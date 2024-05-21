@@ -2,7 +2,7 @@
  * @Author: weick
  * @Date: 2024-05-20 07:59:39
  * @Last Modified by: weick
- * @Last Modified time: 2024-05-20 08:03:59
+ * @Last Modified time: 2024-05-21 07:37:02
  */
 
 #pragma once
@@ -12,6 +12,7 @@
 
 #ifdef Q_OS_WIN
 #include <windowsx.h>
+#include <windows.h>
 #endif
 
 AFramelessWindow::AFramelessWindow(QWindow *parent) :
@@ -41,7 +42,7 @@ void AFramelessWindow::setResizable(bool resizable) {
     }
 }
 
-bool AFramelessWindow::nativeEvent(const QByteArray &eventType, void *message, long *result) {
+bool AFramelessWindow::nativeEvent(const QByteArray &eventType, void *message, qintptr *result) {
 #ifdef Q_OS_WIN
     MSG *msg = reinterpret_cast<MSG *>(message);
     switch (msg->message) {

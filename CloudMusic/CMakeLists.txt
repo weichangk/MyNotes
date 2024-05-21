@@ -49,7 +49,7 @@ else()
 endif()
 link_directories(${PROJECT_LINKDIR}) # 由于依赖其他模块，使单独构建能够通过
 
-find_package(Qt6 COMPONENTS Gui Quick REQUIRED) # Qt COMPONENTS
+find_package(Qt6 COMPONENTS Gui Quick Widgets REQUIRED) # Qt COMPONENTS
 
 file(GLOB_RECURSE INC "inc/*.h" "inc/*.hpp")
 file(GLOB_RECURSE SRC "inc/*.h" "inc/*.hpp" "src/*.cpp" "src/*.cc")
@@ -60,11 +60,17 @@ add_executable(${PROJECT_NAME}
     ${SRC}
 )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Gui Qt6::Quick)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Gui Qt6::Quick Qt6::Widgets)
 
 include(config.cmake)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${PROJECT_ID}")
+
+qt_add_qml_module(CloudMusic
+    URI com.example.myapp
+    VERSION 1.0
+    QML_FILES src/main.qml
+)
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
     APPLICATION_ID="${PROJECT_ID}"

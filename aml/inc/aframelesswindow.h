@@ -2,14 +2,13 @@
  * @Author: weick 
  * @Date: 2024-05-20 07:52:31 
  * @Last Modified by: weick
- * @Last Modified time: 2024-05-20 08:03:55
+ * @Last Modified time: 2024-05-21 07:36:48
  */
 
 #pragma once
-#include "aml_global.h"
 #include <QQuickWindow>
 
-class AML_EXPORT AFramelessWindow : public QQuickWindow {
+class AFramelessWindow : public QQuickWindow {
     Q_OBJECT
 
     Q_PROPERTY(bool resizable READ resizable WRITE setResizable NOTIFY resizableChanged)
@@ -24,7 +23,7 @@ signals:
     void resizableChanged();
 
 protected:
-    bool nativeEvent(const QByteArray &eventType, void *message, long *result) override;
+    bool nativeEvent(const QByteArray &eventType, void *message, qintptr *result) override;
 
 private:
     bool m_resizable = true;
