@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16)
 
 if (MSVC)
     # Specify MSVC UTF-8 encoding
@@ -9,7 +9,7 @@ endif()
 project(
     CloudMusic
     VERSION 1.0.0
-    DESCRIPTION "CloudMusic QML Project"
+    DESCRIPTION "CloudMusic Project"
     LANGUAGES CXX
 )
 
@@ -67,8 +67,9 @@ include(config.cmake)
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${PROJECT_ID}")
 
 qt_add_qml_module(CloudMusic
-    URI com.example.myapp
+    URI CloudMusic
     VERSION 1.0
+    RESOURCE_PREFIX /weichangkqtnote.com/imports
     QML_FILES src/main.qml
 )
 

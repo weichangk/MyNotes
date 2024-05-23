@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16)
 
 if (MSVC)
     # Specify MSVC UTF-8 encoding
@@ -11,5 +11,5 @@ endif()
 set(PROJECT_OUTPUT ${CMAKE_SOURCE_DIR}/cmake/setoutput.cmake)
 include(${PROJECT_OUTPUT})
 
-add_subdirectory(aml)
+# add_subdirectory(aml)
 add_subdirectory(CloudMusic)
