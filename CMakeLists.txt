@@ -12,4 +12,5 @@ set(PROJECT_OUTPUT ${CMAKE_SOURCE_DIR}/cmake/setoutput.cmake)
 include(${PROJECT_OUTPUT})
 
 # add_subdirectory(aml)
+add_subdirectory(QtTest)
 add_subdirectory(CloudMusic)
