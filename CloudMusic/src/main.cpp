@@ -1,6 +1,6 @@
 /*
- * @Author: weick 
- * @Date: 2024-05-21 07:32:24 
+ * @Author: weick
+ * @Date: 2024-05-21 07:32:24
  * @Last Modified by: weick
  * @Last Modified time: 2024-05-21 07:48:11
  */
@@ -8,17 +8,20 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
-int main(int argc, char *argv[])
-{
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    
+int main(int argc, char *argv[]) {
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
 
-    engine.addImportPath(":/scythestudio.com/imports");
+    engine.addImportPath(":/weichangkqtnote.com/imports");
 
-    engine.load(QUrl(u"qrc:/scythestudio.com/imports/Superapp/main.qml"_qs));
+    const QUrl url(u"qrc:/weichangkqtnote.com/imports/CloudMusic/src/main.qml"_qs);
+
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, &app, [url](QObject *obj, const QUrl &objUrl) {
+        if (!obj && url == objUrl)
+            QCoreApplication::exit(-1); }, Qt::QueuedConnection);
+
+    engine.load(url);
 
     return app.exec();
 }
