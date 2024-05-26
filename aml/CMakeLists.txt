@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16)
 
 if (MSVC)
     # Specify MSVC UTF-8 encoding
@@ -7,7 +7,7 @@ if (MSVC)
 endif()
 
 project(
-    AML
+    AmlLib
     VERSION 1.0.0
     DESCRIPTION "aml shared library project"
     LANGUAGES CXX
@@ -33,29 +33,46 @@ add_definitions(${BUILD_DEFINE})
 
 set(CMAKE_PREFIX_PATH "d:/Qt/6.5.1/msvc2019_64") # Qt Kit Dir
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(QRC ./aml.qrc)
 
 find_package(Qt6 COMPONENTS Gui Quick REQUIRED) # Qt COMPONENTS
 
-file(GLOB_RECURSE INC "inc/*.h" "inc/*.hpp")
-file(GLOB_RECURSE SRC "src/*.cpp" "src/*.cc")
-
-qt_add_library(${PROJECT_NAME} SHARED
-    ${QRC}
-    ${INC}
-    ${SRC}
-)
+qt_add_library(${PROJECT_NAME} SHARED)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Gui Qt6::Quick)
 
-# include(GNUInstallDirs) # Defines the ${CMAKE_INSTALL_INCLUDEDIR} variable.
-# install(TARGETS ${PROJECT_NAME})
-# install(
-#     DIRECTORY inc/
-#     DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
-# )
+list(APPEND MODULE_QML_PRIVATE_FILES
+    src/test1.qml
+)
+set_source_files_properties(${MODULE_QML_PRIVATE_FILES} PROPERTIES
+    QT_QML_INTERNAL_TYPE  TRUE
+)
+list(APPEND MODULE_QML_FILES
+    ${MODULE_QML_PRIVATE_FILES}
+    src/test2.qml
+)
+list(APPEND MODULE_CPP_FILES 
+    src/test.h
+    src/test.cpp
+)
+list(APPEND MODULE_JS_FILES 
+    src/test3.js
+)
+list(APPEND MODULE_ASSETS
+    asset/icon/qt-logo.png
+)
+
+qt_add_qml_module(${PROJECT_NAME}
+    URI Aml
+    VERSION 1.0
+    RESOURCE_PREFIX /weick.com/imports
+    QML_FILES
+        ${MODULE_QML_FILES}
+        ${MODULE_JS_FILES}
+    RESOURCES
+        ${MODULE_ASSETS}
+    SOURCES
+        ${MODULE_CPP_FILES}
+)
