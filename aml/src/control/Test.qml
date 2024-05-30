@@ -5,6 +5,6 @@ Rectangle {
     height: 360
     Text {
         anchors.centerIn: parent
-        text: "test 1"
+        text: "test"
     }
 }

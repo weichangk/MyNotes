@@ -1,5 +1,6 @@
 import QtQuick
 import CloudMusic
+import Aml
 
 Window {
     id: root
@@ -7,4 +8,7 @@ Window {
     height: 480
     visible: true
     title: qsTr("CloudMusic")
+    Test {
+
+    }
 }

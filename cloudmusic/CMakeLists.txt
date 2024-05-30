@@ -54,13 +54,16 @@ find_package(Qt6 COMPONENTS Gui Quick Widgets REQUIRED) # Qt COMPONENTS
 file(GLOB_RECURSE INC "inc/*.h" "inc/*.hpp")
 file(GLOB_RECURSE SRC "inc/*.h" "inc/*.hpp" "src/*.cpp" "src/*.cc")
 
+include(../aml/vendor.cmake)
+
 add_executable(${PROJECT_NAME}
     ${QRC}
     ${INC}
     ${SRC}
+    ${VENDOR_SOURCES}
 )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Gui Qt6::Quick Qt6::Widgets)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Gui Qt6::Quick Qt6::Widgets) #AmlLib
 
 include(config.cmake)
 
@@ -69,7 +72,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${PROJECT_ID}")
 qt_add_qml_module(CloudMusic
     URI CloudMusic
     VERSION 1.0
-    RESOURCE_PREFIX /weichangkqtnote.com/imports
+    RESOURCE_PREFIX /weick.com/imports
     QML_FILES src/main.qml
 )
 

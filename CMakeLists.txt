@@ -11,6 +11,8 @@ endif()
 set(PROJECT_OUTPUT ${CMAKE_SOURCE_DIR}/cmake/setoutput.cmake)
 include(${PROJECT_OUTPUT})
 
+# set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/qml)
+
 add_subdirectory(aml)
-add_subdirectory(qttest)
+# add_subdirectory(qttest)
 add_subdirectory(cloudmusic)
