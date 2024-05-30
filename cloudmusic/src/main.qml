@@ -1,6 +1,6 @@
 import QtQuick
 import CloudMusic
-import Aml
+import Aml.Control
 
 Window {
     id: root

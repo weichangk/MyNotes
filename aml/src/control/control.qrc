@@ -3,6 +3,7 @@
 
 <qresource prefix="/Aml/Control">
     <file>Test.qml</file>
+    <file>qmldir</file>
 </qresource>
 
 </RCC>
