@@ -2,7 +2,7 @@
  * @Author: weick
  * @Date: 2024-05-26 08:30:54
  * @Last Modified by: weick
- * @Last Modified time: 2024-05-26 09:39:30
+ * @Last Modified time: 2024-07-26 08:00:07
  */
 
 #include "mainwindow.h"
@@ -19,7 +19,8 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::sigConnect() {
-    connect(painter_btn_, &QPushButton::clicked, this, &MainWindow::painterTest);
+    connect(painter_btn_, &QPushButton::clicked, this, &MainWindow::painterShow);
+    connect(tab_btn_, &QPushButton::clicked, this, &MainWindow::tabShow);
 }
 
 void MainWindow::createUi() {
@@ -32,10 +33,20 @@ void MainWindow::createUi() {
     painter_btn_->setFixedSize(100, 32);
     painter_btn_->setText("painter test");
     layout->addWidget(painter_btn_);
-
     painter_widget_ = new PainterWidget();
+
+
+    tab_btn_ = new QPushButton(this);
+    tab_btn_->setFixedSize(100, 32);
+    tab_btn_->setText("tab test");
+    layout->addWidget(tab_btn_);
+    tab_widget_ = new TabWidget();
 }
 
-void MainWindow::painterTest() {
+void MainWindow::painterShow() {
     painter_widget_->show();
+}
+
+void MainWindow::tabShow() {
+    tab_widget_->show();
 }
