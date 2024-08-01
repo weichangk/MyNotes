@@ -7,7 +7,7 @@
 
 #include "mainwindow.h"
 #include <QVBoxLayout>
-#include "qtwidgetsbeginners/painter.h"
+#include "qtwidget/painter.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent) {

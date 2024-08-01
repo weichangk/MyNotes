@@ -8,8 +8,8 @@
 #pragma once
 #include <QWidget>
 #include <QPushButton>
-#include "qtwidgetsbeginners/painter.h"
-#include "qtwidgetsbeginners/tabwidget.h"
+#include "qtwidget/painter.h"
+#include "qtwidget/tabwidget.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
