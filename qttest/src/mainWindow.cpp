@@ -2,7 +2,7 @@
  * @Author: weick
  * @Date: 2024-05-26 08:30:54
  * @Last Modified by: weick
- * @Last Modified time: 2024-07-26 08:00:07
+ * @Last Modified time: 2024-08-06 00:36:26
  */
 
 #include "mainwindow.h"
@@ -21,6 +21,7 @@ MainWindow::~MainWindow() {
 void MainWindow::sigConnect() {
     connect(painter_btn_, &QPushButton::clicked, this, &MainWindow::painterShow);
     connect(tab_btn_, &QPushButton::clicked, this, &MainWindow::tabShow);
+    connect(translucent_btn_, &QPushButton::clicked, this, &MainWindow::translucentShow);
 }
 
 void MainWindow::createUi() {
@@ -41,6 +42,12 @@ void MainWindow::createUi() {
     tab_btn_->setText("tab test");
     layout->addWidget(tab_btn_);
     tab_widget_ = new TabWidget();
+
+    translucent_btn_ = new QPushButton(this);
+    translucent_btn_->setFixedSize(100, 32);
+    translucent_btn_->setText("translucent test");
+    layout->addWidget(translucent_btn_);
+    translucent_widget_ = new TranslucentBackgroundWidget();
 }
 
 void MainWindow::painterShow() {
@@ -49,4 +56,8 @@ void MainWindow::painterShow() {
 
 void MainWindow::tabShow() {
     tab_widget_->show();
+}
+
+void MainWindow::translucentShow() {
+    translucent_widget_->show();
 }
