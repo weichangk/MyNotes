@@ -119,8 +119,37 @@ target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
 参考下面系列教程
 https://code.visualstudio.com/docs/cpp/introvideos-cpp
 https://www.kdab.com/using-visual-studio-code-for-writing-qt-applications/
+https://github.com/microsoft/vscode-cmake-tools/blob/main/docs/debug-launch.md#debug-using-a-launchjson-file
 
-使用vscode进行调试关键是要理解launch.json和c_cpp_properties.json配置
+在 VSCode 中，launch.json 和 c_cpp_properties.json 是两个重要的配置文件，它们分别用于配置调试和编译环境。
+
+launch.json 文件用于配置调试器的相关选项。它定义了如何启动和调试你的项目，包括设置要调试的程序、传递给程序的参数、调试程序的环境变量等。这里是一些常见的配置项：
+- program: 指定要调试的可执行文件的路径。
+- args: 传递给程序的命令行参数。
+- cwd: 指定程序的工作目录。
+- env: 指定环境变量。
+- stopAtEntry: 是否在程序入口处停止。
+- preLaunchTask: 在启动调试之前运行的任务（通常用于编译）。
+- console: 指定调试时使用的控制台类型（如 integratedTerminal 或 externalTerminal）。
+
+c_cpp_properties.json 文件用于配置 C/C++ 扩展的 IntelliSense、代码浏览、编译数据库等功能。这个文件帮助 VSCode 理解你的项目结构，以便提供准确的代码补全和语法检查。
+- includePath: 指定头文件的搜索路径。
+- defines: 指定预处理器宏定义。
+- compilerPath: 指定编译器路径，以便 C/C++ 扩展能够解析编译器的系统头文件和编译选项。
+- cStandard 和 cppStandard: 指定使用的 C 和 C++ 标准版本。
+- intelliSenseMode: 指定 IntelliSense 的模式（例如 gcc-x64, clang-x64）
+
+IntelliSense 是 VSCode 的智能代码补全和语法提示功能，提供了以下几种支持：
+- 代码补全: 当你输入代码时，IntelliSense 会提供建议的补全项，包括函数、变量、类名等。
+- 参数提示: 在函数调用时，显示函数的参数信息。
+- 快速信息: 悬停在代码元素上时显示相关的文档和信息。
+- 代码片段: 提供常用代码片段的快捷方式，帮助快速插入代码模板。
+- IntelliSense 通过解析代码文件、分析语法和使用编译器信息来提供这些功能。在 C/C++ 开发中，IntelliSense 需要正确配置头文件路径、宏定义和编译器设置。
+
+代码浏览功能帮助你理解和导航代码库：
+- 跳转到定义: 能够快速跳转到变量、函数或类的定义位置。
+- 查找引用: 显示变量、函数或类的所有引用位置，帮助你了解代码的使用情况。
+- 符号查找: 允许你快速查找和浏览代码中的符号（如函数、变量、类等）。
 
 一个基础的调试qt的launch.json和c_cpp_properties.json配置
 ```
