@@ -188,8 +188,7 @@ IntelliSense 是 VSCode 的智能代码补全和语法提示功能，提供了�
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**",
-                "D:/Qt/6.5.0/msvc2019_64/include/**"
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -215,6 +214,12 @@ IntelliSense 是 VSCode 的智能代码补全和语法提示功能，提供了�
 - <b>智能感知设置</b>
 使用 C/C++ 插件已经有带有自能提示功能，但是时需要对 Qt 代码提示和头文件跳转还需要对c_cpp_properties.json添加一些配置。
 在 includePath 节点添加 Qt 头文件路径即可实现 Qt 代码提示和头文件跳转。
+    ```
+    "includePath": [
+        "${workspaceFolder}/**",
+        "D:/Qt/6.5.0/msvc2019_64/include/**"
+    ],
+    ```
 
 - <b>Qt感知对象可视化</b>
     ```
@@ -227,6 +232,10 @@ IntelliSense 是 VSCode 的智能代码补全和语法提示功能，提供了�
     ```
     "symbolSearchPath": "otherSearchPath;D:/Qt/6.5.0/msvc2019_64/bin",
     ```
+
+- <b>defines 指定预处理器宏</b>
+预处理器宏（如 DEBUG 或平台相关的宏）确实应该写在构建系统的配置文件中，比如 CMake 的 CMakeLists.txt 中。这是因为这些宏会直接影响编译器的行为，应该在构建过程中统一管理。
+c_cpp_properties.json 中的 defines 预处理器宏也可以在开发中使用，但是打包环境不会生效。
 
 - <b>Qt源码调试</b>
     ```
@@ -253,4 +262,28 @@ IntelliSense 是 VSCode 的智能代码补全和语法提示功能，提供了�
     },
     ```
 
-defines 用于预处理宏配置
+### 使用 VSCode tasks.json
+在 VSCode 中，tasks.json 是用来配置任务（Tasks）的文件，这些任务通常用于自动化开发流程中的常见操作，例如编译代码、运行测试、构建项目等。
+
+- <b>tasks.json 的作用</b>
+tasks.json 文件定义了可以在 VSCode 中运行的任务。这些任务可以是编译、测试、运行脚本或任何可以通过命令行执行的操作。配置 tasks.json 可以帮助你在开发过程中快速执行这些操作，而无需手动输入命令。
+
+
+- <b>以下是 tasks.json 中一些常见的配置项及其作用：</b>
+    - label: 任务的名称，用于识别任务。
+    - type: 任务的类型，例如 shell 表示在 shell 中运行命令，process 表示直接运行某个可执行文件。
+    - command: 要运行的命令或脚本。
+    - args: 命令的参数。
+    - group: 将任务归类为某一组，例如 build 或 test，并定义是否是默认任务。
+    - problemMatcher: 用于解析任务输出并将错误或警告显示在 VSCode 的问题面板中。
+    - isBackground: 指定任务是否是后台任务（持续运行）。
+    - dependsOn: 指定此任务依赖的其他任务，可以在运行此任务时自动先运行其他任务。
+    - presentation: 控制任务的输出如何显示，如是否显示在终端中。
+
+- <b>使用场景</b>
+    - 编译代码: 可以设置编译命令作为任务，当你需要编译代码时，只需运行任务而不用手动输入命令。
+    - 运行测试: 可以设置测试脚本作为任务，快速执行单元测试或集成测试。
+    - 自动化操作: 任何需要频繁执行的命令或脚本都可以配置成任务，简化开发流程。
+
+- <b>任务与调试的结合</b>
+在 launch.json 中，你可以将 preLaunchTask 配置为 tasks.json 中定义的任务，这样在开始调试之前，VSCode 会自动执行这个任务。例如，先编译代码再启动调试器。通过使用 tasks.json，你可以大大简化和加快开发过程中的常见操作，提高效率。
