@@ -26,7 +26,8 @@
             "name": "win-qtnote-cppvsdbg-attach",
             "type": "cppvsdbg",
             "request": "attach",
-            "processId": 1234,
+            // "processId": 1234,
+            "processId": "${command:pickProcess}",
             "visualizerFile": "${workspaceRoot}/qt6.natvis.xml",
             "symbolSearchPath": "otherSearchPath;D:/Qt/6.5.0/msvc2019_64/bin",
             "sourceFileMap": {
@@ -59,7 +60,9 @@
             "name": "mac-qtnote-cppdbg-attach",
             "type": "cppdbg",
             "request": "attach",
-            "processId": 1234,
+            "program": "${workspaceFolder}/path_to_your_binary",
+            // "processId": 1234,
+            "processId": "${command:pickProcess}",
             "MIMode": "lldb",
             "additionalSOLibSearchPath": "/Users/ws/Qt/6.5.0/clang_64/lib",
             "symbolLoadInfo": {
@@ -93,7 +96,8 @@
             "name": "mac-qtnote-lldb-attach",
             "type": "lldb",
             "request": "attach",
-            "pid": 1234,
+            // "pid": 1234,
+            "pid": "${command:pickProcess}",
             "initCommands": [
                 "settings set target.process.follow-fork-mode child",
                 "settings set target.inline-breakpoint-strategy always",
