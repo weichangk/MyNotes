@@ -7,10 +7,12 @@
 
 #pragma once
 #include <QWidget>
-#include <QPushButton>
-#include "qtwidget/painter.h"
-#include "qtwidget/tabwidget.h"
-#include "qtwidget/translucentbackground.h"
+#include <QTabWidget>
+
+// #include <QPushButton>
+// #include "qtwidget/painter.h"
+// #include "qtwidget/tabwidget.h"
+// #include "qtwidget/translucentbackground.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
@@ -22,16 +24,29 @@ public:
 private:
     void createUi();
     void sigConnect();
-
-    void painterShow();
-    void tabShow();
-    void translucentShow();
+    void setTestDemoBtns(QWidget *w);
+    void setACoreDemoBtns(QWidget *w);
+    void setAWidgetDemoBtns(QWidget *w);
+    void setAGuiDemoBtns(QWidget *w);
+    void setAmlDemoBtns(QWidget *w);
+    
+    // void painterShow();
+    // void tabShow();
+    // void translucentShow();
 
 private:
-    QPushButton *painter_btn_ = nullptr;
-    PainterWidget *painter_widget_ = nullptr;
-    QPushButton *tab_btn_ = nullptr;
-    TabWidget *tab_widget_ = nullptr;
-    QPushButton *translucent_btn_ = nullptr;
-    TranslucentBackgroundWidget *translucent_widget_ = nullptr;
+    QTabWidget *tab_widget_ = nullptr;
+
+    QWidget *tab_test_widget_ = nullptr;
+    QWidget *tab_acore_widget_ = nullptr;
+    QWidget *tab_awidget_widget_ = nullptr;
+    QWidget *tab_agui_widget_ = nullptr;
+    QWidget *tab_aml_widget_ = nullptr;
+
+    // QPushButton *painter_btn_ = nullptr;
+    // PainterWidget *painter_widget_ = nullptr;
+    // QPushButton *tab_btn_ = nullptr;
+    // TabWidget *tab_widget_ = nullptr;
+    // QPushButton *translucent_btn_ = nullptr;
+    // TranslucentBackgroundWidget *translucent_widget_ = nullptr;
 };

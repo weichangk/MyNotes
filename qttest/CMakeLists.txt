@@ -60,7 +60,7 @@ add_executable(${PROJECT_NAME}
     ${SRC}
 )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets AWidget)
 
 include(config.cmake)
 
