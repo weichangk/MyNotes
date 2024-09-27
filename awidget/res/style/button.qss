@@ -1,0 +1,44 @@
+/*
+ * @Author: weick
+ * @Date: 2024-01-14 21:20:25
+ * @Last Modified by: weick
+ * @Last Modified time: 2024-01-14 23:46:53
+ */
+
+ APushButton#OnlyIconButton {
+    border-radius: 6px;
+    background-color: transparent;
+}
+
+APushButton#OnlyIconButton:hover {
+    background-color: rgba(64, 64, 64, 1);
+}
+
+APushButton#OnlyIconButton:pressed {
+    background-color: rgba(64, 64, 64, 0.15);
+}
+
+APushButton#OnlyIconButton:disabled {
+    background-color: rgba(54, 54, 54, 0.15);
+}
+
+ APushButton#FullBGButton_FS14 {
+    border-radius: 6px;
+    background-color: rgba(50, 50, 50, 0.5);
+    color: #9D9D9D;
+    font-size: 14px;
+}
+
+APushButton#FullBGButton_FS14:hover {
+    background-color: rgba(50, 50, 50, 0.75);
+    color: #CCCCCC;
+}
+
+APushButton#FullBGButton_FS14:pressed {
+    background-color: rgba(50, 50, 50, 1);
+    color: #CCCCCC;
+}
+
+APushButton#FullBGButton_FS14:disabled {
+    background-color: rgba(50, 50, 50, 0.25);
+}

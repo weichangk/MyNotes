@@ -45,6 +45,7 @@ include(${PROJECT_OUTPUT})
 
 # set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/qml)
 
+add_subdirectory(awidget)
 add_subdirectory(aml)
 add_subdirectory(qttest)
 add_subdirectory(cloudmusic)
