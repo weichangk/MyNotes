@@ -8,14 +8,14 @@
 #pragma once
 #include <QDialog>
 #include <QPushButton>
-#include "qtwidget/translucentbackground.h"
+#include "translucentbackground.h"
 
-class MainDialog : public QDialog {
+class Dialog : public QDialog {
     Q_OBJECT
 
 public:
-    MainDialog(QDialog *parent = nullptr);
-    ~MainDialog();
+    Dialog(QDialog *parent = nullptr);
+    ~Dialog();
 
 private:
     void createUi();

@@ -5,19 +5,19 @@
  * @Last Modified time: 2024-08-06 01:16:18
  */
 
-#include "maindialog.h"
+#include "dialog.h"
 #include <QVBoxLayout>
 
-MainDialog::MainDialog(QDialog *parent) :
+Dialog::Dialog(QDialog *parent) :
     QDialog(parent) {
     createUi();
     sigConnect();
 }
 
-MainDialog::~MainDialog() {
+Dialog::~Dialog() {
 }
 
-void MainDialog::createUi() {
+void Dialog::createUi() {
     setMinimumSize(1096, 680);
     auto *layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
@@ -31,10 +31,10 @@ void MainDialog::createUi() {
     translucent_widget_->setWindowFlags(translucent_widget_->windowFlags() | Qt::WindowStaysOnTopHint);
 }
 
-void MainDialog::sigConnect() {
-    connect(translucent_btn_, &QPushButton::clicked, this, &MainDialog::translucentShow);
+void Dialog::sigConnect() {
+    connect(translucent_btn_, &QPushButton::clicked, this, &Dialog::translucentShow);
 }
 
-void MainDialog::translucentShow() {
+void Dialog::translucentShow() {
     translucent_widget_->show();
 }
