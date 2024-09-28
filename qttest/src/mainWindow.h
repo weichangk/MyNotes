@@ -24,7 +24,10 @@ public:
 private:
     void createUi();
     void sigConnect();
-    void setTestDemoBtns(QWidget *w);
+    void setQCoreDemoBtns(QWidget *w);
+    void setQWidgetDemoBtns(QWidget *w);
+    void setQGuiDemoBtns(QWidget *w);
+    void setQmlDemoBtns(QWidget *w);
     void setACoreDemoBtns(QWidget *w);
     void setAWidgetDemoBtns(QWidget *w);
     void setAGuiDemoBtns(QWidget *w);
@@ -37,7 +40,12 @@ private:
 private:
     QTabWidget *tab_widget_ = nullptr;
 
-    QWidget *tab_test_widget_ = nullptr;
+    QTabWidget *tab_test_widget_ = nullptr;
+    QWidget *tab_test_qcore_widget_ = nullptr;
+    QWidget *tab_test_qwidget_widget_ = nullptr;
+    QWidget *tab_test_qgui_widget_ = nullptr;
+    QWidget *tab_test_qml_widget_ = nullptr;
+
     QWidget *tab_acore_widget_ = nullptr;
     QWidget *tab_awidget_widget_ = nullptr;
     QWidget *tab_agui_widget_ = nullptr;

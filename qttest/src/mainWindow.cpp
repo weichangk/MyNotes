@@ -12,17 +12,56 @@
 #include "../awidget/inc/aflowlayout.h"
 // #include "qtwidget/painter.h"
 
-using TestDemo = enum {
-    DIALOG = 0,
-    _111,
-    _222,
-    _333,
-    _444,
-    _555,
-    _666,
-    _777,
-    _888,
-    _999,
+using QCoreDemo = enum {
+    _QCoreDemo000 = 0,
+    _QCoreDemo111,
+    _QCoreDemo222,
+    _QCoreDemo333,
+    _QCoreDemo444,
+    _QCoreDemo555,
+    _QCoreDemo666,
+    _QCoreDemo777,
+    _QCoreDemo888,
+    _QCoreDemo999,
+};
+
+using QWidgetDemo = enum {
+    _QWidgetDemo000 = 0,
+    _QWidgetDemo111,
+    _QWidgetDemo222,
+    _QWidgetDemo333,
+    _QWidgetDemo444,
+    _QWidgetDemo555,
+    _QWidgetDemo666,
+    _QWidgetDemo777,
+    _QWidgetDemo888,
+    _QWidgetDemo999,
+};
+
+using QGuiDemo = enum {
+    _QGuiDemo000 = 0,
+    _QGuiDemo111,
+    _QGuiDemo222,
+    _QGuiDemo333,
+    _QGuiDemo444,
+    _QGuiDemo555,
+    _QGuiDemo666,
+    _QGuiDemo777,
+    _QGuiDemo888,
+    _QGuiDemo999,
+};
+
+using QmlDemo = enum {
+    _QmlDemo000 = 0,
+    _QmlDemo111,
+    _QmlDemo222,
+    _QmlDemo333,
+    _QmlDemo444,
+    _QmlDemo555,
+    _QmlDemo666,
+    _QmlDemo777,
+    _QmlDemo888,
+    _QmlDemo999,
 };
 
 using ACoreDemo = enum {
@@ -101,19 +140,34 @@ void MainWindow::createUi() {
     tab_widget_ = new QTabWidget();
     layout->addWidget(tab_widget_);
 
-    tab_test_widget_ = new QWidget();
+    tab_test_widget_ = new QTabWidget();
+
+    tab_test_qcore_widget_ = new QWidget();
+    tab_test_qwidget_widget_ = new QWidget();
+    tab_test_qgui_widget_ = new QWidget();
+    tab_test_qml_widget_ = new QWidget();
+
     tab_acore_widget_ = new QWidget();
     tab_awidget_widget_ = new QWidget();
     tab_agui_widget_ = new QWidget();
     tab_aml_widget_ = new QWidget();
 
     tab_widget_->addTab(tab_test_widget_, "test");
+    tab_test_widget_->addTab(tab_test_qcore_widget_, "qcore");
+    tab_test_widget_->addTab(tab_test_qwidget_widget_, "qwidget");
+    tab_test_widget_->addTab(tab_test_qgui_widget_, "qgui");
+    tab_test_widget_->addTab(tab_test_qml_widget_, "qml");
+
     tab_widget_->addTab(tab_acore_widget_, "acore");
     tab_widget_->addTab(tab_awidget_widget_, "awidget");
     tab_widget_->addTab(tab_agui_widget_, "agui");
     tab_widget_->addTab(tab_aml_widget_, "aml");
 
-    setTestDemoBtns(tab_test_widget_);
+    setQCoreDemoBtns(tab_test_qcore_widget_);
+    setQWidgetDemoBtns(tab_test_qwidget_widget_);
+    setQGuiDemoBtns(tab_test_qgui_widget_);
+    setQmlDemoBtns(tab_test_qml_widget_);
+
     setACoreDemoBtns(tab_acore_widget_);
     setAWidgetDemoBtns(tab_awidget_widget_);
     setAGuiDemoBtns(tab_agui_widget_);
@@ -139,28 +193,109 @@ void MainWindow::createUi() {
     // translucent_widget_ = new TranslucentBackgroundWidget();
 }
 
-void MainWindow::setTestDemoBtns(QWidget *w) {
+void MainWindow::setQCoreDemoBtns(QWidget *w) {
     auto testDemoFlowLayout = new AFlowLayout(w, 4, 4, 4);
     QMap<int, QString> testDemoMap;
-    testDemoMap.insert(TestDemo::DIALOG, "dialog窗体");
-    testDemoMap.insert(TestDemo::_111, "111");
-    testDemoMap.insert(TestDemo::_222, "222");
-    testDemoMap.insert(TestDemo::_333, "333");
-    testDemoMap.insert(TestDemo::_444, "444");
-    testDemoMap.insert(TestDemo::_555, "555");
-    testDemoMap.insert(TestDemo::_666, "666");
-    testDemoMap.insert(TestDemo::_777, "777");
-    testDemoMap.insert(TestDemo::_888, "888");
-    testDemoMap.insert(TestDemo::_999, "999");
+    testDemoMap.insert(QCoreDemo::_QCoreDemo000, "000");
+    testDemoMap.insert(QCoreDemo::_QCoreDemo111, "111");
+    testDemoMap.insert(QCoreDemo::_QCoreDemo222, "222");
+    testDemoMap.insert(QCoreDemo::_QCoreDemo333, "333");
+    testDemoMap.insert(QCoreDemo::_QCoreDemo444, "444");
+    testDemoMap.insert(QCoreDemo::_QCoreDemo555, "555");
+    testDemoMap.insert(QCoreDemo::_QCoreDemo666, "666");
+    testDemoMap.insert(QCoreDemo::_QCoreDemo777, "777");
+    testDemoMap.insert(QCoreDemo::_QCoreDemo888, "888");
+    testDemoMap.insert(QCoreDemo::_QCoreDemo999, "999");
 
     QMap<int, QString>::Iterator iter;
     for (iter = testDemoMap.begin(); iter != testDemoMap.end(); ++iter) {
         QPushButton *btn = new QPushButton(this);
         btn->setFixedSize(160, 24);
         btn->setText(iter.value());
-        btn->setProperty("test_id", iter.key());
+        btn->setProperty("qcore_id", iter.key());
         connect(btn, &QPushButton::clicked, this, [btn]() {
-            int id = btn->property("test_id").toInt();
+            int id = btn->property("qcore_id").toInt();
+        });
+        testDemoFlowLayout->addWidget(btn);
+    }
+}
+
+void MainWindow::setQWidgetDemoBtns(QWidget *w) {
+    auto testDemoFlowLayout = new AFlowLayout(w, 4, 4, 4);
+    QMap<int, QString> testDemoMap;
+    testDemoMap.insert(QWidgetDemo::_QWidgetDemo000, "000");
+    testDemoMap.insert(QWidgetDemo::_QWidgetDemo111, "111");
+    testDemoMap.insert(QWidgetDemo::_QWidgetDemo222, "222");
+    testDemoMap.insert(QWidgetDemo::_QWidgetDemo333, "333");
+    testDemoMap.insert(QWidgetDemo::_QWidgetDemo444, "444");
+    testDemoMap.insert(QWidgetDemo::_QWidgetDemo555, "555");
+    testDemoMap.insert(QWidgetDemo::_QWidgetDemo666, "666");
+    testDemoMap.insert(QWidgetDemo::_QWidgetDemo777, "777");
+    testDemoMap.insert(QWidgetDemo::_QWidgetDemo888, "888");
+    testDemoMap.insert(QWidgetDemo::_QWidgetDemo999, "999");
+
+    QMap<int, QString>::Iterator iter;
+    for (iter = testDemoMap.begin(); iter != testDemoMap.end(); ++iter) {
+        QPushButton *btn = new QPushButton(this);
+        btn->setFixedSize(160, 24);
+        btn->setText(iter.value());
+        btn->setProperty("qwidget_id", iter.key());
+        connect(btn, &QPushButton::clicked, this, [btn]() {
+            int id = btn->property("qwidget_id").toInt();
+        });
+        testDemoFlowLayout->addWidget(btn);
+    }
+}
+
+void MainWindow::setQGuiDemoBtns(QWidget *w) {
+    auto testDemoFlowLayout = new AFlowLayout(w, 4, 4, 4);
+    QMap<int, QString> testDemoMap;
+    testDemoMap.insert(QGuiDemo::_QGuiDemo000, "000");
+    testDemoMap.insert(QGuiDemo::_QGuiDemo111, "111");
+    testDemoMap.insert(QGuiDemo::_QGuiDemo222, "222");
+    testDemoMap.insert(QGuiDemo::_QGuiDemo333, "333");
+    testDemoMap.insert(QGuiDemo::_QGuiDemo444, "444");
+    testDemoMap.insert(QGuiDemo::_QGuiDemo555, "555");
+    testDemoMap.insert(QGuiDemo::_QGuiDemo666, "666");
+    testDemoMap.insert(QGuiDemo::_QGuiDemo777, "777");
+    testDemoMap.insert(QGuiDemo::_QGuiDemo888, "888");
+    testDemoMap.insert(QGuiDemo::_QGuiDemo999, "999");
+
+    QMap<int, QString>::Iterator iter;
+    for (iter = testDemoMap.begin(); iter != testDemoMap.end(); ++iter) {
+        QPushButton *btn = new QPushButton(this);
+        btn->setFixedSize(160, 24);
+        btn->setText(iter.value());
+        btn->setProperty("qgui_id", iter.key());
+        connect(btn, &QPushButton::clicked, this, [btn]() {
+            int id = btn->property("qgui_id").toInt();
+        });
+        testDemoFlowLayout->addWidget(btn);
+    }
+}
+
+void MainWindow::setQmlDemoBtns(QWidget *w) {
+    auto testDemoFlowLayout = new AFlowLayout(w, 4, 4, 4);
+    QMap<int, QString> testDemoMap;
+    testDemoMap.insert(QmlDemo::_QmlDemo000, "000");
+    testDemoMap.insert(QmlDemo::_QmlDemo111, "111");
+    testDemoMap.insert(QmlDemo::_QmlDemo222, "222");
+    testDemoMap.insert(QmlDemo::_QmlDemo333, "333");
+    testDemoMap.insert(QmlDemo::_QmlDemo444, "444");
+    testDemoMap.insert(QmlDemo::_QmlDemo555, "555");
+    testDemoMap.insert(QmlDemo::_QmlDemo666, "666");
+    testDemoMap.insert(QmlDemo::_QmlDemo777, "777");
+    testDemoMap.insert(QmlDemo::_QmlDemo888, "888");
+    testDemoMap.insert(QmlDemo::_QmlDemo999, "999");
+
+    QMap<int, QString>::Iterator iter;
+    for (iter = testDemoMap.begin(); iter != testDemoMap.end(); ++iter) {
+        QPushButton *btn = new QPushButton(this);
+        btn->setFixedSize(160, 24);
+        btn->setText(iter.value());
+        btn->setProperty("qml_id", iter.key());
+        connect(btn, &QPushButton::clicked, this, [btn]() {
+            int id = btn->property("qml_id").toInt();
         });
         testDemoFlowLayout->addWidget(btn);
     }
