@@ -81,3 +81,23 @@ macro(MY_ADD_LINK_FRAMEWORK_FUNC)
       list(APPEND MY_PROJECT_LINKLIB "-framework ${arg}")
   endforeach()
 endmacro(MY_ADD_LINK_FRAMEWORK_FUNC)
+
+# 二方库依赖库变量及追加方法
+set(MY_FIND_2NDPARTY_PACK )
+set(MY_FIND_2NDPARTY_PACK_LINK )
+macro(MY_ADD_2NDPARTY_PACK_FUNC)
+  list(APPEND MY_FIND_2NDPARTY_PACK ${ARGN})
+  foreach(arg ${ARGN})
+      list(APPEND MY_FIND_2NDPARTY_PACK_LINK ${arg})
+  endforeach()
+endmacro(MY_ADD_2NDPARTY_PACK_FUNC)
+
+# 三方库依赖库变量及追加方法
+set(MY_FIND_3RDPARTY_PACK )
+set(MY_FIND_3RDPARTY_PACK_LINK )
+macro(MY_ADD_3RDPARTY_PACK_FUNC)
+  list(APPEND MY_FIND_3RDPARTY_PACK ${ARGN})
+  foreach(arg ${ARGN})
+      list(APPEND MY_FIND_3RDPARTY_PACK_LINK ${arg})
+  endforeach()
+endmacro(MY_ADD_3RDPARTY_PACK_FUNC)
