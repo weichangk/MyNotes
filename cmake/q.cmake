@@ -38,9 +38,28 @@ set(CMAKE_AUTOMOC ON)
 # 自动处理 Qt 资源文件（.qrc），生成相应的 C++ 代码
 set(CMAKE_AUTORCC ON)
 
+# 查找 Qt ui文件
+set(MY_PROJECT_UI )
+file(GLOB_RECURSE MY_PROJECT_UI "${CMAKE_CURRENT_SOURCE_DIR}/*.ui")
+
+# 查找 Qt ts文件
+set(MY_PROJECT_TS )
+file(GLOB_RECURSE MY_PROJECT_TS "${CMAKE_CURRENT_SOURCE_DIR}/*.ts")
+
 # 查找 Qt 资源文件
-set(MY_QRC )
-file(GLOB_RECURSE MY_QRC "*.qrc")
+set(MY_PROJECT_QRC )
+file(GLOB_RECURSE MY_PROJECT_QRC "${CMAKE_CURRENT_SOURCE_DIR}/*.qrc")
+
+# # 处理 Qt 版本相关的宏，使用CMAKE_AUTOxxx后就不需要了
+# if(${MY_QT_VERSION_MAJOR} GREATER_EQUAL 6)
+#     qt6_wrap_cpp(MY_PROJECT_HEADER1 ${MY_PROJECT_HEADER})
+#     qt6_wrap_ui(MY_PROJECT_UI ${MY_PROJECT_UI})
+#     qt6_add_resources(MY_PROJECT_QRC ${MY_PROJECT_QRC})
+# else()
+#     qt5_wrap_cpp(MY_PROJECT_HEADER ${MY_PROJECT_HEADER})
+#     qt5_wrap_ui(MY_PROJECT_UI ${MY_PROJECT_UI})
+#     qt5_add_resources(MY_PROJECT_QRC ${MY_PROJECT_QRC})
+# endif()
 
 # Qt 依赖库变量及追加方法
 set(MY_FIND_QT_PACK )

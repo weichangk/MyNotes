@@ -1,0 +1,16 @@
+# Cmake 最小版本
+cmake_minimum_required(VERSION 3.16)
+
+# 使用 C++17
+set(CMAKE_CXX_STANDARD 17)
+
+# 强制要求使用 C++ 标准版本
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 查找项目头文件
+set(MY_PROJECT_HEADER )
+file(GLOB_RECURSE MY_PROJECT_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/*.h" "${CMAKE_CURRENT_SOURCE_DIR}/*.hpp")
+
+# 查找项目源文件
+set(MY_PROJECT_SOURCE )
+file(GLOB_RECURSE MY_PROJECT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/*.cc")

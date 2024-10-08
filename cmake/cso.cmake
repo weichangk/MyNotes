@@ -1,0 +1,4 @@
+add_library(${PROJECT_NAME} SHARED
+    ${MY_PROJECT_HEADER}
+    ${MY_PROJECT_SOURCE}
+)

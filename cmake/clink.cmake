@@ -1,0 +1,1 @@
+target_link_libraries(${PROJECT_NAME} PRIVATE ${MY_PROJECT_LINKLIB})

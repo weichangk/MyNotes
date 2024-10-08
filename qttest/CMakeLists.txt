@@ -1,6 +1,6 @@
-include(${CMAKE_SOURCE_DIR}/cmake/cmake.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/public.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/qtcmake.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/c.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/cpublic.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/q.cmake)
 
 project(
     QtTest
@@ -13,14 +13,16 @@ MY_ADD_QT_PACK_FUNC(
     Widgets
 )
 
-MY_ADD_2NDPARTY_PACK_FUNC(
+MY_ADD_LINK_LIB_FUNC(
     AWidget
 )
 
-include(${CMAKE_SOURCE_DIR}/cmake/option.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/code.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/qtcode.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/qtexe.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/coption.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/ccode.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/qcode.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/qexe.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/clink.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/qlink.cmake)
 
 include(config.cmake)
 
