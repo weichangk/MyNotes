@@ -1,10 +1,11 @@
 {
     "configurations": [
+        // C/C++: Select a Configuration，选择你需要的配置，比如 Win32 或 Mac
         {
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "E:/Qt/6.7.3/msvc2019_64/include/**"
+                "D:/Qt/6.5.0/msvc2019_64/include/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -12,10 +13,26 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.19041.0",
-            "compilerPath": "E:\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
+            "compilerPath": "D:\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\Hostx64\\x64\\cl.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "windows-msvc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        },
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/Users/ws/qt5-5.15-macOS-release/qtbase/include/**"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-clang-x64",
             "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
