@@ -9,6 +9,7 @@
 #include <QVBoxLayout>
 #include <QPushbutton>
 #include <QMap>
+#include <QVariant>
 #include "../awidget/inc/aflowlayout.h"
 
 using QCoreDemo = enum {

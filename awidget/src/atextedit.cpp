@@ -9,6 +9,7 @@
 #include <QPainter>
 #include <QTimerEvent>
 #include <QKeyEvent>
+#include <QDebug>
 
 ATextEdit::ATextEdit(QWidget *parent) :
     QTextEdit(parent) {
