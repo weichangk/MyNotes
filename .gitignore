@@ -1,5 +1,8 @@
+/Debug
 /bin
 /lib
 /build
 /acore/build
-/CloudMusic/build
+/awidget/build
+/aosx/build
+/cloudmusic/build
