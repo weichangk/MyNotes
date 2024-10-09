@@ -80,7 +80,7 @@ else()
 endif()
 
 if(NOT CMAKE_PREFIX_PATH)
-    message(FATAL_ERROR "Could not find a valid Qt path.")
+    message(WARNING "Could not find a valid Qt path.")
 endif()
 
 # 自动将当前源文件目录加入头文件搜索路径。
