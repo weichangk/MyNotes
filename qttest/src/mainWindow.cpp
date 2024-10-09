@@ -30,7 +30,7 @@ using QWidgetDemo = enum {
     QWidgetDemoPainter,
     QWidgetDemoTabWidget,
     QWidgetDemoTranslucent,
-    QWidgetDemo444,
+    QWidgetDemoLayoutMacBug,
     QWidgetDemo555,
     QWidgetDemo666,
     QWidgetDemo777,
@@ -205,7 +205,7 @@ void MainWindow::setQWidgetDemoBtns(QWidget *w) {
     testDemoMap.insert(QWidgetDemo::QWidgetDemoPainter, "Painter");
     testDemoMap.insert(QWidgetDemo::QWidgetDemoTabWidget, "TabWidget");
     testDemoMap.insert(QWidgetDemo::QWidgetDemoTranslucent, "Translucent");
-    testDemoMap.insert(QWidgetDemo::QWidgetDemo444, "444");
+    testDemoMap.insert(QWidgetDemo::QWidgetDemoLayoutMacBug, "LayoutMacBug");
     testDemoMap.insert(QWidgetDemo::QWidgetDemo555, "555");
     testDemoMap.insert(QWidgetDemo::QWidgetDemo666, "666");
     testDemoMap.insert(QWidgetDemo::QWidgetDemo777, "777");
@@ -431,7 +431,8 @@ void MainWindow::test(int id) {
     case QWidgetDemo::QWidgetDemoTranslucent:
         translucentShow();
         break;
-    case QWidgetDemo::QWidgetDemo444:
+    case QWidgetDemo::QWidgetDemoLayoutMacBug:
+        layoutMacBugShow();
         break;
     case QWidgetDemo::QWidgetDemo555:
         break;
@@ -608,4 +609,11 @@ void MainWindow::translucentShow() {
         translucent_widget_ = new TranslucentBackgroundWidget();
     }
     translucent_widget_->show();
+}
+
+void MainWindow::layoutMacBugShow() {
+    if(!layoutmacbug_widget_) {
+        layoutmacbug_widget_ = new LayoutMacBugWidget();
+    }
+    layoutmacbug_widget_->show();
 }

@@ -12,6 +12,7 @@
 #include "qtwidget/painter.h"
 #include "qtwidget/tabwidget.h"
 #include "qtwidget/translucentbackground.h"
+#include "qtwidget/layout.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
@@ -39,6 +40,7 @@ private:
     void painterShow();
     void tabShow();
     void translucentShow();
+    void layoutMacBugShow();
 
 private:
     QTabWidget *main_tabwidget_ = nullptr;
@@ -58,4 +60,5 @@ private:
     PainterWidget *painter_widget_ = nullptr;
     TabWidget *tab_widget_ = nullptr;
     TranslucentBackgroundWidget *translucent_widget_ = nullptr;
+    LayoutMacBugWidget *layoutmacbug_widget_ = nullptr;
 };
