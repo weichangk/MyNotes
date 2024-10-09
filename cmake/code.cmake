@@ -2,9 +2,11 @@
 add_definitions(${MY_BUILD_DEFINE})
 
 # 设置头文件搜索目录
+list(REMOVE_ITEM MY_PROJECT_INCLUDE ${MY_PROJECT_INCLUDE_EXCLUSIVE})
 include_directories(${MY_PROJECT_INCLUDE})
 
 # 设置依赖库链接目录
+list(REMOVE_ITEM MY_PROJECT_LINKDIR ${MY_PROJECT_LINKDIR_EXCLUSIVE})
 link_directories(${MY_PROJECT_LINKDIR})
 
 # 查找 Qt 包
