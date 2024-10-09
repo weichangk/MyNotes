@@ -38,6 +38,7 @@ endif()
 
 add_subdirectory(acore)
 add_subdirectory(awidget)
+add_subdirectory(aosx)
 # add_subdirectory(aml)
 add_subdirectory(qttest)
 # add_subdirectory(cloudmusic)
