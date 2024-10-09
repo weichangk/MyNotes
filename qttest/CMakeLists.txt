@@ -1,6 +1,4 @@
-include(${CMAKE_SOURCE_DIR}/cmake/c.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/cpublic.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/q.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/public.cmake)
 
 project(
     QtTest
@@ -17,12 +15,10 @@ MY_ADD_LINK_LIB_FUNC(
     AWidget
 )
 
-include(${CMAKE_SOURCE_DIR}/cmake/coption.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/ccode.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/qcode.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/qexe.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/clink.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/qlink.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/option.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/code.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/exe.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/link.cmake)
 
 include(config.cmake)
 

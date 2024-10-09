@@ -1,2 +1,0 @@
-# 查找 Qt 包
-find_package(Qt${MY_QT_VERSION_MAJOR} COMPONENTS ${MY_FIND_QT_PACK} REQUIRED)

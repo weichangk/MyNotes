@@ -7,6 +7,9 @@ include_directories(${MY_PROJECT_INCLUDE})
 # 设置依赖库链接目录
 link_directories(${MY_PROJECT_LINKDIR})
 
+# 查找 Qt 包
+find_package(Qt${MY_QT_VERSION_MAJOR} COMPONENTS ${MY_FIND_QT_PACK} REQUIRED)
+
 # 设置输出目录
 set(EXECUTABLE_OUTPUT_PATH ${MY_BUILD_BINDIR})
 set(LIBRARY_OUTPUT_PATH ${MY_BUILD_BINDIR})

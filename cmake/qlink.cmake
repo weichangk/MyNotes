@@ -1,1 +1,0 @@
-target_link_libraries(${PROJECT_NAME} PRIVATE ${MY_FIND_QT_PACK_LINK})
