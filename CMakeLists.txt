@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
+set(CMAKE_INCLUDE_CURRENT_DIR ON) 
+
 if (MSVC)
     set(NOTE_SYSTEM_PLATFORM "win") # 设置cmake自定义变量用于指定三方库加载路径
     add_compile_definitions(WIN_PLATFORM=1) # 添加编译器定义识别平台，=前后不能有空格！
@@ -34,12 +36,6 @@ elseif(APPLE)
     endif()
 endif()
 
-# set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/qml)
-
-add_subdirectory(acore)
-add_subdirectory(awidget)
-add_subdirectory(aosx)
-# add_subdirectory(aml)
 add_subdirectory(qtmaterial)
 add_subdirectory(qttest)
 # add_subdirectory(cloudmusic)

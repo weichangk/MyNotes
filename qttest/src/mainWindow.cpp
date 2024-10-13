@@ -10,7 +10,7 @@
 #include <QPushbutton>
 #include <QMap>
 #include <QVariant>
-#include "../awidget/inc/aflowlayout.h"
+#include "../../qtmaterial/inc/control/flowlayout.h"
 
 using QCoreDemo = enum {
     QCoreDemo000 = 0,
@@ -171,7 +171,7 @@ void MainWindow::createUi() {
 }
 
 void MainWindow::setQCoreDemoBtns(QWidget *w) {
-    auto testDemoFlowLayout = new AFlowLayout(w, 4, 4, 4);
+    auto testDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
     QMap<int, QString> testDemoMap;
     testDemoMap.insert(QCoreDemo::QCoreDemo000, "000");
     testDemoMap.insert(QCoreDemo::QCoreDemo111, "111");
@@ -199,7 +199,7 @@ void MainWindow::setQCoreDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setQWidgetDemoBtns(QWidget *w) {
-    auto testDemoFlowLayout = new AFlowLayout(w, 4, 4, 4);
+    auto testDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
     QMap<int, QString> testDemoMap;
     testDemoMap.insert(QWidgetDemo::QWidgetDemoDialog, "Dialog");
     testDemoMap.insert(QWidgetDemo::QWidgetDemoPainter, "Painter");
@@ -227,7 +227,7 @@ void MainWindow::setQWidgetDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setQGuiDemoBtns(QWidget *w) {
-    auto testDemoFlowLayout = new AFlowLayout(w, 4, 4, 4);
+    auto testDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
     QMap<int, QString> testDemoMap;
     testDemoMap.insert(QGuiDemo::QGuiDemo000, "000");
     testDemoMap.insert(QGuiDemo::QGuiDemo111, "111");
@@ -255,7 +255,7 @@ void MainWindow::setQGuiDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setQmlDemoBtns(QWidget *w) {
-    auto testDemoFlowLayout = new AFlowLayout(w, 4, 4, 4);
+    auto testDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
     QMap<int, QString> testDemoMap;
     testDemoMap.insert(QmlDemo::QmlDemo000, "000");
     testDemoMap.insert(QmlDemo::QmlDemo111, "111");
@@ -283,7 +283,7 @@ void MainWindow::setQmlDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setACoreDemoBtns(QWidget *w) {
-    auto aCoreDemoFlowLayout = new AFlowLayout(w, 4, 4, 4);
+    auto aCoreDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
     QMap<int, QString> aCoreDemoMap;
     aCoreDemoMap.insert(ACoreDemo::ACoreDemo000, "000");
     aCoreDemoMap.insert(ACoreDemo::ACoreDemo111, "111");
@@ -311,7 +311,7 @@ void MainWindow::setACoreDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setAWidgetDemoBtns(QWidget *w) {
-    auto aWidgetDemoFlowLayout = new AFlowLayout(w, 4, 4, 4);
+    auto aWidgetDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
     QMap<int, QString> aWidgetDemoMap;
     aWidgetDemoMap.insert(AWidgetDemo::AWidgetDemo000, "000");
     aWidgetDemoMap.insert(AWidgetDemo::AWidgetDemo111, "111");
@@ -339,7 +339,7 @@ void MainWindow::setAWidgetDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setAGuiDemoBtns(QWidget *w) {
-    auto aGuiDemoFlowLayout = new AFlowLayout(w, 4, 4, 4);
+    auto aGuiDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
     QMap<int, QString> aGuiDemoMap;
     aGuiDemoMap.insert(AGuiDemo::AGuiDemo000, "000");
     aGuiDemoMap.insert(AGuiDemo::AGuiDemo111, "111");
@@ -367,7 +367,7 @@ void MainWindow::setAGuiDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setAmlDemoBtns(QWidget *w) {
-    auto amlDemoFlowLayout = new AFlowLayout(w, 4, 4, 4);
+    auto amlDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
     QMap<int, QString> amlDemoMap;
     amlDemoMap.insert(AmlDemo::AmlDemo000, "000");
     amlDemoMap.insert(AmlDemo::AmlDemo111, "111");

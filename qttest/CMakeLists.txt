@@ -12,7 +12,7 @@ MY_ADD_QT_PACK_FUNC(
 )
 
 MY_ADD_LINK_LIB_FUNC(
-    AWidget
+    QtMaterial
 )
 
 include(${CMAKE_SOURCE_DIR}/cmake/option.cmake)
