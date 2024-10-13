@@ -1,8 +1,0 @@
-<!DOCTYPE RCC>
-<RCC version="1.0">
-
-<qresource prefix="/Aml/Core">
-    <file>test.js</file>
-</qresource>
-
-</RCC>
