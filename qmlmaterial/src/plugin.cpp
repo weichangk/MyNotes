@@ -19,7 +19,7 @@ class MaterialRegisterHelper {
 
 public:
     MaterialRegisterHelper(const char *uri) {
-        qmlRegisterSingletonType<Device>(uri, 0, 1, "Device", Device::qmlSingleton);
+        // qmlRegisterSingletonType<Device>(uri, 0, 1, "Device", Device::qmlSingleton);
         qmlRegisterUncreatableType<Units>(uri, 0, 3, "Units", QStringLiteral("Units can only be used via the attached property."));
     }
 };
@@ -33,6 +33,6 @@ void MaterialPlugin::registerTypes(const char *uri)
 }
 
 // When using QPM, the C++ plugin is not used and the QML types must be registered manually
-#ifdef QPM_INIT
+// #ifdef QPM_INIT
     static MaterialRegisterHelper registerHelper("Material");
-#endif
+// #endif
