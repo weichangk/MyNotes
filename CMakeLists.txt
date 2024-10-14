@@ -37,5 +37,7 @@ elseif(APPLE)
 endif()
 
 add_subdirectory(qtmaterial)
+add_subdirectory(qmlmaterial)
 add_subdirectory(qttest)
+add_subdirectory(qmlmaterialtest)
 # add_subdirectory(cloudmusic)
