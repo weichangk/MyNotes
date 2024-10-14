@@ -57,56 +57,56 @@ using QmlDemo = enum {
     QmlDemo999,
 };
 
-using ACoreDemo = enum {
-    ACoreDemo000 = 4000,
-    ACoreDemo111,
-    ACoreDemo222,
-    ACoreDemo333,
-    ACoreDemo444,
-    ACoreDemo555,
-    ACoreDemo666,
-    ACoreDemo777,
-    ACoreDemo888,
-    ACoreDemo999,
+using QtmaterialCoreDemo = enum {
+    QtmaterialCoreDemo000 = 4000,
+    QtmaterialCoreDemo111,
+    QtmaterialCoreDemo222,
+    QtmaterialCoreDemo333,
+    QtmaterialCoreDemo444,
+    QtmaterialCoreDemo555,
+    QtmaterialCoreDemo666,
+    QtmaterialCoreDemo777,
+    QtmaterialCoreDemo888,
+    QtmaterialCoreDemo999,
 };
 
-using AWidgetDemo = enum {
-    AWidgetDemo000 = 5000,
-    AWidgetDemo111,
-    AWidgetDemo222,
-    AWidgetDemo333,
-    AWidgetDemo444,
-    AWidgetDemo555,
-    AWidgetDemo666,
-    AWidgetDemo777,
-    AWidgetDemo888,
-    AWidgetDemo999,
+using QtmaterialControlDemo = enum {
+    QtmaterialControlDemo000 = 5000,
+    QtmaterialControlDemo111,
+    QtmaterialControlDemo222,
+    QtmaterialControlDemo333,
+    QtmaterialControlDemo444,
+    QtmaterialControlDemo555,
+    QtmaterialControlDemo666,
+    QtmaterialControlDemo777,
+    QtmaterialControlDemo888,
+    QtmaterialControlDemo999,
 };
 
-using AGuiDemo = enum {
-    AGuiDemo000 = 6000,
-    AGuiDemo111,
-    AGuiDemo222,
-    AGuiDemo333,
-    AGuiDemo444,
-    AGuiDemo555,
-    AGuiDemo666,
-    AGuiDemo777,
-    AGuiDemo888,
-    AGuiDemo999,
+using QtmaterialComponentDemo = enum {
+    QtmaterialComponentDemo000 = 5000,
+    QtmaterialComponentDemo111,
+    QtmaterialComponentDemo222,
+    QtmaterialComponentDemo333,
+    QtmaterialComponentDemo444,
+    QtmaterialComponentDemo555,
+    QtmaterialComponentDemo666,
+    QtmaterialComponentDemo777,
+    QtmaterialComponentDemo888,
+    QtmaterialComponentDemo999,
 };
 
-using AmlDemo = enum {
-    AmlDemo000 = 8000,
-    AmlDemo111,
-    AmlDemo222,
-    AmlDemo333,
-    AmlDemo444,
-    AmlDemo555,
-    AmlDemo666,
-    AmlDemo777,
-    AmlDemo888,
-    AmlDemo999,
+using QtmaterialOsxDemo = enum {
+    QtmaterialOsxDemo000 = 7000,
+    QtmaterialOsxDemo111,
+    QtmaterialOsxDemo222,
+    QtmaterialOsxDemo333,
+    QtmaterialOsxDemo444,
+    QtmaterialOsxDemo555,
+    QtmaterialOsxDemo666,
+    QtmaterialOsxDemo777,
+    QtmaterialOsxDemo888,
+    QtmaterialOsxDemo999,
 };
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -130,260 +130,263 @@ void MainWindow::createUi() {
     layout->addWidget(main_tabwidget_);
 
     q_tabwidget_ = new QTabWidget();
+    main_tabwidget_->addTab(q_tabwidget_, "test");
 
     qcore_widget_ = new QWidget();
     qwidget_widget_ = new QWidget();
     qgui_widget_ = new QWidget();
     qml_widget_ = new QWidget();
 
-    acore_widget_ = new QWidget();
-    awidget_widget_ = new QWidget();
-    agui_widget_ = new QWidget();
-    aml_widget_ = new QWidget();
-
-    main_tabwidget_->addTab(q_tabwidget_, "test");
     q_tabwidget_->addTab(qcore_widget_, "qcore");
     q_tabwidget_->addTab(qwidget_widget_, "qwidget");
     q_tabwidget_->addTab(qgui_widget_, "qgui");
     q_tabwidget_->addTab(qml_widget_, "qml");
 
-    main_tabwidget_->addTab(acore_widget_, "acore");
-    main_tabwidget_->addTab(awidget_widget_, "awidget");
-    main_tabwidget_->addTab(agui_widget_, "agui");
-    main_tabwidget_->addTab(aml_widget_, "aml");
+    qtmaterial_tabwidget_ = new QTabWidget();
+    main_tabwidget_->addTab(qtmaterial_tabwidget_, "qtmaterial");
+
+    qtmaterial_core_widget_ = new QWidget();
+    qtmaterial_control_widget_ = new QWidget();
+    qtmaterial_component_widget_ = new QWidget();
+    qtmaterial_osx_widget_ = new QWidget();
+
+    qtmaterial_tabwidget_->addTab(qtmaterial_core_widget_, "core");
+    qtmaterial_tabwidget_->addTab(qtmaterial_control_widget_, "control");
+    qtmaterial_tabwidget_->addTab(qtmaterial_component_widget_, "component");
+    qtmaterial_tabwidget_->addTab(qtmaterial_osx_widget_, "osx");
 
     setQCoreDemoBtns(qcore_widget_);
     setQWidgetDemoBtns(qwidget_widget_);
     setQGuiDemoBtns(qgui_widget_);
     setQmlDemoBtns(qml_widget_);
 
-    setACoreDemoBtns(acore_widget_);
-    setAWidgetDemoBtns(awidget_widget_);
-    setAGuiDemoBtns(agui_widget_);
-    setAmlDemoBtns(aml_widget_);
+    setQtmaterialCoreDemoBtns(qtmaterial_core_widget_);
+    setQtmaterialControlDemoBtns(qtmaterial_control_widget_);
+    setQtmaterialComponentDemoBtns(qtmaterial_component_widget_);
+    setQtmaterialOsxDemoBtns(qtmaterial_osx_widget_);
 }
 
 void MainWindow::setQCoreDemoBtns(QWidget *w) {
-    auto testDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
-    QMap<int, QString> testDemoMap;
-    testDemoMap.insert(QCoreDemo::QCoreDemo000, "000");
-    testDemoMap.insert(QCoreDemo::QCoreDemo111, "111");
-    testDemoMap.insert(QCoreDemo::QCoreDemo222, "222");
-    testDemoMap.insert(QCoreDemo::QCoreDemo333, "333");
-    testDemoMap.insert(QCoreDemo::QCoreDemo444, "444");
-    testDemoMap.insert(QCoreDemo::QCoreDemo555, "555");
-    testDemoMap.insert(QCoreDemo::QCoreDemo666, "666");
-    testDemoMap.insert(QCoreDemo::QCoreDemo777, "777");
-    testDemoMap.insert(QCoreDemo::QCoreDemo888, "888");
-    testDemoMap.insert(QCoreDemo::QCoreDemo999, "999");
+    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
+    QMap<int, QString> demoMap;
+    demoMap.insert(QCoreDemo::QCoreDemo000, "000");
+    demoMap.insert(QCoreDemo::QCoreDemo111, "111");
+    demoMap.insert(QCoreDemo::QCoreDemo222, "222");
+    demoMap.insert(QCoreDemo::QCoreDemo333, "333");
+    demoMap.insert(QCoreDemo::QCoreDemo444, "444");
+    demoMap.insert(QCoreDemo::QCoreDemo555, "555");
+    demoMap.insert(QCoreDemo::QCoreDemo666, "666");
+    demoMap.insert(QCoreDemo::QCoreDemo777, "777");
+    demoMap.insert(QCoreDemo::QCoreDemo888, "888");
+    demoMap.insert(QCoreDemo::QCoreDemo999, "999");
 
     QMap<int, QString>::Iterator iter;
-    for (iter = testDemoMap.begin(); iter != testDemoMap.end(); ++iter) {
+    for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
         QPushButton *btn = new QPushButton(this);
         btn->setFixedSize(160, 24);
         btn->setText(iter.value());
-        btn->setProperty("qcore_id", iter.key());
+        btn->setProperty("QCoreDemo_Id", iter.key());
         connect(btn, &QPushButton::clicked, this, [this, btn]() {
-            int id = btn->property("qcore_id").toInt();
+            int id = btn->property("QCoreDemo_Id").toInt();
             test(id);
         });
-        testDemoFlowLayout->addWidget(btn);
+        demoFlowLayout->addWidget(btn);
     }
 }
 
 void MainWindow::setQWidgetDemoBtns(QWidget *w) {
-    auto testDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
-    QMap<int, QString> testDemoMap;
-    testDemoMap.insert(QWidgetDemo::QWidgetDemoDialog, "Dialog");
-    testDemoMap.insert(QWidgetDemo::QWidgetDemoPainter, "Painter");
-    testDemoMap.insert(QWidgetDemo::QWidgetDemoTabWidget, "TabWidget");
-    testDemoMap.insert(QWidgetDemo::QWidgetDemoTranslucent, "Translucent");
-    testDemoMap.insert(QWidgetDemo::QWidgetDemoLayoutMacBug, "LayoutMacBug");
-    testDemoMap.insert(QWidgetDemo::QWidgetDemo555, "555");
-    testDemoMap.insert(QWidgetDemo::QWidgetDemo666, "666");
-    testDemoMap.insert(QWidgetDemo::QWidgetDemo777, "777");
-    testDemoMap.insert(QWidgetDemo::QWidgetDemo888, "888");
-    testDemoMap.insert(QWidgetDemo::QWidgetDemo999, "999");
+    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
+    QMap<int, QString> demoMap;
+    demoMap.insert(QWidgetDemo::QWidgetDemoDialog, "Dialog");
+    demoMap.insert(QWidgetDemo::QWidgetDemoPainter, "Painter");
+    demoMap.insert(QWidgetDemo::QWidgetDemoTabWidget, "TabWidget");
+    demoMap.insert(QWidgetDemo::QWidgetDemoTranslucent, "Translucent");
+    demoMap.insert(QWidgetDemo::QWidgetDemoLayoutMacBug, "LayoutMacBug");
+    demoMap.insert(QWidgetDemo::QWidgetDemo555, "555");
+    demoMap.insert(QWidgetDemo::QWidgetDemo666, "666");
+    demoMap.insert(QWidgetDemo::QWidgetDemo777, "777");
+    demoMap.insert(QWidgetDemo::QWidgetDemo888, "888");
+    demoMap.insert(QWidgetDemo::QWidgetDemo999, "999");
 
     QMap<int, QString>::Iterator iter;
-    for (iter = testDemoMap.begin(); iter != testDemoMap.end(); ++iter) {
+    for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
         QPushButton *btn = new QPushButton(this);
         btn->setFixedSize(160, 24);
         btn->setText(iter.value());
-        btn->setProperty("qwidget_id", iter.key());
+        btn->setProperty("QWidgetDemo_Id", iter.key());
         connect(btn, &QPushButton::clicked, this, [this, btn]() {
-            int id = btn->property("qwidget_id").toInt();
+            int id = btn->property("QWidgetDemo_Id").toInt();
             test(id);
         });
-        testDemoFlowLayout->addWidget(btn);
+        demoFlowLayout->addWidget(btn);
     }
 }
 
 void MainWindow::setQGuiDemoBtns(QWidget *w) {
-    auto testDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
-    QMap<int, QString> testDemoMap;
-    testDemoMap.insert(QGuiDemo::QGuiDemo000, "000");
-    testDemoMap.insert(QGuiDemo::QGuiDemo111, "111");
-    testDemoMap.insert(QGuiDemo::QGuiDemo222, "222");
-    testDemoMap.insert(QGuiDemo::QGuiDemo333, "333");
-    testDemoMap.insert(QGuiDemo::QGuiDemo444, "444");
-    testDemoMap.insert(QGuiDemo::QGuiDemo555, "555");
-    testDemoMap.insert(QGuiDemo::QGuiDemo666, "666");
-    testDemoMap.insert(QGuiDemo::QGuiDemo777, "777");
-    testDemoMap.insert(QGuiDemo::QGuiDemo888, "888");
-    testDemoMap.insert(QGuiDemo::QGuiDemo999, "999");
+    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
+    QMap<int, QString> demoMap;
+    demoMap.insert(QGuiDemo::QGuiDemo000, "000");
+    demoMap.insert(QGuiDemo::QGuiDemo111, "111");
+    demoMap.insert(QGuiDemo::QGuiDemo222, "222");
+    demoMap.insert(QGuiDemo::QGuiDemo333, "333");
+    demoMap.insert(QGuiDemo::QGuiDemo444, "444");
+    demoMap.insert(QGuiDemo::QGuiDemo555, "555");
+    demoMap.insert(QGuiDemo::QGuiDemo666, "666");
+    demoMap.insert(QGuiDemo::QGuiDemo777, "777");
+    demoMap.insert(QGuiDemo::QGuiDemo888, "888");
+    demoMap.insert(QGuiDemo::QGuiDemo999, "999");
 
     QMap<int, QString>::Iterator iter;
-    for (iter = testDemoMap.begin(); iter != testDemoMap.end(); ++iter) {
+    for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
         QPushButton *btn = new QPushButton(this);
         btn->setFixedSize(160, 24);
         btn->setText(iter.value());
-        btn->setProperty("qgui_id", iter.key());
+        btn->setProperty("QGuiDemo_Id", iter.key());
         connect(btn, &QPushButton::clicked, this, [this, btn]() {
-            int id = btn->property("qgui_id").toInt();
+            int id = btn->property("QGuiDemo_Id").toInt();
             test(id);
         });
-        testDemoFlowLayout->addWidget(btn);
+        demoFlowLayout->addWidget(btn);
     }
 }
 
 void MainWindow::setQmlDemoBtns(QWidget *w) {
-    auto testDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
-    QMap<int, QString> testDemoMap;
-    testDemoMap.insert(QmlDemo::QmlDemo000, "000");
-    testDemoMap.insert(QmlDemo::QmlDemo111, "111");
-    testDemoMap.insert(QmlDemo::QmlDemo222, "222");
-    testDemoMap.insert(QmlDemo::QmlDemo333, "333");
-    testDemoMap.insert(QmlDemo::QmlDemo444, "444");
-    testDemoMap.insert(QmlDemo::QmlDemo555, "555");
-    testDemoMap.insert(QmlDemo::QmlDemo666, "666");
-    testDemoMap.insert(QmlDemo::QmlDemo777, "777");
-    testDemoMap.insert(QmlDemo::QmlDemo888, "888");
-    testDemoMap.insert(QmlDemo::QmlDemo999, "999");
+    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
+    QMap<int, QString> demoMap;
+    demoMap.insert(QmlDemo::QmlDemo000, "000");
+    demoMap.insert(QmlDemo::QmlDemo111, "111");
+    demoMap.insert(QmlDemo::QmlDemo222, "222");
+    demoMap.insert(QmlDemo::QmlDemo333, "333");
+    demoMap.insert(QmlDemo::QmlDemo444, "444");
+    demoMap.insert(QmlDemo::QmlDemo555, "555");
+    demoMap.insert(QmlDemo::QmlDemo666, "666");
+    demoMap.insert(QmlDemo::QmlDemo777, "777");
+    demoMap.insert(QmlDemo::QmlDemo888, "888");
+    demoMap.insert(QmlDemo::QmlDemo999, "999");
 
     QMap<int, QString>::Iterator iter;
-    for (iter = testDemoMap.begin(); iter != testDemoMap.end(); ++iter) {
+    for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
         QPushButton *btn = new QPushButton(this);
         btn->setFixedSize(160, 24);
         btn->setText(iter.value());
-        btn->setProperty("qml_id", iter.key());
+        btn->setProperty("QmlDemo_Id", iter.key());
         connect(btn, &QPushButton::clicked, this, [this, btn]() {
-            int id = btn->property("qml_id").toInt();
+            int id = btn->property("QmlDemo_Id").toInt();
             test(id);
         });
-        testDemoFlowLayout->addWidget(btn);
+        demoFlowLayout->addWidget(btn);
     }
 }
 
-void MainWindow::setACoreDemoBtns(QWidget *w) {
-    auto aCoreDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
-    QMap<int, QString> aCoreDemoMap;
-    aCoreDemoMap.insert(ACoreDemo::ACoreDemo000, "000");
-    aCoreDemoMap.insert(ACoreDemo::ACoreDemo111, "111");
-    aCoreDemoMap.insert(ACoreDemo::ACoreDemo222, "222");
-    aCoreDemoMap.insert(ACoreDemo::ACoreDemo333, "333");
-    aCoreDemoMap.insert(ACoreDemo::ACoreDemo444, "444");
-    aCoreDemoMap.insert(ACoreDemo::ACoreDemo555, "555");
-    aCoreDemoMap.insert(ACoreDemo::ACoreDemo666, "666");
-    aCoreDemoMap.insert(ACoreDemo::ACoreDemo777, "777");
-    aCoreDemoMap.insert(ACoreDemo::ACoreDemo888, "888");
-    aCoreDemoMap.insert(ACoreDemo::ACoreDemo999, "999");
+void MainWindow::setQtmaterialCoreDemoBtns(QWidget *w) {
+    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
+    QMap<int, QString> demoMap;
+    demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo000, "000");
+    demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo111, "111");
+    demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo222, "222");
+    demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo333, "333");
+    demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo444, "444");
+    demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo555, "555");
+    demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo666, "666");
+    demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo777, "777");
+    demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo888, "888");
+    demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo999, "999");
 
     QMap<int, QString>::Iterator iter;
-    for (iter = aCoreDemoMap.begin(); iter != aCoreDemoMap.end(); ++iter) {
+    for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
         QPushButton *btn = new QPushButton(this);
         btn->setFixedSize(160, 24);
         btn->setText(iter.value());
-        btn->setProperty("acore_id", iter.key());
+        btn->setProperty("QtmaterialCoreDemo_Id", iter.key());
         connect(btn, &QPushButton::clicked, this, [this, btn]() {
-            int id = btn->property("acore_id").toInt();
+            int id = btn->property("QtmaterialCoreDemo_Id").toInt();
             test(id);
         });
-        aCoreDemoFlowLayout->addWidget(btn);
+        demoFlowLayout->addWidget(btn);
     }
 }
 
-void MainWindow::setAWidgetDemoBtns(QWidget *w) {
-    auto aWidgetDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
-    QMap<int, QString> aWidgetDemoMap;
-    aWidgetDemoMap.insert(AWidgetDemo::AWidgetDemo000, "000");
-    aWidgetDemoMap.insert(AWidgetDemo::AWidgetDemo111, "111");
-    aWidgetDemoMap.insert(AWidgetDemo::AWidgetDemo222, "222");
-    aWidgetDemoMap.insert(AWidgetDemo::AWidgetDemo333, "333");
-    aWidgetDemoMap.insert(AWidgetDemo::AWidgetDemo444, "444");
-    aWidgetDemoMap.insert(AWidgetDemo::AWidgetDemo555, "555");
-    aWidgetDemoMap.insert(AWidgetDemo::AWidgetDemo666, "666");
-    aWidgetDemoMap.insert(AWidgetDemo::AWidgetDemo777, "777");
-    aWidgetDemoMap.insert(AWidgetDemo::AWidgetDemo888, "888");
-    aWidgetDemoMap.insert(AWidgetDemo::AWidgetDemo999, "999");
+void MainWindow::setQtmaterialControlDemoBtns(QWidget *w) {
+    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
+    QMap<int, QString> demoMap;
+    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo000, "000");
+    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo111, "111");
+    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo222, "222");
+    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo333, "333");
+    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo444, "444");
+    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo555, "555");
+    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo666, "666");
+    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo777, "777");
+    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo888, "888");
+    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo999, "999");
 
     QMap<int, QString>::Iterator iter;
-    for (iter = aWidgetDemoMap.begin(); iter != aWidgetDemoMap.end(); ++iter) {
+    for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
         QPushButton *btn = new QPushButton(this);
         btn->setFixedSize(160, 24);
         btn->setText(iter.value());
-        btn->setProperty("awidget_id", iter.key());
+        btn->setProperty("QtmaterialControlDemo_Id", iter.key());
         connect(btn, &QPushButton::clicked, this, [this, btn]() {
-            int id = btn->property("awidget_id").toInt();
+            int id = btn->property("QtmaterialControlDemo_Id").toInt();
             test(id);
         });
-        aWidgetDemoFlowLayout->addWidget(btn);
+        demoFlowLayout->addWidget(btn);
     }
 }
 
-void MainWindow::setAGuiDemoBtns(QWidget *w) {
-    auto aGuiDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
-    QMap<int, QString> aGuiDemoMap;
-    aGuiDemoMap.insert(AGuiDemo::AGuiDemo000, "000");
-    aGuiDemoMap.insert(AGuiDemo::AGuiDemo111, "111");
-    aGuiDemoMap.insert(AGuiDemo::AGuiDemo222, "222");
-    aGuiDemoMap.insert(AGuiDemo::AGuiDemo333, "333");
-    aGuiDemoMap.insert(AGuiDemo::AGuiDemo444, "444");
-    aGuiDemoMap.insert(AGuiDemo::AGuiDemo555, "555");
-    aGuiDemoMap.insert(AGuiDemo::AGuiDemo666, "666");
-    aGuiDemoMap.insert(AGuiDemo::AGuiDemo777, "777");
-    aGuiDemoMap.insert(AGuiDemo::AGuiDemo888, "888");
-    aGuiDemoMap.insert(AGuiDemo::AGuiDemo999, "999");
+void MainWindow::setQtmaterialComponentDemoBtns(QWidget *w) {
+    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
+    QMap<int, QString> demoMap;
+    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo000, "000");
+    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo111, "111");
+    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo222, "222");
+    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo333, "333");
+    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo444, "444");
+    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo555, "555");
+    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo666, "666");
+    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo777, "777");
+    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo888, "888");
+    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo999, "999");
 
     QMap<int, QString>::Iterator iter;
-    for (iter = aGuiDemoMap.begin(); iter != aGuiDemoMap.end(); ++iter) {
+    for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
         QPushButton *btn = new QPushButton(this);
         btn->setFixedSize(160, 24);
         btn->setText(iter.value());
-        btn->setProperty("agui_id", iter.key());
+        btn->setProperty("QtmaterialComponentDemo_Id", iter.key());
         connect(btn, &QPushButton::clicked, this, [this, btn]() {
-            int id = btn->property("agui_id").toInt();
+            int id = btn->property("QtmaterialComponentDemo_Id").toInt();
             test(id);
         });
-        aGuiDemoFlowLayout->addWidget(btn);
+        demoFlowLayout->addWidget(btn);
     }
 }
 
-void MainWindow::setAmlDemoBtns(QWidget *w) {
-    auto amlDemoFlowLayout = new FlowLayout(w, 4, 4, 4);
-    QMap<int, QString> amlDemoMap;
-    amlDemoMap.insert(AmlDemo::AmlDemo000, "000");
-    amlDemoMap.insert(AmlDemo::AmlDemo111, "111");
-    amlDemoMap.insert(AmlDemo::AmlDemo222, "222");
-    amlDemoMap.insert(AmlDemo::AmlDemo333, "333");
-    amlDemoMap.insert(AmlDemo::AmlDemo444, "444");
-    amlDemoMap.insert(AmlDemo::AmlDemo555, "555");
-    amlDemoMap.insert(AmlDemo::AmlDemo666, "666");
-    amlDemoMap.insert(AmlDemo::AmlDemo777, "777");
-    amlDemoMap.insert(AmlDemo::AmlDemo888, "888");
-    amlDemoMap.insert(AmlDemo::AmlDemo999, "999");
+void MainWindow::setQtmaterialOsxDemoBtns(QWidget *w) {
+    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
+    QMap<int, QString> demoMap;
+    demoMap.insert(QtmaterialOsxDemo::QtmaterialOsxDemo000, "000");
+    demoMap.insert(QtmaterialOsxDemo::QtmaterialOsxDemo111, "111");
+    demoMap.insert(QtmaterialOsxDemo::QtmaterialOsxDemo222, "222");
+    demoMap.insert(QtmaterialOsxDemo::QtmaterialOsxDemo333, "333");
+    demoMap.insert(QtmaterialOsxDemo::QtmaterialOsxDemo444, "444");
+    demoMap.insert(QtmaterialOsxDemo::QtmaterialOsxDemo555, "555");
+    demoMap.insert(QtmaterialOsxDemo::QtmaterialOsxDemo666, "666");
+    demoMap.insert(QtmaterialOsxDemo::QtmaterialOsxDemo777, "777");
+    demoMap.insert(QtmaterialOsxDemo::QtmaterialOsxDemo888, "888");
+    demoMap.insert(QtmaterialOsxDemo::QtmaterialOsxDemo999, "999");
 
     QMap<int, QString>::Iterator iter;
-    for (iter = amlDemoMap.begin(); iter != amlDemoMap.end(); ++iter) {
+    for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
         QPushButton *btn = new QPushButton(this);
         btn->setFixedSize(160, 24);
         btn->setText(iter.value());
-        btn->setProperty("aml_id", iter.key());
+        btn->setProperty("QtmaterialOsxDemo_Id", iter.key());
         connect(btn, &QPushButton::clicked, this, [this, btn]() {
-            int id = btn->property("aml_id").toInt();
+            int id = btn->property("QtmaterialOsxDemo_Id").toInt();
             test(id);
         });
-        amlDemoFlowLayout->addWidget(btn);
+        demoFlowLayout->addWidget(btn);
     }
 }
 
@@ -486,94 +489,94 @@ void MainWindow::test(int id) {
     }
 
     switch (id) {
-    case ACoreDemo::ACoreDemo000:
+    case QtmaterialCoreDemo::QtmaterialCoreDemo000:
         break;
-    case ACoreDemo::ACoreDemo111:
+    case QtmaterialCoreDemo::QtmaterialCoreDemo111:
         break;
-    case ACoreDemo::ACoreDemo222:
+    case QtmaterialCoreDemo::QtmaterialCoreDemo222:
         break;
-    case ACoreDemo::ACoreDemo333:
+    case QtmaterialCoreDemo::QtmaterialCoreDemo333:
         break;
-    case ACoreDemo::ACoreDemo444:
+    case QtmaterialCoreDemo::QtmaterialCoreDemo444:
         break;
-    case ACoreDemo::ACoreDemo555:
+    case QtmaterialCoreDemo::QtmaterialCoreDemo555:
         break;
-    case ACoreDemo::ACoreDemo666:
+    case QtmaterialCoreDemo::QtmaterialCoreDemo666:
         break;
-    case ACoreDemo::ACoreDemo777:
+    case QtmaterialCoreDemo::QtmaterialCoreDemo777:
         break;
-    case ACoreDemo::ACoreDemo888:
+    case QtmaterialCoreDemo::QtmaterialCoreDemo888:
         break;
-    case ACoreDemo::ACoreDemo999:
-        break;
-    }
-
-    switch (id) {
-    case AWidgetDemo::AWidgetDemo000:
-        break;
-    case AWidgetDemo::AWidgetDemo111:
-        break;
-    case AWidgetDemo::AWidgetDemo222:
-        break;
-    case AWidgetDemo::AWidgetDemo333:
-        break;
-    case AWidgetDemo::AWidgetDemo444:
-        break;
-    case AWidgetDemo::AWidgetDemo555:
-        break;
-    case AWidgetDemo::AWidgetDemo666:
-        break;
-    case AWidgetDemo::AWidgetDemo777:
-        break;
-    case AWidgetDemo::AWidgetDemo888:
-        break;
-    case AWidgetDemo::AWidgetDemo999:
+    case QtmaterialCoreDemo::QtmaterialCoreDemo999:
         break;
     }
 
     switch (id) {
-    case AGuiDemo::AGuiDemo000:
+    case QtmaterialControlDemo::QtmaterialControlDemo000:
         break;
-    case AGuiDemo::AGuiDemo111:
+    case QtmaterialControlDemo::QtmaterialControlDemo111:
         break;
-    case AGuiDemo::AGuiDemo222:
+    case QtmaterialControlDemo::QtmaterialControlDemo222:
         break;
-    case AGuiDemo::AGuiDemo333:
+    case QtmaterialControlDemo::QtmaterialControlDemo333:
         break;
-    case AGuiDemo::AGuiDemo444:
+    case QtmaterialControlDemo::QtmaterialControlDemo444:
         break;
-    case AGuiDemo::AGuiDemo555:
+    case QtmaterialControlDemo::QtmaterialControlDemo555:
         break;
-    case AGuiDemo::AGuiDemo666:
+    case QtmaterialControlDemo::QtmaterialControlDemo666:
         break;
-    case AGuiDemo::AGuiDemo777:
+    case QtmaterialControlDemo::QtmaterialControlDemo777:
         break;
-    case AGuiDemo::AGuiDemo888:
+    case QtmaterialControlDemo::QtmaterialControlDemo888:
         break;
-    case AGuiDemo::AGuiDemo999:
+    case QtmaterialControlDemo::QtmaterialControlDemo999:
         break;
     }
 
     switch (id) {
-    case AmlDemo::AmlDemo000:
+    case QtmaterialComponentDemo::QtmaterialComponentDemo000:
         break;
-    case AmlDemo::AmlDemo111:
+    case QtmaterialComponentDemo::QtmaterialComponentDemo111:
         break;
-    case AmlDemo::AmlDemo222:
+    case QtmaterialComponentDemo::QtmaterialComponentDemo222:
         break;
-    case AmlDemo::AmlDemo333:
+    case QtmaterialComponentDemo::QtmaterialComponentDemo333:
         break;
-    case AmlDemo::AmlDemo444:
+    case QtmaterialComponentDemo::QtmaterialComponentDemo444:
         break;
-    case AmlDemo::AmlDemo555:
+    case QtmaterialComponentDemo::QtmaterialComponentDemo555:
         break;
-    case AmlDemo::AmlDemo666:
+    case QtmaterialComponentDemo::QtmaterialComponentDemo666:
         break;
-    case AmlDemo::AmlDemo777:
+    case QtmaterialComponentDemo::QtmaterialComponentDemo777:
         break;
-    case AmlDemo::AmlDemo888:
+    case QtmaterialComponentDemo::QtmaterialComponentDemo888:
         break;
-    case AmlDemo::AmlDemo999:
+    case QtmaterialComponentDemo::QtmaterialComponentDemo999:
+        break;
+    }
+
+    switch (id) {
+    case QtmaterialOsxDemo::QtmaterialOsxDemo000:
+        break;
+    case QtmaterialOsxDemo::QtmaterialOsxDemo111:
+        break;
+    case QtmaterialOsxDemo::QtmaterialOsxDemo222:
+        break;
+    case QtmaterialOsxDemo::QtmaterialOsxDemo333:
+        break;
+    case QtmaterialOsxDemo::QtmaterialOsxDemo444:
+        break;
+    case QtmaterialOsxDemo::QtmaterialOsxDemo555:
+        break;
+    case QtmaterialOsxDemo::QtmaterialOsxDemo666:
+        break;
+    case QtmaterialOsxDemo::QtmaterialOsxDemo777:
+        break;
+    case QtmaterialOsxDemo::QtmaterialOsxDemo888:
+        break;
+    case QtmaterialOsxDemo::QtmaterialOsxDemo999:
         break;
     }
 }

@@ -21,10 +21,11 @@ private:
     void setQWidgetDemoBtns(QWidget *w);
     void setQGuiDemoBtns(QWidget *w);
     void setQmlDemoBtns(QWidget *w);
-    void setACoreDemoBtns(QWidget *w);
-    void setAWidgetDemoBtns(QWidget *w);
-    void setAGuiDemoBtns(QWidget *w);
-    void setAmlDemoBtns(QWidget *w);
+
+    void setQtmaterialCoreDemoBtns(QWidget *w);
+    void setQtmaterialControlDemoBtns(QWidget *w);
+    void setQtmaterialComponentDemoBtns(QWidget *w);
+    void setQtmaterialOsxDemoBtns(QWidget *w);
     
     void test(int id);
 
@@ -44,10 +45,11 @@ private:
     QWidget *qgui_widget_ = nullptr;
     QWidget *qml_widget_ = nullptr;
 
-    QWidget *acore_widget_ = nullptr;
-    QWidget *awidget_widget_ = nullptr;
-    QWidget *agui_widget_ = nullptr;
-    QWidget *aml_widget_ = nullptr;
+    QTabWidget *qtmaterial_tabwidget_ = nullptr;
+    QWidget *qtmaterial_core_widget_ = nullptr;
+    QWidget *qtmaterial_control_widget_ = nullptr;
+    QWidget *qtmaterial_component_widget_ = nullptr;
+    QWidget *qtmaterial_osx_widget_ = nullptr;
 
     // qwidget
     PainterWidget *painter_widget_ = nullptr;
