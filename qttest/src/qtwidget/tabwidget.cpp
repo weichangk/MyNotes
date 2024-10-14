@@ -1,10 +1,3 @@
-/*
- * @Author: weick 
- * @Date: 2024-07-26 07:46:02 
- * @Last Modified by: weick
- * @Last Modified time: 2024-07-26 08:07:07
- */
-
 #include "tabwidget.h"
 #include <QVBoxLayout>
 

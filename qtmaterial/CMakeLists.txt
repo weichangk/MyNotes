@@ -14,6 +14,10 @@ if (MSVC)
 else()
 endif()
 
+MY_ADD_PROJECT_INCLUDE_FUNC(
+    ${CMAKE_CURRENT_SOURCE_DIR}/inc
+)
+
 MY_ADD_QT_PACK_FUNC(
     Widgets
 )

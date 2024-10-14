@@ -1,4 +1,4 @@
-#include "inc/core/painterhelper.h"
+#include "core/painterhelper.h"
 #include <QPainterPath>
 
 void PainterHelper::paintPixmap(QPainter *painter, QRect rc, const QPixmap &pixmap, float devicPixelRatio, int radius, bool keepRadio) {

@@ -1,10 +1,3 @@
-/*
- * @Author: weick 
- * @Date: 2024-05-26 08:29:37 
- * @Last Modified by: weick
- * @Last Modified time: 2024-08-06 00:35:15
- */
-
 #pragma once
 #include <QWidget>
 #include <QTabWidget>

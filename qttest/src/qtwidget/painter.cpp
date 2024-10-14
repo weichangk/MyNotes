@@ -1,10 +1,3 @@
-/*
- * @Author: weick
- * @Date: 2024-05-25 23:59:42
- * @Last Modified by: weick
- * @Last Modified time: 2024-05-26 09:38:47
- */
-
 #include "painter.h"
 #include <QPainterPath>
 

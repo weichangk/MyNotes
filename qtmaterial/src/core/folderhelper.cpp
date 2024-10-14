@@ -1,4 +1,4 @@
-#include "inc/core/folderhelper.h"
+#include "core/folderhelper.h"
 #include <QDir>
 
 bool FolderHelper::addFolder(const QString &folderPath) {

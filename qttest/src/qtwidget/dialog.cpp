@@ -1,10 +1,3 @@
-/*
- * @Author: weick
- * @Date: 2024-08-06 00:56:22
- * @Last Modified by: weick
- * @Last Modified time: 2024-08-06 01:16:18
- */
-
 #include "dialog.h"
 #include <QVBoxLayout>
 

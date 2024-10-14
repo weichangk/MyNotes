@@ -1,16 +1,9 @@
-/*
- * @Author: weick
- * @Date: 2024-05-26 08:30:54
- * @Last Modified by: weick
- * @Last Modified time: 2024-08-06 00:36:26
- */
-
 #include "mainwindow.h"
 #include <QVBoxLayout>
 #include <QPushbutton>
 #include <QMap>
 #include <QVariant>
-#include "../../qtmaterial/inc/control/flowlayout.h"
+#include "control/flowlayout.h"
 
 using QCoreDemo = enum {
     QCoreDemo000 = 0,

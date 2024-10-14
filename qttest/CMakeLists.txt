@@ -7,6 +7,10 @@ project(
     LANGUAGES CXX
 )
 
+MY_ADD_PROJECT_INCLUDE_FUNC(
+    ${CMAKE_SOURCE_DIR}/qtmaterial/inc
+)
+
 MY_ADD_QT_PACK_FUNC(
     Widgets
 )

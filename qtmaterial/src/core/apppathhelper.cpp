@@ -1,11 +1,4 @@
-/*
- * @Author: weick
- * @Date: 2024-05-11 07:02:23
- * @Last Modified by: weick
- * @Last Modified time: 2024-05-11 07:18:04
- */
-
-#include "inc/core/apppathhelper.h"
+#include "core/apppathhelper.h"
 #include <QStandardPaths>
 #include <QDir>
 

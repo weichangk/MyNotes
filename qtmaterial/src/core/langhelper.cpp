@@ -1,4 +1,4 @@
-#include "inc/core/langhelper.h"
+#include "core/langhelper.h"
 #include <QApplication>
 #include <QDir>
 

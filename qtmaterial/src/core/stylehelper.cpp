@@ -1,4 +1,4 @@
-#include "inc/core/stylehelper.h"
+#include "core/stylehelper.h"
 #include <QDir>
 #include <QApplication>
 #include <QWidget>

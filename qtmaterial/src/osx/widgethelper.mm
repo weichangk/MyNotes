@@ -1,4 +1,4 @@
-#include "widgethelper.h"
+#include "osx/widgethelper.h"
 #import <Cocoa/Cocoa.h>
 
 /*

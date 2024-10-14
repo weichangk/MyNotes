@@ -1,5 +1,5 @@
 #pragma once
-#include "inc/qtmaterial_global.h"
+#include "qtmaterial_global.h"
 #include <QLineEdit>
 
 class QTMATERIAL_EXPORT LineEdit : public QLineEdit {

@@ -1,11 +1,4 @@
-/*
- * @Author: weick
- * @Date: 2024-03-30 21:42:37
- * @Last Modified by: weick
- * @Last Modified time: 2024-03-30 21:44:15
- */
-
-#include "inc/control/lineedit.h"
+#include "control/lineedit.h"
 #include <QKeyEvent>
 
 LineEdit::LineEdit(QWidget *parent) :

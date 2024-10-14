@@ -1,4 +1,4 @@
-#include "inc/core/filehelper.h"
+#include "core/filehelper.h"
 #include <QFile>
 #include <QDir>
 

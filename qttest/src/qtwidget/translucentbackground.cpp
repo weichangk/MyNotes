@@ -1,10 +1,3 @@
-/*
- * @Author: weick
- * @Date: 2024-08-06 00:29:49
- * @Last Modified by: weick
- * @Last Modified time: 2024-08-06 00:45:21
- */
-
 #include "translucentbackground.h"
 #include <QPainterPath>
 #include <QMouseEvent>
