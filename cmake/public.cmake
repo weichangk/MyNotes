@@ -117,6 +117,14 @@ macro(MY_ADD_QT_PACK_FUNC)
   endforeach()
 endmacro(MY_ADD_QT_PACK_FUNC)
 
+# VENDOR_SOURCES
+set(MY_VENDOR_SOURCES )
+macro(MY_ADD_VENDOR_SOURCES_FUNC)
+  foreach(arg ${ARGN})
+      list(APPEND MY_VENDOR_SOURCES ${arg})
+  endforeach()
+endmacro(MY_ADD_VENDOR_SOURCES_FUNC)
+
 # 设置输出目录
 if (NOT DEFINED MY_BUILD_BINDIR)
     if(MSVC)
