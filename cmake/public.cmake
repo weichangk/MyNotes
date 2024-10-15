@@ -53,7 +53,7 @@ macro(MY_ADD_PROJECT_SOURCE_EXCLUSIVE_FUNC)
 endmacro(MY_ADD_PROJECT_SOURCE_EXCLUSIVE_FUNC)
 
 # 设置 QT 主版本
-set(MY_QT_VERSION_MAJOR 6)
+set(MY_QT_VERSION_MAJOR 5)
 
 # 设置 QT 路径
 set(MY_QT_DIR $ENV{QTDIR})
@@ -71,7 +71,7 @@ endfunction()
 # 查找 QT 路径并设置
 if(NOT EXISTS ${MY_QT_DIR})
     if(MSVC)
-        MY_SET_QT_PATH_FUNC("D:/Qt/6.5.0/msvc2019_64" "D:/Qt/5.15.2/msvc2019_64" "D:/QtCopy/5.15.2/msvc2019_64" "E:/Qt/6.7.3/msvc2019_64")
+        MY_SET_QT_PATH_FUNC("E:/Qt/5.15.2/msvc2019_64" "D:/Qt/6.5.0/msvc2019_64" "D:/Qt/5.15.2/msvc2019_64" "D:/QtCopy/5.15.2/msvc2019_64" "E:/Qt/6.7.3/msvc2019_64")
     else()
         MY_SET_QT_PATH_FUNC("/Users/ws/Qt/6.5.0/clang_64" "/Users/ws/Qt/5.15.2/clang_64")
     endif()

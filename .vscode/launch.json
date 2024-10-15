@@ -12,14 +12,14 @@
             "environment": [
                 {
                     "name": "PATH",
-                    "value": "D:/Qt/6.5.0/msvc2019_64/bin"
+                    "value": "E:/Qt/5.15.2/msvc2019_64/bin"
                 }
             ],
             "console": "integratedTerminal",
             "visualizerFile": "${workspaceRoot}/qt6.natvis.xml",
-            "symbolSearchPath": "otherSearchPath;D:/Qt/6.5.0/msvc2019_64/bin",
+            "symbolSearchPath": "otherSearchPath;E:/Qt/5.15.2/msvc2019_64/bin",
             "sourceFileMap": {
-                "C:/Users/qt/work/qt": "D:/Qt/6.5.0/Src"
+                "C:/Users/qt/work/qt": "E:/Qt/5.15.2/Src"
             }
         },
         {
@@ -29,9 +29,9 @@
             // "processId": 1234,
             "processId": "${command:pickProcess}",
             "visualizerFile": "${workspaceRoot}/qt6.natvis.xml",
-            "symbolSearchPath": "otherSearchPath;D:/Qt/6.5.0/msvc2019_64/bin",
+            "symbolSearchPath": "otherSearchPath;E:/Qt/5.15.2/msvc2019_64/bin",
             "sourceFileMap": {
-                "C:/Users/qt/work/qt": "D:/Qt/6.5.0/Src"
+                "C:/Users/qt/work/qt": "E:/Qt/5.15.2/Src"
             }
         },
         {
