@@ -1,4 +1,4 @@
 import subprocess
 
-subprocess.run(['python', '../../py/ts.py', 'qtest', 'en'])
-subprocess.run(['python', '../../py/ts.py', 'qtest', 'zh'])
+subprocess.run(['python', '../../py/ts.py', 'qttest', 'en'])
+subprocess.run(['python', '../../py/ts.py', 'qttest', 'zh'])
