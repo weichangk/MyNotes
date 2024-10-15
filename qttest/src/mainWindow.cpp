@@ -24,7 +24,7 @@ using QWidgetDemo = enum {
     QWidgetDemoTabWidget,
     QWidgetDemoTranslucent,
     QWidgetDemoLayoutMacBug,
-    QWidgetDemo555,
+    QWidgetDemoLanguageChangeTest,
     QWidgetDemo666,
     QWidgetDemo777,
     QWidgetDemo888,
@@ -202,7 +202,7 @@ void MainWindow::setQWidgetDemoBtns(QWidget *w) {
     demoMap.insert(QWidgetDemo::QWidgetDemoTabWidget, "TabWidget");
     demoMap.insert(QWidgetDemo::QWidgetDemoTranslucent, "Translucent");
     demoMap.insert(QWidgetDemo::QWidgetDemoLayoutMacBug, "LayoutMacBug");
-    demoMap.insert(QWidgetDemo::QWidgetDemo555, "555");
+    demoMap.insert(QWidgetDemo::QWidgetDemoLanguageChangeTest, "LanguageChangeTest");
     demoMap.insert(QWidgetDemo::QWidgetDemo666, "666");
     demoMap.insert(QWidgetDemo::QWidgetDemo777, "777");
     demoMap.insert(QWidgetDemo::QWidgetDemo888, "888");
@@ -430,7 +430,8 @@ void MainWindow::test(int id) {
     case QWidgetDemo::QWidgetDemoLayoutMacBug:
         layoutMacBugShow();
         break;
-    case QWidgetDemo::QWidgetDemo555:
+    case QWidgetDemo::QWidgetDemoLanguageChangeTest:
+        languageChangeTestShow();
         break;
     case QWidgetDemo::QWidgetDemo666:
         break;
@@ -612,4 +613,11 @@ void MainWindow::layoutMacBugShow() {
         layoutmacbug_widget_ = new LayoutMacBugWidget();
     }
     layoutmacbug_widget_->show();
+}
+
+void MainWindow::languageChangeTestShow() {
+    if(!languagechange_widget_) {
+        languagechange_widget_ = new LanguageChangeTest();
+    }
+    languagechange_widget_->show();
 }

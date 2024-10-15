@@ -6,6 +6,7 @@
 #include "qtwidget/tabwidget.h"
 #include "qtwidget/translucentbackground.h"
 #include "qtwidget/layout.h"
+#include "qtwidget/languagechange.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
@@ -35,6 +36,7 @@ private:
     void tabShow();
     void translucentShow();
     void layoutMacBugShow();
+    void languageChangeTestShow();
 
 private:
     QTabWidget *main_tabwidget_ = nullptr;
@@ -56,4 +58,5 @@ private:
     TabWidget *tab_widget_ = nullptr;
     TranslucentBackgroundWidget *translucent_widget_ = nullptr;
     LayoutMacBugWidget *layoutmacbug_widget_ = nullptr;
+    LanguageChangeTest *languagechange_widget_ = nullptr;
 };
