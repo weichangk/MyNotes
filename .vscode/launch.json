@@ -16,7 +16,7 @@
                 }
             ],
             "console": "integratedTerminal",
-            "visualizerFile": "${workspaceRoot}/qt6.natvis.xml",
+            "visualizerFile": "${workspaceRoot}/qt5.natvis.xml",
             "symbolSearchPath": "otherSearchPath;E:/Qt/5.15.2/msvc2019_64/bin",
             "sourceFileMap": {
                 "C:/Users/qt/work/qt": "E:/Qt/5.15.2/Src"
@@ -28,7 +28,7 @@
             "request": "attach",
             // "processId": 1234,
             "processId": "${command:pickProcess}",
-            "visualizerFile": "${workspaceRoot}/qt6.natvis.xml",
+            "visualizerFile": "${workspaceRoot}/qt5.natvis.xml",
             "symbolSearchPath": "otherSearchPath;E:/Qt/5.15.2/msvc2019_64/bin",
             "sourceFileMap": {
                 "C:/Users/qt/work/qt": "E:/Qt/5.15.2/Src"
@@ -50,7 +50,7 @@
                 "loadAll": true,
                 "exceptionList": ""
             },
-            "visualizerFile": "${workspaceFolder}/qt6.natvis.xml",
+            "visualizerFile": "${workspaceFolder}/qt5.natvis.xml",
             "showDisplayString": true, // 使得natvis生效
             "sourceFileMap": {
                 "/Users/qt/work/qt": "/Users/ws/Qt/6.5.0/Src"
@@ -69,7 +69,7 @@
                 "loadAll": true,
                 "exceptionList": ""
             },
-            "visualizerFile": "${workspaceFolder}/qt6.natvis.xml",
+            "visualizerFile": "${workspaceFolder}/qt5.natvis.xml",
             "showDisplayString": true,
             "sourceFileMap": {
                 "/Users/qt/work/qt": "/Users/ws/Qt/6.5.0/Src"
