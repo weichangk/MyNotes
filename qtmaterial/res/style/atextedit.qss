@@ -1,0 +1,30 @@
+/*
+ * @Author: weick
+ * @Date: 2023-12-05 23:04:58
+ * @Last Modified by:   weick
+ * @Last Modified time: 2023-12-05 23:04:58
+ */
+
+ATextEdit {
+    padding: 3px 6px;
+    border-radius: 6px;
+    background: #F2F4F9;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #16181A;
+}
+
+ATextEdit:hover {
+    border: 1px solid rgba(15, 38, 77, 0.12);
+}
+
+ATextEdit:focus {
+    border: 1px solid #2977FF;
+    selection-background-color: #C5D8FF;
+    selection-color: #16181A;
+}
+
+ATextEdit::placeholder {
+    color: #828B99;
+}
