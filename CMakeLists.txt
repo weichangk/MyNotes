@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON) 
+project(
+    QtNote
+    VERSION 1.0.0
+    DESCRIPTION "qt note project"
+    LANGUAGES CXX
+)
 
 if (MSVC)
     set(NOTE_SYSTEM_PLATFORM "win") # 设置cmake自定义变量用于指定三方库加载路径

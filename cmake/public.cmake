@@ -10,10 +10,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # 自动将当前目录添加到编译器的包含路径中，源文件中的 #include 语句可以直接引用当前目录中的头文件，而不需要使用相对路径或绝对路径。
 set(CMAKE_INCLUDE_CURRENT_DIR ON) 
 
+if(APPLE)
 # macOS 的最低部署目标版本
 set(CMAKE_OSX_DEPLOYMENT_TARGET "10.15")
 
-if(APPLE)
 # 启用 Objective-C 编程语言的支持，识别 .m 文件
 enable_language(OBJC)
 
