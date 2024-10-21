@@ -13,11 +13,13 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 # macOS 的最低部署目标版本
 set(CMAKE_OSX_DEPLOYMENT_TARGET "10.15")
 
+if(APPLE)
 # 启用 Objective-C 编程语言的支持，识别 .m 文件
 enable_language(OBJC)
 
 # 启用 Objective-C++ 编程语言的支持，识别 .mm 文件
 enable_language(OBJCXX)
+endif()
 
 # 查找项目头文件
 set(MY_PROJECT_HEADER )

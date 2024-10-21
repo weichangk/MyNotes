@@ -22,10 +22,12 @@ MY_ADD_QT_PACK_FUNC(
     Widgets
 )
 
+if(APPLE)
 MY_ADD_LINK_FRAMEWORK_FUNC(
     AppKit
     Foundation
 )
+endif()
 
 include(${CMAKE_SOURCE_DIR}/cmake/option.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/code.cmake)
