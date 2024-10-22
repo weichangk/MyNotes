@@ -1,4 +1,4 @@
-include(${CMAKE_SOURCE_DIR}/cmake/public.cmake)
+cmake_minimum_required(VERSION 3.16)
 
 project(
     QmlMaterial
@@ -6,6 +6,11 @@ project(
     DESCRIPTION "Qml Material Shared Library Project"
     LANGUAGES CXX
 )
+
+set(MY_CMAKE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../cmake)
+
+include(${MY_CMAKE_DIR}/public.cmake)
+
 
 if (MSVC)
     MY_ADD_BUILD_DEFINE_FUNC(
@@ -18,8 +23,8 @@ MY_ADD_QT_PACK_FUNC(
     Gui Quick
 )
 
-include(${CMAKE_SOURCE_DIR}/cmake/option.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/code.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/so.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/link.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/install.cmake)
+include(${MY_CMAKE_DIR}/option.cmake)
+include(${MY_CMAKE_DIR}/code.cmake)
+include(${MY_CMAKE_DIR}/so.cmake)
+include(${MY_CMAKE_DIR}/link.cmake)
+include(${MY_CMAKE_DIR}/install.cmake)

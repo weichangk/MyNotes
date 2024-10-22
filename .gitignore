@@ -2,5 +2,9 @@
 /bin
 /lib
 /build
+/qtmaterial/bin
+/qtmaterial/lib
 /qtmaterial/build
+/qmlmaterial/bin
+/qmlmaterial/lib
 /qmlmaterial/build
