@@ -1,0 +1,21 @@
+/*
+ * @Author: weick
+ * @Date: 2023-12-08 22:10:27
+ * @Last Modified by: weick
+ * @Last Modified time: 2023-12-08 22:22:01
+ */
+
+ QWidget#AFuncPanelWidget {
+    border-radius: 8;
+    background-color: #313131;
+ }
+
+ QLabel#AFuncPanelWidget_m_Name {
+    font-size: 15px;
+    color: #FFFFFF;
+ }
+
+ QLabel#AFuncPanelWidget_m_Dec {
+    font-size: 11px;
+    color: #575859;
+ }

@@ -1,0 +1,22 @@
+/*
+ * @Author: weick
+ * @Date: 2023-12-05 23:05:09
+ * @Last Modified by:   weick
+ * @Last Modified time: 2023-12-05 23:05:09
+ */
+
+#AToolTip_frame {
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 38, 77, 0.12);
+    border-radius: 6px;
+}
+
+#AToolTip_text {
+    background-color: transparent;
+    border: none;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #16181A;
+}
