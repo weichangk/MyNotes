@@ -1,0 +1,51 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+
+<qresource prefix="icons/maps">
+	<file alias="place.svg">../icons/maps_place.svg</file>
+</qresource>
+
+<qresource prefix="icons/communication">
+	<file alias="email.svg">../icons/communication_email.svg</file>
+</qresource>
+
+<qresource prefix="icons/image">
+	<file alias="color_lens.svg">../icons/image_color_lens.svg</file>
+	<file alias="edit.svg">../icons/image_edit.svg</file>
+</qresource>
+
+<qresource prefix="icons/alert">
+	<file alias="warning.svg">../icons/alert_warning.svg</file>
+</qresource>
+
+<qresource prefix="icons/content">
+	<file alias="add.svg">../icons/content_add.svg</file>
+	<file alias="create.svg">../icons/content_create.svg</file>
+	<file alias="forward.svg">../icons/content_forward.svg</file>
+</qresource>
+
+<qresource prefix="icons/device">
+	<file alias="access_alarm.svg">../icons/device_access_alarm.svg</file>
+</qresource>
+
+<qresource prefix="icons/file">
+	<file alias="file_download.svg">../icons/file_file_download.svg</file>
+</qresource>
+
+<qresource prefix="icons/social">
+	<file alias="share.svg">../icons/social_share.svg</file>
+</qresource>
+
+<qresource prefix="icons/action">
+	<file alias="account_circle.svg">../icons/action_account_circle.svg</file>
+	<file alias="autorenew.svg">../icons/action_autorenew.svg</file>
+	<file alias="delete.svg">../icons/action_delete.svg</file>
+	<file alias="language.svg">../icons/action_language.svg</file>
+	<file alias="settings.svg">../icons/action_settings.svg</file>
+</qresource>
+
+<qresource prefix="icons/navigation">
+	<file alias="arrow_drop_down.svg">../icons/navigation_arrow_drop_down.svg</file>
+</qresource>
+
+</RCC>

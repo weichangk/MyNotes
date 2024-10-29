@@ -11,6 +11,22 @@ set(MY_CMAKE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../cmake)
 
 include(${MY_CMAKE_DIR}/public.cmake)
 
+# 查找项目源文件
+set(MY_PROJECT_SOURCE )
+if(MSVC)
+    file(GLOB_RECURSE MY_PROJECT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/*.cc")
+else()
+    file(GLOB_RECURSE MY_PROJECT_SOURCE
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.cc"
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.mm"
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.m"
+    )
+endif()
+
+# 查找 Qt 资源文件
+set(MY_PROJECT_QRC )
+file(GLOB_RECURSE MY_PROJECT_QRC "${CMAKE_CURRENT_SOURCE_DIR}/*.qrc")
 
 if (MSVC)
     MY_ADD_BUILD_DEFINE_FUNC(
