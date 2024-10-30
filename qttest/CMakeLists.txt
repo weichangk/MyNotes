@@ -7,6 +7,23 @@ project(
     LANGUAGES CXX
 )
 
+# 查找项目头文件
+set(MY_PROJECT_HEADER )
+file(GLOB_RECURSE MY_PROJECT_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/*.h" "${CMAKE_CURRENT_SOURCE_DIR}/*.hpp")
+
+# 查找项目源文件
+set(MY_PROJECT_SOURCE )
+if(MSVC)
+    file(GLOB_RECURSE MY_PROJECT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/*.cc")
+else()
+    file(GLOB_RECURSE MY_PROJECT_SOURCE
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.cc"
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.mm"
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.m"
+    )
+endif()
+
 MY_ADD_PROJECT_INCLUDE_FUNC(
     ${CMAKE_SOURCE_DIR}/qtmaterial/inc
 )

@@ -11,6 +11,10 @@ set(MY_CMAKE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../cmake)
 
 include(${MY_CMAKE_DIR}/public.cmake)
 
+# 查找项目头文件
+set(MY_PROJECT_HEADER )
+file(GLOB_RECURSE MY_PROJECT_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/*.h" "${CMAKE_CURRENT_SOURCE_DIR}/*.hpp")
+
 # 查找项目源文件
 set(MY_PROJECT_SOURCE )
 if(MSVC)
