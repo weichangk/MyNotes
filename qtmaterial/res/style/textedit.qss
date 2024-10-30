@@ -1,4 +1,4 @@
-LineEdit {
+TextEdit {
     padding: 3px 6px;
     border-radius: 6px;
     background: #F2F4F9;
@@ -8,16 +8,16 @@ LineEdit {
     color: #16181A;
 }
 
-LineEdit:hover {
+TextEdit:hover {
     border: 1px solid rgba(15, 38, 77, 0.12);
 }
 
-LineEdit:focus {
+TextEdit:focus {
     border: 1px solid #2977FF;
     selection-background-color: #C5D8FF;
     selection-color: #16181A;
 }
 
-LineEdit::placeholder {
+TextEdit::placeholder {
     color: #828B99;
 }
