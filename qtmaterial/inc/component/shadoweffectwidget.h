@@ -1,11 +1,11 @@
 #pragma once
 #include "qtmaterial_global.h"
 
-class QTMATERIAL_EXPORT ShadowEffect : public QObject {
+class QTMATERIAL_EXPORT ShadowEffectWidget : public QObject {
     Q_OBJECT
 public:
-    ShadowEffect(QWidget *parent);
-    ~ShadowEffect();
+    ShadowEffectWidget(QWidget *parent);
+    ~ShadowEffectWidget();
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event);
