@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="/">
+    <file>../res/style/widget.qss</file>
+    <file>../res/style/button.qss</file>
+    <file>../res/style/lineedit.qss</file>
+    <file>../res/style/topbar.qss</file>
+    <file>../res/style/tooltip.qss</file>
+    <file>../res/style/funcpanelwidget.qss</file>
+    <file>../res/style/icontextwidget.qss</file>
+  </qresource>
+</RCC>

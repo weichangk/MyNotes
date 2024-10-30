@@ -1,11 +1,4 @@
-/*
- * @Author: weick
- * @Date: 2023-12-05 22:53:58
- * @Last Modified by:   weick
- * @Last Modified time: 2023-12-05 22:53:58
- */
-
-APushButton#ATopbar_m_closeBtn {
+QPushButton#TopbarWidget_m_closeBtn {
     border: 0px;
     margin: 0px;
     padding: 0px;
@@ -13,19 +6,19 @@ APushButton#ATopbar_m_closeBtn {
     border-image: url(:/res/image/icon40_close_normal.svg);
 }
 
-APushButton#ATopbar_m_closeBtn:hover {
+QPushButton#TopbarWidget_m_closeBtn:hover {
     border-image: url(:/res/image/icon40_close_hover.svg);
 }
 
-APushButton#ATopbar_m_closeBtn:pressed {
+QPushButton#TopbarWidget_m_closeBtn:pressed {
     border-image: url(:/res/image/icon40_close_pressed.svg);
 }
 
-APushButton#ATopbar_m_closeBtn:disabled {
+QPushButton#TopbarWidget_m_closeBtn:disabled {
     border-image: url(:/res/image/icon40_close_disabled.svg);
 }
 
-APushButton#ATopbar_m_closeBtn_10Radius {
+QPushButton#TopbarWidget_m_closeBtn_10Radius {
     border: 0px;
     margin: 0px;
     padding: 0px;
@@ -34,19 +27,19 @@ APushButton#ATopbar_m_closeBtn_10Radius {
     border-image: url(:/res/image/icon40_close_normal.svg);
 }
 
-APushButton#ATopbar_m_closeBtn_10Radius:hover {
+QPushButton#TopbarWidget_m_closeBtn_10Radius:hover {
     border-image: url(:/res/image/icon40_close_hover.svg);
 }
 
-APushButton#ATopbar_m_closeBtn_10Radius:pressed {
+QPushButton#TopbarWidget_m_closeBtn_10Radius:pressed {
     border-image: url(:/res/image/icon40_close_pressed.svg);
 }
 
-APushButton#ATopbar_m_closeBtn_10Radius:disabled {
+QPushButton#TopbarWidget_m_closeBtn_10Radius:disabled {
     border-image: url(:/res/image/icon40_close_disabled.svg);
 }
 
-APushButton#ATopbar_m_maxBtn {
+QPushButton#TopbarWidget_m_maxBtn {
     border: 0px;
     margin: 0px;
     padding: 0px;
@@ -54,19 +47,19 @@ APushButton#ATopbar_m_maxBtn {
     border-image: url(:/res/image/icon40_max_normal.svg);
 }
 
-APushButton#ATopbar_m_maxBtn:hover {
+QPushButton#TopbarWidget_m_maxBtn:hover {
     border-image: url(:/res/image/icon40_max_hover.svg);
 }
 
-APushButton#ATopbar_m_maxBtn:pressed {
+QPushButton#TopbarWidget_m_maxBtn:pressed {
     border-image: url(:/res/image/icon40_max_pressed.svg);
 }
 
-APushButton#ATopbar_m_maxBtn:disabled {
+QPushButton#TopbarWidget_m_maxBtn:disabled {
     border-image: url(:/res/image/icon40_max_disabled.svg);
 }
 
-APushButton#ATopbar_m_minBtn {
+QPushButton#TopbarWidget_m_minBtn {
     border: 0px;
     margin: 0px;
     padding: 0px;
@@ -74,19 +67,19 @@ APushButton#ATopbar_m_minBtn {
     border-image: url(:/res/image/icon40_min_normal.svg);
 }
 
-APushButton#ATopbar_m_minBtn:hover {
+QPushButton#TopbarWidget_m_minBtn:hover {
     border-image: url(:/res/image/icon40_min_hover.svg);
 }
 
-APushButton#ATopbar_m_minBtn:pressed {
+QPushButton#TopbarWidget_m_minBtn:pressed {
     border-image: url(:/res/image/icon40_min_pressed.svg);
 }
 
-APushButton#ATopbar_m_minBtn:disabled {
+QPushButton#TopbarWidget_m_minBtn:disabled {
     border-image: url(:/res/image/icon40_min_disabled.svg);
 }
 
-APushButton#ATopbar_m_normalBtn {
+QPushButton#TopbarWidget_m_normalBtn {
     border: 0px;
     margin: 0px;
     padding: 0px;
@@ -94,14 +87,14 @@ APushButton#ATopbar_m_normalBtn {
     border-image: url(:/res/image/icon40_normal_normal.svg);
 }
 
-APushButton#ATopbar_m_normalBtn:hover {
+QPushButton#TopbarWidget_m_normalBtn:hover {
     border-image: url(:/res/image/icon40_normal_hover.svg);
 }
 
-APushButton#ATopbar_m_normalBtn:pressed {
+QPushButton#TopbarWidget_m_normalBtn:pressed {
     border-image: url(:/res/image/icon40_normal_pressed.svg);
 }
 
-APushButton#ATopbar_m_normalBtn:disabled {
+QPushButton#TopbarWidget_m_normalBtn:disabled {
     border-image: url(:/res/image/icon40_normal_disabled.svg);
 }

@@ -1,11 +1,4 @@
-/*
- * @Author: weick
- * @Date: 2023-12-05 23:04:58
- * @Last Modified by:   weick
- * @Last Modified time: 2023-12-05 23:04:58
- */
-
-ATextEdit {
+LineEdit {
     padding: 3px 6px;
     border-radius: 6px;
     background: #F2F4F9;
@@ -15,16 +8,16 @@ ATextEdit {
     color: #16181A;
 }
 
-ATextEdit:hover {
+LineEdit:hover {
     border: 1px solid rgba(15, 38, 77, 0.12);
 }
 
-ATextEdit:focus {
+LineEdit:focus {
     border: 1px solid #2977FF;
     selection-background-color: #C5D8FF;
     selection-color: #16181A;
 }
 
-ATextEdit::placeholder {
+LineEdit::placeholder {
     color: #828B99;
 }

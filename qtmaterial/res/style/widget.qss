@@ -1,0 +1,6 @@
+QWidget {
+    outline: none;
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+    color: #969799;
+}

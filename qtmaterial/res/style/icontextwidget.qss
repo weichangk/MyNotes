@@ -1,0 +1,25 @@
+QWidget#IconTextWidget {}
+
+QWidget#IconTextWidget_Icon {}
+
+QLabel#IconTextWidget_Text[style-state='normal'] {
+    font-size: 14px;
+    color: #969799;
+}
+
+QLabel#IconTextWidget_Text[style-state='hover'] {
+    font-size: 14px;
+    color: #E1E3E6;
+}
+
+QLabel#IconTextWidget_Text[style-state='pressed'] {
+    font-size: 14px;
+    color: #E1E3E6;
+}
+
+QLabel#IconTextWidget_Text[style-state='checked'] {
+    font-size: 14px;
+    color: #E1E3E6;
+}
+
+QLabel#IconTextWidget_Text[style-state='disabled'] {}

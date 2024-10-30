@@ -2,7 +2,7 @@
 #include "qtmaterial_global.h"
 #include <QWidget>
 
-class QTMATERIAL_EXPORT PreviewButton : public QWidget {
+class QTMATERIAL_EXPORT PreviewWidget : public QWidget {
     Q_OBJECT
     Q_PROPERTY(QPixmap normalIcon READ normalIcon WRITE setNormalIcon NOTIFY sigNormalIconChanged)
     Q_PROPERTY(QPixmap hoverIcon READ hoverIcon WRITE setHoverIcon NOTIFY sigHoverIconChanged)
@@ -16,8 +16,8 @@ public:
         kPressed
     };
 
-    explicit PreviewButton(QWidget *parent = nullptr);
-    ~PreviewButton();
+    explicit PreviewWidget(QWidget *parent = nullptr);
+    ~PreviewWidget();
 
     QPixmap &normalIcon();
     void setNormalIcon(const QPixmap &icon);
