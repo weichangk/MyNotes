@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/light/shadowext">
+    <file alias="shadow.png">../../image/light/shadow.png</file>
+  </qresource>
+</RCC>

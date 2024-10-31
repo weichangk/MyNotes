@@ -3,19 +3,19 @@ QPushButton#TopbarWidget_m_closeBtn {
     margin: 0px;
     padding: 0px;
     background: transparent;
-    border-image: url(:/res/image/icon40_close_normal.svg);
+    border-image: url(:/light/component/icon40_close_normal.svg);
 }
 
 QPushButton#TopbarWidget_m_closeBtn:hover {
-    border-image: url(:/res/image/icon40_close_hover.svg);
+    border-image: url(:/light/component/icon40_close_hover.svg);
 }
 
 QPushButton#TopbarWidget_m_closeBtn:pressed {
-    border-image: url(:/res/image/icon40_close_pressed.svg);
+    border-image: url(:/light/component/icon40_close_pressed.svg);
 }
 
 QPushButton#TopbarWidget_m_closeBtn:disabled {
-    border-image: url(:/res/image/icon40_close_disabled.svg);
+    border-image: url(:/light/component/icon40_close_disabled.svg);
 }
 
 QPushButton#TopbarWidget_m_closeBtn_10Radius {
@@ -24,19 +24,19 @@ QPushButton#TopbarWidget_m_closeBtn_10Radius {
     padding: 0px;
     background: transparent;
     border-top-right-radius: 10px;
-    border-image: url(:/res/image/icon40_close_normal.svg);
+    border-image: url(:/light/component/icon40_close_normal.svg);
 }
 
 QPushButton#TopbarWidget_m_closeBtn_10Radius:hover {
-    border-image: url(:/res/image/icon40_close_hover.svg);
+    border-image: url(:/light/component/icon40_close_hover.svg);
 }
 
 QPushButton#TopbarWidget_m_closeBtn_10Radius:pressed {
-    border-image: url(:/res/image/icon40_close_pressed.svg);
+    border-image: url(:/light/component/icon40_close_pressed.svg);
 }
 
 QPushButton#TopbarWidget_m_closeBtn_10Radius:disabled {
-    border-image: url(:/res/image/icon40_close_disabled.svg);
+    border-image: url(:/light/component/icon40_close_disabled.svg);
 }
 
 QPushButton#TopbarWidget_m_maxBtn {
@@ -44,19 +44,19 @@ QPushButton#TopbarWidget_m_maxBtn {
     margin: 0px;
     padding: 0px;
     background: transparent;
-    border-image: url(:/res/image/icon40_max_normal.svg);
+    border-image: url(:/light/component/icon40_max_normal.svg);
 }
 
 QPushButton#TopbarWidget_m_maxBtn:hover {
-    border-image: url(:/res/image/icon40_max_hover.svg);
+    border-image: url(:/light/component/icon40_max_hover.svg);
 }
 
 QPushButton#TopbarWidget_m_maxBtn:pressed {
-    border-image: url(:/res/image/icon40_max_pressed.svg);
+    border-image: url(:/light/component/icon40_max_pressed.svg);
 }
 
 QPushButton#TopbarWidget_m_maxBtn:disabled {
-    border-image: url(:/res/image/icon40_max_disabled.svg);
+    border-image: url(:/light/component/icon40_max_disabled.svg);
 }
 
 QPushButton#TopbarWidget_m_minBtn {
@@ -64,19 +64,19 @@ QPushButton#TopbarWidget_m_minBtn {
     margin: 0px;
     padding: 0px;
     background: transparent;
-    border-image: url(:/res/image/icon40_min_normal.svg);
+    border-image: url(:/light/component/icon40_min_normal.svg);
 }
 
 QPushButton#TopbarWidget_m_minBtn:hover {
-    border-image: url(:/res/image/icon40_min_hover.svg);
+    border-image: url(:/light/component/icon40_min_hover.svg);
 }
 
 QPushButton#TopbarWidget_m_minBtn:pressed {
-    border-image: url(:/res/image/icon40_min_pressed.svg);
+    border-image: url(:/light/component/icon40_min_pressed.svg);
 }
 
 QPushButton#TopbarWidget_m_minBtn:disabled {
-    border-image: url(:/res/image/icon40_min_disabled.svg);
+    border-image: url(:/light/component/icon40_min_disabled.svg);
 }
 
 QPushButton#TopbarWidget_m_normalBtn {
@@ -84,17 +84,17 @@ QPushButton#TopbarWidget_m_normalBtn {
     margin: 0px;
     padding: 0px;
     background: transparent;
-    border-image: url(:/res/image/icon40_normal_normal.svg);
+    border-image: url(:/light/component/icon40_normal_normal.svg);
 }
 
 QPushButton#TopbarWidget_m_normalBtn:hover {
-    border-image: url(:/res/image/icon40_normal_hover.svg);
+    border-image: url(:/light/component/icon40_normal_hover.svg);
 }
 
 QPushButton#TopbarWidget_m_normalBtn:pressed {
-    border-image: url(:/res/image/icon40_normal_pressed.svg);
+    border-image: url(:/light/component/icon40_normal_pressed.svg);
 }
 
 QPushButton#TopbarWidget_m_normalBtn:disabled {
-    border-image: url(:/res/image/icon40_normal_disabled.svg);
+    border-image: url(:/light/component/icon40_normal_disabled.svg);
 }

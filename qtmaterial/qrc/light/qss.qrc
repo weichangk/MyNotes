@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="/">
+    <file>../../qss/light/widget.qss</file>
+    <file>../../qss/light/control/button.qss</file>
+    <file>../../qss/light/component/textedit.qss</file>
+    <file>../../qss/light/component/topbar.qss</file>
+    <file>../../qss/light/component/tooltip.qss</file>
+    <file>../../qss/light/component/funcpanelwidget.qss</file>
+    <file>../../qss/light/component/icontextwidget.qss</file>
+  </qresource>
+</RCC>
