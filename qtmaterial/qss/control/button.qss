@@ -35,3 +35,28 @@ QPushButton#FullBGButton_FS14:pressed {
 QPushButton#FullBGButton_FS14:disabled {
     background-color: rgba(50, 50, 50, 0.25);
 }
+
+/* HorIconTextButton */
+#HorIconTextButton {
+}
+
+#HorIconTextButton:hover {
+}
+
+#HorIconTextButton:pressed {
+}
+
+#HorIconTextButton:disabled {
+}
+
+QLabel#HorIconTextButtonText[ButtonStatus='normal'] {
+}
+
+QLabel#HorIconTextButtonText[ButtonStatus='hover'] {
+}
+
+QLabel#HorIconTextButtonText[ButtonStatus='pressed'] {
+}
+
+QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
+}
