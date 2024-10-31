@@ -1,5 +1,5 @@
 #include "component/icontextwidget.h"
-#include "core/stringhelper.h"
+#include "helper/stringhelper.h"
 #include <QHBoxLayout>
 #include <QMetaEnum>
 #include <QMouseEvent>

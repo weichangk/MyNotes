@@ -1,4 +1,4 @@
-#include "core/apppathhelper.h"
+#include "helper/apppathhelper.h"
 #include <QStandardPaths>
 #include <QDir>
 

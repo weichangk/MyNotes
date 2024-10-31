@@ -1,14 +1,14 @@
-#include "component/shadoweffectwidget.h"
+#include "extension/shadowext.h"
 #include <QDialog>
 #include <QEvent>
 #include <QTimer>
 #include <QApplication>
 #include <QPainter>
 
-ShadowEffectWidget::ShadowEffectWidget(QWidget *parent) :
+ShadowExt::ShadowExt(QWidget *parent) :
     QObject(nullptr),
     m_parentWidget(parent) {
-    m_pixmap = QPixmap(":/shadoweffectwidget/shadow.png");
+    m_pixmap = QPixmap(":/shadowext/shadow.png");
     setParent(m_parentWidget);
     m_parentWidget->installEventFilter(this);
     if (auto dlg = qobject_cast<QDialog *>(m_parentWidget)) {
@@ -26,10 +26,10 @@ ShadowEffectWidget::ShadowEffectWidget(QWidget *parent) :
     m_shadowWidget->installEventFilter(this);
 }
 
-ShadowEffectWidget::~ShadowEffectWidget() {
+ShadowExt::~ShadowExt() {
 }
 
-bool ShadowEffectWidget::eventFilter(QObject *watched, QEvent *event) {
+bool ShadowExt::eventFilter(QObject *watched, QEvent *event) {
     if (watched == m_parentWidget) {
         auto ResizeEffectFun = [&]() {
             QRect rc = m_parentWidget->geometry();
@@ -76,7 +76,7 @@ bool ShadowEffectWidget::eventFilter(QObject *watched, QEvent *event) {
     return false;
 }
 
-QPixmap ShadowEffectWidget::ninePatchPixmap(const QPixmap &srcPixmap, int horzSplit, int vertSplit, int dstWidth, int dstHeight) {
+QPixmap ShadowExt::ninePatchPixmap(const QPixmap &srcPixmap, int horzSplit, int vertSplit, int dstWidth, int dstHeight) {
     if (srcPixmap.isNull())
         return QPixmap();
 

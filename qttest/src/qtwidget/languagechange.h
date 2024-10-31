@@ -3,7 +3,7 @@
 #include <QComboBox>
 #include <QLabel>
 #include <QPushButton>
-#include "core/languagechangehelper.h"
+#include "helper/languagechangehelper.h"
 
 class LanguageChangeTest : public QWidget {
     Q_OBJECT

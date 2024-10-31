@@ -1,11 +1,11 @@
 <RCC>
   <qresource prefix="/">
     <file>../qss/widget.qss</file>
-    <file>../qss/button.qss</file>
-    <file>../qss/textedit.qss</file>
-    <file>../qss/topbar.qss</file>
-    <file>../qss/tooltip.qss</file>
-    <file>../qss/funcpanelwidget.qss</file>
-    <file>../qss/icontextwidget.qss</file>
+    <file>../qss/control/button.qss</file>
+    <file>../qss/component/textedit.qss</file>
+    <file>../qss/component/topbar.qss</file>
+    <file>../qss/component/tooltip.qss</file>
+    <file>../qss/component/funcpanelwidget.qss</file>
+    <file>../qss/component/icontextwidget.qss</file>
   </qresource>
 </RCC>

@@ -1,6 +1,6 @@
 #include "languagechange.h"
 #include <QHBoxLayout>
-#include "core/langhelper.h"
+#include "helper/langhelper.h"
 
 LanguageChangeTest::LanguageChangeTest(QWidget *parent) :
     QWidget(parent) {

@@ -1,4 +1,4 @@
-#include "core/loghelper.h"
+#include "helper/loghelper.h"
 #include <QDateTime>
 #include <QFile>
 #include <QMutex>

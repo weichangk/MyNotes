@@ -1,4 +1,4 @@
-#include "core/languagechangehelper.h"
+#include "helper/languagechangehelper.h"
 #include <QEvent>
 
 LanguageChangeHelper::LanguageChangeHelper(QObject *parent) :
