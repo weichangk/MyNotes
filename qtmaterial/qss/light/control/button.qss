@@ -38,25 +38,46 @@ QPushButton#FullBGButton_FS14:disabled {
 
 /* HorIconTextButton */
 #HorIconTextButton {
+    border-radius: 6px;
+    background-color: #403f43;
 }
 
 #HorIconTextButton:hover {
+    background-color: #46444f;
 }
 
 #HorIconTextButton:pressed {
+    background-color: #5b5968;
 }
 
 #HorIconTextButton:disabled {
+    background-color: #414043;
 }
 
 QLabel#HorIconTextButtonText[ButtonStatus='normal'] {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(239, 238, 240, 1);
 }
 
 QLabel#HorIconTextButtonText[ButtonStatus='hover'] {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 1);
 }
 
 QLabel#HorIconTextButtonText[ButtonStatus='pressed'] {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 1);
 }
 
 QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(102, 100, 107, 1);
 }
