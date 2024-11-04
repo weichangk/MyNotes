@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "qtmaterialiconfont"; /* Project id 4734580 */
+  src: url('iconfont.ttf?t=1730732186045') format('truetype');
+}
+
+.qtmaterialiconfont {
+  font-family: "qtmaterialiconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.qtmaterialicon-add:before {
+  content: "\e664";
+}
+
+.qtmaterialicon-add-circle:before {
+  content: "\e665";
+}
+
+.qtmaterialicon-arrow-up-circle:before {
+  content: "\e666";
+}
+
+.qtmaterialicon-arrow-right-circle:before {
+  content: "\e667";
+}
+
