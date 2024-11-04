@@ -5,56 +5,17 @@
 #include <QVariant>
 #include "control/flowlayout.h"
 
-using QCoreDemo = enum {
-    QCoreDemo000 = 0,
-    QCoreDemo111,
-    QCoreDemo222,
-    QCoreDemo333,
-    QCoreDemo444,
-    QCoreDemo555,
-    QCoreDemo666,
-    QCoreDemo777,
-    QCoreDemo888,
-    QCoreDemo999,
-};
-
-using QWidgetDemo = enum {
-    QWidgetDemoDialog = 1000,
-    QWidgetDemoPainter,
-    QWidgetDemoTabWidget,
-    QWidgetDemoTranslucent,
-    QWidgetDemoLayoutMacBug,
-    QWidgetDemoLanguageChangeTest,
-    QWidgetDemo666,
-    QWidgetDemo777,
-    QWidgetDemo888,
-    QWidgetDemo999,
-};
-
-using QGuiDemo = enum {
-    QGuiDemo000 = 2000,
-    QGuiDemo111,
-    QGuiDemo222,
-    QGuiDemo333,
-    QGuiDemo444,
-    QGuiDemo555,
-    QGuiDemo666,
-    QGuiDemo777,
-    QGuiDemo888,
-    QGuiDemo999,
-};
-
-using QmlDemo = enum {
-    QmlDemo000 = 3000,
-    QmlDemo111,
-    QmlDemo222,
-    QmlDemo333,
-    QmlDemo444,
-    QmlDemo555,
-    QmlDemo666,
-    QmlDemo777,
-    QmlDemo888,
-    QmlDemo999,
+using QtTestDemo = enum {
+    QtTestDemoDialog = 0,
+    QtTestDemoPainter,
+    QtTestDemoTabWidget,
+    QtTestDemoTranslucent,
+    QtTestDemoLayoutMacBug,
+    QtTestDemoLanguageChangeTest,
+    QtTestDemo666,
+    QtTestDemo777,
+    QtTestDemo888,
+    QtTestDemo999,
 };
 
 using QtmaterialCoreDemo = enum {
@@ -129,18 +90,8 @@ void MainWindow::createUi() {
     main_tabwidget_ = new QTabWidget();
     layout->addWidget(main_tabwidget_);
 
-    q_tabwidget_ = new QTabWidget();
-    main_tabwidget_->addTab(q_tabwidget_, "test");
-
-    qcore_widget_ = new QWidget();
-    qwidget_widget_ = new QWidget();
-    qgui_widget_ = new QWidget();
-    qml_widget_ = new QWidget();
-
-    q_tabwidget_->addTab(qcore_widget_, "qcore");
-    q_tabwidget_->addTab(qwidget_widget_, "qwidget");
-    q_tabwidget_->addTab(qgui_widget_, "qgui");
-    q_tabwidget_->addTab(qml_widget_, "qml");
+    qttest_widget_ = new QWidget();
+    main_tabwidget_->addTab(qttest_widget_, "qttest");
 
     qtmaterial_tabwidget_ = new QTabWidget();
     main_tabwidget_->addTab(qtmaterial_tabwidget_, "qtmaterial");
@@ -155,10 +106,7 @@ void MainWindow::createUi() {
     qtmaterial_tabwidget_->addTab(qtmaterial_component_widget_, "component");
     qtmaterial_tabwidget_->addTab(qtmaterial_osx_widget_, "osx");
 
-    setQCoreDemoBtns(qcore_widget_);
-    setQWidgetDemoBtns(qwidget_widget_);
-    setQGuiDemoBtns(qgui_widget_);
-    setQmlDemoBtns(qml_widget_);
+    setQtTestDemoBtns(qttest_widget_);
 
     setQtmaterialCoreDemoBtns(qtmaterial_core_widget_);
     setQtmaterialControlDemoBtns(qtmaterial_control_widget_);
@@ -166,112 +114,28 @@ void MainWindow::createUi() {
     setQtmaterialOsxDemoBtns(qtmaterial_osx_widget_);
 }
 
-void MainWindow::setQCoreDemoBtns(QWidget *w) {
+void MainWindow::setQtTestDemoBtns(QWidget *w) {
     auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
-    demoMap.insert(QCoreDemo::QCoreDemo000, "000");
-    demoMap.insert(QCoreDemo::QCoreDemo111, "111");
-    demoMap.insert(QCoreDemo::QCoreDemo222, "222");
-    demoMap.insert(QCoreDemo::QCoreDemo333, "333");
-    demoMap.insert(QCoreDemo::QCoreDemo444, "444");
-    demoMap.insert(QCoreDemo::QCoreDemo555, "555");
-    demoMap.insert(QCoreDemo::QCoreDemo666, "666");
-    demoMap.insert(QCoreDemo::QCoreDemo777, "777");
-    demoMap.insert(QCoreDemo::QCoreDemo888, "888");
-    demoMap.insert(QCoreDemo::QCoreDemo999, "999");
+    demoMap.insert(QtTestDemo::QtTestDemoDialog, "Dialog");
+    demoMap.insert(QtTestDemo::QtTestDemoPainter, "Painter");
+    demoMap.insert(QtTestDemo::QtTestDemoTabWidget, "TabWidget");
+    demoMap.insert(QtTestDemo::QtTestDemoTranslucent, "Translucent");
+    demoMap.insert(QtTestDemo::QtTestDemoLayoutMacBug, "LayoutMacBug");
+    demoMap.insert(QtTestDemo::QtTestDemoLanguageChangeTest, "LanguageChangeTest");
+    demoMap.insert(QtTestDemo::QtTestDemo666, "666");
+    demoMap.insert(QtTestDemo::QtTestDemo777, "777");
+    demoMap.insert(QtTestDemo::QtTestDemo888, "888");
+    demoMap.insert(QtTestDemo::QtTestDemo999, "999");
 
     QMap<int, QString>::Iterator iter;
     for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
         QPushButton *btn = new QPushButton(this);
         btn->setFixedSize(160, 24);
         btn->setText(iter.value());
-        btn->setProperty("QCoreDemo_Id", iter.key());
+        btn->setProperty("QtTestDemo_Id", iter.key());
         connect(btn, &QPushButton::clicked, this, [this, btn]() {
-            int id = btn->property("QCoreDemo_Id").toInt();
-            test(id);
-        });
-        demoFlowLayout->addWidget(btn);
-    }
-}
-
-void MainWindow::setQWidgetDemoBtns(QWidget *w) {
-    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
-    QMap<int, QString> demoMap;
-    demoMap.insert(QWidgetDemo::QWidgetDemoDialog, "Dialog");
-    demoMap.insert(QWidgetDemo::QWidgetDemoPainter, "Painter");
-    demoMap.insert(QWidgetDemo::QWidgetDemoTabWidget, "TabWidget");
-    demoMap.insert(QWidgetDemo::QWidgetDemoTranslucent, "Translucent");
-    demoMap.insert(QWidgetDemo::QWidgetDemoLayoutMacBug, "LayoutMacBug");
-    demoMap.insert(QWidgetDemo::QWidgetDemoLanguageChangeTest, "LanguageChangeTest");
-    demoMap.insert(QWidgetDemo::QWidgetDemo666, "666");
-    demoMap.insert(QWidgetDemo::QWidgetDemo777, "777");
-    demoMap.insert(QWidgetDemo::QWidgetDemo888, "888");
-    demoMap.insert(QWidgetDemo::QWidgetDemo999, "999");
-
-    QMap<int, QString>::Iterator iter;
-    for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
-        QPushButton *btn = new QPushButton(this);
-        btn->setFixedSize(160, 24);
-        btn->setText(iter.value());
-        btn->setProperty("QWidgetDemo_Id", iter.key());
-        connect(btn, &QPushButton::clicked, this, [this, btn]() {
-            int id = btn->property("QWidgetDemo_Id").toInt();
-            test(id);
-        });
-        demoFlowLayout->addWidget(btn);
-    }
-}
-
-void MainWindow::setQGuiDemoBtns(QWidget *w) {
-    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
-    QMap<int, QString> demoMap;
-    demoMap.insert(QGuiDemo::QGuiDemo000, "000");
-    demoMap.insert(QGuiDemo::QGuiDemo111, "111");
-    demoMap.insert(QGuiDemo::QGuiDemo222, "222");
-    demoMap.insert(QGuiDemo::QGuiDemo333, "333");
-    demoMap.insert(QGuiDemo::QGuiDemo444, "444");
-    demoMap.insert(QGuiDemo::QGuiDemo555, "555");
-    demoMap.insert(QGuiDemo::QGuiDemo666, "666");
-    demoMap.insert(QGuiDemo::QGuiDemo777, "777");
-    demoMap.insert(QGuiDemo::QGuiDemo888, "888");
-    demoMap.insert(QGuiDemo::QGuiDemo999, "999");
-
-    QMap<int, QString>::Iterator iter;
-    for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
-        QPushButton *btn = new QPushButton(this);
-        btn->setFixedSize(160, 24);
-        btn->setText(iter.value());
-        btn->setProperty("QGuiDemo_Id", iter.key());
-        connect(btn, &QPushButton::clicked, this, [this, btn]() {
-            int id = btn->property("QGuiDemo_Id").toInt();
-            test(id);
-        });
-        demoFlowLayout->addWidget(btn);
-    }
-}
-
-void MainWindow::setQmlDemoBtns(QWidget *w) {
-    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
-    QMap<int, QString> demoMap;
-    demoMap.insert(QmlDemo::QmlDemo000, "000");
-    demoMap.insert(QmlDemo::QmlDemo111, "111");
-    demoMap.insert(QmlDemo::QmlDemo222, "222");
-    demoMap.insert(QmlDemo::QmlDemo333, "333");
-    demoMap.insert(QmlDemo::QmlDemo444, "444");
-    demoMap.insert(QmlDemo::QmlDemo555, "555");
-    demoMap.insert(QmlDemo::QmlDemo666, "666");
-    demoMap.insert(QmlDemo::QmlDemo777, "777");
-    demoMap.insert(QmlDemo::QmlDemo888, "888");
-    demoMap.insert(QmlDemo::QmlDemo999, "999");
-
-    QMap<int, QString>::Iterator iter;
-    for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
-        QPushButton *btn = new QPushButton(this);
-        btn->setFixedSize(160, 24);
-        btn->setText(iter.value());
-        btn->setProperty("QmlDemo_Id", iter.key());
-        connect(btn, &QPushButton::clicked, this, [this, btn]() {
-            int id = btn->property("QmlDemo_Id").toInt();
+            int id = btn->property("QtTestDemo_Id").toInt();
             test(id);
         });
         demoFlowLayout->addWidget(btn);
@@ -392,100 +256,31 @@ void MainWindow::setQtmaterialOsxDemoBtns(QWidget *w) {
 
 void MainWindow::test(int id) {
     switch (id) {
-    case QCoreDemo::QCoreDemo000:
-        break;
-    case QCoreDemo::QCoreDemo111:
-        break;
-    case QCoreDemo::QCoreDemo222:
-        break;
-    case QCoreDemo::QCoreDemo333:
-        break;
-    case QCoreDemo::QCoreDemo444:
-        break;
-    case QCoreDemo::QCoreDemo555:
-        break;
-    case QCoreDemo::QCoreDemo666:
-        break;
-    case QCoreDemo::QCoreDemo777:
-        break;
-    case QCoreDemo::QCoreDemo888:
-        break;
-    case QCoreDemo::QCoreDemo999:
-        break;
-    }
-
-    switch (id) {
-    case QWidgetDemo::QWidgetDemoDialog:
+    case QtTestDemo::QtTestDemoDialog:
         dialogShow();
         break;
-    case QWidgetDemo::QWidgetDemoPainter:
+    case QtTestDemo::QtTestDemoPainter:
         painterShow();
         break;
-    case QWidgetDemo::QWidgetDemoTabWidget:
+    case QtTestDemo::QtTestDemoTabWidget:
         tabShow();
         break;
-    case QWidgetDemo::QWidgetDemoTranslucent:
+    case QtTestDemo::QtTestDemoTranslucent:
         translucentShow();
         break;
-    case QWidgetDemo::QWidgetDemoLayoutMacBug:
+    case QtTestDemo::QtTestDemoLayoutMacBug:
         layoutMacBugShow();
         break;
-    case QWidgetDemo::QWidgetDemoLanguageChangeTest:
+    case QtTestDemo::QtTestDemoLanguageChangeTest:
         languageChangeTestShow();
         break;
-    case QWidgetDemo::QWidgetDemo666:
+    case QtTestDemo::QtTestDemo666:
         break;
-    case QWidgetDemo::QWidgetDemo777:
+    case QtTestDemo::QtTestDemo777:
         break;
-    case QWidgetDemo::QWidgetDemo888:
+    case QtTestDemo::QtTestDemo888:
         break;
-    case QWidgetDemo::QWidgetDemo999:
-        break;
-    }
-
-    switch (id) {
-    case QGuiDemo::QGuiDemo000:
-        break;
-    case QGuiDemo::QGuiDemo111:
-        break;
-    case QGuiDemo::QGuiDemo222:
-        break;
-    case QGuiDemo::QGuiDemo333:
-        break;
-    case QGuiDemo::QGuiDemo444:
-        break;
-    case QGuiDemo::QGuiDemo555:
-        break;
-    case QGuiDemo::QGuiDemo666:
-        break;
-    case QGuiDemo::QGuiDemo777:
-        break;
-    case QGuiDemo::QGuiDemo888:
-        break;
-    case QGuiDemo::QGuiDemo999:
-        break;
-    }
-
-    switch (id) {
-    case QmlDemo::QmlDemo000:
-        break;
-    case QmlDemo::QmlDemo111:
-        break;
-    case QmlDemo::QmlDemo222:
-        break;
-    case QmlDemo::QmlDemo333:
-        break;
-    case QmlDemo::QmlDemo444:
-        break;
-    case QmlDemo::QmlDemo555:
-        break;
-    case QmlDemo::QmlDemo666:
-        break;
-    case QmlDemo::QmlDemo777:
-        break;
-    case QmlDemo::QmlDemo888:
-        break;
-    case QmlDemo::QmlDemo999:
+    case QtTestDemo::QtTestDemo999:
         break;
     }
 
