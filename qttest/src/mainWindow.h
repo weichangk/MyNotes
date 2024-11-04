@@ -1,12 +1,12 @@
 #pragma once
 #include <QWidget>
 #include <QTabWidget>
-#include "qtwidget/dialog.h"
-#include "qtwidget/painter.h"
-#include "qtwidget/tabwidget.h"
-#include "qtwidget/translucentbackground.h"
-#include "qtwidget/layout.h"
-#include "qtwidget/languagechange.h"
+#include "test/dialog.h"
+#include "test/painter.h"
+#include "test/tabwidget.h"
+#include "test/translucentbackground.h"
+#include "test/layout.h"
+#include "test/languagechange.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
