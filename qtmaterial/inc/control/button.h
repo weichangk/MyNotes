@@ -133,7 +133,6 @@ private:
 
 private:
     QHBoxLayout *m_pLayout = nullptr;
-    QLabel *m_pIcon = nullptr;
     QLabel *m_pText = nullptr;
 
     QString m_strFourStatePath = "";

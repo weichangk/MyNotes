@@ -15,7 +15,6 @@ QString buttonStatusToString(button::ButtonStatus state) {
 IconButton::IconButton(QWidget *parent) :
     QPushButton(parent) {
     QPushButton::setObjectName("IconButton");
-    setAttribute(Qt::WA_StyledBackground, true);
 }
 
 void IconButton::setObjectName(const QString &name) {
@@ -89,6 +88,7 @@ QString IconButton::disablePixmapPath() const {
 }
 
 void IconButton::paintEvent(QPaintEvent *event) {
+    QPushButton::paintEvent(event);
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
     QPixmap pixmap = getCurrentPixmap();
@@ -97,26 +97,25 @@ void IconButton::paintEvent(QPaintEvent *event) {
         QRect iconRect(m_nIconMargin, m_nIconMargin, iconSize.width(), iconSize.height());
         painter.drawPixmap(iconRect, pixmap.scaled(iconSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     }
-    QWidget::paintEvent(event);
 }
 
 void IconButton::mousePressEvent(QMouseEvent *event) {
-    QWidget::mousePressEvent(event);
+    QPushButton::mousePressEvent(event);
     setButtonState(button::ButtonStatus::Pressed);
 }
 
 void IconButton::mouseReleaseEvent(QMouseEvent *event) {
-    QWidget::mouseReleaseEvent(event);
+    QPushButton::mouseReleaseEvent(event);
     setButtonState(button::ButtonStatus::Normal);
 }
 
 void IconButton::enterEvent(QEvent *event) {
-    QWidget::enterEvent(event);
+    QPushButton::enterEvent(event);
     setButtonState(button::ButtonStatus::Hover);
 }
 
 void IconButton::leaveEvent(QEvent *event) {
-    QWidget::leaveEvent(event);
+    QPushButton::leaveEvent(event);
     setButtonState(button::ButtonStatus::Normal);
 }
 
@@ -137,29 +136,20 @@ QPixmap IconButton::getCurrentPixmap() const {
 HorIconTextButton::HorIconTextButton(QWidget *parent) :
     QPushButton(parent) {
     QPushButton::setObjectName("HorIconTextButton");
-    setAttribute(Qt::WA_StyledBackground, true);
     m_pLayout = new QHBoxLayout(this);
     m_pLayout->setContentsMargins(m_nLeftRightSpacing, 0, m_nLeftRightSpacing, 0);
-    m_pLayout->setSpacing(m_nIconTextSpacing);
-
-    m_pIcon = new QLabel(this);
-    m_pIcon->setFixedSize(m_nIconSize, m_nIconSize);
-    m_pIcon->setObjectName("HorIconTextButtonIcon");
 
     m_pText = new QLabel(this);
     m_pText->setObjectName("HorIconTextButtonText");
     m_pText->setProperty("ButtonStatus", "normal");
 
-    m_pLayout->addWidget(m_pIcon, 0, Qt::AlignCenter);
+    m_pLayout->addSpacing(m_nIconSize + m_nIconTextSpacing);
     m_pLayout->addWidget(m_pText, 0, Qt::AlignCenter);
     m_pLayout->addStretch();
 }
 
 void HorIconTextButton::setObjectName(const QString &name) {
     QPushButton::setObjectName(name);
-    if (m_pIcon) {
-        m_pIcon->setObjectName(name + "Icon");
-    }
     if (m_pText) {
         m_pText->setObjectName(name + "Text");
     }
@@ -184,7 +174,6 @@ QString HorIconTextButton::text() const {
 
 void HorIconTextButton::setIconSize(int n) {
     m_nIconSize = n;
-    m_pIcon->setFixedSize(n, n);
 }
 
 int HorIconTextButton::iconSize() const {
@@ -259,34 +248,34 @@ QString HorIconTextButton::disablePixmapPath() const {
 }
 
 void HorIconTextButton::paintEvent(QPaintEvent *event) {
+    QPushButton::paintEvent(event);
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
     QPixmap pixmap = getCurrentPixmap();
     if (!pixmap.isNull()) {
-    QSize iconSize = m_pIcon->rect().size();
-    QRect iconRect = QRect(m_pIcon->x(), m_pIcon->y(), m_pIcon->width(), m_pIcon->height());
+        QSize iconSize = QSize(m_nIconSize, m_nIconSize);
+        QRect iconRect = QRect(m_nLeftRightSpacing, (height() - m_nIconSize) / 2, m_nIconSize, m_nIconSize);
         painter.drawPixmap(iconRect, pixmap.scaled(iconSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     }
-    QWidget::paintEvent(event);
 }
 
 void HorIconTextButton::mousePressEvent(QMouseEvent *event) {
-    QWidget::mousePressEvent(event);
+    QPushButton::mousePressEvent(event);
     setButtonState(button::ButtonStatus::Pressed);
 }
 
 void HorIconTextButton::mouseReleaseEvent(QMouseEvent *event) {
-    QWidget::mouseReleaseEvent(event);
+    QPushButton::mouseReleaseEvent(event);
     setButtonState(button::ButtonStatus::Normal);
 }
 
 void HorIconTextButton::enterEvent(QEvent *event) {
-    QWidget::enterEvent(event);
+    QPushButton::enterEvent(event);
     setButtonState(button::ButtonStatus::Hover);
 }
 
 void HorIconTextButton::leaveEvent(QEvent *event) {
-    QWidget::leaveEvent(event);
+    QPushButton::leaveEvent(event);
     setButtonState(button::ButtonStatus::Normal);
 }
 
