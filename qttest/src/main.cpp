@@ -10,6 +10,7 @@ int main(int argc, char *argv[]) {
     LangHelper::getInstance()->setSysLangLocale();
     ThemeHelper::setTheme(ThemeHelper::LIGHT);
     FontHelper::setFont(FontHelper::ROBOTO_REGULAR);
+    FontHelper::setIconFont(FontHelper::IconFont);
     MainWindow w;
     w.show();
     return a.exec();

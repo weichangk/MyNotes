@@ -12,7 +12,7 @@ using QtTestDemo = enum {
     QtTestDemoTranslucent,
     QtTestDemoLayoutMacBug,
     QtTestDemoLanguageChangeTest,
-    QtTestDemo666,
+    QtTestDemoIconFontTest,
     QtTestDemo777,
     QtTestDemo888,
     QtTestDemo999,
@@ -123,7 +123,7 @@ void MainWindow::setQtTestDemoBtns(QWidget *w) {
     demoMap.insert(QtTestDemo::QtTestDemoTranslucent, "Translucent");
     demoMap.insert(QtTestDemo::QtTestDemoLayoutMacBug, "LayoutMacBug");
     demoMap.insert(QtTestDemo::QtTestDemoLanguageChangeTest, "LanguageChangeTest");
-    demoMap.insert(QtTestDemo::QtTestDemo666, "666");
+    demoMap.insert(QtTestDemo::QtTestDemoIconFontTest, "IconFontTest");
     demoMap.insert(QtTestDemo::QtTestDemo777, "777");
     demoMap.insert(QtTestDemo::QtTestDemo888, "888");
     demoMap.insert(QtTestDemo::QtTestDemo999, "999");
@@ -274,7 +274,8 @@ void MainWindow::test(int id) {
     case QtTestDemo::QtTestDemoLanguageChangeTest:
         languageChangeTestShow();
         break;
-    case QtTestDemo::QtTestDemo666:
+    case QtTestDemo::QtTestDemoIconFontTest:
+        iconFontTestShow();
         break;
     case QtTestDemo::QtTestDemo777:
         break;
@@ -383,36 +384,43 @@ void MainWindow::dialogShow() {
 }
 
 void MainWindow::painterShow() {
-    if(!painter_widget_) {
+    if (!painter_widget_) {
         painter_widget_ = new PainterWidget();
     }
     painter_widget_->show();
 }
 
 void MainWindow::tabShow() {
-    if(!tab_widget_) {
+    if (!tab_widget_) {
         tab_widget_ = new TabWidget();
     }
     tab_widget_->show();
 }
 
 void MainWindow::translucentShow() {
-    if(!translucent_widget_) {
+    if (!translucent_widget_) {
         translucent_widget_ = new TranslucentBackgroundWidget();
     }
     translucent_widget_->show();
 }
 
 void MainWindow::layoutMacBugShow() {
-    if(!layoutmacbug_widget_) {
+    if (!layoutmacbug_widget_) {
         layoutmacbug_widget_ = new LayoutMacBugWidget();
     }
     layoutmacbug_widget_->show();
 }
 
 void MainWindow::languageChangeTestShow() {
-    if(!languagechange_widget_) {
+    if (!languagechange_widget_) {
         languagechange_widget_ = new LanguageChangeTest();
     }
     languagechange_widget_->show();
+}
+
+void MainWindow::iconFontTestShow() {
+    if (!m_pIconFontTestWidget) {
+        m_pIconFontTestWidget = new IconFontTestWidget();
+    }
+    m_pIconFontTestWidget->show();
 }

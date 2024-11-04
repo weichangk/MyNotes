@@ -7,6 +7,7 @@
 #include "test/translucentbackground.h"
 #include "test/layout.h"
 #include "test/languagechange.h"
+#include "test/iconfonttest.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
@@ -27,13 +28,14 @@ private:
     
     void test(int id);
 
-    // qwidget
+    // qttest
     void dialogShow();
     void painterShow();
     void tabShow();
     void translucentShow();
     void layoutMacBugShow();
     void languageChangeTestShow();
+    void iconFontTestShow();
 
 private:
     QTabWidget *main_tabwidget_ = nullptr;
@@ -46,10 +48,11 @@ private:
     QWidget *qtmaterial_component_widget_ = nullptr;
     QWidget *qtmaterial_osx_widget_ = nullptr;
 
-    // qwidget
+    // qttest
     PainterWidget *painter_widget_ = nullptr;
     TabWidget *tab_widget_ = nullptr;
     TranslucentBackgroundWidget *translucent_widget_ = nullptr;
     LayoutMacBugWidget *layoutmacbug_widget_ = nullptr;
     LanguageChangeTest *languagechange_widget_ = nullptr;
+    IconFontTestWidget *m_pIconFontTestWidget = nullptr;
 };

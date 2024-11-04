@@ -30,17 +30,6 @@ QFont FontHelper::currentIconFont() {
     return m_currentIconFont;
 }
 
-QFont FontHelper::defaultIconFont() {
-    QFont font = QFont();
-    QString fontPath = FontHelper::iconFontEnumToFontPath(IconFont);
-    int fontId = QFontDatabase::addApplicationFont(fontPath);
-    QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
-    if (!fontFamilies.isEmpty()) {
-        font =  QFont(fontFamilies.at(0));
-    }
-    return font;
-}
-
 QString FontHelper::fontEnumToFontPath(FontEnum e) {
     switch (e) {
         case ROBOTO_BLACK: return ":/fonts/Roboto-Black.ttf";
@@ -72,4 +61,4 @@ QString FontHelper::iconFontEnumToFontPath(IconFontEnum e) {
     }
 }
 
-QFont FontHelper::m_currentIconFont = FontHelper::defaultIconFont();
+QFont FontHelper::m_currentIconFont = QFont();

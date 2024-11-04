@@ -35,7 +35,6 @@ public:
 
     static void setIconFont(IconFontEnum);
     static QFont currentIconFont();
-    static QFont defaultIconFont();
 
 private:
     static QString fontEnumToFontPath(FontEnum);
