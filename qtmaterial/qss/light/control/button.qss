@@ -81,3 +81,82 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     line-height: 16px;
     color: rgba(102, 100, 107, 1);
 }
+
+IconVectorButton {
+    border: none;
+    background-color: transparent;
+    color:#313131; 
+    text-align: center;
+}
+
+IconVectorButton:hover {
+    color:#000000; 
+}
+
+IconVectorButton#IconVectorButton_Size24 {
+    min-width: 24px;
+    max-width: 24px;
+    width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    height: 24px;  
+    font-size: 16px;
+}
+
+IconVectorButton#IconVectorButton_Size26 {
+    min-width: 26px;
+    max-width: 26px;
+    width: 26px;
+    min-height: 26px;
+    max-height: 26px;
+    height: 26px;  
+    font-size: 18px;
+}
+
+IconVectorButton#IconVectorButton_Size28 {
+    min-width: 28px;
+    max-width: 28px;
+    width: 28px;
+    min-height: 28px;
+    max-height: 28px;
+    height: 28px;  
+    font-size: 20px;
+}
+
+IconVectorButton#IconVectorButton_Size24RoundBg {
+    border-radius: 12px;
+    background-color: #ebebeb;
+    min-width: 24px;
+    max-width: 24px;
+    width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    height: 24px;  
+    font-size: 16px;
+    padding-bottom: 1px;/* text有点偏下，调整一下 */
+}
+
+IconVectorButton#IconVectorButton_Size26RoundBg {
+    border-radius: 13px;
+    background-color: #ebebeb;
+    min-width: 26px;
+    max-width: 26px;
+    width: 26px;
+    min-height: 26px;
+    max-height: 26px;
+    height: 26px;  
+    font-size: 18px;
+    padding-bottom: 1px;/* text有点偏下，调整一下 */
+}
+
+IconVectorButton#IconVectorButton_Size28RoundBg {
+    border-radius: 14px;
+    background-color: #ebebeb;
+    min-width: 28px;
+    max-width: 28px;
+    width: 28px;
+    min-height: 28px;
+    max-height: 28px;
+    height: 28px;  
+    font-size: 20px;
+}

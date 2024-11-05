@@ -153,3 +153,11 @@ private:
     int m_nLeftRightSpacing = 4;
     int m_nIconTextSpacing = 2;
 };
+
+class QTMATERIAL_EXPORT IconVectorButton : public QPushButton {
+    Q_OBJECT
+public:
+    IconVectorButton(QWidget *parent = nullptr);
+    ~IconVectorButton() override {
+    }
+};

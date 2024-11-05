@@ -294,3 +294,7 @@ QPixmap HorIconTextButton::getCurrentPixmap() const {
         default: return m_pixmapNormal;
     }
 }
+
+IconVectorButton::IconVectorButton(QWidget *parent) :
+    QPushButton(parent) {
+}

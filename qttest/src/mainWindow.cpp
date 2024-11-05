@@ -12,7 +12,7 @@ using QtTestDemo = enum {
     QtTestDemoTranslucent,
     QtTestDemoLayoutMacBug,
     QtTestDemoLanguageChangeTest,
-    QtTestDemoIconFontTest,
+    QtTestDemo666,
     QtTestDemo777,
     QtTestDemo888,
     QtTestDemo999,
@@ -32,7 +32,7 @@ using QtmaterialCoreDemo = enum {
 };
 
 using QtmaterialControlDemo = enum {
-    QtmaterialControlDemo000 = 5000,
+    QtmaterialControlButtonTest = 5000,
     QtmaterialControlDemo111,
     QtmaterialControlDemo222,
     QtmaterialControlDemo333,
@@ -123,7 +123,7 @@ void MainWindow::setQtTestDemoBtns(QWidget *w) {
     demoMap.insert(QtTestDemo::QtTestDemoTranslucent, "Translucent");
     demoMap.insert(QtTestDemo::QtTestDemoLayoutMacBug, "LayoutMacBug");
     demoMap.insert(QtTestDemo::QtTestDemoLanguageChangeTest, "LanguageChangeTest");
-    demoMap.insert(QtTestDemo::QtTestDemoIconFontTest, "IconFontTest");
+    demoMap.insert(QtTestDemo::QtTestDemo666, "666");
     demoMap.insert(QtTestDemo::QtTestDemo777, "777");
     demoMap.insert(QtTestDemo::QtTestDemo888, "888");
     demoMap.insert(QtTestDemo::QtTestDemo999, "999");
@@ -173,7 +173,7 @@ void MainWindow::setQtmaterialCoreDemoBtns(QWidget *w) {
 void MainWindow::setQtmaterialControlDemoBtns(QWidget *w) {
     auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
-    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo000, "000");
+    demoMap.insert(QtmaterialControlDemo::QtmaterialControlButtonTest, "Button Test");
     demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo111, "111");
     demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo222, "222");
     demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo333, "333");
@@ -274,8 +274,7 @@ void MainWindow::test(int id) {
     case QtTestDemo::QtTestDemoLanguageChangeTest:
         languageChangeTestShow();
         break;
-    case QtTestDemo::QtTestDemoIconFontTest:
-        iconFontTestShow();
+    case QtTestDemo::QtTestDemo666:
         break;
     case QtTestDemo::QtTestDemo777:
         break;
@@ -309,7 +308,8 @@ void MainWindow::test(int id) {
     }
 
     switch (id) {
-    case QtmaterialControlDemo::QtmaterialControlDemo000:
+    case QtmaterialControlDemo::QtmaterialControlButtonTest:
+        buttonTestShow();
         break;
     case QtmaterialControlDemo::QtmaterialControlDemo111:
         break;
@@ -418,9 +418,9 @@ void MainWindow::languageChangeTestShow() {
     languagechange_widget_->show();
 }
 
-void MainWindow::iconFontTestShow() {
-    if (!m_pIconFontTestWidget) {
-        m_pIconFontTestWidget = new IconFontTestWidget();
+void MainWindow::buttonTestShow() {
+    if (!m_pButtonTestWidget) {
+        m_pButtonTestWidget = new ButtonTestWidget();
     }
-    m_pIconFontTestWidget->show();
+    m_pButtonTestWidget->show();
 }
