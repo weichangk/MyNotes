@@ -3,7 +3,7 @@
 #include <QPushbutton>
 #include <QMap>
 #include <QVariant>
-#include "control/flowlayout.h"
+#include "widget/flowlayout.h"
 
 using QtTestDemo = enum {
     QtTestDemoDialog = 0,
@@ -115,7 +115,7 @@ void MainWindow::createUi() {
 }
 
 void MainWindow::setQtTestDemoBtns(QWidget *w) {
-    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
+    auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
     demoMap.insert(QtTestDemo::QtTestDemoDialog, "Dialog");
     demoMap.insert(QtTestDemo::QtTestDemoPainter, "Painter");
@@ -143,7 +143,7 @@ void MainWindow::setQtTestDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setQtmaterialCoreDemoBtns(QWidget *w) {
-    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
+    auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
     demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo000, "000");
     demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo111, "111");
@@ -171,7 +171,7 @@ void MainWindow::setQtmaterialCoreDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setQtmaterialControlDemoBtns(QWidget *w) {
-    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
+    auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
     demoMap.insert(QtmaterialControlDemo::QtmaterialControlButtonTest, "Button Test");
     demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo111, "111");
@@ -199,7 +199,7 @@ void MainWindow::setQtmaterialControlDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setQtmaterialComponentDemoBtns(QWidget *w) {
-    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
+    auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
     demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo000, "000");
     demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo111, "111");
@@ -227,7 +227,7 @@ void MainWindow::setQtmaterialComponentDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setQtmaterialOsxDemoBtns(QWidget *w) {
-    auto demoFlowLayout = new FlowLayout(w, 4, 4, 4);
+    auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
     demoMap.insert(QtmaterialOsxDemo::QtmaterialOsxDemo000, "000");
     demoMap.insert(QtmaterialOsxDemo::QtmaterialOsxDemo111, "111");
