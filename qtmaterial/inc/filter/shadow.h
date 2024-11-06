@@ -1,11 +1,12 @@
 #pragma once
 #include "qtmaterial_global.h"
 
-class QTMATERIAL_EXPORT ShadowExt : public QObject {
+namespace filter {
+class QTMATERIAL_EXPORT Shadow : public QObject {
     Q_OBJECT
 public:
-    ShadowExt(QWidget *parent);
-    ~ShadowExt();
+    Shadow(QWidget *parent);
+    ~Shadow();
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event);
@@ -19,3 +20,4 @@ private:
     QPixmap m_pixmap;
     QPixmap m_maskPixmap;
 };
+} // namespace filter

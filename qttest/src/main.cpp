@@ -5,14 +5,12 @@
 #include "core/theme.h"
 #include "core/font.h"
 
-using namespace core;
-
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-    Lang::getInstance()->setSysLangLocale();
-    Theme::setTheme(Theme::LIGHT);
-    Font::setFont(Font::ROBOTO_REGULAR);
-    Font::setIconFont(Font::IconFont);
+    core::Lang::getInstance()->setSysLangLocale();
+    core::Theme::setTheme(core::Theme::LIGHT);
+    core::Font::setFont(core::Font::ROBOTO_REGULAR);
+    core::Font::setIconFont(core::Font::IconFont);
     MainWindow w;
     w.show();
     return a.exec();

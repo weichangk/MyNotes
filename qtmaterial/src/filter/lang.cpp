@@ -1,21 +1,21 @@
-#include "core/languagechange.h"
+#include "filter/lang.h"
 #include <QEvent>
 
-namespace core {
-LanguageChange::LanguageChange(QObject *parent) :
+namespace filter {
+Lang::Lang(QObject *parent) :
     QObject(parent), watched_(parent) {
     watched_->installEventFilter(this);
 }
 
-LanguageChange::~LanguageChange() {
+Lang::~Lang() {
 }
 
-bool LanguageChange::eventFilter(QObject *watched, QEvent *event) {
+bool Lang::eventFilter(QObject *watched, QEvent *event) {
     if (watched_ == watched) {
         if (event->type() == QEvent::LanguageChange) {
-            emit sigLanguageChanged();
+            emit sigLanguageChange();
         }
     }
     return QObject::eventFilter(watched, event);
 }
-} // namespace core
+} // namespace filter

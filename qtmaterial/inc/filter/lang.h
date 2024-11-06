@@ -1,16 +1,16 @@
 #pragma once
 #include "qtmaterial_global.h"
 
-namespace core {
-class QTMATERIAL_EXPORT LanguageChange : public QObject {
+namespace filter {
+class QTMATERIAL_EXPORT Lang : public QObject {
     Q_OBJECT
 
 public:
-    LanguageChange(QObject *parent);
-    ~LanguageChange();
+    Lang(QObject *parent);
+    ~Lang();
 
 Q_SIGNALS:
-    void sigLanguageChanged();
+    void sigLanguageChange();
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event);
@@ -18,4 +18,4 @@ protected:
 private:
     QObject *watched_ = nullptr;
 };
-} // namespace core
+} // namespace filter

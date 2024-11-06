@@ -1,14 +1,16 @@
 #pragma once
 #include "qtmaterial_global.h"
 
-class QTMATERIAL_EXPORT ToolExt : public QObject {
+namespace filter {
+class QTMATERIAL_EXPORT Tool : public QObject {
     Q_OBJECT
 public:
-    explicit ToolExt(QWidget *parent);
-    ~ToolExt() override {
+    explicit Tool(QWidget *parent);
+    ~Tool() override {
     }
     bool eventFilter(QObject *watched, QEvent *event);
 
 private:
     QWidget *m_pWatchedObj = nullptr;
 };
+} // namespace filter

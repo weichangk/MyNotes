@@ -1,15 +1,16 @@
-#include "extension/toolext.h"
+#include "filter/tool.h"
 #include <QApplication>
 #include <QMouseEvent>
 
-ToolExt::ToolExt(QWidget *parent) :
+namespace filter {
+Tool::Tool(QWidget *parent) :
     QObject(parent), m_pWatchedObj(parent) {
     setParent(m_pWatchedObj);
     m_pWatchedObj->setWindowFlags(m_pWatchedObj->windowFlags() | Qt::Tool);
     qApp->installEventFilter(this);
 }
 
-bool ToolExt::eventFilter(QObject *watched, QEvent *event) {
+bool Tool::eventFilter(QObject *watched, QEvent *event) {
     if (event->type() == QEvent::MouseButtonPress) {
         QMouseEvent *e = (QMouseEvent *)event;
         auto pos = m_pWatchedObj->mapFromGlobal(e->globalPos());
@@ -19,3 +20,4 @@ bool ToolExt::eventFilter(QObject *watched, QEvent *event) {
     }
     return QObject::eventFilter(watched, event);
 }
+} // namespace filter
