@@ -22,8 +22,7 @@ private:
     void setQtTestDemoBtns(QWidget *w);
 
     void setQtmaterialCoreDemoBtns(QWidget *w);
-    void setQtmaterialControlDemoBtns(QWidget *w);
-    void setQtmaterialComponentDemoBtns(QWidget *w);
+    void setQtmaterialWidgetDemoBtns(QWidget *w);
     void setQtmaterialOsxDemoBtns(QWidget *w);
     
     void test(int id);
@@ -36,7 +35,7 @@ private:
     void layoutMacBugShow();
     void languageChangeTestShow();;
 
-    // qtmaterial control
+    // qtmaterial widget
     void buttonTestShow();
 
 private:
@@ -46,8 +45,7 @@ private:
 
     QTabWidget *qtmaterial_tabwidget_ = nullptr;
     QWidget *qtmaterial_core_widget_ = nullptr;
-    QWidget *qtmaterial_control_widget_ = nullptr;
-    QWidget *qtmaterial_component_widget_ = nullptr;
+    QWidget *qtmaterial_widget_widget_ = nullptr;
     QWidget *qtmaterial_osx_widget_ = nullptr;
 
     // qttest
@@ -57,6 +55,6 @@ private:
     LayoutMacBugWidget *layoutmacbug_widget_ = nullptr;
     LanguageChangeTest *languagechange_widget_ = nullptr;
 
-    // qtmaterial control
+    // qtmaterial widget
     ButtonTestWidget *m_pButtonTestWidget = nullptr;
 };

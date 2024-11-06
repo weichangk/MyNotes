@@ -19,7 +19,7 @@ using QtTestDemo = enum {
 };
 
 using QtmaterialCoreDemo = enum {
-    QtmaterialCoreDemo000 = 4000,
+    QtmaterialCoreDemo000 = 1000,
     QtmaterialCoreDemo111,
     QtmaterialCoreDemo222,
     QtmaterialCoreDemo333,
@@ -31,34 +31,21 @@ using QtmaterialCoreDemo = enum {
     QtmaterialCoreDemo999,
 };
 
-using QtmaterialControlDemo = enum {
-    QtmaterialControlButtonTest = 5000,
-    QtmaterialControlDemo111,
-    QtmaterialControlDemo222,
-    QtmaterialControlDemo333,
-    QtmaterialControlDemo444,
-    QtmaterialControlDemo555,
-    QtmaterialControlDemo666,
-    QtmaterialControlDemo777,
-    QtmaterialControlDemo888,
-    QtmaterialControlDemo999,
-};
-
-using QtmaterialComponentDemo = enum {
-    QtmaterialComponentDemo000 = 5000,
-    QtmaterialComponentDemo111,
-    QtmaterialComponentDemo222,
-    QtmaterialComponentDemo333,
-    QtmaterialComponentDemo444,
-    QtmaterialComponentDemo555,
-    QtmaterialComponentDemo666,
-    QtmaterialComponentDemo777,
-    QtmaterialComponentDemo888,
-    QtmaterialComponentDemo999,
+using QtmaterialWidgetDemo = enum {
+    QtmaterialWidgetButtonTest = 2000,
+    QtmaterialWidgetDemo111,
+    QtmaterialWidgetDemo222,
+    QtmaterialWidgetDemo333,
+    QtmaterialWidgetDemo444,
+    QtmaterialWidgetDemo555,
+    QtmaterialWidgetDemo666,
+    QtmaterialWidgetDemo777,
+    QtmaterialWidgetDemo888,
+    QtmaterialWidgetDemo999,
 };
 
 using QtmaterialOsxDemo = enum {
-    QtmaterialOsxDemo000 = 7000,
+    QtmaterialOsxDemo000 = 3000,
     QtmaterialOsxDemo111,
     QtmaterialOsxDemo222,
     QtmaterialOsxDemo333,
@@ -97,20 +84,17 @@ void MainWindow::createUi() {
     main_tabwidget_->addTab(qtmaterial_tabwidget_, "qtmaterial");
 
     qtmaterial_core_widget_ = new QWidget();
-    qtmaterial_control_widget_ = new QWidget();
-    qtmaterial_component_widget_ = new QWidget();
+    qtmaterial_widget_widget_ = new QWidget();
     qtmaterial_osx_widget_ = new QWidget();
 
     qtmaterial_tabwidget_->addTab(qtmaterial_core_widget_, "core");
-    qtmaterial_tabwidget_->addTab(qtmaterial_control_widget_, "control");
-    qtmaterial_tabwidget_->addTab(qtmaterial_component_widget_, "component");
+    qtmaterial_tabwidget_->addTab(qtmaterial_widget_widget_, "widget");
     qtmaterial_tabwidget_->addTab(qtmaterial_osx_widget_, "osx");
 
     setQtTestDemoBtns(qttest_widget_);
 
     setQtmaterialCoreDemoBtns(qtmaterial_core_widget_);
-    setQtmaterialControlDemoBtns(qtmaterial_control_widget_);
-    setQtmaterialComponentDemoBtns(qtmaterial_component_widget_);
+    setQtmaterialWidgetDemoBtns(qtmaterial_widget_widget_);
     setQtmaterialOsxDemoBtns(qtmaterial_osx_widget_);
 }
 
@@ -170,56 +154,28 @@ void MainWindow::setQtmaterialCoreDemoBtns(QWidget *w) {
     }
 }
 
-void MainWindow::setQtmaterialControlDemoBtns(QWidget *w) {
+void MainWindow::setQtmaterialWidgetDemoBtns(QWidget *w) {
     auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
-    demoMap.insert(QtmaterialControlDemo::QtmaterialControlButtonTest, "Button Test");
-    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo111, "111");
-    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo222, "222");
-    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo333, "333");
-    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo444, "444");
-    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo555, "555");
-    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo666, "666");
-    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo777, "777");
-    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo888, "888");
-    demoMap.insert(QtmaterialControlDemo::QtmaterialControlDemo999, "999");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetButtonTest, "Button Test");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo111, "111");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo222, "222");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo333, "333");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo444, "444");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo555, "555");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo666, "666");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo777, "777");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo888, "888");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo999, "999");
 
     QMap<int, QString>::Iterator iter;
     for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
         QPushButton *btn = new QPushButton(this);
         btn->setFixedSize(160, 24);
         btn->setText(iter.value());
-        btn->setProperty("QtmaterialControlDemo_Id", iter.key());
+        btn->setProperty("QtmaterialWidgetDemo_Id", iter.key());
         connect(btn, &QPushButton::clicked, this, [this, btn]() {
-            int id = btn->property("QtmaterialControlDemo_Id").toInt();
-            test(id);
-        });
-        demoFlowLayout->addWidget(btn);
-    }
-}
-
-void MainWindow::setQtmaterialComponentDemoBtns(QWidget *w) {
-    auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
-    QMap<int, QString> demoMap;
-    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo000, "000");
-    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo111, "111");
-    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo222, "222");
-    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo333, "333");
-    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo444, "444");
-    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo555, "555");
-    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo666, "666");
-    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo777, "777");
-    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo888, "888");
-    demoMap.insert(QtmaterialComponentDemo::QtmaterialComponentDemo999, "999");
-
-    QMap<int, QString>::Iterator iter;
-    for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
-        QPushButton *btn = new QPushButton(this);
-        btn->setFixedSize(160, 24);
-        btn->setText(iter.value());
-        btn->setProperty("QtmaterialComponentDemo_Id", iter.key());
-        connect(btn, &QPushButton::clicked, this, [this, btn]() {
-            int id = btn->property("QtmaterialComponentDemo_Id").toInt();
+            int id = btn->property("QtmaterialWidgetDemo_Id").toInt();
             test(id);
         });
         demoFlowLayout->addWidget(btn);
@@ -308,49 +264,26 @@ void MainWindow::test(int id) {
     }
 
     switch (id) {
-    case QtmaterialControlDemo::QtmaterialControlButtonTest:
+    case QtmaterialWidgetDemo::QtmaterialWidgetButtonTest:
         buttonTestShow();
         break;
-    case QtmaterialControlDemo::QtmaterialControlDemo111:
+    case QtmaterialWidgetDemo::QtmaterialWidgetDemo111:
         break;
-    case QtmaterialControlDemo::QtmaterialControlDemo222:
+    case QtmaterialWidgetDemo::QtmaterialWidgetDemo222:
         break;
-    case QtmaterialControlDemo::QtmaterialControlDemo333:
+    case QtmaterialWidgetDemo::QtmaterialWidgetDemo333:
         break;
-    case QtmaterialControlDemo::QtmaterialControlDemo444:
+    case QtmaterialWidgetDemo::QtmaterialWidgetDemo444:
         break;
-    case QtmaterialControlDemo::QtmaterialControlDemo555:
+    case QtmaterialWidgetDemo::QtmaterialWidgetDemo555:
         break;
-    case QtmaterialControlDemo::QtmaterialControlDemo666:
+    case QtmaterialWidgetDemo::QtmaterialWidgetDemo666:
         break;
-    case QtmaterialControlDemo::QtmaterialControlDemo777:
+    case QtmaterialWidgetDemo::QtmaterialWidgetDemo777:
         break;
-    case QtmaterialControlDemo::QtmaterialControlDemo888:
+    case QtmaterialWidgetDemo::QtmaterialWidgetDemo888:
         break;
-    case QtmaterialControlDemo::QtmaterialControlDemo999:
-        break;
-    }
-
-    switch (id) {
-    case QtmaterialComponentDemo::QtmaterialComponentDemo000:
-        break;
-    case QtmaterialComponentDemo::QtmaterialComponentDemo111:
-        break;
-    case QtmaterialComponentDemo::QtmaterialComponentDemo222:
-        break;
-    case QtmaterialComponentDemo::QtmaterialComponentDemo333:
-        break;
-    case QtmaterialComponentDemo::QtmaterialComponentDemo444:
-        break;
-    case QtmaterialComponentDemo::QtmaterialComponentDemo555:
-        break;
-    case QtmaterialComponentDemo::QtmaterialComponentDemo666:
-        break;
-    case QtmaterialComponentDemo::QtmaterialComponentDemo777:
-        break;
-    case QtmaterialComponentDemo::QtmaterialComponentDemo888:
-        break;
-    case QtmaterialComponentDemo::QtmaterialComponentDemo999:
+    case QtmaterialWidgetDemo::QtmaterialWidgetDemo999:
         break;
     }
 
