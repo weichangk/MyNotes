@@ -11,7 +11,7 @@ namespace filter {
 Shadow::Shadow(QWidget *parent) :
     QObject(nullptr),
     m_parentWidget(parent) {
-    m_pixmap = QPixmap(QString(":/%1/shadowext/shadow.png").arg(core::Theme::currentTheme()));
+    m_pixmap = QPixmap(QString(":/%1/shadow/shadow.png").arg(core::Theme::currentTheme()));
     setParent(m_parentWidget);
     m_parentWidget->installEventFilter(this);
     if (auto dlg = qobject_cast<QDialog *>(m_parentWidget)) {
