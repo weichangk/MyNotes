@@ -82,18 +82,12 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     color: rgba(102, 100, 107, 1);
 }
 
-IconVectorButton {
+#IconVectorButton_Size24 {
     border: none;
     background-color: transparent;
     color:#313131; 
     text-align: center;
-}
 
-IconVectorButton:hover {
-    color:#000000; 
-}
-
-IconVectorButton#IconVectorButton_Size24 {
     min-width: 24px;
     max-width: 24px;
     width: 24px;
@@ -103,7 +97,16 @@ IconVectorButton#IconVectorButton_Size24 {
     font-size: 16px;
 }
 
-IconVectorButton#IconVectorButton_Size26 {
+#IconVectorButton_Size24:hover {
+    color:#000000; 
+}
+
+#IconVectorButton_Size26 {
+    border: none;
+    background-color: transparent;
+    color:#313131; 
+    text-align: center;
+
     min-width: 26px;
     max-width: 26px;
     width: 26px;
@@ -113,7 +116,16 @@ IconVectorButton#IconVectorButton_Size26 {
     font-size: 18px;
 }
 
-IconVectorButton#IconVectorButton_Size28 {
+#IconVectorButton_Size26:hover {
+    color:#000000; 
+}
+
+#IconVectorButton_Size28 {
+    border: none;
+    background-color: transparent;
+    color:#313131; 
+    text-align: center;
+
     min-width: 28px;
     max-width: 28px;
     width: 28px;
@@ -123,7 +135,16 @@ IconVectorButton#IconVectorButton_Size28 {
     font-size: 20px;
 }
 
-IconVectorButton#IconVectorButton_Size24RoundBg {
+#IconVectorButton_Size28:hover {
+    color:#000000; 
+}
+
+#IconVectorButton_Size24RoundBg {
+    border: none;
+    background-color: transparent;
+    color:#313131; 
+    text-align: center;
+
     border-radius: 12px;
     background-color: #ebebeb;
     min-width: 24px;
@@ -136,7 +157,16 @@ IconVectorButton#IconVectorButton_Size24RoundBg {
     padding-bottom: 1px;/* text有点偏下，调整一下 */
 }
 
-IconVectorButton#IconVectorButton_Size26RoundBg {
+#IconVectorButton_Size24RoundBg:hover {
+    color:#000000; 
+}
+
+#IconVectorButton_Size26RoundBg {
+    border: none;
+    background-color: transparent;
+    color:#313131; 
+    text-align: center;
+
     border-radius: 13px;
     background-color: #ebebeb;
     min-width: 26px;
@@ -149,7 +179,16 @@ IconVectorButton#IconVectorButton_Size26RoundBg {
     padding-bottom: 1px;/* text有点偏下，调整一下 */
 }
 
-IconVectorButton#IconVectorButton_Size28RoundBg {
+#IconVectorButton_Size26RoundBg:hover {
+    color:#000000; 
+}
+
+#IconVectorButton_Size28RoundBg {
+    border: none;
+    background-color: transparent;
+    color:#313131; 
+    text-align: center;
+
     border-radius: 14px;
     background-color: #ebebeb;
     min-width: 28px;
@@ -159,4 +198,8 @@ IconVectorButton#IconVectorButton_Size28RoundBg {
     max-height: 28px;
     height: 28px;  
     font-size: 20px;
+}
+
+#IconVectorButton_Size28RoundBg:hover {
+    color:#000000; 
 }
