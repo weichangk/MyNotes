@@ -19,7 +19,7 @@ using QtTestDemo = enum {
 };
 
 using QtmaterialCoreDemo = enum {
-    QtmaterialCoreDemo000 = 1000,
+    QtmaterialCoreDemoDefineTest = 1000,
     QtmaterialCoreDemo111,
     QtmaterialCoreDemo222,
     QtmaterialCoreDemo333,
@@ -129,7 +129,7 @@ void MainWindow::setQtTestDemoBtns(QWidget *w) {
 void MainWindow::setQtmaterialCoreDemoBtns(QWidget *w) {
     auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
-    demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo000, "000");
+    demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemoDefineTest, "Define Test");
     demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo111, "111");
     demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo222, "222");
     demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo333, "333");
@@ -241,7 +241,8 @@ void MainWindow::test(int id) {
     }
 
     switch (id) {
-    case QtmaterialCoreDemo::QtmaterialCoreDemo000:
+    case QtmaterialCoreDemo::QtmaterialCoreDemoDefineTest:
+        defineTestShow();
         break;
     case QtmaterialCoreDemo::QtmaterialCoreDemo111:
         break;
@@ -349,6 +350,13 @@ void MainWindow::languageChangeTestShow() {
         languagechange_widget_ = new LanguageChangeTest();
     }
     languagechange_widget_->show();
+}
+
+void MainWindow::defineTestShow() {
+    if (!m_pDefineTestWidget) {
+        m_pDefineTestWidget = new DefineTestWidget();
+    }
+    m_pDefineTestWidget->show();
 }
 
 void MainWindow::buttonTestShow() {

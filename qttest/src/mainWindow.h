@@ -7,6 +7,7 @@
 #include "test/translucentbackground.h"
 #include "test/layout.h"
 #include "test/languagechange.h"
+#include "qtmaterial/core/definetest.h"
 #include "qtmaterial/widget/buttontest.h"
 
 class MainWindow : public QWidget {
@@ -35,6 +36,9 @@ private:
     void layoutMacBugShow();
     void languageChangeTestShow();;
 
+    // qtmaterial core
+    void defineTestShow();
+
     // qtmaterial widget
     void buttonTestShow();
 
@@ -54,6 +58,9 @@ private:
     TranslucentBackgroundWidget *translucent_widget_ = nullptr;
     LayoutMacBugWidget *layoutmacbug_widget_ = nullptr;
     LanguageChangeTest *languagechange_widget_ = nullptr;
+
+    // qtmaterial core
+    DefineTestWidget *m_pDefineTestWidget = nullptr;
 
     // qtmaterial widget
     ButtonTestWidget *m_pButtonTestWidget = nullptr;
