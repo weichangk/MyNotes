@@ -7,7 +7,7 @@
 #include "test/translucentbackground.h"
 #include "test/layout.h"
 #include "test/languagechange.h"
-#include "qtmaterial/control/buttontest.h"
+#include "qtmaterial/widget/buttontest.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
