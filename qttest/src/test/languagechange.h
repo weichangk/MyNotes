@@ -3,7 +3,9 @@
 #include <QComboBox>
 #include <QLabel>
 #include <QPushButton>
-#include "helper/languagechangehelper.h"
+#include "core/languagechange.h"
+
+using namespace core;
 
 class LanguageChangeTest : public QWidget {
     Q_OBJECT
@@ -23,5 +25,5 @@ private slots:
 private:
     QComboBox *lang_combox_ = nullptr;
     QLabel *label_ = nullptr;
-    LanguageChangeHelper *lang_helper_ = nullptr;
+    LanguageChange *lang_helper_ = nullptr;
 };

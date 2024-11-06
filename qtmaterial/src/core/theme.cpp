@@ -1,9 +1,10 @@
-#include "helper/themehelper.h"
+#include "core/theme.h"
 
 #include <QApplication>
 #include <QDirIterator>
 
-QString ThemeHelper::themeEnumToString(ThemeEnum e) {
+namespace core {
+QString Theme::themeEnumToString(ThemeEnum e) {
     switch (e) {
     case LIGHT: return "light";
     case DARK: return "dark";
@@ -11,26 +12,26 @@ QString ThemeHelper::themeEnumToString(ThemeEnum e) {
     }
 }
 
-ThemeHelper::ThemeEnum ThemeHelper::stringToThemeEnum(const QString& s) {
+Theme::ThemeEnum Theme::stringToThemeEnum(const QString &s) {
     if (s == "dark") return DARK;
     return LIGHT;
 }
 
-void ThemeHelper::setTheme(ThemeEnum theme) {
+void Theme::setTheme(ThemeEnum theme) {
     m_strCurrentTheme = themeEnumToString(theme);
     setStyleToApp(":/qss/" + m_strCurrentTheme);
 }
 
-QString ThemeHelper::currentTheme() {
+QString Theme::currentTheme() {
     return m_strCurrentTheme;
 }
 
-void ThemeHelper::setStyleToApp(const QString &qssFolder) {
+void Theme::setStyleToApp(const QString &qssFolder) {
     QString allStyle;
     QDirIterator it(qssFolder, QDirIterator::Subdirectories);
     while (it.hasNext()) {
         it.next();
-        if (it.fileInfo().isFile()  && it.fileInfo().suffix() == "qss") {
+        if (it.fileInfo().isFile() && it.fileInfo().suffix() == "qss") {
             QString path = it.filePath();
             QFile file(path);
             file.open(QIODevice::ReadOnly);
@@ -44,4 +45,5 @@ void ThemeHelper::setStyleToApp(const QString &qssFolder) {
     qApp->setStyleSheet(allStyle);
 }
 
-QString ThemeHelper::m_strCurrentTheme = ThemeHelper::themeEnumToString(LIGHT);
+QString Theme::m_strCurrentTheme = Theme::themeEnumToString(LIGHT);
+} // namespace core

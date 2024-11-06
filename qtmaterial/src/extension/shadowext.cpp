@@ -1,5 +1,5 @@
 #include "extension/shadowext.h"
-#include "helper/themehelper.h"
+#include "core/theme.h"
 
 #include <QDialog>
 #include <QEvent>
@@ -7,10 +7,12 @@
 #include <QApplication>
 #include <QPainter>
 
+using namespace core;
+
 ShadowExt::ShadowExt(QWidget *parent) :
     QObject(nullptr),
     m_parentWidget(parent) {
-    m_pixmap = QPixmap(QString(":/%1/shadowext/shadow.png").arg(ThemeHelper::currentTheme()));
+    m_pixmap = QPixmap(QString(":/%1/shadowext/shadow.png").arg(Theme::currentTheme()));
     setParent(m_parentWidget);
     m_parentWidget->installEventFilter(this);
     if (auto dlg = qobject_cast<QDialog *>(m_parentWidget)) {

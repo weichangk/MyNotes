@@ -1,5 +1,6 @@
 #pragma once
 
+namespace core {
 template <class T>
 class Singlton {
 protected:
@@ -27,3 +28,4 @@ private:
 };
 template <class T>
 T *Singlton<T>::m_ins = 0;
+} // namespace core

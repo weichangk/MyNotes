@@ -1,10 +1,11 @@
-#include "helper/loghelper.h"
+#include "core/log.h"
 #include <QDateTime>
 #include <QFile>
 #include <QMutex>
 #include <QTextStream>
 
-void LogHelper::outputMessage(QtMsgType type, const QMessageLogContext &context, const QString &msg) {
+namespace core {
+void Log::outputMessage(QtMsgType type, const QMessageLogContext &context, const QString &msg) {
     QString contextInfo = QString("File:(%1) Line:(%2)").arg(QString(context.file)).arg(context.line);
     QString currentDateTime = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss ddd");
     QString currentDate = QString("(%1)").arg(currentDateTime);
@@ -51,7 +52,7 @@ void LogHelper::outputMessage(QtMsgType type, const QMessageLogContext &context,
     }
 }
 
-void LogHelper::writeLine(QString logFileName, QString logMessage) {
+void Log::writeLine(QString logFileName, QString logMessage) {
     QFile file(logFileName);
     file.open(QIODevice::WriteOnly | QIODevice::Append);
     QTextStream textStream(&file);
@@ -60,7 +61,7 @@ void LogHelper::writeLine(QString logFileName, QString logMessage) {
     file.close();
 }
 
-void LogHelper::log(QString logFileName, QString logMessage) {
+void Log::log(QString logFileName, QString logMessage) {
     static QMutex mutex;
     mutex.lock();
 
@@ -76,3 +77,4 @@ void LogHelper::log(QString logFileName, QString logMessage) {
 
     mutex.unlock();
 }
+} // namespace core

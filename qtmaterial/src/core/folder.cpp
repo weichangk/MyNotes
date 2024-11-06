@@ -1,7 +1,8 @@
-#include "helper/folderhelper.h"
+#include "core/folder.h"
 #include <QDir>
 
-bool FolderHelper::addFolder(const QString &folderPath) {
+namespace core {
+bool Folder::addFolder(const QString &folderPath) {
     if (!folderExists(folderPath)) {
         QDir dir;
         if (dir.mkdir(folderPath)) {
@@ -11,7 +12,7 @@ bool FolderHelper::addFolder(const QString &folderPath) {
     return false;
 }
 
-bool FolderHelper::removeFolder(const QString &folderPath) {
+bool Folder::removeFolder(const QString &folderPath) {
     if (folderExists(folderPath)) {
         QDir dir(folderPath);
         if (dir.rmpath(folderPath)) {
@@ -21,7 +22,8 @@ bool FolderHelper::removeFolder(const QString &folderPath) {
     return false;
 }
 
-bool FolderHelper::folderExists(const QString &folderPath) {
+bool Folder::folderExists(const QString &folderPath) {
     QDir dir(folderPath);
     return dir.exists();
 }
+} // namespace core

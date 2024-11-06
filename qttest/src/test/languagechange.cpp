@@ -1,6 +1,8 @@
 #include "languagechange.h"
 #include <QHBoxLayout>
-#include "helper/langhelper.h"
+#include "core/lang.h"
+
+using namespace core;
 
 LanguageChangeTest::LanguageChangeTest(QWidget *parent) :
     QWidget(parent) {
@@ -13,7 +15,7 @@ LanguageChangeTest::~LanguageChangeTest() {
 }
 
 void LanguageChangeTest::createUi() {
-    lang_helper_ = new LanguageChangeHelper(this);
+    lang_helper_ = new LanguageChange(this);
     
     setWindowTitle("Language Change Test");
     setFixedSize(800, 600);
@@ -34,7 +36,7 @@ void LanguageChangeTest::createUi() {
 }
 
 void LanguageChangeTest::sigConnect() {
-    connect(lang_helper_, &LanguageChangeHelper::sigLanguageChanged,
+    connect(lang_helper_, &LanguageChange::sigLanguageChanged,
             this, &LanguageChangeTest::slotLanguageChanged);
 
     connect(lang_combox_, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
@@ -48,13 +50,13 @@ void LanguageChangeTest::slotLanguageChanged() {
 void LanguageChangeTest::slotLangComboxIndexChanged(int index) {
     switch (index) {
     case 0:
-        LangHelper::getInstance()->setLangLocale(LangLocale::lang_locale_zh);
+        Lang::getInstance()->setLangLocale(LangLocale::lang_locale_zh);
         break;
     case 1:
-        LangHelper::getInstance()->setLangLocale(LangLocale::lang_locale_en);
+        Lang::getInstance()->setLangLocale(LangLocale::lang_locale_en);
         break;
     default:
-        LangHelper::getInstance()->setLangLocale(LangLocale::lang_locale_zh);
+        Lang::getInstance()->setLangLocale(LangLocale::lang_locale_zh);
         break;
     }
 }

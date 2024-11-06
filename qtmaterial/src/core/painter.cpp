@@ -1,7 +1,8 @@
-#include "helper/painterhelper.h"
+#include "core/painter.h"
 #include <QPainterPath>
 
-void PainterHelper::paintPixmap(QPainter *painter, QRect rc, const QPixmap &pixmap, float devicPixelRatio, int radius, bool keepRadio) {
+namespace core {
+void Painter::paintPixmap(QPainter *painter, QRect rc, const QPixmap &pixmap, float devicPixelRatio, int radius, bool keepRadio) {
     if (pixmap.isNull()) {
         return;
     }
@@ -27,3 +28,4 @@ void PainterHelper::paintPixmap(QPainter *painter, QRect rc, const QPixmap &pixm
     painter->drawPixmap(drawRc, pixmapTemp);
     painter->restore();
 }
+} // namespace core

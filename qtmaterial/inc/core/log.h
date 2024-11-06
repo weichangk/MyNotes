@@ -1,7 +1,8 @@
 #pragma once
 #include "qtmaterial_global.h"
 
-class QTMATERIAL_EXPORT LogHelper {
+namespace core {
+class QTMATERIAL_EXPORT Log {
 public:
     static void outputMessage(QtMsgType type, const QMessageLogContext &context, const QString &msg);
 
@@ -13,3 +14,4 @@ private:
     static const bool m_bEnableTerminalLog = 1;
     static const bool m_bEnableFileLog = 1;
 };
+} // namespace core

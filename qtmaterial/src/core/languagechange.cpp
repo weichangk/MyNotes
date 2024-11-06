@@ -1,15 +1,16 @@
-#include "helper/languagechangehelper.h"
+#include "core/languagechange.h"
 #include <QEvent>
 
-LanguageChangeHelper::LanguageChangeHelper(QObject *parent) :
+namespace core {
+LanguageChange::LanguageChange(QObject *parent) :
     QObject(parent), watched_(parent) {
     watched_->installEventFilter(this);
 }
 
-LanguageChangeHelper::~LanguageChangeHelper() {
+LanguageChange::~LanguageChange() {
 }
 
-bool LanguageChangeHelper::eventFilter(QObject *watched, QEvent *event) {
+bool LanguageChange::eventFilter(QObject *watched, QEvent *event) {
     if (watched_ == watched) {
         if (event->type() == QEvent::LanguageChange) {
             emit sigLanguageChanged();
@@ -17,3 +18,4 @@ bool LanguageChangeHelper::eventFilter(QObject *watched, QEvent *event) {
     }
     return QObject::eventFilter(watched, event);
 }
+} // namespace core

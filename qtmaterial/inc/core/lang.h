@@ -2,6 +2,7 @@
 #include "qtmaterial_global.h"
 #include <QTranslator>
 
+namespace core {
 enum QTMATERIAL_EXPORT LangLocale {
     lang_locale_en,
     lang_locale_zh,
@@ -23,17 +24,17 @@ struct QTMATERIAL_EXPORT OneLang {
     void init(LangLocale lang);
 };
 
-class QTMATERIAL_EXPORT LangHelper : public QObject {
+class QTMATERIAL_EXPORT Lang : public QObject {
     Q_OBJECT
 public:
-    static LangHelper *getInstance();
-    ~LangHelper();
+    static Lang *getInstance();
+    ~Lang();
     static void release();
     void setSysLangLocale();
     void setLangLocale(LangLocale lang);
 
 protected:
-    LangHelper(QObject *parent = nullptr);
+    Lang(QObject *parent = nullptr);
     void init();
     void loadCurrentLang();
     void removeCurrentLang();
@@ -45,3 +46,4 @@ private:
     QList<OneLang *> m_lstLangs;
     LangLocale m_curLang;
 };
+} // namespace core

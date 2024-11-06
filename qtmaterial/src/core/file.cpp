@@ -1,19 +1,20 @@
-#include "helper/filehelper.h"
+#include "core/file.h"
 #include <QFile>
 #include <QDir>
 
-bool FileHelper::fileExists(const QString filePath) {
+namespace core {
+bool File::fileExists(const QString filePath) {
     QFile file(filePath);
     return file.exists();
 }
 
-QFileInfo FileHelper::fileInfo(const QString filePath) {
+QFileInfo File::fileInfo(const QString filePath) {
     QFile file(filePath);
     QFileInfo fileInfo(file);
     return fileInfo;
 }
 
-void FileHelper::renameIfExists(QString &filePath) {
+void File::renameIfExists(QString &filePath) {
     QFile file(filePath);
     QFileInfo fileInfo(file);
     if (file.exists()) {
@@ -30,7 +31,8 @@ void FileHelper::renameIfExists(QString &filePath) {
     }
 }
 
-QString FileHelper::joinPathAndFileName(const QString path, const QString fileName) {
+QString File::joinPathAndFileName(const QString path, const QString fileName) {
     QDir dir(path);
     return dir.filePath(fileName);
 }
+} // namespace core

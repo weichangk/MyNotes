@@ -1,12 +1,13 @@
 #pragma once
 #include "qtmaterial_global.h"
 
-class QTMATERIAL_EXPORT LanguageChangeHelper : public QObject {
+namespace core {
+class QTMATERIAL_EXPORT LanguageChange : public QObject {
     Q_OBJECT
 
 public:
-    LanguageChangeHelper(QObject *parent);
-    ~LanguageChangeHelper();
+    LanguageChange(QObject *parent);
+    ~LanguageChange();
 
 Q_SIGNALS:
     void sigLanguageChanged();
@@ -17,3 +18,4 @@ protected:
 private:
     QObject *watched_ = nullptr;
 };
+} // namespace core

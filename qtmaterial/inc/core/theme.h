@@ -1,7 +1,8 @@
 #pragma once
 #include "qtmaterial_global.h"
 
-class QTMATERIAL_EXPORT ThemeHelper {
+namespace core {
+class QTMATERIAL_EXPORT Theme {
 public:
     enum ThemeEnum {
         LIGHT = 0,
@@ -9,7 +10,7 @@ public:
     };
 
     static QString themeEnumToString(ThemeEnum);
-    static ThemeHelper::ThemeEnum stringToThemeEnum(const QString &);
+    static Theme::ThemeEnum stringToThemeEnum(const QString &);
 
     static void setTheme(ThemeEnum);
     static QString currentTheme();
@@ -20,3 +21,4 @@ private:
 private:
     static QString m_strCurrentTheme;
 };
+} // namespace core

@@ -2,8 +2,8 @@
 #include "qtmaterial_global.h"
 #include <QFont>
 
-class QTMATERIAL_EXPORT FontHelper {
-
+namespace core {
+class QTMATERIAL_EXPORT Font {
 public:
     enum FontEnum {
         ROBOTO_BLACK = 0,
@@ -43,3 +43,4 @@ private:
 private:
     static QFont m_currentIconFont;
 };
+} // namespace core

@@ -1,7 +1,8 @@
-#include "helper/langhelper.h"
+#include "core/lang.h"
 #include <QApplication>
 #include <QDir>
 
+namespace core {
 static const size_t g_nInfos = 2;
 static const LangConstInfo g_LangInfos[g_nInfos] = {
     {lang_locale_en, "en", "ENG", "en-us", "English"},
@@ -44,16 +45,16 @@ OneLang::~OneLang() {
     }
 }
 
-static LangHelper *m_instance = nullptr;
+static Lang *m_instance = nullptr;
 
-LangHelper *LangHelper::getInstance() {
+Lang *Lang::getInstance() {
     if (m_instance == nullptr) {
-        m_instance = new LangHelper;
+        m_instance = new Lang;
     }
     return m_instance;
 }
 
-LangHelper::LangHelper(QObject *parent) :
+Lang::Lang(QObject *parent) :
     QObject(parent) {
     QTranslator translator;
     QLocale locale = QLocale::system();
@@ -72,38 +73,38 @@ LangHelper::LangHelper(QObject *parent) :
     loadCurrentLang();
 }
 
-LangHelper::~LangHelper() {
+Lang::~Lang() {
     for (auto lang : m_lstLangs) {
         delete lang;
     }
 }
 
-void LangHelper::release() {
+void Lang::release() {
     if (m_instance) {
         delete m_instance;
         m_instance = nullptr;
     }
 }
 
-void LangHelper::setSysLangLocale() {
+void Lang::setSysLangLocale() {
     QLocale::setDefault((QLocale::Language)getQtLocale(m_curLang));
 }
 
-void LangHelper::setLangLocale(LangLocale lang) {
+void Lang::setLangLocale(LangLocale lang) {
     removeCurrentLang();
     m_curLang = lang;
     loadCurrentLang();
     QLocale::setDefault((QLocale::Language)getQtLocale(m_curLang));
 }
 
-void LangHelper::init() {
+void Lang::init() {
     for (auto langInfo : g_LangInfos) {
         OneLang *lang = new OneLang(langInfo.ll);
         m_lstLangs.push_back(lang);
     }
 }
 
-void LangHelper::loadCurrentLang() {
+void Lang::loadCurrentLang() {
     for (auto lang : m_lstLangs) {
         if (m_curLang == lang->m_lang) {
             for (auto translator : lang->m_lstTranslators) {
@@ -113,7 +114,7 @@ void LangHelper::loadCurrentLang() {
     }
 }
 
-void LangHelper::removeCurrentLang() {
+void Lang::removeCurrentLang() {
     for (auto lang : m_lstLangs) {
         if (m_curLang == lang->m_lang) {
             for (auto translator : lang->m_lstTranslators)
@@ -122,7 +123,7 @@ void LangHelper::removeCurrentLang() {
     }
 }
 
-int LangHelper::getQtLocale(LangLocale lang) {
+int Lang::getQtLocale(LangLocale lang) {
     switch (lang) {
     case lang_locale_en:
         return QLocale::English;
@@ -131,3 +132,4 @@ int LangHelper::getQtLocale(LangLocale lang) {
     }
     return QLocale::English;
 }
+} // namespace core
