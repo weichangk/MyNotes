@@ -33,32 +33,32 @@ QFont Font::currentIconFont() {
 
 QString Font::fontEnumToFontPath(FontEnum e) {
     switch (e) {
-    case ROBOTO_BLACK: return ":/fonts/Roboto-Black.ttf";
-    case ROBOTO_BLACKITALIC: return ":/fonts/Roboto-BlackItalic.ttf";
-    case ROBOTO_BOLD: return ":/fonts/Roboto-Bold.ttf";
-    case ROBOTO_BOLDITALIC: return ":/fonts/Roboto-BoldItalic.ttf";
-    case ROBOTO_ITALIC: return ":/fonts/Roboto-Italic.ttf";
-    case ROBOTO_LIGHT: return ":/fonts/Roboto-Light.ttf";
-    case ROBOTO_LIGHTITALIC: return ":/fonts/Roboto-LightItalic.ttf";
-    case ROBOTO_MEDIUM: return ":/fonts/Roboto-Medium.ttf";
-    case ROBOTO_MEDIUMITALIC: return ":/fonts/Roboto-MediumItalic.ttf";
-    case ROBOTO_REGULAR: return ":/fonts/Roboto-Regular.ttf";
-    case ROBOTO_THIN: return ":/fonts/Roboto-Thin.ttf";
-    case ROBOTO_THINITALIC: return ":/fonts/Roboto-ThinItalic.ttf";
-    case ROBOTOCONDENSED_BOLD: return ":/fonts/RobotoCondensed-Bold.ttf";
-    case ROBOTOCONDENSED_BOLDITALIC: return ":/fonts/RobotoCondensed-BoldItalic.ttf";
-    case ROBOTOCONDENSED_ITALIC: return ":/fonts/RobotoCondensed-Italic.ttf";
-    case ROBOTOCONDENSED_LIGHT: return ":/fonts/RobotoCondensed-Light.ttf";
-    case ROBOTOCONDENSED_LIGHTITALIC: return ":/fonts/RobotoCondensed-LightItalic.ttf";
-    case ROBOTOCONDENSED_REGULAR: return ":/fonts/RobotoCondensed-Regular.ttf";
-    default: return ":/fonts/Roboto-Regular.ttf";
+    case ROBOTO_BLACK: return ":/font/Roboto-Black.ttf";
+    case ROBOTO_BLACKITALIC: return ":/font/Roboto-BlackItalic.ttf";
+    case ROBOTO_BOLD: return ":/font/Roboto-Bold.ttf";
+    case ROBOTO_BOLDITALIC: return ":/font/Roboto-BoldItalic.ttf";
+    case ROBOTO_ITALIC: return ":/font/Roboto-Italic.ttf";
+    case ROBOTO_LIGHT: return ":/font/Roboto-Light.ttf";
+    case ROBOTO_LIGHTITALIC: return ":/font/Roboto-LightItalic.ttf";
+    case ROBOTO_MEDIUM: return ":/font/Roboto-Medium.ttf";
+    case ROBOTO_MEDIUMITALIC: return ":/font/Roboto-MediumItalic.ttf";
+    case ROBOTO_REGULAR: return ":/font/Roboto-Regular.ttf";
+    case ROBOTO_THIN: return ":/font/Roboto-Thin.ttf";
+    case ROBOTO_THINITALIC: return ":/font/Roboto-ThinItalic.ttf";
+    case ROBOTOCONDENSED_BOLD: return ":/font/RobotoCondensed-Bold.ttf";
+    case ROBOTOCONDENSED_BOLDITALIC: return ":/font/RobotoCondensed-BoldItalic.ttf";
+    case ROBOTOCONDENSED_ITALIC: return ":/font/RobotoCondensed-Italic.ttf";
+    case ROBOTOCONDENSED_LIGHT: return ":/font/RobotoCondensed-Light.ttf";
+    case ROBOTOCONDENSED_LIGHTITALIC: return ":/font/RobotoCondensed-LightItalic.ttf";
+    case ROBOTOCONDENSED_REGULAR: return ":/font/RobotoCondensed-Regular.ttf";
+    default: return ":/font/Roboto-Regular.ttf";
     }
 }
 
 QString Font::iconFontEnumToFontPath(IconFontEnum e) {
     switch (e) {
-    case IconFont: return ":/fonts/iconfont.ttf";
-    default: return ":/fonts/iconfont.ttf";
+    case IconFont: return ":/font/iconfont.ttf";
+    default: return ":/font/iconfont.ttf";
     }
 }
 
