@@ -82,7 +82,7 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     color: rgba(102, 100, 107, 1);
 }
 
-#IconVectorButton_Size24 {
+#VectorButton_Size24 {
     border: none;
     background-color: transparent;
     color:#313131; 
@@ -97,11 +97,11 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     font-size: 16px;
 }
 
-#IconVectorButton_Size24:hover {
+#VectorButton_Size24:hover {
     color:#000000; 
 }
 
-#IconVectorButton_Size26 {
+#VectorButton_Size26 {
     border: none;
     background-color: transparent;
     color:#313131; 
@@ -116,11 +116,11 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     font-size: 18px;
 }
 
-#IconVectorButton_Size26:hover {
+#VectorButton_Size26:hover {
     color:#000000; 
 }
 
-#IconVectorButton_Size28 {
+#VectorButton_Size28 {
     border: none;
     background-color: transparent;
     color:#313131; 
@@ -135,11 +135,11 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     font-size: 20px;
 }
 
-#IconVectorButton_Size28:hover {
+#VectorButton_Size28:hover {
     color:#000000; 
 }
 
-#IconVectorButton_Size24RoundBg {
+#VectorButton_Size24RoundBg {
     border: none;
     background-color: transparent;
     color:#313131; 
@@ -157,11 +157,11 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     padding-bottom: 1px;/* text有点偏下，调整一下 */
 }
 
-#IconVectorButton_Size24RoundBg:hover {
+#VectorButton_Size24RoundBg:hover {
     color:#000000; 
 }
 
-#IconVectorButton_Size26RoundBg {
+#VectorButton_Size26RoundBg {
     border: none;
     background-color: transparent;
     color:#313131; 
@@ -179,11 +179,11 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     padding-bottom: 1px;/* text有点偏下，调整一下 */
 }
 
-#IconVectorButton_Size26RoundBg:hover {
+#VectorButton_Size26RoundBg:hover {
     color:#000000; 
 }
 
-#IconVectorButton_Size28RoundBg {
+#VectorButton_Size28RoundBg {
     border: none;
     background-color: transparent;
     color:#313131; 
@@ -200,6 +200,6 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     font-size: 20px;
 }
 
-#IconVectorButton_Size28RoundBg:hover {
+#VectorButton_Size28RoundBg:hover {
     color:#000000; 
 }

@@ -296,7 +296,7 @@ QPixmap HorIconTextButton::getCurrentPixmap() const {
     }
 }
 
-IconVectorButton::IconVectorButton(QWidget *parent) :
+VectorButton::VectorButton(QWidget *parent) :
     QPushButton(parent) {
 }
 } // namespace widget
