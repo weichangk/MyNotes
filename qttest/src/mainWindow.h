@@ -9,6 +9,7 @@
 #include "test/languagechange.h"
 #include "qtmaterial/core/definetest.h"
 #include "qtmaterial/widget/buttontest.h"
+#include "qtmaterial/widget/labeltest.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
@@ -41,6 +42,7 @@ private:
 
     // qtmaterial widget
     void buttonTestShow();
+    void labelTestShow();
 
 private:
     QTabWidget *main_tabwidget_ = nullptr;
@@ -64,4 +66,5 @@ private:
 
     // qtmaterial widget
     ButtonTestWidget *m_pButtonTestWidget = nullptr;
+    LabelTestWidget *m_pLabelTestWidget = nullptr;
 };

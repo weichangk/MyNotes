@@ -33,7 +33,7 @@ using QtmaterialCoreDemo = enum {
 
 using QtmaterialWidgetDemo = enum {
     QtmaterialWidgetButtonTest = 2000,
-    QtmaterialWidgetDemo111,
+    QtmaterialWidgetDemoLabelTest,
     QtmaterialWidgetDemo222,
     QtmaterialWidgetDemo333,
     QtmaterialWidgetDemo444,
@@ -158,7 +158,7 @@ void MainWindow::setQtmaterialWidgetDemoBtns(QWidget *w) {
     auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetButtonTest, "Button Test");
-    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo111, "111");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoLabelTest, "Label test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo222, "222");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo333, "333");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo444, "444");
@@ -268,7 +268,8 @@ void MainWindow::test(int id) {
     case QtmaterialWidgetDemo::QtmaterialWidgetButtonTest:
         buttonTestShow();
         break;
-    case QtmaterialWidgetDemo::QtmaterialWidgetDemo111:
+    case QtmaterialWidgetDemo::QtmaterialWidgetDemoLabelTest:
+        labelTestShow();
         break;
     case QtmaterialWidgetDemo::QtmaterialWidgetDemo222:
         break;
@@ -364,4 +365,11 @@ void MainWindow::buttonTestShow() {
         m_pButtonTestWidget = new ButtonTestWidget();
     }
     m_pButtonTestWidget->show();
+}
+
+void MainWindow::labelTestShow() {
+    if (!m_pLabelTestWidget) {
+        m_pLabelTestWidget = new LabelTestWidget();
+    }
+    m_pLabelTestWidget->show();
 }

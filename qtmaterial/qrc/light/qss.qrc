@@ -2,6 +2,7 @@
   <qresource prefix="/">
     <file>../../qss/light/widget.qss</file>
     <file>../../qss/light/button.qss</file>
+    <file>../../qss/light/label.qss</file>
     <file>../../qss/light/textedit.qss</file>
     <file>../../qss/light/topbar.qss</file>
     <file>../../qss/light/tooltip.qss</file>
