@@ -1,6 +1,7 @@
 #include "widget/button.h"
 #include <QPainter>
 #include <QVariant>
+#include <QEvent>
 
 namespace widget {
 QString buttonStatusToString(button::ButtonStatus state) {
@@ -302,32 +303,34 @@ VectorButton::VectorButton(QWidget *parent) :
 
 HorIconTextVectorButton::HorIconTextVectorButton(QWidget *parent) :
     QPushButton(parent) {
-    // QPushButton::setObjectName("HorIconTextVectorButton");
+    QPushButton::setObjectName("HorIconTextVectorButton");
     m_pLayout = new QHBoxLayout(this);
     m_pLayout->setContentsMargins(m_nLeftRightSpacing, 0, m_nLeftRightSpacing, 0);
     m_pLayout->setSpacing(m_nIconTextSpacing);
 
     m_pIcon= new widget::VectorLabel(this);
-    // m_pIcon->setObjectName("HorIconTextVectorButtonIcon");
+    m_pIcon->setObjectName("HorIconTextVectorButton_Icon");
     m_pIcon->setFixedSize(m_nIconSize, m_nIconSize);
 
     m_pLayout->addWidget(m_pIcon, 0, Qt::AlignCenter);
 
     m_pText = new QLabel(this);
-    // m_pText->setObjectName("HorIconTextVectorButtonText");
+    m_pText->setObjectName("HorIconTextVectorButton_Text");
 
     m_pLayout->addWidget(m_pText, 0, Qt::AlignCenter);
     m_pLayout->addStretch();
+
+    updateWidgetStatus(widget::WidgetStatus::Normal);
 }
 
 void HorIconTextVectorButton::setObjectName(const QString &name) {
     QPushButton::setObjectName(name);
     if(m_pIcon) {
-        m_pIcon->setObjectName(name + "Icon");
+        m_pIcon->setObjectName(name + "_Icon");
         m_pIcon->setStyle(m_pIcon->style());
     }
     if (m_pText) {
-        m_pText->setObjectName(name + "Text");
+        m_pText->setObjectName(name + "_Text");
         m_pText->setStyle(m_pText->style());
     }
 }
@@ -352,4 +355,52 @@ QString HorIconTextVectorButton::text() const {
     return m_pText->text();
 }
 
+void HorIconTextVectorButton::slotWidgetStateChecked(bool checked) {
+    if (m_eState != widget::WidgetStatus::Disabled) {
+        updateWidgetStatus(checked ? widget::WidgetStatus::Checked : widget::WidgetStatus::Normal);
+    }
+}
+
+void HorIconTextVectorButton::mousePressEvent(QMouseEvent *event) {
+    QWidget::mousePressEvent(event);
+    if (m_eState != widget::WidgetStatus::Checked && m_eState != widget::WidgetStatus::Disabled) {
+        updateWidgetStatus(widget::WidgetStatus::Pressed);
+    }
+}
+
+void HorIconTextVectorButton::mouseReleaseEvent(QMouseEvent *event) {
+    QWidget::mouseReleaseEvent(event);
+    if (m_eState != widget::WidgetStatus::Checked && m_eState != widget::WidgetStatus::Disabled) {
+        updateWidgetStatus(widget::WidgetStatus::Hover);
+    }
+}
+
+void HorIconTextVectorButton::enterEvent(QEvent *event) {
+    QWidget::enterEvent(event);
+    if (m_eState != widget::WidgetStatus::Checked && m_eState != widget::WidgetStatus::Disabled) {
+        updateWidgetStatus(widget::WidgetStatus::Hover);
+    }
+}
+
+void HorIconTextVectorButton::leaveEvent(QEvent *event) {
+    QWidget::leaveEvent(event);
+    if (m_eState != widget::WidgetStatus::Checked && m_eState != widget::WidgetStatus::Disabled) {
+        updateWidgetStatus(widget::WidgetStatus::Normal);
+    }
+}
+
+void HorIconTextVectorButton::changeEvent(QEvent *event) {
+    QWidget::changeEvent(event);
+    if (event->type() == QEvent::EnabledChange) {
+        updateWidgetStatus(isEnabled() ? widget::WidgetStatus::Normal : widget::WidgetStatus::Disabled);
+    }
+}
+
+void HorIconTextVectorButton::updateWidgetStatus(widget::WidgetStatus state) {
+        m_eState = state;
+        m_pIcon->setProperty(widget::kWidgetStateProperty, widget::widgetStatusToString(m_eState));
+        m_pText->setProperty(widget::kWidgetStateProperty, widget::widgetStatusToString(m_eState));
+        m_pIcon->setStyle(m_pIcon->style());
+        m_pText->setStyle(m_pText->style());
+}
 } // namespace widget

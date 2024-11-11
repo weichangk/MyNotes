@@ -1,5 +1,6 @@
 #include "qtmaterial_global.h"
 #include "widget/label.h"
+#include "widget/enums.h"
 
 #include <QPushButton>
 #include <QLabel>
@@ -180,13 +181,28 @@ public:
     void setText(const QString &);
     QString text() const;
 
+public Q_SLOTS:
+    void slotWidgetStateChecked(bool);
+
+protected:
+    void mousePressEvent(QMouseEvent *) override;
+    void mouseReleaseEvent(QMouseEvent *) override;
+    void enterEvent(QEvent *) override;
+    void leaveEvent(QEvent *) override;
+    void changeEvent(QEvent *) override;
+    
+private: 
+    void updateWidgetStatus(widget::WidgetStatus state);
+
 private:
     QHBoxLayout *m_pLayout = nullptr;
     widget::VectorLabel *m_pIcon = nullptr;
     QLabel *m_pText = nullptr;
 
-    int m_nIconSize = 16;
-    int m_nLeftRightSpacing = 4;
-    int m_nIconTextSpacing = 2;
+    widget::WidgetStatus m_eState = widget::WidgetStatus::Normal;
+
+    int m_nIconSize = 20;
+    int m_nLeftRightSpacing = 8;
+    int m_nIconTextSpacing = 8;
 };
 } // namespace widget

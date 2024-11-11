@@ -83,174 +83,235 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
 }
 
 /* VectorButton */
-#VectorButton_Size24 {
+#VectorButton_I20 {
     border: none;
     background-color: transparent;
-    color:#313131; 
-    text-align: center;
-
-    min-width: 24px;
-    max-width: 24px;
-    width: 24px;
-    min-height: 24px;
-    max-height: 24px;
-    height: 24px;  
-    font-size: 16px;
-}
-
-#VectorButton_Size24:hover {
-    color:#000000; 
-}
-
-#VectorButton_Size26 {
-    border: none;
-    background-color: transparent;
-    color:#313131; 
-    text-align: center;
-
-    min-width: 26px;
-    max-width: 26px;
-    width: 26px;
-    min-height: 26px;
-    max-height: 26px;
-    height: 26px;  
-    font-size: 18px;
-}
-
-#VectorButton_Size26:hover {
-    color:#000000; 
-}
-
-#VectorButton_Size28 {
-    border: none;
-    background-color: transparent;
-    color:#313131; 
-    text-align: center;
-
-    min-width: 28px;
-    max-width: 28px;
-    width: 28px;
-    min-height: 28px;
-    max-height: 28px;
-    height: 28px;  
+    color:#9aa0aa; 
+    min-width: 20px;
+    max-width: 20px;
+    width: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    height: 20px;  
     font-size: 20px;
 }
 
-#VectorButton_Size28:hover {
-    color:#000000; 
+#VectorButton_I20:hover {
+    color:#5b6474; 
 }
 
-#VectorButton_Size24RoundBg {
-    border: none;
-    background-color: transparent;
-    color:#313131; 
-    text-align: center;
-
-    border-radius: 12px;
-    background-color: #ebebeb;
-    min-width: 24px;
-    max-width: 24px;
-    width: 24px;
-    min-height: 24px;
-    max-height: 24px;
-    height: 24px;  
-    font-size: 16px;
-    padding-bottom: 1px;/* text有点偏下，调整一下 */
+#VectorButton_I20:pressed {
+    color:#5b6474; 
 }
 
-#VectorButton_Size24RoundBg:hover {
-    color:#000000; 
+#VectorButton_I20:disabled {
+    color:#f0f3f6; 
 }
 
-#VectorButton_Size26RoundBg {
-    border: none;
-    background-color: transparent;
-    color:#313131; 
-    text-align: center;
-
-    border-radius: 13px;
-    background-color: #ebebeb;
-    min-width: 26px;
-    max-width: 26px;
-    width: 26px;
-    min-height: 26px;
-    max-height: 26px;
-    height: 26px;  
-    font-size: 18px;
-    padding-bottom: 1px;/* text有点偏下，调整一下 */
+#VectorButton_I20:checked {
+    color:#5b6474; 
 }
 
-#VectorButton_Size26RoundBg:hover {
-    color:#000000; 
-}
+#VectorButton_HW36_R8_I20_Bg {
+    border-radius: 8px;
+    border: 1px solid #f3e4eb; 
 
-#VectorButton_Size28RoundBg {
-    border: none;
-    background-color: transparent;
-    color:#313131; 
-    text-align: center;
+    background-color: #f7eef7;
+    color:#9aa0aa; 
 
-    border-radius: 14px;
-    background-color: #ebebeb;
-    min-width: 28px;
-    max-width: 28px;
-    width: 28px;
-    min-height: 28px;
-    max-height: 28px;
-    height: 28px;  
+    min-width: 36px;
+    max-width: 36px;
+    width: 36px;
+    min-height: 36px;
+    max-height: 36px;
+    height: 36px;  
     font-size: 20px;
 }
 
-#VectorButton_Size28RoundBg:hover {
-    color:#000000; 
+#VectorButton_HW36_R8_I20_Bg:hover {
+    background-color: #f5e7f5;
+    color:#9aa0aa;
+}
+
+#VectorButton_HW36_R8_I20_Bg:pressed {
+    background-color: #f5e7f5;
+    color:#9aa0aa;
+}
+
+#VectorButton_HW36_R8_I20_Bg:disabled {
+    background-color: #ecedef;
+    color:#ffffff; 
+}
+
+#VectorButton_HW36_R8_I20_Bg:checked {
+    background-color: #f5e7f5;
+    color:#9aa0aa;
 }
 
 /* HorIconTextVectorButton */
-/* #HorIconTextVectorButton_Size24 {
+#HorIconTextVectorButton_H36_I20_T14 {
     border: none;
     background-color: transparent;
-} */
-
-
-/* #HorIconTextVectorButton_Size24Icon {
-    border: none;
-    background-color: transparent;
-} */
-
-#HorIconTextVectorButton_Size24:hover #HorIconTextVectorButton_Size24Icon{
-    color:blue; 
+    min-height: 36px;
+    max-height: 36px;
+    height: 36px;
 }
 
-/* #HorIconTextVectorButton_Size24Text {
+#HorIconTextVectorButton_H36_I20_T14_Icon[widget-state='normal'] {
     border: none;
     background-color: transparent;
-} */
-
-#HorIconTextVectorButton_Size24:hover #HorIconTextVectorButton_Size24Text{
-    color:red; 
+    color:#9aa0aa; 
+    font-size: 20px;
 }
 
-#HorIconTextVectorButton_Size26 {
+#HorIconTextVectorButton_H36_I20_T14_Icon[widget-state='hover'] {
     border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Icon[widget-state='pressed'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Icon[widget-state='disabled'] {
+    border: none;
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Icon[widget-state='checked'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474;  
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Text[widget-state='normal'] {
+    border: none;
+    background-color: transparent;
+    color:#9aa0aa; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Text[widget-state='hover'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Text[widget-state='pressed'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Text[widget-state='disabled'] {
+    border: none;
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Text[widget-state='checked'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg {
+    border-radius: 8px;
+    background-color: transparent;
+    min-height: 36px;
+    max-height: 36px;
+    height: 36px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg:hover {
+    background-color: #e4e8ec;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg:pressed {
+    background-color: #e4e8ec;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg:disabled {
     background-color: transparent;
 }
 
-#HorIconTextVectorButton_Size28 {
-    border: none;
-    background-color: transparent;
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg:checked {
+    background-color: #fd3d4b;
 }
 
-#HorIconTextVectorButton_Size24RoundBg {
-    border: none;
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Icon[widget-state='normal'] {
     background-color: transparent;
+    color:#9aa0aa; 
+    font-size: 20px;
 }
 
-#HorIconTextVectorButton_Size26RoundBg {
-    border: none;
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Icon[widget-state='hover'] {
     background-color: transparent;
+    color:#9aa0aa; 
+    font-size: 20px;
 }
 
-#HorIconTextVectorButton_Size28RoundBg {
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Icon[widget-state='pressed'] {
+    background-color: transparent;
+    color:#9aa0aa; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Icon[widget-state='disabled'] {
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Icon[widget-state='checked'] {
+    background-color: transparent;
+    color:#ffffff; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='normal'] {
     border: none;
     background-color: transparent;
+    color:#9aa0aa; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='hover'] {
+    border: none;
+    background-color: transparent;
+    color:#9aa0aa; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='pressed'] {
+    border: none;
+    background-color: transparent;
+    color:#9aa0aa; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='disabled'] {
+    border: none;
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='checked'] {
+    border: none;
+    background-color: transparent;
+    color:#ffffff; 
+    font-size: 14px;
 }
