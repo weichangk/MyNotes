@@ -82,6 +82,7 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     color: rgba(102, 100, 107, 1);
 }
 
+/* VectorButton */
 #VectorButton_Size24 {
     border: none;
     background-color: transparent;
@@ -202,4 +203,54 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
 
 #VectorButton_Size28RoundBg:hover {
     color:#000000; 
+}
+
+/* HorIconTextVectorButton */
+/* #HorIconTextVectorButton_Size24 {
+    border: none;
+    background-color: transparent;
+} */
+
+
+/* #HorIconTextVectorButton_Size24Icon {
+    border: none;
+    background-color: transparent;
+} */
+
+#HorIconTextVectorButton_Size24:hover #HorIconTextVectorButton_Size24Icon{
+    color:blue; 
+}
+
+/* #HorIconTextVectorButton_Size24Text {
+    border: none;
+    background-color: transparent;
+} */
+
+#HorIconTextVectorButton_Size24:hover #HorIconTextVectorButton_Size24Text{
+    color:red; 
+}
+
+#HorIconTextVectorButton_Size26 {
+    border: none;
+    background-color: transparent;
+}
+
+#HorIconTextVectorButton_Size28 {
+    border: none;
+    background-color: transparent;
+}
+
+#HorIconTextVectorButton_Size24RoundBg {
+    border: none;
+    background-color: transparent;
+}
+
+#HorIconTextVectorButton_Size26RoundBg {
+    border: none;
+    background-color: transparent;
+}
+
+#HorIconTextVectorButton_Size28RoundBg {
+    border: none;
+    background-color: transparent;
 }

@@ -299,4 +299,57 @@ QPixmap HorIconTextButton::getCurrentPixmap() const {
 VectorButton::VectorButton(QWidget *parent) :
     QPushButton(parent) {
 }
+
+HorIconTextVectorButton::HorIconTextVectorButton(QWidget *parent) :
+    QPushButton(parent) {
+    // QPushButton::setObjectName("HorIconTextVectorButton");
+    m_pLayout = new QHBoxLayout(this);
+    m_pLayout->setContentsMargins(m_nLeftRightSpacing, 0, m_nLeftRightSpacing, 0);
+    m_pLayout->setSpacing(m_nIconTextSpacing);
+
+    m_pIcon= new widget::VectorLabel(this);
+    // m_pIcon->setObjectName("HorIconTextVectorButtonIcon");
+    m_pIcon->setFixedSize(m_nIconSize, m_nIconSize);
+
+    m_pLayout->addWidget(m_pIcon, 0, Qt::AlignCenter);
+
+    m_pText = new QLabel(this);
+    // m_pText->setObjectName("HorIconTextVectorButtonText");
+
+    m_pLayout->addWidget(m_pText, 0, Qt::AlignCenter);
+    m_pLayout->addStretch();
+}
+
+void HorIconTextVectorButton::setObjectName(const QString &name) {
+    QPushButton::setObjectName(name);
+    if(m_pIcon) {
+        m_pIcon->setObjectName(name + "Icon");
+        m_pIcon->setStyle(m_pIcon->style());
+    }
+    if (m_pText) {
+        m_pText->setObjectName(name + "Text");
+        m_pText->setStyle(m_pText->style());
+    }
+}
+
+void HorIconTextVectorButton::setIconFont(const QFont &font){
+    m_pIcon->setFont(font);
+}
+
+void HorIconTextVectorButton::setIcon(const QString &text) {
+    m_pIcon->setText(text);
+}
+
+void HorIconTextVectorButton::setIconSize(int) {
+    m_pIcon->setFixedSize(m_nIconSize, m_nIconSize);
+}
+
+void HorIconTextVectorButton::setText(const QString &text) {
+    m_pText->setText(text);
+}
+
+QString HorIconTextVectorButton::text() const {
+    return m_pText->text();
+}
+
 } // namespace widget

@@ -1,4 +1,5 @@
 #include "qtmaterial_global.h"
+#include "widget/label.h"
 
 #include <QPushButton>
 #include <QLabel>
@@ -161,5 +162,31 @@ public:
     VectorButton(QWidget *parent = nullptr);
     ~VectorButton() override {
     }
+};
+
+class QTMATERIAL_EXPORT HorIconTextVectorButton : public QPushButton {
+    Q_OBJECT
+public:
+    HorIconTextVectorButton(QWidget *parent = nullptr);
+    ~HorIconTextVectorButton() override {
+    }
+
+    void setObjectName(const QString &);
+
+    void setIconFont(const QFont &);
+    void setIcon(const QString &);
+    void setIconSize(int);
+
+    void setText(const QString &);
+    QString text() const;
+
+private:
+    QHBoxLayout *m_pLayout = nullptr;
+    widget::VectorLabel *m_pIcon = nullptr;
+    QLabel *m_pText = nullptr;
+
+    int m_nIconSize = 16;
+    int m_nLeftRightSpacing = 4;
+    int m_nIconTextSpacing = 2;
 };
 } // namespace widget

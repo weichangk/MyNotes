@@ -16,4 +16,11 @@ private:
     widget::VectorButton *m_pBtn4 = nullptr;
     widget::VectorButton *m_pBtn5 = nullptr;
     widget::VectorButton *m_pBtn6 = nullptr;
+
+    widget::HorIconTextVectorButton *m_pBtn11 = nullptr;
+    widget::HorIconTextVectorButton *m_pBtn12 = nullptr;
+    widget::HorIconTextVectorButton *m_pBtn13 = nullptr;
+    widget::HorIconTextVectorButton *m_pBtn14 = nullptr;
+    widget::HorIconTextVectorButton *m_pBtn15 = nullptr;
+    widget::HorIconTextVectorButton *m_pBtn16 = nullptr;
 };
