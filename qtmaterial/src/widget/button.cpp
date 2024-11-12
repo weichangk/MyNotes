@@ -321,6 +321,8 @@ HorIconTextVectorButton::HorIconTextVectorButton(QWidget *parent) :
     m_pLayout->addStretch();
 
     updateWidgetStatus(widget::WidgetStatus::Normal);
+
+    connect(this, &QPushButton::toggled, this, &HorIconTextVectorButton::slotToggled);
 }
 
 void HorIconTextVectorButton::setObjectName(const QString &name) {
@@ -355,52 +357,81 @@ QString HorIconTextVectorButton::text() const {
     return m_pText->text();
 }
 
-void HorIconTextVectorButton::slotWidgetStateChecked(bool checked) {
-    if (m_eState != widget::WidgetStatus::Disabled) {
-        updateWidgetStatus(checked ? widget::WidgetStatus::Checked : widget::WidgetStatus::Normal);
-    }
+void HorIconTextVectorButton::setAdjustWidth(bool b) {
+    m_bAdjustWidth = b;
+}
+bool HorIconTextVectorButton::adjustWidth() const {
+    return m_bAdjustWidth;
 }
 
 void HorIconTextVectorButton::mousePressEvent(QMouseEvent *event) {
-    QWidget::mousePressEvent(event);
+    QPushButton::mousePressEvent(event);
     if (m_eState != widget::WidgetStatus::Checked && m_eState != widget::WidgetStatus::Disabled) {
         updateWidgetStatus(widget::WidgetStatus::Pressed);
     }
 }
 
 void HorIconTextVectorButton::mouseReleaseEvent(QMouseEvent *event) {
-    QWidget::mouseReleaseEvent(event);
+    QPushButton::mouseReleaseEvent(event);
     if (m_eState != widget::WidgetStatus::Checked && m_eState != widget::WidgetStatus::Disabled) {
         updateWidgetStatus(widget::WidgetStatus::Hover);
     }
 }
 
 void HorIconTextVectorButton::enterEvent(QEvent *event) {
-    QWidget::enterEvent(event);
+    QPushButton::enterEvent(event);
     if (m_eState != widget::WidgetStatus::Checked && m_eState != widget::WidgetStatus::Disabled) {
         updateWidgetStatus(widget::WidgetStatus::Hover);
     }
 }
 
 void HorIconTextVectorButton::leaveEvent(QEvent *event) {
-    QWidget::leaveEvent(event);
+    QPushButton::leaveEvent(event);
     if (m_eState != widget::WidgetStatus::Checked && m_eState != widget::WidgetStatus::Disabled) {
         updateWidgetStatus(widget::WidgetStatus::Normal);
     }
 }
 
 void HorIconTextVectorButton::changeEvent(QEvent *event) {
-    QWidget::changeEvent(event);
+    QPushButton::changeEvent(event);
     if (event->type() == QEvent::EnabledChange) {
         updateWidgetStatus(isEnabled() ? widget::WidgetStatus::Normal : widget::WidgetStatus::Disabled);
     }
 }
 
+void HorIconTextVectorButton::resizeEvent(QResizeEvent *event) {
+    QPushButton::resizeEvent(event);
+    if (m_bAdjustWidth) {
+        int textWidth = m_pText->fontMetrics().horizontalAdvance(m_pText->text());
+        int w = textWidth + m_nLeftRightSpacing * 2 + m_nIconSize + m_nIconTextSpacing;
+        int h = height();
+        setFixedSize(w, h);
+    }
+}
+// 在QHBoxLayout或QVBoxLayout布局中的所有该自定义控件如果没有设置大小，所有的自定义控件宽或高默认统一和最大的宽或高的那个一样
+// 为了在布局内的该自定义控件能准确的设置固定宽度需要resizeEvent和sizeHint都要处理，否则会有点小问题！
+// 需要先 setAdjustWidth(false); 再setFixedSize(); 才能设置固定宽度
+QSize HorIconTextVectorButton::sizeHint() const {
+    if (m_bAdjustWidth) {
+        int textWidth = m_pText->fontMetrics().horizontalAdvance(m_pText->text());
+        int w = textWidth + m_nLeftRightSpacing * 2 + m_nIconSize + m_nIconTextSpacing;
+        int h = height();
+        return QSize(w, h);
+    }
+    return QPushButton::sizeHint();
+}
+
 void HorIconTextVectorButton::updateWidgetStatus(widget::WidgetStatus state) {
-        m_eState = state;
-        m_pIcon->setProperty(widget::kWidgetStateProperty, widget::widgetStatusToString(m_eState));
-        m_pText->setProperty(widget::kWidgetStateProperty, widget::widgetStatusToString(m_eState));
-        m_pIcon->setStyle(m_pIcon->style());
-        m_pText->setStyle(m_pText->style());
+    m_eState = state;
+    m_pIcon->setProperty(widget::kWidgetStateProperty, widget::widgetStatusToString(m_eState));
+    m_pText->setProperty(widget::kWidgetStateProperty, widget::widgetStatusToString(m_eState));
+    m_pIcon->setStyle(m_pIcon->style());
+    m_pText->setStyle(m_pText->style());
+}
+
+void HorIconTextVectorButton::slotToggled(bool checked) {
+    if (m_eState != widget::WidgetStatus::Disabled) {
+        updateWidgetStatus(checked ? widget::WidgetStatus::Checked : widget::WidgetStatus::Normal);
+    }
 }
 } // namespace widget

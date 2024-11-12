@@ -181,8 +181,8 @@ public:
     void setText(const QString &);
     QString text() const;
 
-public Q_SLOTS:
-    void slotWidgetStateChecked(bool);
+    void setAdjustWidth(bool);
+    bool adjustWidth() const;
 
 protected:
     void mousePressEvent(QMouseEvent *) override;
@@ -190,9 +190,14 @@ protected:
     void enterEvent(QEvent *) override;
     void leaveEvent(QEvent *) override;
     void changeEvent(QEvent *) override;
+    void resizeEvent(QResizeEvent *) override;
+    QSize sizeHint() const override;
     
 private: 
     void updateWidgetStatus(widget::WidgetStatus state);
+
+private Q_SLOTS:
+    void slotToggled(bool);
 
 private:
     QHBoxLayout *m_pLayout = nullptr;
@@ -204,5 +209,7 @@ private:
     int m_nIconSize = 20;
     int m_nLeftRightSpacing = 8;
     int m_nIconTextSpacing = 8;
+
+    bool m_bAdjustWidth = true;
 };
 } // namespace widget

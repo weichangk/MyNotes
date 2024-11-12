@@ -9,7 +9,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     QWidget(parent) {
     setObjectName("ButtonTestWidget");
     setWindowTitle("Button Test");
-    setFixedSize(800, 600);
+    setFixedSize(1000, 600);
 
     QString style = R"(
         QWidget#ButtonTestWidget {
@@ -69,11 +69,13 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     m_pBtn13->setCheckable(true);
     m_pBtn13->setIconFont(core::Font::currentIconFont());
     m_pBtn13->setIcon(QChar(0xe665));
-    m_pBtn13->setText("最近播放");
+    m_pBtn13->setText("最近播放呀呀");
     layout2->addWidget(m_pBtn13);
 
     m_pBtn14 = new widget::HorIconTextVectorButton(this);
     m_pBtn14->setObjectName("HorIconTextVectorButton_H36_R8_I20_T14_Bg");
+    m_pBtn14->setAdjustWidth(false);
+    m_pBtn14->setFixedSize(200, 36);
     m_pBtn14->setCheckable(true);
     m_pBtn14->setIconFont(core::Font::currentIconFont());
     m_pBtn14->setIcon(QChar(0xe665));
@@ -131,23 +133,13 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
 
     //
     QButtonGroup *buttonGroup = new QButtonGroup(this);
-    buttonGroup->setExclusive(true);
+    buttonGroup->setExclusive(false);
     buttonGroup->addButton(m_pBtn13, 0);
     buttonGroup->addButton(m_pBtn14, 1);
     buttonGroup->addButton(m_pBtn15, 2);
     buttonGroup->addButton(m_pBtn16, 3);
 
     m_pBtn13->setChecked(true);
-    m_pBtn13->slotWidgetStateChecked(true);
-
-    bool b = connect(buttonGroup, &QButtonGroup::idToggled, this, [&](int id, bool checked) {
-        if (checked) {
-            m_pBtn13->slotWidgetStateChecked(id == 0);
-            m_pBtn14->slotWidgetStateChecked(id == 1);
-            m_pBtn15->slotWidgetStateChecked(id == 2);
-            m_pBtn16->slotWidgetStateChecked(id == 3);
-        }
-    });
 
     //
     QButtonGroup *buttonGroup21 = new QButtonGroup(this);

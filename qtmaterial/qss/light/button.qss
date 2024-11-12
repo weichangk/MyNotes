@@ -283,7 +283,6 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     font-size: 20px;
 }
 
-/* HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text */
 #HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='normal'] {
     border: none;
     background-color: transparent;
