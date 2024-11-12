@@ -320,7 +320,7 @@ HorIconTextVectorButton::HorIconTextVectorButton(QWidget *parent) :
     m_pLayout->addWidget(m_pText, 0, Qt::AlignCenter);
     m_pLayout->addStretch();
 
-    updateWidgetStatus(widget::WidgetStatus::Normal);
+    updateWidgetStatus(style::WidgetStatus::Normal);
 
     connect(this, &QPushButton::toggled, this, &HorIconTextVectorButton::slotToggled);
 }
@@ -366,36 +366,36 @@ bool HorIconTextVectorButton::adjustWidth() const {
 
 void HorIconTextVectorButton::mousePressEvent(QMouseEvent *event) {
     QPushButton::mousePressEvent(event);
-    if (m_eState != widget::WidgetStatus::Checked && m_eState != widget::WidgetStatus::Disabled) {
-        updateWidgetStatus(widget::WidgetStatus::Pressed);
+    if (m_eState != style::WidgetStatus::Checked && m_eState != style::WidgetStatus::Disabled) {
+        updateWidgetStatus(style::WidgetStatus::Pressed);
     }
 }
 
 void HorIconTextVectorButton::mouseReleaseEvent(QMouseEvent *event) {
     QPushButton::mouseReleaseEvent(event);
-    if (m_eState != widget::WidgetStatus::Checked && m_eState != widget::WidgetStatus::Disabled) {
-        updateWidgetStatus(widget::WidgetStatus::Hover);
+    if (m_eState != style::WidgetStatus::Checked && m_eState != style::WidgetStatus::Disabled) {
+        updateWidgetStatus(style::WidgetStatus::Hover);
     }
 }
 
 void HorIconTextVectorButton::enterEvent(QEvent *event) {
     QPushButton::enterEvent(event);
-    if (m_eState != widget::WidgetStatus::Checked && m_eState != widget::WidgetStatus::Disabled) {
-        updateWidgetStatus(widget::WidgetStatus::Hover);
+    if (m_eState != style::WidgetStatus::Checked && m_eState != style::WidgetStatus::Disabled) {
+        updateWidgetStatus(style::WidgetStatus::Hover);
     }
 }
 
 void HorIconTextVectorButton::leaveEvent(QEvent *event) {
     QPushButton::leaveEvent(event);
-    if (m_eState != widget::WidgetStatus::Checked && m_eState != widget::WidgetStatus::Disabled) {
-        updateWidgetStatus(widget::WidgetStatus::Normal);
+    if (m_eState != style::WidgetStatus::Checked && m_eState != style::WidgetStatus::Disabled) {
+        updateWidgetStatus(style::WidgetStatus::Normal);
     }
 }
 
 void HorIconTextVectorButton::changeEvent(QEvent *event) {
     QPushButton::changeEvent(event);
     if (event->type() == QEvent::EnabledChange) {
-        updateWidgetStatus(isEnabled() ? widget::WidgetStatus::Normal : widget::WidgetStatus::Disabled);
+        updateWidgetStatus(isEnabled() ? style::WidgetStatus::Normal : style::WidgetStatus::Disabled);
     }
 }
 
@@ -421,17 +421,17 @@ QSize HorIconTextVectorButton::sizeHint() const {
     return QPushButton::sizeHint();
 }
 
-void HorIconTextVectorButton::updateWidgetStatus(widget::WidgetStatus state) {
+void HorIconTextVectorButton::updateWidgetStatus(style::WidgetStatus state) {
     m_eState = state;
-    m_pIcon->setProperty(widget::kWidgetStateProperty, widget::widgetStatusToString(m_eState));
-    m_pText->setProperty(widget::kWidgetStateProperty, widget::widgetStatusToString(m_eState));
+    m_pIcon->setProperty(style::kWidgetStateProperty, style::widgetStatusToString(m_eState));
+    m_pText->setProperty(style::kWidgetStateProperty, style::widgetStatusToString(m_eState));
     m_pIcon->setStyle(m_pIcon->style());
     m_pText->setStyle(m_pText->style());
 }
 
 void HorIconTextVectorButton::slotToggled(bool checked) {
-    if (m_eState != widget::WidgetStatus::Disabled) {
-        updateWidgetStatus(checked ? widget::WidgetStatus::Checked : widget::WidgetStatus::Normal);
+    if (m_eState != style::WidgetStatus::Disabled) {
+        updateWidgetStatus(checked ? style::WidgetStatus::Checked : style::WidgetStatus::Normal);
     }
 }
 } // namespace widget

@@ -115,10 +115,10 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
 /* VectorButton_HW36_R8_I20_Bg */
 #VectorButton_HW36_R8_I20_Bg {
     border-radius: 8px;
-    border: 1px solid #f3e4eb; 
+    border: 1px solid #e2e5e9; 
 
-    background-color: #f7eef7;
-    color:#9aa0aa; 
+    background-color: transparent;
+    color:#898f9d; 
 
     min-width: 36px;
     max-width: 36px;
@@ -130,23 +130,23 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
 }
 
 #VectorButton_HW36_R8_I20_Bg:hover {
-    background-color: #f5e7f5;
-    color:#9aa0aa;
+    background-color: #e2e5e9;
+    color:#898f9d;
 }
 
 #VectorButton_HW36_R8_I20_Bg:pressed {
-    background-color: #f5e7f5;
-    color:#9aa0aa;
+    background-color: #e2e5e9;
+    color:#898f9d;
 }
 
 #VectorButton_HW36_R8_I20_Bg:disabled {
     background-color: #ecedef;
-    color:#ffffff; 
+    color:transparent; 
 }
 
 #VectorButton_HW36_R8_I20_Bg:checked {
-    background-color: #f5e7f5;
-    color:#9aa0aa;
+    background-color: #e2e5e9;
+    color:#898f9d;
 }
 
 /* HorIconTextVectorButton_H36_I20_T14 */
@@ -255,19 +255,19 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
 
 #HorIconTextVectorButton_H36_R8_I20_T14_Bg_Icon[widget-state='normal'] {
     background-color: transparent;
-    color:#9aa0aa; 
+    color:#737b89; 
     font-size: 20px;
 }
 
 #HorIconTextVectorButton_H36_R8_I20_T14_Bg_Icon[widget-state='hover'] {
     background-color: transparent;
-    color:#9aa0aa; 
+    color:#737b89; 
     font-size: 20px;
 }
 
 #HorIconTextVectorButton_H36_R8_I20_T14_Bg_Icon[widget-state='pressed'] {
     background-color: transparent;
-    color:#9aa0aa; 
+    color:#737b89; 
     font-size: 20px;
 }
 
@@ -286,21 +286,21 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
 #HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='normal'] {
     border: none;
     background-color: transparent;
-    color:#9aa0aa; 
+    color:#4e5669; 
     font-size: 14px;
 }
 
 #HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='hover'] {
     border: none;
     background-color: transparent;
-    color:#9aa0aa; 
+    color:#4e5669; 
     font-size: 14px;
 }
 
 #HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='pressed'] {
     border: none;
     background-color: transparent;
-    color:#9aa0aa; 
+    color:#4e5669; 
     font-size: 14px;
 }
 
@@ -328,7 +328,7 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     border-radius: 16px;
     border: 1px solid #e2e5e9; 
     background-color: transparent;
-    color:#9aa0aa; 
+    color:#4e5669; 
 
     padding-left: 16px;
     padding-right: 16px;

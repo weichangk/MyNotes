@@ -1,6 +1,6 @@
 #include "qtmaterial_global.h"
 #include "widget/label.h"
-#include "widget/enums.h"
+#include "widget/style.h"
 
 #include <QPushButton>
 #include <QLabel>
@@ -194,7 +194,7 @@ protected:
     QSize sizeHint() const override;
     
 private: 
-    void updateWidgetStatus(widget::WidgetStatus state);
+    void updateWidgetStatus(style::WidgetStatus state);
 
 private Q_SLOTS:
     void slotToggled(bool);
@@ -204,7 +204,7 @@ private:
     widget::VectorLabel *m_pIcon = nullptr;
     QLabel *m_pText = nullptr;
 
-    widget::WidgetStatus m_eState = widget::WidgetStatus::Normal;
+    style::WidgetStatus m_eState = style::WidgetStatus::Normal;
 
     int m_nIconSize = 20;
     int m_nLeftRightSpacing = 8;
