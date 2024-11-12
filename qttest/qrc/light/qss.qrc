@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/">
+      <file>../../qss/light/qsstest.qss</file>
+  </qresource>
+</RCC>

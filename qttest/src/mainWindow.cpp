@@ -12,7 +12,7 @@ using QtTestDemo = enum {
     QtTestDemoTranslucent,
     QtTestDemoLayoutMacBug,
     QtTestDemoLanguageChangeTest,
-    QtTestDemo666,
+    QtTestDemoQssTest,
     QtTestDemo777,
     QtTestDemo888,
     QtTestDemo999,
@@ -107,7 +107,7 @@ void MainWindow::setQtTestDemoBtns(QWidget *w) {
     demoMap.insert(QtTestDemo::QtTestDemoTranslucent, "Translucent");
     demoMap.insert(QtTestDemo::QtTestDemoLayoutMacBug, "LayoutMacBug");
     demoMap.insert(QtTestDemo::QtTestDemoLanguageChangeTest, "LanguageChangeTest");
-    demoMap.insert(QtTestDemo::QtTestDemo666, "666");
+    demoMap.insert(QtTestDemo::QtTestDemoQssTest, "QssTest");
     demoMap.insert(QtTestDemo::QtTestDemo777, "777");
     demoMap.insert(QtTestDemo::QtTestDemo888, "888");
     demoMap.insert(QtTestDemo::QtTestDemo999, "999");
@@ -230,7 +230,8 @@ void MainWindow::test(int id) {
     case QtTestDemo::QtTestDemoLanguageChangeTest:
         languageChangeTestShow();
         break;
-    case QtTestDemo::QtTestDemo666:
+    case QtTestDemo::QtTestDemoQssTest:
+        qssTestWidgetShow();
         break;
     case QtTestDemo::QtTestDemo777:
         break;
@@ -351,6 +352,13 @@ void MainWindow::languageChangeTestShow() {
         languagechange_widget_ = new LanguageChangeTest();
     }
     languagechange_widget_->show();
+}
+
+void MainWindow::qssTestWidgetShow() {
+    if (!m_pQssWidget) {
+        m_pQssWidget = new QssTestWidget();
+    }
+    m_pQssWidget->show();
 }
 
 void MainWindow::defineTestShow() {

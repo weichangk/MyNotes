@@ -1,0 +1,31 @@
+ns--NsPushButton {
+    border: none;
+    background-color: green;
+}
+
+#NsPushButtonXXX {
+    border: none;
+    background-color: blue;
+}
+
+MyPushButton {
+    border: none;
+    background-color: red;
+}
+
+/* #HasChildPushButton #HasChildPushButtonText{
+    color: aqua;
+} */
+
+QPushButton:hover QLabel{
+    color: antiquewhite;
+}
+
+#PushButton_Check_Test {
+    background-color: transparent;
+    color: black;
+}
+
+#PushButton_Check_Test:checked {
+    color: red;
+}
