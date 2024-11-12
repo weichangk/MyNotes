@@ -20,6 +20,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
 
     auto layout = new QVBoxLayout(this); 
 
+    //
     auto widget1 = new QWidget(this);
     widget1->setFixedHeight(48);
 
@@ -41,6 +42,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
 
     layout1->addStretch();
 
+    //
     auto widget2 = new QWidget(this);
     widget2->setFixedHeight(48);
 
@@ -96,8 +98,38 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
 
     layout2->addStretch();
 
+    //
+    auto widget3 = new QWidget(this);
+    widget3->setFixedHeight(48);
+
+    layout->addWidget(widget3);
+
+    auto layout3 = new QHBoxLayout(widget3);
+
+    m_pBtn21 = new QPushButton(this);
+    m_pBtn21->setObjectName("QPushButton_H32_R16_T14_Bg");
+    m_pBtn21->setCheckable(true);
+    m_pBtn21->setText("民谣");
+    layout3->addWidget(m_pBtn21);
+
+    m_pBtn22 = new QPushButton(this);
+    m_pBtn22->setObjectName("QPushButton_H32_R16_T14_Bg");
+    m_pBtn22->setCheckable(true);
+    m_pBtn22->setText("电子");
+    layout3->addWidget(m_pBtn22);
+
+    m_pBtn23 = new QPushButton(this);
+    m_pBtn23->setObjectName("QPushButton_H32_R16_T14_Bg");
+    m_pBtn23->setCheckable(true);
+    m_pBtn23->setText("轻音乐");
+    layout3->addWidget(m_pBtn23);
+
+    layout3->addStretch();
+
+    //
     layout->addStretch();
 
+    //
     QButtonGroup *buttonGroup = new QButtonGroup(this);
     buttonGroup->setExclusive(true);
     buttonGroup->addButton(m_pBtn13, 0);
@@ -116,4 +148,10 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
             m_pBtn16->slotWidgetStateChecked(id == 3);
         }
     });
+
+    //
+    QButtonGroup *buttonGroup21 = new QButtonGroup(this);
+    buttonGroup21->addButton(m_pBtn21, 0);
+    buttonGroup21->addButton(m_pBtn22, 1);
+    buttonGroup21->addButton(m_pBtn23, 2);
 }

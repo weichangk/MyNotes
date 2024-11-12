@@ -82,7 +82,7 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     color: rgba(102, 100, 107, 1);
 }
 
-/* VectorButton */
+/* VectorButton_I20 */
 #VectorButton_I20 {
     border: none;
     background-color: transparent;
@@ -112,6 +112,7 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     color:#5b6474; 
 }
 
+/* VectorButton_HW36_R8_I20_Bg */
 #VectorButton_HW36_R8_I20_Bg {
     border-radius: 8px;
     border: 1px solid #f3e4eb; 
@@ -148,7 +149,7 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     color:#9aa0aa;
 }
 
-/* HorIconTextVectorButton */
+/* HorIconTextVectorButton_H36_I20_T14 */
 #HorIconTextVectorButton_H36_I20_T14 {
     border: none;
     background-color: transparent;
@@ -227,6 +228,7 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     font-size: 14px;
 }
 
+/* HorIconTextVectorButton_H36_R8_I20_T14_Bg */
 #HorIconTextVectorButton_H36_R8_I20_T14_Bg {
     border-radius: 8px;
     background-color: transparent;
@@ -281,6 +283,7 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     font-size: 20px;
 }
 
+/* HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text */
 #HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='normal'] {
     border: none;
     background-color: transparent;
@@ -314,4 +317,44 @@ QLabel#HorIconTextButtonText[ButtonStatus='disabled'] {
     background-color: transparent;
     color:#ffffff; 
     font-size: 14px;
+}
+
+/* QPushButton_H32_R16_T14_Bg */
+#QPushButton_H32_R16_T14_Bg {
+    /* 高度=height+border */
+    min-height: 30px;
+    max-height: 30px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 16px;
+    border: 1px solid #e2e5e9; 
+    background-color: transparent;
+    color:#9aa0aa; 
+
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#QPushButton_H32_R16_T14_Bg:hover {
+    border: 1px solid #f4d7da; 
+    background-color: #f6eaed;
+    color:#e53434; 
+}
+
+#QPushButton_H32_R16_T14_Bg:pressed {
+    border: 1px solid #f6eaed; 
+    background-color: #f6f0f3;
+    color:#ec8384; 
+}
+
+#QPushButton_H32_R16_T14_Bg:checked {
+    border: 1px solid #f4d7da; 
+    background-color: #f6eaed;
+    color:#e53434; 
+}
+
+#QPushButton_H32_R16_T14_Bg:disabled {
+    border: 1px solid #f6eaed; 
+    background-color: #f6f0f3;
+    color:#ec8384; 
 }

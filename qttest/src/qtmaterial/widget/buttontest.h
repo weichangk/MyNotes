@@ -1,6 +1,8 @@
 #pragma once
-#include <QWidget>
 #include "widget/button.h"
+
+#include <QWidget>
+#include <QPushButton>
 
 class ButtonTestWidget : public QWidget {
     Q_OBJECT
@@ -19,4 +21,8 @@ private:
     widget::HorIconTextVectorButton *m_pBtn14 = nullptr;
     widget::HorIconTextVectorButton *m_pBtn15 = nullptr;
     widget::HorIconTextVectorButton *m_pBtn16 = nullptr;
+
+    QPushButton *m_pBtn21 = nullptr;
+    QPushButton *m_pBtn22 = nullptr;
+    QPushButton *m_pBtn23 = nullptr;
 };
