@@ -137,14 +137,12 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     auto layout4 = new QHBoxLayout(widget4); 
 
     m_pBtn31 = new widget::IconButton(this);
-    m_pBtn31->setObjectName("IconButton");
-    m_pBtn31->setFixedSize(24, 24);
+    m_pBtn31->setObjectName("IconButton_HW24");
     m_pBtn31->setNormalPixmapPath(":/test/light/first-1-16.png");
     layout4->addWidget(m_pBtn31);
 
     m_pBtn32 = new widget::IconButton(this);
-    m_pBtn32->setObjectName("IconButton_R8_Bg");
-    m_pBtn32->setFixedSize(24, 24);
+    m_pBtn32->setObjectName("IconButton_HW24_R6_Bg");
     m_pBtn32->setNormalPixmapPath(":/test/light/first-1-16.png");
     layout4->addWidget(m_pBtn32);
 
