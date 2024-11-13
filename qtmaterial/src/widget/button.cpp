@@ -4,56 +4,53 @@
 #include <QEvent>
 
 namespace widget {
-QString buttonStatusToString(button::ButtonStatus state) {
-    switch (state) {
-    case button::Normal: return "normal";
-    case button::Hover: return "hover";
-    case button::Pressed: return "pressed";
-    case button::Disabled: return "disabled";
-    default: return "normal";
-    }
-}
-
 IconButton::IconButton(QWidget *parent) :
     QPushButton(parent) {
     QPushButton::setObjectName("IconButton");
+
+    auto layout = new QHBoxLayout(this);
+    layout->setContentsMargins(0, 0, 0, 0);
+
+    m_pIcon = new QLabel(this);
+    m_pIcon->setObjectName("IconButton_Icon");
+    m_pIcon->setFixedSize(m_nIconSize, m_nIconSize);
+
+    layout->addWidget(m_pIcon, 0, Qt::AlignCenter);
 }
 
 void IconButton::setObjectName(const QString &name) {
     QPushButton::setObjectName(name);
+    if (m_pIcon) {
+        m_pIcon->setObjectName(name + "_Icon");
+    }
 }
 
-void IconButton::setEnabled(bool b) {
-    QPushButton::setEnabled(b);
-    setButtonState(button::ButtonStatus::Disabled);
+void IconButton::setIconSize(int n) {
+    m_nIconSize = n;
+    m_pIcon->setFixedSize(m_nIconSize, m_nIconSize);
 }
 
-bool IconButton::isEnabled() const {
-    return QPushButton::isEnabled();
+int IconButton::iconSize() const {
+    return m_nIconSize;
 }
 
-void IconButton::setIconMargin(int n) {
-    m_nIconMargin = n;
+void IconButton::setFivePixmapPath(const QString &path) {
+    m_strFivePath = path;
+    m_pixmapFive = QPixmap(path);
+    if(!m_pixmapFive.isNull()) {
+        m_pixmapNormal = m_pixmapFive.copy(0, 0, m_pixmapFive.width() / 5, m_pixmapFive.height());
+        m_pixmapHover = m_pixmapFive.copy(m_pixmapFive.width() / 5, 0, m_pixmapFive.width() / 5, m_pixmapFive.height());
+        m_pixmapPressed = m_pixmapFive.copy(m_pixmapFive.width() / 5 * 2, 0, m_pixmapFive.width() / 5, m_pixmapFive.height());
+        m_pixmapChecked = m_pixmapFive.copy(m_pixmapFive.width() / 5 * 3, 0, m_pixmapFive.width() / 5, m_pixmapFive.height());
+        m_pixmapDisabled = m_pixmapFive.copy(m_pixmapFive.width() / 5 * 4, 0, m_pixmapFive.width() / 5, m_pixmapFive.height());
+    }
 }
 
-int IconButton::iconMargin() const {
-    return m_nIconMargin;
+QString IconButton::fivePixmapPath() const {
+    return m_strFivePath;
 }
 
-void IconButton::setFourPixmap(const QString &path) {
-    m_strFourStatePath = path;
-    m_pixmapFourState = QPixmap(path);
-    m_pixmapNormal = m_pixmapFourState.copy(0, 0, m_pixmapFourState.width() / 4, m_pixmapFourState.height());
-    m_pixmapHover = m_pixmapFourState.copy(m_pixmapFourState.width() / 4, 0, m_pixmapFourState.width() / 4, m_pixmapFourState.height());
-    m_pixmapPressed = m_pixmapFourState.copy(m_pixmapFourState.width() / 2, 0, m_pixmapFourState.width() / 4, m_pixmapFourState.height());
-    m_pixmapDisabled = m_pixmapFourState.copy(m_pixmapFourState.width() / 4 * 3, 0, m_pixmapFourState.width() / 4, m_pixmapFourState.height());
-}
-
-QString IconButton::fourPixmapPath() const {
-    return m_strFourStatePath;
-}
-
-void IconButton::setNormalPixmap(const QString &path) {
+void IconButton::setNormalPixmapPath(const QString &path) {
     m_strNormalPath = path;
     m_pixmapNormal = QPixmap(path);
 }
@@ -62,7 +59,7 @@ QString IconButton::normalPixmapPath() const {
     return m_strNormalPath;
 }
 
-void IconButton::setHoverPixmap(const QString &path) {
+void IconButton::setHoverPixmapPath(const QString &path) {
     m_strHoverPath = path;
     m_pixmapHover = QPixmap(path);
 }
@@ -71,7 +68,7 @@ QString IconButton::hoverPixmapPath() const {
     return m_strHoverPath;
 }
 
-void IconButton::setPressedPixmap(const QString &path) {
+void IconButton::setPressedPixmapPath(const QString &path) {
     m_strPressedPath = path;
     m_pixmapPressed = QPixmap(path);
 }
@@ -80,7 +77,16 @@ QString IconButton::pressedPixmapPath() const {
     return m_strPressedPath;
 }
 
-void IconButton::setDisablePixmap(const QString &path) {
+void IconButton::setCheckedPixmapPath(const QString &path) {
+    m_strCheckedPath = path;
+    m_pixmapChecked = QPixmap(path);
+}
+
+QString IconButton::checkedPixmapPath() const {
+    return m_strCheckedPath;
+}
+
+void IconButton::setDisablePixmapPath(const QString &path) {
     m_strDisabledPath = path;
     m_pixmapDisabled = QPixmap(path);
 }
@@ -89,48 +95,53 @@ QString IconButton::disablePixmapPath() const {
     return m_strDisabledPath;
 }
 
-void IconButton::paintEvent(QPaintEvent *event) {
-    QPushButton::paintEvent(event);
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing, true);
-    QPixmap pixmap = getCurrentPixmap();
-    if (!pixmap.isNull()) {
-        QSize iconSize(rect().width() - m_nIconMargin, rect().height() - m_nIconMargin);
-        QRect iconRect(m_nIconMargin, m_nIconMargin, iconSize.width(), iconSize.height());
-        painter.drawPixmap(iconRect, pixmap.scaled(iconSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
-    }
+void IconButton::resizeEvent(QResizeEvent *event) {
+    QPushButton::resizeEvent(event);
+    updateWidgetStatus(isEnabled() ? style::WidgetStatus::Normal : style::WidgetStatus::Disabled);
 }
 
 void IconButton::mousePressEvent(QMouseEvent *event) {
     QPushButton::mousePressEvent(event);
-    setButtonState(button::ButtonStatus::Pressed);
+    updateWidgetStatus(style::WidgetStatus::Pressed);
 }
 
 void IconButton::mouseReleaseEvent(QMouseEvent *event) {
     QPushButton::mouseReleaseEvent(event);
-    setButtonState(button::ButtonStatus::Normal);
+    updateWidgetStatus(style::WidgetStatus::Normal);
 }
 
 void IconButton::enterEvent(QEvent *event) {
     QPushButton::enterEvent(event);
-    setButtonState(button::ButtonStatus::Hover);
+    updateWidgetStatus(style::WidgetStatus::Hover);
 }
 
 void IconButton::leaveEvent(QEvent *event) {
     QPushButton::leaveEvent(event);
-    setButtonState(button::ButtonStatus::Normal);
+    updateWidgetStatus(style::WidgetStatus::Normal);
 }
 
-void IconButton::setButtonState(button::ButtonStatus state) {
-    m_eButtonState = state;
-    update();
+void IconButton::changeEvent(QEvent *event) {
+    QPushButton::changeEvent(event);
+    if (event->type() == QEvent::EnabledChange) {
+        updateWidgetStatus(isEnabled() ? style::WidgetStatus::Normal : style::WidgetStatus::Disabled);
+    }
+}
+
+void IconButton::updateWidgetStatus(style::WidgetStatus state) {
+    m_eState = m_eState == style::WidgetStatus::Disabled ? style::WidgetStatus::Disabled : state;
+    QPixmap pixmap = getCurrentPixmap();
+    if (!pixmap.isNull()) {
+        QSize iconSize = QSize(m_nIconSize, m_nIconSize);
+        m_pIcon->setPixmap(pixmap.scaled(iconSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    }
 }
 
 QPixmap IconButton::getCurrentPixmap() const {
-    switch (m_eButtonState) {
-    case button::Hover: return m_pixmapHover;
-    case button::Pressed: return m_pixmapPressed;
-    case button::Disabled: return m_pixmapDisabled;
+    switch (m_eState) {
+    case style::WidgetStatus::Hover: return m_pixmapHover.isNull() ? m_pixmapNormal : m_pixmapHover;
+    case style::WidgetStatus::Pressed: return m_pixmapPressed.isNull() ? m_pixmapNormal : m_pixmapPressed;
+    case style::WidgetStatus::Checked: return m_pixmapChecked.isNull() ? m_pixmapNormal : m_pixmapChecked;
+    case style::WidgetStatus::Disabled: return m_pixmapDisabled.isNull() ? m_pixmapNormal : m_pixmapDisabled;
     default: return m_pixmapNormal;
     }
 }
@@ -140,26 +151,34 @@ HorIconTextButton::HorIconTextButton(QWidget *parent) :
     QPushButton::setObjectName("HorIconTextButton");
     m_pLayout = new QHBoxLayout(this);
     m_pLayout->setContentsMargins(m_nLeftRightSpacing, 0, m_nLeftRightSpacing, 0);
+    m_pLayout->setSpacing(m_nIconTextSpacing);
+
+    m_pIcon = new QLabel(this);
+    m_pIcon->setObjectName("HorIconTextButton_Icon");
+    m_pIcon->setFixedSize(m_nIconSize, m_nIconSize);
 
     m_pText = new QLabel(this);
-    m_pText->setObjectName("HorIconTextButtonText");
+    m_pText->setObjectName("HorIconTextButton_Text");
     m_pText->setProperty("ButtonStatus", "normal");
 
-    m_pLayout->addSpacing(m_nIconSize + m_nIconTextSpacing);
+    m_pLayout->addWidget(m_pIcon, 0, Qt::AlignCenter);
     m_pLayout->addWidget(m_pText, 0, Qt::AlignCenter);
     m_pLayout->addStretch();
 }
 
 void HorIconTextButton::setObjectName(const QString &name) {
     QPushButton::setObjectName(name);
+    if (m_pIcon) {
+        m_pIcon->setObjectName(name + "_Icon");
+    }
     if (m_pText) {
-        m_pText->setObjectName(name + "Text");
+        m_pText->setObjectName(name + "_Text");
     }
 }
 
 void HorIconTextButton::setEnabled(bool b) {
     QPushButton::setEnabled(b);
-    setButtonState(button::ButtonStatus::Disabled);
+    updateWidgetStatus(style::WidgetStatus::Disabled);
 }
 
 bool HorIconTextButton::isEnabled() const {
@@ -176,6 +195,7 @@ QString HorIconTextButton::text() const {
 
 void HorIconTextButton::setIconSize(int n) {
     m_nIconSize = n;
+    m_pIcon->setFixedSize(m_nIconSize, m_nIconSize);
 }
 
 int HorIconTextButton::iconSize() const {
@@ -200,20 +220,30 @@ int HorIconTextButton::iconTextSpacing() const {
     return m_nIconTextSpacing;
 }
 
-void HorIconTextButton::setFourPixmap(const QString &path) {
-    m_strFourStatePath = path;
-    m_pixmapFourState = QPixmap(path);
-    m_pixmapNormal = m_pixmapFourState.copy(0, 0, m_pixmapFourState.width() / 4, m_pixmapFourState.height());
-    m_pixmapHover = m_pixmapFourState.copy(m_pixmapFourState.width() / 4, 0, m_pixmapFourState.width() / 4, m_pixmapFourState.height());
-    m_pixmapPressed = m_pixmapFourState.copy(m_pixmapFourState.width() / 2, 0, m_pixmapFourState.width() / 4, m_pixmapFourState.height());
-    m_pixmapDisabled = m_pixmapFourState.copy(m_pixmapFourState.width() / 4 * 3, 0, m_pixmapFourState.width() / 4, m_pixmapFourState.height());
+void HorIconTextButton::setAdjustWidth(bool b) {
+    m_bAdjustWidth = b;
+}
+bool HorIconTextButton::adjustWidth() const {
+    return m_bAdjustWidth;
 }
 
-QString HorIconTextButton::fourPixmapPath() const {
-    return m_strFourStatePath;
+void HorIconTextButton::setFivePixmapPath(const QString &path) {
+    m_strFivePath = path;
+    m_pixmapFive = QPixmap(path);
+    if(!m_pixmapFive.isNull()) {
+        m_pixmapNormal = m_pixmapFive.copy(0, 0, m_pixmapFive.width() / 5, m_pixmapFive.height());
+        m_pixmapHover = m_pixmapFive.copy(m_pixmapFive.width() / 5, 0, m_pixmapFive.width() / 5, m_pixmapFive.height());
+        m_pixmapPressed = m_pixmapFive.copy(m_pixmapFive.width() / 5 * 2, 0, m_pixmapFive.width() / 5, m_pixmapFive.height());
+        m_pixmapChecked = m_pixmapFive.copy(m_pixmapFive.width() / 5 * 3, 0, m_pixmapFive.width() / 5, m_pixmapFive.height());
+        m_pixmapDisabled = m_pixmapFive.copy(m_pixmapFive.width() / 5 * 4, 0, m_pixmapFive.width() / 5, m_pixmapFive.height());
+    }
 }
 
-void HorIconTextButton::setNormalPixmap(const QString &path) {
+QString HorIconTextButton::fivePixmapPath() const {
+    return m_strFivePath;
+}
+
+void HorIconTextButton::setNormalPixmapPath(const QString &path) {
     m_strNormalPath = path;
     m_pixmapNormal = QPixmap(path);
 }
@@ -222,7 +252,7 @@ QString HorIconTextButton::normalPixmapPath() const {
     return m_strNormalPath;
 }
 
-void HorIconTextButton::setHoverPixmap(const QString &path) {
+void HorIconTextButton::setHoverPixmapPath(const QString &path) {
     m_strHoverPath = path;
     m_pixmapHover = QPixmap(path);
 }
@@ -231,7 +261,7 @@ QString HorIconTextButton::hoverPixmapPath() const {
     return m_strHoverPath;
 }
 
-void HorIconTextButton::setPressedPixmap(const QString &path) {
+void HorIconTextButton::setPressedPixmapPath(const QString &path) {
     m_strPressedPath = path;
     m_pixmapPressed = QPixmap(path);
 }
@@ -240,7 +270,16 @@ QString HorIconTextButton::pressedPixmapPath() const {
     return m_strPressedPath;
 }
 
-void HorIconTextButton::setDisablePixmap(const QString &path) {
+void HorIconTextButton::setCheckedPixmapPath(const QString &path) {
+    m_strCheckedPath = path;
+    m_pixmapChecked = QPixmap(path);
+}
+
+QString HorIconTextButton::checkedPixmapPath() const {
+    return m_strCheckedPath;
+}
+
+void HorIconTextButton::setDisablePixmapPath(const QString &path) {
     m_strDisabledPath = path;
     m_pixmapDisabled = QPixmap(path);
 }
@@ -249,50 +288,71 @@ QString HorIconTextButton::disablePixmapPath() const {
     return m_strDisabledPath;
 }
 
-void HorIconTextButton::paintEvent(QPaintEvent *event) {
-    QPushButton::paintEvent(event);
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing, true);
-    QPixmap pixmap = getCurrentPixmap();
-    if (!pixmap.isNull()) {
-        QSize iconSize = QSize(m_nIconSize, m_nIconSize);
-        QRect iconRect = QRect(m_nLeftRightSpacing, (height() - m_nIconSize) / 2, m_nIconSize, m_nIconSize);
-        painter.drawPixmap(iconRect, pixmap.scaled(iconSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+void HorIconTextButton::resizeEvent(QResizeEvent *event) {
+    QPushButton::resizeEvent(event);
+    if (m_bAdjustWidth) {
+        int textWidth = m_pText->fontMetrics().horizontalAdvance(m_pText->text());
+        int w = textWidth + m_nLeftRightSpacing * 2 + m_nIconSize + m_nIconTextSpacing;
+        int h = height();
+        setFixedSize(w, h);
     }
+    updateWidgetStatus(isEnabled() ? style::WidgetStatus::Normal : style::WidgetStatus::Disabled);
 }
 
 void HorIconTextButton::mousePressEvent(QMouseEvent *event) {
     QPushButton::mousePressEvent(event);
-    setButtonState(button::ButtonStatus::Pressed);
+    updateWidgetStatus(style::WidgetStatus::Pressed);
 }
 
 void HorIconTextButton::mouseReleaseEvent(QMouseEvent *event) {
     QPushButton::mouseReleaseEvent(event);
-    setButtonState(button::ButtonStatus::Normal);
+    updateWidgetStatus(style::WidgetStatus::Normal);
 }
 
 void HorIconTextButton::enterEvent(QEvent *event) {
     QPushButton::enterEvent(event);
-    setButtonState(button::ButtonStatus::Hover);
+    updateWidgetStatus(style::WidgetStatus::Hover);
 }
 
 void HorIconTextButton::leaveEvent(QEvent *event) {
     QPushButton::leaveEvent(event);
-    setButtonState(button::ButtonStatus::Normal);
+    updateWidgetStatus(style::WidgetStatus::Normal);
 }
 
-void HorIconTextButton::setButtonState(button::ButtonStatus state) {
-    m_pText->setProperty("ButtonStatus", buttonStatusToString(state));
+void HorIconTextButton::changeEvent(QEvent *event) {
+    QPushButton::changeEvent(event);
+    if (event->type() == QEvent::EnabledChange) {
+        updateWidgetStatus(isEnabled() ? style::WidgetStatus::Normal : style::WidgetStatus::Disabled);
+    }
+}
+
+QSize HorIconTextButton::sizeHint() const {
+    if (m_bAdjustWidth) {
+        int textWidth = m_pText->fontMetrics().horizontalAdvance(m_pText->text());
+        int w = textWidth + m_nLeftRightSpacing * 2 + m_nIconSize + m_nIconTextSpacing;
+        int h = height();
+        return QSize(w, h);
+    }
+    return QPushButton::sizeHint();
+}
+
+void HorIconTextButton::updateWidgetStatus(style::WidgetStatus state) {
+    m_eState = m_eState == style::WidgetStatus::Disabled ? style::WidgetStatus::Disabled : state;
+    QPixmap pixmap = getCurrentPixmap();
+    if (!pixmap.isNull()) {
+        QSize iconSize = QSize(m_nIconSize, m_nIconSize);
+        m_pIcon->setPixmap(pixmap.scaled(iconSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    }
+    m_pText->setProperty(style::kWidgetStateProperty, style::widgetStatusToString(m_eState));
     m_pText->setStyle(m_pText->style());
-    m_eButtonState = state;
-    update();
 }
 
 QPixmap HorIconTextButton::getCurrentPixmap() const {
-    switch (m_eButtonState) {
-    case button::Hover: return m_pixmapHover;
-    case button::Pressed: return m_pixmapPressed;
-    case button::Disabled: return m_pixmapDisabled;
+    switch (m_eState) {
+    case style::WidgetStatus::Hover: return m_pixmapHover.isNull() ? m_pixmapNormal : m_pixmapHover;
+    case style::WidgetStatus::Pressed: return m_pixmapPressed.isNull() ? m_pixmapNormal : m_pixmapPressed;
+    case style::WidgetStatus::Checked: return m_pixmapChecked.isNull() ? m_pixmapNormal : m_pixmapChecked;
+    case style::WidgetStatus::Disabled: return m_pixmapDisabled.isNull() ? m_pixmapNormal : m_pixmapDisabled;
     default: return m_pixmapNormal;
     }
 }
@@ -319,8 +379,6 @@ HorIconTextVectorButton::HorIconTextVectorButton(QWidget *parent) :
 
     m_pLayout->addWidget(m_pText, 0, Qt::AlignCenter);
     m_pLayout->addStretch();
-
-    updateWidgetStatus(style::WidgetStatus::Normal);
 
     connect(this, &QPushButton::toggled, this, &HorIconTextVectorButton::slotToggled);
 }
@@ -407,6 +465,7 @@ void HorIconTextVectorButton::resizeEvent(QResizeEvent *event) {
         int h = height();
         setFixedSize(w, h);
     }
+    updateWidgetStatus(isEnabled() ? style::WidgetStatus::Normal : style::WidgetStatus::Disabled);
 }
 // 在QHBoxLayout或QVBoxLayout布局中的所有该自定义控件如果没有设置大小，所有的自定义控件宽或高默认统一和最大的宽或高的那个一样
 // 为了在布局内的该自定义控件能准确的设置固定宽度需要resizeEvent和sizeHint都要处理，否则会有点小问题！

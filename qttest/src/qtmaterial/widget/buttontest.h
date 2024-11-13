@@ -25,4 +25,10 @@ private:
     QPushButton *m_pBtn21 = nullptr;
     QPushButton *m_pBtn22 = nullptr;
     QPushButton *m_pBtn23 = nullptr;
+
+    widget::IconButton *m_pBtn31 = nullptr;
+    widget::IconButton *m_pBtn32 = nullptr;
+
+    widget::HorIconTextButton *m_pBtn41 = nullptr;
+    widget::HorIconTextButton *m_pBtn42 = nullptr;
 };

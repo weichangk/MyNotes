@@ -129,6 +129,50 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     layout3->addStretch();
 
     //
+    auto widget4 = new QWidget(this);
+    widget4->setFixedHeight(48);
+
+    layout->addWidget(widget4);
+
+    auto layout4 = new QHBoxLayout(widget4); 
+
+    m_pBtn31 = new widget::IconButton(this);
+    m_pBtn31->setObjectName("IconButton");
+    m_pBtn31->setFixedSize(24, 24);
+    m_pBtn31->setNormalPixmapPath(":/test/light/first-1-16.png");
+    layout4->addWidget(m_pBtn31);
+
+    m_pBtn32 = new widget::IconButton(this);
+    m_pBtn32->setObjectName("IconButton_R8_Bg");
+    m_pBtn32->setFixedSize(24, 24);
+    m_pBtn32->setNormalPixmapPath(":/test/light/first-1-16.png");
+    layout4->addWidget(m_pBtn32);
+
+    layout4->addStretch();
+
+    //
+    auto widget5 = new QWidget(this);
+    widget5->setFixedHeight(48);
+
+    layout->addWidget(widget5);
+
+    auto layout5 = new QHBoxLayout(widget5); 
+
+    m_pBtn41 = new widget::HorIconTextButton(this);
+    m_pBtn41->setObjectName("HorIconTextButton_I20");
+    m_pBtn41->setNormalPixmapPath(":/test/light/first-1-16.png");
+    m_pBtn41->setText("动态");
+    layout5->addWidget(m_pBtn41);
+
+    m_pBtn42 = new widget::HorIconTextButton(this);
+    m_pBtn42->setObjectName("HorIconTextButton_I20_Bg");
+    m_pBtn42->setNormalPixmapPath(":/test/light/first-1-16.png");
+    m_pBtn42->setText("我的音乐网盘");
+    layout5->addWidget(m_pBtn42);
+
+    layout5->addStretch();
+
+    //
     layout->addStretch();
 
     //
@@ -138,7 +182,6 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     buttonGroup->addButton(m_pBtn14, 1);
     buttonGroup->addButton(m_pBtn15, 2);
     buttonGroup->addButton(m_pBtn16, 3);
-
     m_pBtn13->setChecked(true);
 
     //

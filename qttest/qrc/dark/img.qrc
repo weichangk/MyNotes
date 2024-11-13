@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/test/dark">
+    <file alias="first-1-16.png">../../img/light/first-1-16.png</file>
+  </qresource>
+</RCC>
