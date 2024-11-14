@@ -97,7 +97,7 @@ QString IconButton::disablePixmapPath() const {
 
 void IconButton::resizeEvent(QResizeEvent *event) {
     QPushButton::resizeEvent(event);
-    updateWidgetStatus(isEnabled() ? style::WidgetStatus::Normal : style::WidgetStatus::Disabled);
+    updateWidgetStatus(isEnabled() ? isChecked() ? style::WidgetStatus::Checked : style::WidgetStatus::Normal : style::WidgetStatus::Disabled);
 }
 
 void IconButton::mousePressEvent(QMouseEvent *event) {
@@ -465,7 +465,7 @@ void HorIconTextVectorButton::resizeEvent(QResizeEvent *event) {
         int h = height();
         setFixedSize(w, h);
     }
-    updateWidgetStatus(isEnabled() ? style::WidgetStatus::Normal : style::WidgetStatus::Disabled);
+    updateWidgetStatus(isEnabled() ? isChecked() ? style::WidgetStatus::Checked : style::WidgetStatus::Normal : style::WidgetStatus::Disabled);
 }
 // 在QHBoxLayout或QVBoxLayout布局中的所有该自定义控件如果没有设置大小，所有的自定义控件宽或高默认统一和最大的宽或高的那个一样
 // 为了在布局内的该自定义控件能准确的设置固定宽度需要resizeEvent和sizeHint都要处理，否则会有点小问题！

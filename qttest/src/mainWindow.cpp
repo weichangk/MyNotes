@@ -34,7 +34,7 @@ using QtmaterialCoreDemo = enum {
 using QtmaterialWidgetDemo = enum {
     QtmaterialWidgetButtonTest = 2000,
     QtmaterialWidgetDemoLabelTest,
-    QtmaterialWidgetDemo222,
+    QtmaterialWidgetDemoTabBarTest,
     QtmaterialWidgetDemo333,
     QtmaterialWidgetDemo444,
     QtmaterialWidgetDemo555,
@@ -159,7 +159,7 @@ void MainWindow::setQtmaterialWidgetDemoBtns(QWidget *w) {
     QMap<int, QString> demoMap;
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetButtonTest, "Button Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoLabelTest, "Label test");
-    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo222, "222");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoTabBarTest, "TabBar Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo333, "333");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo444, "444");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo555, "555");
@@ -272,7 +272,8 @@ void MainWindow::test(int id) {
     case QtmaterialWidgetDemo::QtmaterialWidgetDemoLabelTest:
         labelTestShow();
         break;
-    case QtmaterialWidgetDemo::QtmaterialWidgetDemo222:
+    case QtmaterialWidgetDemo::QtmaterialWidgetDemoTabBarTest:
+        tabBarTestShow();
         break;
     case QtmaterialWidgetDemo::QtmaterialWidgetDemo333:
         break;
@@ -380,4 +381,11 @@ void MainWindow::labelTestShow() {
         m_pLabelTestWidget = new LabelTestWidget();
     }
     m_pLabelTestWidget->show();
+}
+
+void MainWindow::tabBarTestShow() {
+    if (!m_pTabBarTestWidget) {
+        m_pTabBarTestWidget = new TabBarTestWidget();
+    }
+    m_pTabBarTestWidget->show();
 }

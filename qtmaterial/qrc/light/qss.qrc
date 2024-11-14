@@ -1,8 +1,10 @@
 <RCC>
   <qresource prefix="/">
     <file>../../qss/light/widget.qss</file>
-    <file>../../qss/light/button.qss</file>
     <file>../../qss/light/iconbutton.qss</file>
+    <file>../../qss/light/qpushbutton.qss</file>
+    <file>../../qss/light/vectorbutton.qss</file>
+    <file>../../qss/light/horicontextvectorbutton.qss</file>
     <file>../../qss/light/label.qss</file>
     <file>../../qss/light/tabbar.qss</file>
     <file>../../qss/light/textedit.qss</file>

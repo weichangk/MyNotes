@@ -11,6 +11,7 @@
 #include "qtmaterial/core/definetest.h"
 #include "qtmaterial/widget/buttontest.h"
 #include "qtmaterial/widget/labeltest.h"
+#include "qtmaterial/widget/tabbartest.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
@@ -45,6 +46,7 @@ private:
     // qtmaterial widget
     void buttonTestShow();
     void labelTestShow();
+    void tabBarTestShow();
 
 private:
     QTabWidget *main_tabwidget_ = nullptr;
@@ -70,4 +72,5 @@ private:
     // qtmaterial widget
     ButtonTestWidget *m_pButtonTestWidget = nullptr;
     LabelTestWidget *m_pLabelTestWidget = nullptr;
+    TabBarTestWidget *m_pTabBarTestWidget = nullptr;
 };

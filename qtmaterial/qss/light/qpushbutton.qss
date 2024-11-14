@@ -1,0 +1,120 @@
+
+/* QPushButton_H28_R14_T14_B_Bg */
+#QPushButton_H28_R14_T14_B_Bg {
+    /* 高度=height+border */
+    min-height: 26px;
+    max-height: 26px;
+    height: 26px;
+    font-size: 14px;
+    border-radius: 14px;
+    border: 1px solid #e2e5e9; 
+    background-color: transparent;
+    color:#4e5669; 
+
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+#QPushButton_H28_R14_T14_B_Bg:hover {
+    border: 1px solid #f4d7da; 
+    background-color: #f6eaed;
+    color:#e53434; 
+}
+
+#QPushButton_H28_R14_T14_B_Bg:pressed {
+    border: 1px solid #f6eaed; 
+    background-color: #f6f0f3;
+    color:#ec8384; 
+}
+
+#QPushButton_H28_R14_T14_B_Bg:checked {
+    border: 1px solid #f4d7da; 
+    background-color: #f6eaed;
+    color:#e53434; 
+}
+
+#QPushButton_H28_R14_T14_B_Bg:disabled {
+    border: 1px solid #f6eaed; 
+    background-color: #f6f0f3;
+    color:#ec8384; 
+}
+
+/* QPushButton_H32_R16_T14_B_Bg */
+#QPushButton_H32_R16_T14_B_Bg {
+    /* 高度=height+border */
+    min-height: 30px;
+    max-height: 30px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 16px;
+    border: 1px solid #e2e5e9; 
+    background-color: transparent;
+    color:#4e5669; 
+
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#QPushButton_H32_R16_T14_B_Bg:hover {
+    border: 1px solid #f4d7da; 
+    background-color: #f6eaed;
+    color:#e53434; 
+}
+
+#QPushButton_H32_R16_T14_B_Bg:pressed {
+    border: 1px solid #f6eaed; 
+    background-color: #f6f0f3;
+    color:#ec8384; 
+}
+
+#QPushButton_H32_R16_T14_B_Bg:checked {
+    border: 1px solid #f4d7da; 
+    background-color: #f6eaed;
+    color:#e53434; 
+}
+
+#QPushButton_H32_R16_T14_B_Bg:disabled {
+    border: 1px solid #f6eaed; 
+    background-color: #f6f0f3;
+    color:#ec8384; 
+}
+
+/* QPushButton_H36_R18_T14_B_Bg */
+#QPushButton_H36_R18_T14_B_Bg {
+    /* 高度=height+border */
+    min-height: 34px;
+    max-height: 34px;
+    height: 34px;
+    font-size: 14px;
+    border-radius: 18px;
+    border: 1px solid #e2e5e9; 
+    background-color: transparent;
+    color:#4e5669; 
+
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+#QPushButton_H36_R18_T14_B_Bg:hover {
+    border: 1px solid #f4d7da; 
+    background-color: #f6eaed;
+    color:#e53434; 
+}
+
+#QPushButton_H36_R18_T14_B_Bg:pressed {
+    border: 1px solid #f6eaed; 
+    background-color: #f6f0f3;
+    color:#ec8384; 
+}
+
+#QPushButton_H36_R18_T14_B_Bg:checked {
+    border: 1px solid #f4d7da; 
+    background-color: #f6eaed;
+    color:#e53434; 
+}
+
+#QPushButton_H36_R18_T14_B_Bg:disabled {
+    border: 1px solid #f6eaed; 
+    background-color: #f6f0f3;
+    color:#ec8384; 
+}

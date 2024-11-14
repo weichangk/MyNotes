@@ -1,0 +1,509 @@
+
+/* HorIconTextVectorButton_H28_I20_T14 */
+#HorIconTextVectorButton_H28_I20_T14 {
+    border: none;
+    background-color: transparent;
+    min-height: 28px;
+    max-height: 28px;
+    height: 28px;
+}
+
+#HorIconTextVectorButton_H28_I20_T14_Icon[widget-state='normal'] {
+    border: none;
+    background-color: transparent;
+    color:#9aa0aa; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H28_I20_T14_Icon[widget-state='hover'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H28_I20_T14_Icon[widget-state='pressed'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H28_I20_T14_Icon[widget-state='disabled'] {
+    border: none;
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H28_I20_T14_Icon[widget-state='checked'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474;  
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H28_I20_T14_Text[widget-state='normal'] {
+    border: none;
+    background-color: transparent;
+    color:#9aa0aa; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H28_I20_T14_Text[widget-state='hover'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H28_I20_T14_Text[widget-state='pressed'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H28_I20_T14_Text[widget-state='disabled'] {
+    border: none;
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H28_I20_T14_Text[widget-state='checked'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 14px;
+}
+
+
+/* HorIconTextVectorButton_H32_I20_T14 */
+#HorIconTextVectorButton_H32_I20_T14 {
+    border: none;
+    background-color: transparent;
+    min-height: 32px;
+    max-height: 32px;
+    height: 32px;
+}
+
+#HorIconTextVectorButton_H32_I20_T14_Icon[widget-state='normal'] {
+    border: none;
+    background-color: transparent;
+    color:#9aa0aa; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H32_I20_T14_Icon[widget-state='hover'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H32_I20_T14_Icon[widget-state='pressed'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H32_I20_T14_Icon[widget-state='disabled'] {
+    border: none;
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H32_I20_T14_Icon[widget-state='checked'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474;  
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H32_I20_T14_Text[widget-state='normal'] {
+    border: none;
+    background-color: transparent;
+    color:#9aa0aa; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H32_I20_T14_Text[widget-state='hover'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H32_I20_T14_Text[widget-state='pressed'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H32_I20_T14_Text[widget-state='disabled'] {
+    border: none;
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H32_I20_T14_Text[widget-state='checked'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 14px;
+}
+
+/* HorIconTextVectorButton_H36_I20_T14 */
+#HorIconTextVectorButton_H36_I20_T14 {
+    border: none;
+    background-color: transparent;
+    min-height: 36px;
+    max-height: 36px;
+    height: 36px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Icon[widget-state='normal'] {
+    border: none;
+    background-color: transparent;
+    color:#9aa0aa; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Icon[widget-state='hover'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Icon[widget-state='pressed'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Icon[widget-state='disabled'] {
+    border: none;
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Icon[widget-state='checked'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474;  
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Text[widget-state='normal'] {
+    border: none;
+    background-color: transparent;
+    color:#9aa0aa; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Text[widget-state='hover'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Text[widget-state='pressed'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Text[widget-state='disabled'] {
+    border: none;
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_I20_T14_Text[widget-state='checked'] {
+    border: none;
+    background-color: transparent;
+    color:#5b6474; 
+    font-size: 14px;
+}
+
+/* HorIconTextVectorButton_H28_R8_I20_T14_Bg */
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg {
+    border-radius: 8px;
+    background-color: transparent;
+    min-height: 28px;
+    max-height: 28px;
+    height: 28px;
+}
+
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg:hover {
+    background-color: #e4e8ec;
+}
+
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg:pressed {
+    background-color: #e4e8ec;
+}
+
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg:disabled {
+    background-color: transparent;
+}
+
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg:checked {
+    background-color: #fd3d4b;
+}
+
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg_Icon[widget-state='normal'] {
+    background-color: transparent;
+    color:#737b89; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg_Icon[widget-state='hover'] {
+    background-color: transparent;
+    color:#737b89; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg_Icon[widget-state='pressed'] {
+    background-color: transparent;
+    color:#737b89; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg_Icon[widget-state='disabled'] {
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg_Icon[widget-state='checked'] {
+    background-color: transparent;
+    color:#ffffff; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg_Text[widget-state='normal'] {
+    border: none;
+    background-color: transparent;
+    color:#4e5669; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg_Text[widget-state='hover'] {
+    border: none;
+    background-color: transparent;
+    color:#4e5669; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg_Text[widget-state='pressed'] {
+    border: none;
+    background-color: transparent;
+    color:#4e5669; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg_Text[widget-state='disabled'] {
+    border: none;
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H28_R8_I20_T14_Bg_Text[widget-state='checked'] {
+    border: none;
+    background-color: transparent;
+    color:#ffffff; 
+    font-size: 14px;
+}
+
+/* HorIconTextVectorButton_H32_R8_I20_T14_Bg */
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg {
+    border-radius: 8px;
+    background-color: transparent;
+    min-height: 32px;
+    max-height: 32px;
+    height: 32px;
+}
+
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg:hover {
+    background-color: #e4e8ec;
+}
+
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg:pressed {
+    background-color: #e4e8ec;
+}
+
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg:disabled {
+    background-color: transparent;
+}
+
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg:checked {
+    background-color: #fd3d4b;
+}
+
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg_Icon[widget-state='normal'] {
+    background-color: transparent;
+    color:#737b89; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg_Icon[widget-state='hover'] {
+    background-color: transparent;
+    color:#737b89; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg_Icon[widget-state='pressed'] {
+    background-color: transparent;
+    color:#737b89; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg_Icon[widget-state='disabled'] {
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg_Icon[widget-state='checked'] {
+    background-color: transparent;
+    color:#ffffff; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg_Text[widget-state='normal'] {
+    border: none;
+    background-color: transparent;
+    color:#4e5669; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg_Text[widget-state='hover'] {
+    border: none;
+    background-color: transparent;
+    color:#4e5669; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg_Text[widget-state='pressed'] {
+    border: none;
+    background-color: transparent;
+    color:#4e5669; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg_Text[widget-state='disabled'] {
+    border: none;
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H32_R8_I20_T14_Bg_Text[widget-state='checked'] {
+    border: none;
+    background-color: transparent;
+    color:#ffffff; 
+    font-size: 14px;
+}
+
+
+/* HorIconTextVectorButton_H36_R8_I20_T14_Bg */
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg {
+    border-radius: 8px;
+    background-color: transparent;
+    min-height: 36px;
+    max-height: 36px;
+    height: 36px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg:hover {
+    background-color: #e4e8ec;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg:pressed {
+    background-color: #e4e8ec;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg:disabled {
+    background-color: transparent;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg:checked {
+    background-color: #fd3d4b;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Icon[widget-state='normal'] {
+    background-color: transparent;
+    color:#737b89; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Icon[widget-state='hover'] {
+    background-color: transparent;
+    color:#737b89; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Icon[widget-state='pressed'] {
+    background-color: transparent;
+    color:#737b89; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Icon[widget-state='disabled'] {
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Icon[widget-state='checked'] {
+    background-color: transparent;
+    color:#ffffff; 
+    font-size: 20px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='normal'] {
+    border: none;
+    background-color: transparent;
+    color:#4e5669; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='hover'] {
+    border: none;
+    background-color: transparent;
+    color:#4e5669; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='pressed'] {
+    border: none;
+    background-color: transparent;
+    color:#4e5669; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='disabled'] {
+    border: none;
+    background-color: transparent;
+    color:#f0f3f6; 
+    font-size: 14px;
+}
+
+#HorIconTextVectorButton_H36_R8_I20_T14_Bg_Text[widget-state='checked'] {
+    border: none;
+    background-color: transparent;
+    color:#ffffff; 
+    font-size: 14px;
+}

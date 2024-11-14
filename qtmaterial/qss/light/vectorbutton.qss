@@ -1,0 +1,200 @@
+/* VectorButton_HW28_I20 */
+#VectorButton_HW28_I20 {
+    border: none;
+    background-color: transparent;
+    color:#9aa0aa; 
+    min-width: 28px;
+    max-width: 28px;
+    width: 28px;
+    min-height: 28px;
+    max-height: 28px;
+    height: 28px;  
+    font-size: 20px;
+}
+
+#VectorButton_HW28_I20:hover {
+    color:#5b6474; 
+}
+
+#VectorButton_HW28_I20:pressed {
+    color:#5b6474; 
+}
+
+#VectorButton_HW28_I20:disabled {
+    color:#f0f3f6; 
+}
+
+#VectorButton_HW28_I20:checked {
+    color:#5b6474; 
+}
+
+/* VectorButton_HW32_I20 */
+#VectorButton_HW32_I20 {
+    border: none;
+    background-color: transparent;
+    color:#9aa0aa; 
+    min-width: 32px;
+    max-width: 32px;
+    width: 32px;
+    min-height: 32px;
+    max-height: 32px;
+    height: 32px;  
+    font-size: 20px;
+}
+
+#VectorButton_HW32_I20:hover {
+    color:#5b6474; 
+}
+
+#VectorButton_HW32_I20:pressed {
+    color:#5b6474; 
+}
+
+#VectorButton_HW32_I20:disabled {
+    color:#f0f3f6; 
+}
+
+#VectorButton_HW32_I20:checked {
+    color:#5b6474; 
+}
+
+/* VectorButton_HW36_I20 */
+#VectorButton_HW36_I20 {
+    border: none;
+    background-color: transparent;
+    color:#9aa0aa; 
+    min-width: 36px;
+    max-width: 36px;
+    width: 36px;
+    min-height: 36px;
+    max-height: 36px;
+    height: 36px;  
+    font-size: 20px;
+}
+
+#VectorButton_HW36_I20:hover {
+    color:#5b6474; 
+}
+
+#VectorButton_HW36_I20:pressed {
+    color:#5b6474; 
+}
+
+#VectorButton_HW36_I20:disabled {
+    color:#f0f3f6; 
+}
+
+#VectorButton_HW36_I20:checked {
+    color:#5b6474; 
+}
+
+/* VectorButton_HW28_R8_I20_B_Bg */
+#VectorButton_HW28_R8_I20_B_Bg {
+    border-radius: 8px;
+    border: 1px solid #e2e5e9; 
+
+    background-color: transparent;
+    color:#898f9d; 
+
+    min-width: 26px;
+    max-width: 26px;
+    width: 26px;
+    min-height: 26px;
+    max-height: 26px;
+    height: 26px;  
+    font-size: 20px;
+}
+
+#VectorButton_HW28_R8_I20_B_Bg:hover {
+    background-color: #e2e5e9;
+    color:#898f9d;
+}
+
+#VectorButton_HW28_R8_I20_B_Bg:pressed {
+    background-color: #e2e5e9;
+    color:#898f9d;
+}
+
+#VectorButton_HW28_R8_I20_B_Bg:disabled {
+    background-color: #ecedef;
+    color:transparent; 
+}
+
+#VectorButton_HW28_R8_I20_B_Bg:checked {
+    background-color: #e2e5e9;
+    color:#898f9d;
+}
+
+/* VectorButton_HW32_R8_I20_B_Bg */
+#VectorButton_HW32_R8_I20_B_Bg {
+    border-radius: 8px;
+    border: 1px solid #e2e5e9; 
+
+    background-color: transparent;
+    color:#898f9d; 
+
+    min-width: 30px;
+    max-width: 30px;
+    width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+    height: 30px;  
+    font-size: 20px;
+}
+
+#VectorButton_HW32_R8_I20_B_Bg:hover {
+    background-color: #e2e5e9;
+    color:#898f9d;
+}
+
+#VectorButton_HW32_R8_I20_B_Bg:pressed {
+    background-color: #e2e5e9;
+    color:#898f9d;
+}
+
+#VectorButton_HW32_R8_I20_B_Bg:disabled {
+    background-color: #ecedef;
+    color:transparent; 
+}
+
+#VectorButton_HW32_R8_I20_B_Bg:checked {
+    background-color: #e2e5e9;
+    color:#898f9d;
+}
+
+/* VectorButton_HW36_R8_I20_B_Bg */
+#VectorButton_HW36_R8_I20_B_Bg {
+    border-radius: 8px;
+    border: 1px solid #e2e5e9; 
+
+    background-color: transparent;
+    color:#898f9d; 
+
+    min-width: 36px;
+    max-width: 36px;
+    width: 36px;
+    min-height: 36px;
+    max-height: 36px;
+    height: 36px;  
+    font-size: 20px;
+}
+
+#VectorButton_HW36_R8_I20_B_Bg:hover {
+    background-color: #e2e5e9;
+    color:#898f9d;
+}
+
+#VectorButton_HW36_R8_I20_B_Bg:pressed {
+    background-color: #e2e5e9;
+    color:#898f9d;
+}
+
+#VectorButton_HW36_R8_I20_B_Bg:disabled {
+    background-color: #ecedef;
+    color:transparent; 
+}
+
+#VectorButton_HW36_R8_I20_B_Bg:checked {
+    background-color: #e2e5e9;
+    color:#898f9d;
+}
