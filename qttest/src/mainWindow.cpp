@@ -4,6 +4,7 @@
 #include <QMap>
 #include <QVariant>
 #include "widget/flowlayout.h"
+#include "filter/mask.h"
 
 using QtTestDemo = enum {
     QtTestDemoDialog = 0,
@@ -317,6 +318,8 @@ void MainWindow::test(int id) {
 
 void MainWindow::dialogShow() {
     Dialog dialog;
+    auto mask = new filter::Mask(&dialog, this);
+    mask->setFullMask(true);
     dialog.exec();
 }
 
