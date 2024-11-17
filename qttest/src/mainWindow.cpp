@@ -318,7 +318,7 @@ void MainWindow::test(int id) {
 
 void MainWindow::dialogShow() {
     Dialog dialog;
-    auto mask = new filter::Mask(&dialog, this);
+    auto mask = new filter::PopupMask(&dialog, this);
     mask->setFullMask(true);
     dialog.exec();
 }

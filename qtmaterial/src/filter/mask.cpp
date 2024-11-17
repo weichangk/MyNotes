@@ -7,7 +7,7 @@
 #include <QScreen>
 
 namespace filter {
-Mask::Mask(QWidget *watchedWidget, QWidget *maskWidget) :
+PopupMask::PopupMask(QWidget *watchedWidget, QWidget *maskWidget) :
     QObject(watchedWidget),
     m_pWatchedWidget(watchedWidget),
     m_pMaskWidget(maskWidget) {
@@ -25,43 +25,43 @@ Mask::Mask(QWidget *watchedWidget, QWidget *maskWidget) :
     m_pMask->installEventFilter(this);
 }
 
-Mask::~Mask() {
+PopupMask::~PopupMask() {
     SAFE_DELETE(m_pMask);
 }
 
-void Mask::setMaskColor(const QColor color) {
+void PopupMask::setMaskColor(const QColor color) {
     m_colorMask = color;
 }
 
-QColor Mask::maskColor() const {
+QColor PopupMask::maskColor() const {
     return m_colorMask;
 }
 
-void Mask::setWatchedWidgetRadius(int n) {
+void PopupMask::setWatchedWidgetRadius(int n) {
     m_nWatchedWidgetRadius = n;
 }
 
-int Mask::watchedWidgetRadius() const {
+int PopupMask::watchedWidgetRadius() const {
     return m_nWatchedWidgetRadius;
 }
 
-void Mask::setMaskWidgetRadius(int n) {
+void PopupMask::setMaskWidgetRadius(int n) {
     m_nMaskWidgetRadius = n;
 }
 
-int Mask::maskWidgetRadius() const {
+int PopupMask::maskWidgetRadius() const {
     return m_nMaskWidgetRadius;
 }
 
-void Mask::setFullMask(bool b) {
+void PopupMask::setFullMask(bool b) {
     m_bFullMask = b;
 }
 
-bool Mask::fullMask() const {
+bool PopupMask::fullMask() const {
     return m_bFullMask;
 }
 
-bool Mask::eventFilter(QObject *watched, QEvent *event) {
+bool PopupMask::eventFilter(QObject *watched, QEvent *event) {
     if (watched == m_pWatchedWidget) {
         if (event->type() == QEvent::Move) {
             updateMaskGeometry();
@@ -127,7 +127,7 @@ bool Mask::eventFilter(QObject *watched, QEvent *event) {
     return false;
 }
 
-void Mask::updateMaskGeometry() {
+void PopupMask::updateMaskGeometry() {
     QRect rc(0, 0, 0, 0);
     if (m_bFullMask) {
         QScreen *screen = m_pWatchedWidget->screen();
@@ -137,4 +137,98 @@ void Mask::updateMaskGeometry() {
     }
     m_pMask->setGeometry(rc);
 }
+
+RadiusMask::RadiusMask(QWidget *parent) :
+    QObject(parent), m_pWatchedWidget(parent) {
+    m_pWatchedWidget->installEventFilter(this);
+}
+
+void RadiusMask::setPramas(RoundType roundType, int maskMargin, int xRadius, int yRadius) {
+    if (m_eRoundType == roundType && m_nMaskMargin == maskMargin && 
+        m_nXRadius == xRadius && m_nYRadius == yRadius) {
+        return;
+    }
+
+    m_eRoundType = roundType;
+    m_nMaskMargin = maskMargin;
+    m_nXRadius = xRadius;
+    m_nYRadius = yRadius;
+    updateMask();
+}
+
+
+void RadiusMask::updateMask() {
+    auto mask = generateMask();
+	m_pWatchedWidget->setMask(mask);
+}
+
+bool RadiusMask::eventFilter(QObject *watched, QEvent *event) {
+    static QSize lastSize;
+    if (watched == m_pWatchedWidget) {
+        if (event->type() == QEvent::Resize) {
+            QSize currentSize = m_pWatchedWidget->size();
+            if (lastSize != currentSize) {
+                updateMask();
+                lastSize = currentSize;
+            }
+        }
+    }
+    return false;
+}
+
+QBitmap RadiusMask::generateMask() {
+    int width = m_pWatchedWidget->width();
+    int height = m_pWatchedWidget->height();
+
+    QBitmap bitmap(width, height);
+    bitmap.fill(Qt::color0);
+
+    QPainter painter(&bitmap);
+    painter.setBrush(Qt::color1); // 使用Qt::color1来绘制可见区域
+    painter.setRenderHint(QPainter::Antialiasing);
+
+    painter.drawRoundedRect(m_nMaskMargin, m_nMaskMargin,
+                            width - 2 * m_nMaskMargin, height - 2 * m_nMaskMargin,
+                            m_nXRadius, m_nYRadius);
+
+    int temp = 0;
+    switch (m_eRoundType) {
+        case Round_Left:
+            temp = width / 2;
+            painter.drawRect(width - temp - m_nMaskMargin, m_nMaskMargin,
+                             temp, height - 2 * m_nMaskMargin);
+            break;
+        case Round_Right:
+            painter.drawRect(m_nMaskMargin, m_nMaskMargin,
+                             width / 2, height - 2 * m_nMaskMargin);
+            break;
+        case Round_Top:
+            temp = height / 2;
+            painter.drawRect(m_nMaskMargin, height - temp - m_nMaskMargin,
+                             width - 2 * m_nMaskMargin, temp);
+            break;
+        case Round_Bottom:
+            painter.drawRect(m_nMaskMargin, m_nMaskMargin,
+                             width - 2 * m_nMaskMargin, height / 2);
+            break;
+        case Round_Left_Bottom:
+            temp = width / 2;
+            painter.drawRect(width - temp - m_nMaskMargin, m_nMaskMargin,
+                             temp, height - 2 * m_nMaskMargin);
+            painter.drawRect(m_nMaskMargin, m_nMaskMargin,
+                             width - 2 * m_nMaskMargin, height / 2);
+            break;
+        case Round_Right_Bottom:
+            painter.drawRect(m_nMaskMargin, m_nMaskMargin,
+                             width / 2, height - 2 * m_nMaskMargin);
+            painter.drawRect(m_nMaskMargin, m_nMaskMargin,
+                             width - 2 * m_nMaskMargin, height / 2);
+            break;
+        default:
+            break;
+    }
+
+    return bitmap;
+}
+
 } // namespace filter
