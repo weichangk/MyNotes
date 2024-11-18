@@ -2,8 +2,11 @@
 #include <QPainter>
 #include <QVariant>
 #include <QEvent>
+#include <QStyleOptionButton>
+#include <QPainterPath>
 
 namespace widget {
+//IconButton
 IconButton::IconButton(QWidget *parent) :
     QPushButton(parent) {
     QPushButton::setObjectName("IconButton");
@@ -146,6 +149,7 @@ QPixmap IconButton::getCurrentPixmap() const {
     }
 }
 
+//HorIconTextButton
 HorIconTextButton::HorIconTextButton(QWidget *parent) :
     QPushButton(parent) {
     QPushButton::setObjectName("HorIconTextButton");
@@ -357,10 +361,88 @@ QPixmap HorIconTextButton::getCurrentPixmap() const {
     }
 }
 
+// BottomBorderButton
+BottomBorderButton::BottomBorderButton(QWidget *parent) :
+    QPushButton(parent) {
+}
+
+void BottomBorderButton::setColorBottomBorder(const QColor &color) {
+    m_colorBottomBorder = color;
+}
+
+QColor BottomBorderButton::colorBottomBorder() const {
+    return m_colorBottomBorder;
+}
+
+void BottomBorderButton::setBottomBorderWidth(int n) {
+    m_nBottomBorderWidth = n;
+}
+
+int BottomBorderButton::bottomBorderWidth() const {
+    return m_nBottomBorderWidth;
+}
+
+void BottomBorderButton::setBottomBorderHeight(int n) {
+    m_nBottomBorderHeight = n;
+}
+
+int BottomBorderButton::bottomBorderHeight() const {
+    return m_nBottomBorderHeight;
+}
+
+void BottomBorderButton::setBottomBorderRadius(int n) {
+    m_nBottomBorderRadius = n;
+}
+
+int BottomBorderButton::bottomBorderRadius() const {
+    return m_nBottomBorderRadius;
+}
+
+void BottomBorderButton::setAdjustBorderWidth(bool b) {
+    m_bAdjustBorderWidth = b;
+}
+
+bool BottomBorderButton::adjustBorderWidth() const {
+    return m_bAdjustBorderWidth;
+}
+
+void BottomBorderButton::paintEvent(QPaintEvent *event) {
+    QStyleOptionButton option;
+    option.initFrom(this);
+
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
+
+    style()->drawControl(QStyle::CE_PushButton, &option, &painter, this);
+
+    if (isChecked()) {
+        QRect rect = this->rect();
+        rect.setTop(rect.bottom() - m_nBottomBorderHeight);
+        if (m_bAdjustBorderWidth) {
+            rect.setLeft(rect.left() + m_nBottomBorderWidth / 2);
+            rect.setRight(rect.right() - m_nBottomBorderWidth / 2);
+        } else {
+            rect.setLeft(rect.left() + m_nBottomBorderWidth);
+            rect.setRight(rect.right() - m_nBottomBorderWidth);
+        }
+
+        QBrush brush(m_colorBottomBorder);
+
+        QPainterPath path;
+        path.addRoundedRect(rect, m_nBottomBorderRadius, m_nBottomBorderRadius);
+
+        painter.setBrush(brush);
+        painter.setPen(Qt::NoPen);
+        painter.drawPath(path);
+    }
+}
+
+// VectorButton
 VectorButton::VectorButton(QWidget *parent) :
     QPushButton(parent) {
 }
 
+// HorIconTextVectorButton
 HorIconTextVectorButton::HorIconTextVectorButton(QWidget *parent) :
     QPushButton(parent) {
     QPushButton::setObjectName("HorIconTextVectorButton");

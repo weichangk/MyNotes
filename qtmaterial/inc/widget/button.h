@@ -176,6 +176,41 @@ private:
     bool m_bAdjustWidth = true;
 };
 
+
+class QTMATERIAL_EXPORT BottomBorderButton : public QPushButton {
+    Q_OBJECT
+public:
+    BottomBorderButton(QWidget *parent = nullptr);
+    ~BottomBorderButton() override {
+    }
+
+    void setColorBottomBorder(const QColor &);
+    QColor colorBottomBorder() const;
+
+    void setBottomBorderWidth(int);
+    int bottomBorderWidth() const;
+
+    void setBottomBorderHeight(int);
+    int bottomBorderHeight() const;
+
+    void setBottomBorderRadius(int);
+    int bottomBorderRadius() const;
+
+    void setAdjustBorderWidth(bool);
+    bool adjustBorderWidth() const;
+
+protected:
+    void paintEvent(QPaintEvent *) override;
+
+private:
+    QColor m_colorBottomBorder = "#fc3c53"; 
+    int m_nBottomBorderWidth = 16; 
+    int m_nBottomBorderHeight = 3;  
+    int m_nBottomBorderRadius = 1;
+
+    bool m_bAdjustBorderWidth = false;
+};
+
 class QTMATERIAL_EXPORT VectorButton : public QPushButton {
     Q_OBJECT
 public:
