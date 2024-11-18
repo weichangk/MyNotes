@@ -1,0 +1,30 @@
+widget--BottomBorderButton {
+    border: none;
+    background-color: transparent;
+}
+
+#BottomBorderButton_H28_T16 {
+    min-height: 28px;
+    max-height: 28px;
+    height: 28px;
+    font-size: 16px;
+    color:#4e5669; 
+    text-align: top;
+}
+
+#BottomBorderButton_H28_T16:hover {
+    color:#4e5669;
+}
+
+#BottomBorderButton_H28_T16:pressed {
+    color:#4e5669;
+}
+
+#BottomBorderButton_H28_T16:checked {
+    color:#4e5669;
+    font-weight: bold;
+}
+
+#BottomBorderButton_H28_T16:disabled {
+    color:#f0f3f6;
+}

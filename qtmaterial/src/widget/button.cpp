@@ -2,7 +2,6 @@
 #include <QPainter>
 #include <QVariant>
 #include <QEvent>
-#include <QStyleOptionButton>
 #include <QPainterPath>
 
 namespace widget {
@@ -398,32 +397,30 @@ int BottomBorderButton::bottomBorderRadius() const {
     return m_nBottomBorderRadius;
 }
 
-void BottomBorderButton::setAdjustBorderWidth(bool b) {
-    m_bAdjustBorderWidth = b;
+void BottomBorderButton::setAdjustBottomBorderWidth(bool b) {
+    m_bAdjustBottomBorderWidth = b;
 }
 
-bool BottomBorderButton::adjustBorderWidth() const {
-    return m_bAdjustBorderWidth;
+bool BottomBorderButton::adjustBottomBorderWidth() const {
+    return m_bAdjustBottomBorderWidth;
+}
+
+void BottomBorderButton::setLeftRightSpacing(int n) {
+    m_nLeftRightSpacing = n;
+}
+int BottomBorderButton::leftRightSpacing() const {
+    return m_nLeftRightSpacing;
 }
 
 void BottomBorderButton::paintEvent(QPaintEvent *event) {
-    QStyleOptionButton option;
-    option.initFrom(this);
-
+    QPushButton::paintEvent(event);
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
 
-    style()->drawControl(QStyle::CE_PushButton, &option, &painter, this);
-
     if (isChecked()) {
-        QRect rect = this->rect();
-        rect.setTop(rect.bottom() - m_nBottomBorderHeight);
-        if (m_bAdjustBorderWidth) {
-            rect.setLeft(rect.left() + m_nBottomBorderWidth / 2);
-            rect.setRight(rect.right() - m_nBottomBorderWidth / 2);
-        } else {
-            rect.setLeft(rect.left() + m_nBottomBorderWidth);
-            rect.setRight(rect.right() - m_nBottomBorderWidth);
+        QRect rect = QRect((width() - m_nBottomBorderWidth) / 2, height() - m_nBottomBorderHeight - 1, m_nBottomBorderWidth, m_nBottomBorderHeight);
+        if(m_bAdjustBottomBorderWidth) {
+            rect = QRect(0, height() - m_nBottomBorderHeight - 1, m_nBottomBorderWidth, m_nBottomBorderHeight);
         }
 
         QBrush brush(m_colorBottomBorder);
@@ -435,6 +432,34 @@ void BottomBorderButton::paintEvent(QPaintEvent *event) {
         painter.setPen(Qt::NoPen);
         painter.drawPath(path);
     }
+}
+
+void BottomBorderButton::resizeEvent(QResizeEvent *event) {
+    QPushButton::resizeEvent(event);
+    if (m_bAdjustWidth) {
+        QString text = this->text();
+        QFont boldFont = this->font();
+        boldFont.setBold(true);
+        QFontMetrics fm(boldFont);
+        int textWidth = fm.horizontalAdvance(text);
+        int w = textWidth + m_nLeftRightSpacing * 2;
+        int h = height();
+        setFixedSize(w, h);
+    }
+}
+// 处理qss加粗显示不全
+QSize BottomBorderButton::sizeHint() const {
+    if (m_bAdjustWidth) {
+        QString text = this->text();
+        QFont boldFont = this->font();
+        boldFont.setBold(true);
+        QFontMetrics fm(boldFont);
+        int textWidth = fm.horizontalAdvance(text);
+        int w = textWidth + m_nLeftRightSpacing * 2;
+        int h = height();
+        return QSize(w, h);
+    }
+    return QPushButton::sizeHint();
 }
 
 // VectorButton

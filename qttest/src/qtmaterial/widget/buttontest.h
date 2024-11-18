@@ -35,4 +35,10 @@ private:
 
     widget::HorIconTextButton *m_pBtn41 = nullptr;
     widget::HorIconTextButton *m_pBtn42 = nullptr;
+
+    widget::BottomBorderButton *m_pBtn_BottomBorderButton1 = nullptr;
+    widget::BottomBorderButton *m_pBtn_BottomBorderButton2 = nullptr;
+    widget::BottomBorderButton *m_pBtn_BottomBorderButton3 = nullptr;
+    widget::BottomBorderButton *m_pBtn_BottomBorderButton4 = nullptr;
+    widget::BottomBorderButton *m_pBtn_BottomBorderButton5 = nullptr;
 };

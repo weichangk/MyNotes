@@ -197,19 +197,26 @@ public:
     void setBottomBorderRadius(int);
     int bottomBorderRadius() const;
 
-    void setAdjustBorderWidth(bool);
-    bool adjustBorderWidth() const;
+    void setAdjustBottomBorderWidth(bool);
+    bool adjustBottomBorderWidth() const;
 
+    void setLeftRightSpacing(int);
+    int leftRightSpacing() const;
+    
 protected:
     void paintEvent(QPaintEvent *) override;
+    void resizeEvent(QResizeEvent *) override;
+    QSize sizeHint() const override;
 
 private:
     QColor m_colorBottomBorder = "#fc3c53"; 
     int m_nBottomBorderWidth = 16; 
     int m_nBottomBorderHeight = 3;  
     int m_nBottomBorderRadius = 1;
+    int m_nLeftRightSpacing = 0;
 
-    bool m_bAdjustBorderWidth = false;
+    bool m_bAdjustBottomBorderWidth = false;
+    bool m_bAdjustWidth = true;
 };
 
 class QTMATERIAL_EXPORT VectorButton : public QPushButton {

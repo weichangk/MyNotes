@@ -229,11 +229,72 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     layout5->addStretch();
 
     //
-    layout->addStretch();
-
-    //
     QButtonGroup *buttonGroup21 = new QButtonGroup(this);
     buttonGroup21->addButton(m_pBtn21, 0);
     buttonGroup21->addButton(m_pBtn22, 1);
     buttonGroup21->addButton(m_pBtn23, 2);
+
+    //
+    auto widgetBottomBorderButton = new QWidget(this);
+    widgetBottomBorderButton->setFixedHeight(48);
+
+    layout->addWidget(widgetBottomBorderButton);
+
+    auto layoutBottomBorderButton = new QHBoxLayout(widgetBottomBorderButton);
+    layoutBottomBorderButton->setAlignment(Qt::AlignVCenter);
+    layoutBottomBorderButton->setSpacing(16);
+    layoutBottomBorderButton->setContentsMargins(0, 0, 0, 0);
+
+    m_pBtn_BottomBorderButton1 = new widget::BottomBorderButton(this);
+    m_pBtn_BottomBorderButton1->setObjectName("BottomBorderButton_H28_T16");
+    m_pBtn_BottomBorderButton1->setCheckable(true);
+    m_pBtn_BottomBorderButton1->setText("精选");
+    layoutBottomBorderButton->addWidget(m_pBtn_BottomBorderButton1, 0, Qt::AlignVCenter);
+    // m_pBtn_BottomBorderButton1->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    // m_pBtn_BottomBorderButton1->adjustSize();  // 调整按钮大小以适应文本
+
+    m_pBtn_BottomBorderButton2 = new widget::BottomBorderButton(this);
+    m_pBtn_BottomBorderButton2->setObjectName("BottomBorderButton_H28_T16");
+    m_pBtn_BottomBorderButton2->setCheckable(true);
+    m_pBtn_BottomBorderButton2->setText("歌单广场");
+    layoutBottomBorderButton->addWidget(m_pBtn_BottomBorderButton2, 0, Qt::AlignVCenter);
+    // m_pBtn_BottomBorderButton2->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    // m_pBtn_BottomBorderButton2->adjustSize();  // 调整按钮大小以适应文本
+
+    m_pBtn_BottomBorderButton3 = new widget::BottomBorderButton(this);
+    m_pBtn_BottomBorderButton3->setObjectName("BottomBorderButton_H28_T16");
+    m_pBtn_BottomBorderButton3->setCheckable(true);
+    m_pBtn_BottomBorderButton3->setText("排行榜");
+    layoutBottomBorderButton->addWidget(m_pBtn_BottomBorderButton3, 0, Qt::AlignVCenter);
+    // m_pBtn_BottomBorderButton3->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    // m_pBtn_BottomBorderButton3->adjustSize();  // 调整按钮大小以适应文本
+
+    m_pBtn_BottomBorderButton4 = new widget::BottomBorderButton(this);
+    m_pBtn_BottomBorderButton4->setObjectName("BottomBorderButton_H28_T16");
+    m_pBtn_BottomBorderButton4->setCheckable(true);
+    m_pBtn_BottomBorderButton4->setText("歌手");
+    layoutBottomBorderButton->addWidget(m_pBtn_BottomBorderButton4, 0, Qt::AlignVCenter);
+    // m_pBtn_BottomBorderButton4->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    // m_pBtn_BottomBorderButton4->adjustSize();  // 调整按钮大小以适应文本
+
+    m_pBtn_BottomBorderButton5 = new widget::BottomBorderButton(this);
+    m_pBtn_BottomBorderButton5->setObjectName("BottomBorderButton_H28_T16");
+    m_pBtn_BottomBorderButton5->setCheckable(true);
+    m_pBtn_BottomBorderButton5->setText("VIP");
+    layoutBottomBorderButton->addWidget(m_pBtn_BottomBorderButton5, 0, Qt::AlignVCenter);
+    // m_pBtn_BottomBorderButton5->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    // m_pBtn_BottomBorderButton5->adjustSize();  // 调整按钮大小以适应文本
+
+    layoutBottomBorderButton->addStretch();
+
+    QButtonGroup *buttonGroupBottomBorderButton = new QButtonGroup(this);
+    buttonGroupBottomBorderButton->addButton(m_pBtn_BottomBorderButton1, 0);
+    buttonGroupBottomBorderButton->addButton(m_pBtn_BottomBorderButton2, 1);
+    buttonGroupBottomBorderButton->addButton(m_pBtn_BottomBorderButton3, 2);
+    buttonGroupBottomBorderButton->addButton(m_pBtn_BottomBorderButton4, 3);
+    buttonGroupBottomBorderButton->addButton(m_pBtn_BottomBorderButton5, 4);
+    m_pBtn_BottomBorderButton1->setChecked(true);
+
+    //
+    layout->addStretch();
 }
