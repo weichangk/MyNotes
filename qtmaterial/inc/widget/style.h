@@ -1,3 +1,4 @@
+#pragma once
 #include "qtmaterial_global.h"
 
 namespace style {
