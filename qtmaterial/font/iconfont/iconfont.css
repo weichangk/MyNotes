@@ -1,6 +1,6 @@
 @font-face {
   font-family: "qtmaterialiconfont"; /* Project id 4734580 */
-  src: url('iconfont.ttf?t=1730732186045') format('truetype');
+  src: url('iconfont.ttf?t=1731947455831') format('truetype');
 }
 
 .qtmaterialiconfont {
@@ -9,6 +9,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.qtmaterialicon-search1:before {
+  content: "\e601";
+}
+
+.qtmaterialicon-clear:before {
+  content: "\e60c";
 }
 
 .qtmaterialicon-add:before {
