@@ -1,0 +1,27 @@
+widget--SearchLineEdit {
+    border-radius: 8px;
+    border: 1px solid #e2e5e9; 
+    background-color: transparent;
+    font-size: 14px;
+    color:#4e5669; 
+}
+
+widget--SearchLineEdit:hover {
+    border: 1px solid #e2e5e9; 
+}
+
+widget--SearchLineEdit:focus {
+    border: 1px solid #e2e5e9; 
+}
+
+widget--SearchLineEdit::placeholder {
+    color: #cccfd6;
+}
+
+#SearchLineEdit_SearchVectorBtn {
+    font-size: 18px;
+}
+
+#SearchLineEdit_ClearVectorBtn {
+    font-size: 16px;
+}
