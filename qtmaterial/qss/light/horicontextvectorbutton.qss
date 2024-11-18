@@ -1,3 +1,7 @@
+widget--HorIconTextVectorButton {
+    border: none;
+    background-color: transparent;
+}
 
 /* HorIconTextVectorButton_H28_I20_T14 */
 #HorIconTextVectorButton_H28_I20_T14 {
