@@ -8,3 +8,5 @@
 /qmlmaterial/bin
 /qmlmaterial/lib
 /qmlmaterial/build
+
+/3rdparty/QtMaterial
