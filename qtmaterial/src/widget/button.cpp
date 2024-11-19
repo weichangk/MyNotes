@@ -415,7 +415,8 @@ int BottomBorderButton::leftRightSpacing() const {
 void BottomBorderButton::paintEvent(QPaintEvent *event) {
     QPushButton::paintEvent(event);
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::HighQualityAntialiasing);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
 
     if (isChecked()) {
         QRect rect = QRect((width() - m_nBottomBorderWidth) / 2, height() - m_nBottomBorderHeight - 1, m_nBottomBorderWidth, m_nBottomBorderHeight);

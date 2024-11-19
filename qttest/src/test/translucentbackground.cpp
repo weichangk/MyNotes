@@ -17,7 +17,8 @@ void TranslucentBackgroundWidget::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
 
     QRect rect = this->rect();
-    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setRenderHint(QPainter::HighQualityAntialiasing);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
 
 #ifdef Q_OS_WIN
     // win 透明窗体要设透明度才会有鼠标事件

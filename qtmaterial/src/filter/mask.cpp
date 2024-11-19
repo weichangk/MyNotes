@@ -107,7 +107,8 @@ bool PopupMask::eventFilter(QObject *watched, QEvent *event) {
         if (event->type() == QEvent::Paint) {
             if (m_pWatchedWidget->isVisible()) {
                 QPainter painter(m_pMask);
-                painter.setRenderHint(QPainter::Antialiasing);
+                painter.setRenderHint(QPainter::HighQualityAntialiasing);
+                painter.setRenderHint(QPainter::SmoothPixmapTransform);
                 painter.setPen(Qt::NoPen);
                 painter.setBrush(m_colorMask);
 
@@ -185,7 +186,8 @@ QBitmap RadiusMask::generateMask() {
 
     QPainter painter(&bitmap);
     painter.setBrush(Qt::color1); // 使用Qt::color1来绘制可见区域
-    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::HighQualityAntialiasing);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
 
     painter.drawRoundedRect(m_nMaskMargin, m_nMaskMargin,
                             width - 2 * m_nMaskMargin, height - 2 * m_nMaskMargin,

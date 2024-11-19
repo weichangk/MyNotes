@@ -59,7 +59,8 @@ void Arrow::setTriangleInfo(int width, int height) {
 
 void Arrow::paintEvent(QPaintEvent *) {
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setRenderHint(QPainter::HighQualityAntialiasing);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
     painter.setPen(Qt::NoPen);
     painter.setBrush(QColor(255, 255, 255));
 

@@ -28,7 +28,8 @@ void PainterWidget::sigConnect() {
 }
 
 void Painter::draw2Diamond(QPainter *painter, QPoint startPoint, QPoint endPoint, const QColor &borderColor, const QColor &contentColor) {
-    painter->setRenderHint(QPainter::Antialiasing);
+    painter->setRenderHint(QPainter::HighQualityAntialiasing);
+    painter->setRenderHint(QPainter::SmoothPixmapTransform);
     QPainterPath path1;
     path1.moveTo(startPoint.x() - 6, startPoint.y());
     path1.lineTo(startPoint.x(), startPoint.y() - 6);

@@ -18,7 +18,8 @@ void Thumbnail::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     painter.save();
 
-    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setRenderHint(QPainter::HighQualityAntialiasing);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
     QPixmap pixmapTemp;
     pixmapTemp = m_pixmap.scaled(this->rect().size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     pixmapTemp.setDevicePixelRatio(1);
@@ -27,7 +28,7 @@ void Thumbnail::paintEvent(QPaintEvent *event) {
         QPainterPath path;
         path.addRoundedRect(this->rect(), m_radiius, m_radiius);
         painter.setClipPath(path);
-        painter.setRenderHint(QPainter::Antialiasing);
+        painter.setRenderHint(QPainter::HighQualityAntialiasing);
         painter.setRenderHint(QPainter::SmoothPixmapTransform);
     }
     painter.drawPixmap(this->rect(), pixmapTemp);

@@ -23,7 +23,7 @@ void Painter::paintPixmap(QPainter *painter, QRect rc, const QPixmap &pixmap, fl
         QPainterPath path;
         path.addRoundedRect(rc, radius, radius);
         painter->setClipPath(path);
-        painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
+        painter->setRenderHints(QPainter::HighQualityAntialiasing | QPainter::SmoothPixmapTransform);
     }
     painter->drawPixmap(drawRc, pixmapTemp);
     painter->restore();

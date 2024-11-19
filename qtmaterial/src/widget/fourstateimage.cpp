@@ -43,7 +43,8 @@ void FourStateImage::showEvent(QShowEvent *event) {
 
 void FourStateImage::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setRenderHint(QPainter::HighQualityAntialiasing);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
     if (!m_FourPixmap.isNull()) {
         QPixmap pixmapTemp;
         switch (m_State) {
