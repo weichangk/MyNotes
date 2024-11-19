@@ -1,5 +1,6 @@
 #include "filter/shadow.h"
 #include "core/theme.h"
+#include "filter/mask.h"
 
 #include <QDialog>
 #include <QEvent>
@@ -123,4 +124,108 @@ QPixmap Shadow::ninePatchPixmap(const QPixmap &srcPixmap, int horzSplit, int ver
     }
     return resultImg;
 }
+
+ShadowEffect::ShadowEffect(QWidget *parent) :
+    QWidget(nullptr), m_pParentWidget(parent) {
+    m_pParentWidget->installEventFilter(this);
+    m_pParentWidget->setWindowFlags(m_pParentWidget->windowFlags() | Qt::FramelessWindowHint);
+
+    setWindowFlags(Qt::Tool | Qt::FramelessWindowHint);
+    setAttribute(Qt::WA_TranslucentBackground);
+    setAttribute(Qt::WA_TransparentForMouseEvents);
+    setAttribute(Qt::WA_InputMethodTransparent);
+
+    m_pLayout = new QVBoxLayout(this);
+    m_pLayout->setContentsMargins(m_margins);
+
+    m_pBackgroundWidget = new QWidget(this);
+    m_pBackgroundWidget->installEventFilter(this);
+
+    m_pLayout->addWidget(m_pBackgroundWidget, 1);
+
+    setEffectParams(m_nRadius, m_dOffsetX, m_dOffsetY, m_dBlurRadius, m_color);
+}
+
+void ShadowEffect::release() {
+    deleteLater();
+}
+
+void ShadowEffect::setMargins(const QMargins &margins) {
+    if (m_margins != margins) {
+        m_margins = margins;
+        m_pLayout->setContentsMargins(m_margins);
+    }
+}
+
+void ShadowEffect::setEffectParams(int radius, double offsetX, double offsetY, double blurRadius, const QColor &color) {
+    m_nRadius = radius;
+    m_dOffsetX = offsetX;
+    m_dOffsetY = offsetY;
+    m_dBlurRadius = blurRadius;
+    m_color = color;
+
+    auto mask = new filter::RadiusMask(m_pParentWidget);
+    mask->setPramas(RadiusMask::Round_All, 0, m_nRadius, m_nRadius);
+
+    m_pBackgroundWidget->setStyleSheet(QString("background-color: rgb(255, 255, 255); border-radius: %1px;").arg(m_nRadius));
+
+    if (!m_pShadowEffect) {
+        m_pShadowEffect = new QGraphicsDropShadowEffect(this);
+        m_pBackgroundWidget->setGraphicsEffect(m_pShadowEffect);
+    }
+    m_pShadowEffect->setOffset(m_dOffsetX, m_dOffsetY); // 设置向哪个方向产生阴影效果(dx,dy),(0,0)代表向四周发散
+    m_pShadowEffect->setColor(m_color);                 // 设置阴影颜色为灰色,也可设置成其他颜色，成为发光控件
+    m_pShadowEffect->setBlurRadius(m_dBlurRadius);      // 设定阴影的模糊半径，数值越大越模糊
+}
+
+bool ShadowEffect::eventFilter(QObject *watched, QEvent *event) {
+    if (watched == m_pParentWidget) {
+        switch (event->type()) {
+        case QEvent::Move:
+        case QEvent::Resize:
+            updateGeometry();
+            break;
+        case QEvent::WindowActivate:
+            raise();
+            m_pParentWidget->raise();
+            break;
+        case QEvent::Show:
+            show();
+            break;
+        case QEvent::Hide:
+            hide();
+            break;
+        case QEvent::Close:
+            close();
+            break;
+        case QEvent::WindowStateChange:
+            if (m_pParentWidget->windowState() == Qt::WindowNoState 
+                || m_pParentWidget->windowState() == Qt::WindowMaximized 
+                || m_pParentWidget->windowState() == Qt::WindowFullScreen) {
+                show();
+            }
+            break;
+        default:
+            break;
+        }
+        return false;
+    } else if (watched == m_pBackgroundWidget) {
+        switch (event->type()) {
+        case QEvent::WindowActivate:
+            raise();
+            m_pParentWidget->raise();
+            break;
+        default:
+            break;
+        }
+        return false;
+    }
+    return QObject::eventFilter(watched, event);
+}
+
+void ShadowEffect::updateGeometry() {
+    QRect rc = m_pParentWidget->geometry().adjusted(-m_margins.left(), -m_margins.top(), m_margins.right(), m_margins.bottom());
+    setGeometry(rc);
+}
+
 } // namespace filter

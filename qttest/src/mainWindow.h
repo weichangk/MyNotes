@@ -12,6 +12,7 @@
 #include "qtmaterial/widget/buttontest.h"
 #include "qtmaterial/widget/labeltest.h"
 #include "qtmaterial/widget/lineedittest.h"
+#include "qtmaterial/widget/shadowtest.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
@@ -47,6 +48,7 @@ private:
     void buttonTestShow();
     void labelTestShow();
     void lineEditTestShow();
+    void shadowTestShow();
 
 private:
     QTabWidget *main_tabwidget_ = nullptr;
@@ -73,4 +75,5 @@ private:
     ButtonTestWidget *m_pButtonTestWidget = nullptr;
     LabelTestWidget *m_pLabelTestWidget = nullptr;
     LineEditTestWidget *m_pLineEditTestWidget = nullptr;
+    ShadowTestWidget *m_pShadowTestWidget = nullptr;
 };

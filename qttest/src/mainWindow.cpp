@@ -36,7 +36,7 @@ using QtmaterialWidgetDemo = enum {
     QtmaterialWidgetButtonTest = 2000,
     QtmaterialWidgetDemoLabelTest,
     QtmaterialWidgetDemoLineEditTest,
-    QtmaterialWidgetDemo333,
+    QtmaterialWidgetDemoShadowTest,
     QtmaterialWidgetDemo444,
     QtmaterialWidgetDemo555,
     QtmaterialWidgetDemo666,
@@ -161,7 +161,7 @@ void MainWindow::setQtmaterialWidgetDemoBtns(QWidget *w) {
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetButtonTest, "Button Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoLabelTest, "Label test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoLineEditTest, "LineEdit Test");
-    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo333, "333");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoShadowTest, "Shadow Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo444, "444");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo555, "555");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo666, "666");
@@ -276,7 +276,8 @@ void MainWindow::test(int id) {
     case QtmaterialWidgetDemo::QtmaterialWidgetDemoLineEditTest:
         lineEditTestShow();
         break;
-    case QtmaterialWidgetDemo::QtmaterialWidgetDemo333:
+    case QtmaterialWidgetDemo::QtmaterialWidgetDemoShadowTest:
+        shadowTestShow();
         break;
     case QtmaterialWidgetDemo::QtmaterialWidgetDemo444:
         break;
@@ -391,4 +392,11 @@ void MainWindow::lineEditTestShow() {
         m_pLineEditTestWidget = new LineEditTestWidget();
     }
     m_pLineEditTestWidget->show();
+}
+
+void MainWindow::shadowTestShow() {
+    if (!m_pShadowTestWidget) {
+        m_pShadowTestWidget = new ShadowTestWidget();
+    }
+    m_pShadowTestWidget->show();
 }
