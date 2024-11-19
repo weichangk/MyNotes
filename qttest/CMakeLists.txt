@@ -1,4 +1,4 @@
-include(${CMAKE_SOURCE_DIR}/cmake/public.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/QtMaterial/cmake/public.cmake)
 
 project(
     QtTest
@@ -25,7 +25,7 @@ else()
 endif()
 
 MY_ADD_PROJECT_INCLUDE_FUNC(
-    ${CMAKE_SOURCE_DIR}/qtmaterial/inc
+    ${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/QtMaterial/inc
 )
 
 MY_ADD_QT_PACK_FUNC(
@@ -36,10 +36,10 @@ MY_ADD_LINK_LIB_FUNC(
     QtMaterial
 )
 
-include(${CMAKE_SOURCE_DIR}/cmake/option.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/code.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/exe.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/link.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/QtMaterial/cmake/option.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/QtMaterial/cmake/code.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/QtMaterial/cmake/exe.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/QtMaterial/cmake/link.cmake)
 
 include(config.cmake)
 
