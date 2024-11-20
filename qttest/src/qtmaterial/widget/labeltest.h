@@ -16,4 +16,6 @@ private:
     widget::VectorLabel *m_pLab4 = nullptr;
     widget::VectorLabel *m_pLab5 = nullptr;
     widget::VectorLabel *m_pLab6 = nullptr;
+
+    widget::CarouselLabel *m_pCarouselLabel = nullptr;
 };
