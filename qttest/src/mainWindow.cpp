@@ -36,8 +36,8 @@ using QtmaterialWidgetDemo = enum {
     QtmaterialWidgetButtonTest = 2000,
     QtmaterialWidgetDemoLabelTest,
     QtmaterialWidgetDemoLineEditTest,
-    QtmaterialWidgetDemoShadowTest,
     QtmaterialWidgetDemoProgressBarTest,
+    QtmaterialWidgetDemo444,
     QtmaterialWidgetDemo555,
     QtmaterialWidgetDemo666,
     QtmaterialWidgetDemo777,
@@ -45,8 +45,21 @@ using QtmaterialWidgetDemo = enum {
     QtmaterialWidgetDemo999,
 };
 
+using QtmaterialFilterDemo = enum {
+    QtmaterialFilterShadowTest = 3000,
+    QtmaterialFilterDemo111,
+    QtmaterialFilterDemo222,
+    QtmaterialFilterDemo333,
+    QtmaterialFilterDemo444,
+    QtmaterialFilterDemo555,
+    QtmaterialFilterDemo666,
+    QtmaterialFilterDemo777,
+    QtmaterialFilterDemo888,
+    QtmaterialFilterDemo999,
+};
+
 using QtmaterialOsxDemo = enum {
-    QtmaterialOsxDemo000 = 3000,
+    QtmaterialOsxDemo000 = 4000,
     QtmaterialOsxDemo111,
     QtmaterialOsxDemo222,
     QtmaterialOsxDemo333,
@@ -86,16 +99,19 @@ void MainWindow::createUi() {
 
     qtmaterial_core_widget_ = new QWidget();
     qtmaterial_widget_widget_ = new QWidget();
+    qtmaterial_filter_widget_ = new QWidget();
     qtmaterial_osx_widget_ = new QWidget();
 
     qtmaterial_tabwidget_->addTab(qtmaterial_core_widget_, "core");
     qtmaterial_tabwidget_->addTab(qtmaterial_widget_widget_, "widget");
+    qtmaterial_tabwidget_->addTab(qtmaterial_filter_widget_, "filter");
     qtmaterial_tabwidget_->addTab(qtmaterial_osx_widget_, "osx");
 
     setQtTestDemoBtns(qttest_widget_);
 
     setQtmaterialCoreDemoBtns(qtmaterial_core_widget_);
     setQtmaterialWidgetDemoBtns(qtmaterial_widget_widget_);
+    setQtmaterialFilterDemoBtns(qtmaterial_filter_widget_);
     setQtmaterialOsxDemoBtns(qtmaterial_osx_widget_);
 }
 
@@ -159,10 +175,10 @@ void MainWindow::setQtmaterialWidgetDemoBtns(QWidget *w) {
     auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetButtonTest, "Button Test");
-    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoLabelTest, "Label test");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoLabelTest, "Label Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoLineEditTest, "LineEdit Test");
-    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoShadowTest, "Shadow Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoProgressBarTest, "ProgressBar Test");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo444, "444");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo555, "555");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo666, "666");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo777, "777");
@@ -177,6 +193,34 @@ void MainWindow::setQtmaterialWidgetDemoBtns(QWidget *w) {
         btn->setProperty("QtmaterialWidgetDemo_Id", iter.key());
         connect(btn, &QPushButton::clicked, this, [this, btn]() {
             int id = btn->property("QtmaterialWidgetDemo_Id").toInt();
+            test(id);
+        });
+        demoFlowLayout->addWidget(btn);
+    }
+}
+
+void MainWindow::setQtmaterialFilterDemoBtns(QWidget *w) {
+    auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
+    QMap<int, QString> demoMap;
+    demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterShadowTest, "Shadow Test");
+    demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo111, "111");
+    demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo222, "222");
+    demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo333, "333");
+    demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo444, "444");
+    demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo555, "555");
+    demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo666, "666");
+    demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo777, "777");
+    demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo888, "888");
+    demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo999, "999");
+
+    QMap<int, QString>::Iterator iter;
+    for (iter = demoMap.begin(); iter != demoMap.end(); ++iter) {
+        QPushButton *btn = new QPushButton(this);
+        btn->setFixedSize(160, 24);
+        btn->setText(iter.value());
+        btn->setProperty("QtmaterialFilterDemo_Id", iter.key());
+        connect(btn, &QPushButton::clicked, this, [this, btn]() {
+            int id = btn->property("QtmaterialFilterDemo_Id").toInt();
             test(id);
         });
         demoFlowLayout->addWidget(btn);
@@ -276,11 +320,10 @@ void MainWindow::test(int id) {
     case QtmaterialWidgetDemo::QtmaterialWidgetDemoLineEditTest:
         lineEditTestShow();
         break;
-    case QtmaterialWidgetDemo::QtmaterialWidgetDemoShadowTest:
-        shadowTestShow();
-        break;
     case QtmaterialWidgetDemo::QtmaterialWidgetDemoProgressBarTest:
         progressBarTestShow();
+        break;
+    case QtmaterialWidgetDemo::QtmaterialWidgetDemo444:
         break;
     case QtmaterialWidgetDemo::QtmaterialWidgetDemo555:
         break;
@@ -291,6 +334,30 @@ void MainWindow::test(int id) {
     case QtmaterialWidgetDemo::QtmaterialWidgetDemo888:
         break;
     case QtmaterialWidgetDemo::QtmaterialWidgetDemo999:
+        break;
+    }
+
+    switch (id) {
+    case QtmaterialFilterDemo::QtmaterialFilterShadowTest:
+        shadowTestShow();
+        break;
+    case QtmaterialFilterDemo::QtmaterialFilterDemo111:
+        break;
+    case QtmaterialFilterDemo::QtmaterialFilterDemo222:
+        break;
+    case QtmaterialFilterDemo::QtmaterialFilterDemo333:
+        break;
+    case QtmaterialFilterDemo::QtmaterialFilterDemo444:
+        break;
+    case QtmaterialFilterDemo::QtmaterialFilterDemo555:
+        break;
+    case QtmaterialFilterDemo::QtmaterialFilterDemo666:
+        break;
+    case QtmaterialFilterDemo::QtmaterialFilterDemo777:
+        break;
+    case QtmaterialFilterDemo::QtmaterialFilterDemo888:
+        break;
+    case QtmaterialFilterDemo::QtmaterialFilterDemo999:
         break;
     }
 
@@ -395,16 +462,16 @@ void MainWindow::lineEditTestShow() {
     m_pLineEditTestWidget->show();
 }
 
-void MainWindow::shadowTestShow() {
-    if (!m_pShadowTestWidget) {
-        m_pShadowTestWidget = new ShadowTestWidget();
-    }
-    m_pShadowTestWidget->show();
-}
-
 void MainWindow::progressBarTestShow() {
     if (!m_pProgressBarTestWidget) {
         m_pProgressBarTestWidget = new ProgressBarTestWidget();
     }
     m_pProgressBarTestWidget->show();
+}
+
+void MainWindow::shadowTestShow() {
+    if (!m_pShadowTestWidget) {
+        m_pShadowTestWidget = new ShadowTestWidget();
+    }
+    m_pShadowTestWidget->show();
 }
