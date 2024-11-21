@@ -26,51 +26,51 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
 
     layout->addWidget(widgetVectorButton);
 
-    auto layoutwidgetVectorButton = new QHBoxLayout(widgetVectorButton); 
-    layoutwidgetVectorButton->setAlignment(Qt::AlignVCenter);
-    layoutwidgetVectorButton->setContentsMargins(0, 0, 0, 0);
+    auto layoutVectorButton = new QHBoxLayout(widgetVectorButton); 
+    layoutVectorButton->setAlignment(Qt::AlignVCenter);
+    layoutVectorButton->setContentsMargins(0, 0, 0, 0);
 
     m_pBtn_VectorButton_HW28_I20 = new widget::VectorButton(this);
     m_pBtn_VectorButton_HW28_I20->setObjectName("VectorButton_HW28_I20");
     m_pBtn_VectorButton_HW28_I20->setCheckable(true);
     m_pBtn_VectorButton_HW28_I20->setFont(core::Font::currentIconFont());
     m_pBtn_VectorButton_HW28_I20->setText(QChar(0xe665));
-    layoutwidgetVectorButton->addWidget(m_pBtn_VectorButton_HW28_I20, 0, Qt::AlignVCenter);
+    layoutVectorButton->addWidget(m_pBtn_VectorButton_HW28_I20, 0, Qt::AlignVCenter);
 
     m_pBtn_VectorButton_HW32_I20 = new widget::VectorButton(this);
     m_pBtn_VectorButton_HW32_I20->setObjectName("VectorButton_HW32_I20");
     m_pBtn_VectorButton_HW32_I20->setCheckable(true);
     m_pBtn_VectorButton_HW32_I20->setFont(core::Font::currentIconFont());
     m_pBtn_VectorButton_HW32_I20->setText(QChar(0xe665));
-    layoutwidgetVectorButton->addWidget(m_pBtn_VectorButton_HW32_I20, 0, Qt::AlignVCenter);
+    layoutVectorButton->addWidget(m_pBtn_VectorButton_HW32_I20, 0, Qt::AlignVCenter);
 
     m_pBtn_VectorButton_HW36_I20 = new widget::VectorButton(this);
     m_pBtn_VectorButton_HW36_I20->setObjectName("VectorButton_HW36_I20");
     m_pBtn_VectorButton_HW36_I20->setCheckable(true);
     m_pBtn_VectorButton_HW36_I20->setFont(core::Font::currentIconFont());
     m_pBtn_VectorButton_HW36_I20->setText(QChar(0xe665));
-    layoutwidgetVectorButton->addWidget(m_pBtn_VectorButton_HW36_I20, 0, Qt::AlignVCenter);
+    layoutVectorButton->addWidget(m_pBtn_VectorButton_HW36_I20, 0, Qt::AlignVCenter);
 
     m_pBtn_VectorButton_HW28_R8_I20_B_Bg = new widget::VectorButton(this);
     m_pBtn_VectorButton_HW28_R8_I20_B_Bg->setObjectName("VectorButton_HW28_R8_I20_B_Bg");
     m_pBtn_VectorButton_HW28_R8_I20_B_Bg->setCheckable(true);
     m_pBtn_VectorButton_HW28_R8_I20_B_Bg->setFont(core::Font::currentIconFont());
     m_pBtn_VectorButton_HW28_R8_I20_B_Bg->setText(QChar(0xe665));
-    layoutwidgetVectorButton->addWidget(m_pBtn_VectorButton_HW28_R8_I20_B_Bg, 0, Qt::AlignVCenter);
+    layoutVectorButton->addWidget(m_pBtn_VectorButton_HW28_R8_I20_B_Bg, 0, Qt::AlignVCenter);
 
     m_pBtn_VectorButton_HW32_R8_I20_B_Bg = new widget::VectorButton(this);
     m_pBtn_VectorButton_HW32_R8_I20_B_Bg->setObjectName("VectorButton_HW32_R8_I20_B_Bg");
     m_pBtn_VectorButton_HW32_R8_I20_B_Bg->setCheckable(true);
     m_pBtn_VectorButton_HW32_R8_I20_B_Bg->setFont(core::Font::currentIconFont());
     m_pBtn_VectorButton_HW32_R8_I20_B_Bg->setText(QChar(0xe665));
-    layoutwidgetVectorButton->addWidget(m_pBtn_VectorButton_HW32_R8_I20_B_Bg, 0, Qt::AlignVCenter);
+    layoutVectorButton->addWidget(m_pBtn_VectorButton_HW32_R8_I20_B_Bg, 0, Qt::AlignVCenter);
 
     m_pBtn_VectorButton_HW36_R8_I20_B_Bg = new widget::VectorButton(this);
     m_pBtn_VectorButton_HW36_R8_I20_B_Bg->setObjectName("VectorButton_HW36_R8_I20_B_Bg");
     m_pBtn_VectorButton_HW36_R8_I20_B_Bg->setCheckable(true);
     m_pBtn_VectorButton_HW36_R8_I20_B_Bg->setFont(core::Font::currentIconFont());
     m_pBtn_VectorButton_HW36_R8_I20_B_Bg->setText(QChar(0xe665));
-    layoutwidgetVectorButton->addWidget(m_pBtn_VectorButton_HW36_R8_I20_B_Bg, 0, Qt::AlignVCenter);
+    layoutVectorButton->addWidget(m_pBtn_VectorButton_HW36_R8_I20_B_Bg, 0, Qt::AlignVCenter);
 
     QButtonGroup *buttonGroupVectorButton = new QButtonGroup(this);
     buttonGroupVectorButton->setExclusive(true);
@@ -82,7 +82,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     buttonGroupVectorButton->addButton(m_pBtn_VectorButton_HW36_R8_I20_B_Bg, 6);
     m_pBtn_VectorButton_HW36_R8_I20_B_Bg->setChecked(true);
 
-    layoutwidgetVectorButton->addStretch();
+    layoutVectorButton->addStretch();
 
     //
     auto widgetHorIconTextVectorButton = new QWidget(this);
@@ -157,82 +157,159 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     layoutHorIconTextVectorButton->addStretch();
 
     //
-    auto widget3 = new QWidget(this);
-    widget3->setFixedHeight(48);
+    auto widgetQPushButton = new QWidget(this);
+    widgetQPushButton->setFixedHeight(48);
 
-    layout->addWidget(widget3);
+    layout->addWidget(widgetQPushButton);
 
-    auto layout3 = new QHBoxLayout(widget3);
-    layout3->setAlignment(Qt::AlignVCenter);
-    layout3->setContentsMargins(0, 0, 0, 0);
+    auto layoutQPushButton = new QHBoxLayout(widgetQPushButton);
+    layoutQPushButton->setAlignment(Qt::AlignVCenter);
+    layoutQPushButton->setContentsMargins(0, 0, 0, 0);
 
-    m_pBtn21 = new QPushButton(this);
-    m_pBtn21->setObjectName("QPushButton_H28_R14_T14_B_Bg");
-    m_pBtn21->setCheckable(true);
-    m_pBtn21->setText("民谣");
-    layout3->addWidget(m_pBtn21, 0, Qt::AlignVCenter);
+    m_pQPushButton_H28_R14_T14_B_Bg = new QPushButton(this);
+    m_pQPushButton_H28_R14_T14_B_Bg->setObjectName("QPushButton_H28_R14_T14_B_Bg");
+    m_pQPushButton_H28_R14_T14_B_Bg->setCheckable(true);
+    m_pQPushButton_H28_R14_T14_B_Bg->setText("民谣");
+    layoutQPushButton->addWidget(m_pQPushButton_H28_R14_T14_B_Bg, 0, Qt::AlignVCenter);
 
-    m_pBtn22 = new QPushButton(this);
-    m_pBtn22->setObjectName("QPushButton_H32_R16_T14_B_Bg");
-    m_pBtn22->setCheckable(true);
-    m_pBtn22->setText("电子");
-    layout3->addWidget(m_pBtn22, 0, Qt::AlignVCenter);
+    m_pQPushButton_H32_R16_T14_B_Bg = new QPushButton(this);
+    m_pQPushButton_H32_R16_T14_B_Bg->setObjectName("QPushButton_H32_R16_T14_B_Bg");
+    m_pQPushButton_H32_R16_T14_B_Bg->setCheckable(true);
+    m_pQPushButton_H32_R16_T14_B_Bg->setText("电子");
+    layoutQPushButton->addWidget(m_pQPushButton_H32_R16_T14_B_Bg, 0, Qt::AlignVCenter);
 
-    m_pBtn23 = new QPushButton(this);
-    m_pBtn23->setObjectName("QPushButton_H36_R18_T14_B_Bg");
-    m_pBtn23->setCheckable(true);
-    m_pBtn23->setText("轻音乐");
-    layout3->addWidget(m_pBtn23, 0, Qt::AlignVCenter);
+    m_pQPushButton_H36_R18_T14_B_Bg = new QPushButton(this);
+    m_pQPushButton_H36_R18_T14_B_Bg->setObjectName("QPushButton_H36_R18_T14_B_Bg");
+    m_pQPushButton_H36_R18_T14_B_Bg->setCheckable(true);
+    m_pQPushButton_H36_R18_T14_B_Bg->setText("轻音乐");
+    layoutQPushButton->addWidget(m_pQPushButton_H36_R18_T14_B_Bg, 0, Qt::AlignVCenter);
 
-    layout3->addStretch();
-
-    //
-    auto widget4 = new QWidget(this);
-    widget4->setFixedHeight(48);
-
-    layout->addWidget(widget4);
-
-    auto layout4 = new QHBoxLayout(widget4); 
-
-    m_pBtn31 = new widget::IconButton(this);
-    m_pBtn31->setObjectName("IconButton_HW24");
-    m_pBtn31->setNormalPixmapPath(":/test/light/first-1-16.png");
-    layout4->addWidget(m_pBtn31);
-
-    m_pBtn32 = new widget::IconButton(this);
-    m_pBtn32->setObjectName("IconButton_HW24_R6_Bg");
-    m_pBtn32->setNormalPixmapPath(":/test/light/first-1-16.png");
-    layout4->addWidget(m_pBtn32);
-
-    layout4->addStretch();
-
-    //
-    auto widget5 = new QWidget(this);
-    widget5->setFixedHeight(48);
-
-    layout->addWidget(widget5);
-
-    auto layout5 = new QHBoxLayout(widget5); 
-
-    m_pBtn41 = new widget::HorIconTextButton(this);
-    m_pBtn41->setObjectName("HorIconTextButton_I20");
-    m_pBtn41->setNormalPixmapPath(":/test/light/first-1-16.png");
-    m_pBtn41->setText("动态");
-    layout5->addWidget(m_pBtn41);
-
-    m_pBtn42 = new widget::HorIconTextButton(this);
-    m_pBtn42->setObjectName("HorIconTextButton_I20_Bg");
-    m_pBtn42->setNormalPixmapPath(":/test/light/first-1-16.png");
-    m_pBtn42->setText("我的音乐网盘");
-    layout5->addWidget(m_pBtn42);
-
-    layout5->addStretch();
-
-    //
     QButtonGroup *buttonGroup21 = new QButtonGroup(this);
-    buttonGroup21->addButton(m_pBtn21, 0);
-    buttonGroup21->addButton(m_pBtn22, 1);
-    buttonGroup21->addButton(m_pBtn23, 2);
+    buttonGroup21->addButton(m_pQPushButton_H28_R14_T14_B_Bg, 0);
+    buttonGroup21->addButton(m_pQPushButton_H32_R16_T14_B_Bg, 1);
+    buttonGroup21->addButton(m_pQPushButton_H36_R18_T14_B_Bg, 2);
+
+    layoutQPushButton->addStretch();
+
+    //
+    auto widgetIconButton = new QWidget(this);
+    widgetIconButton->setFixedHeight(48);
+
+    layout->addWidget(widgetIconButton);
+
+    auto layoutIconButton = new QHBoxLayout(widgetIconButton); 
+    layoutIconButton->setAlignment(Qt::AlignVCenter);
+    layoutIconButton->setContentsMargins(0, 0, 0, 0);
+
+    m_pIconButton_HW28 = new widget::IconButton(this);
+    m_pIconButton_HW28->setObjectName("IconButton_HW28");
+    m_pIconButton_HW28->setIconSize(20);
+    m_pIconButton_HW28->setNormalPixmapPath(":/qtmaterial/test/test20.png");
+    layoutIconButton->addWidget(m_pIconButton_HW28, 0, Qt::AlignVCenter);
+
+    m_pIconButton_HW32 = new widget::IconButton(this);
+    m_pIconButton_HW32->setObjectName("IconButton_HW32");
+    m_pIconButton_HW32->setIconSize(20);
+    m_pIconButton_HW32->setNormalPixmapPath(":/qtmaterial/test/test20.png");
+    layoutIconButton->addWidget(m_pIconButton_HW32, 0, Qt::AlignVCenter);
+
+    m_pIconButton_HW36 = new widget::IconButton(this);
+    m_pIconButton_HW36->setObjectName("IconButton_HW36");
+    m_pIconButton_HW36->setIconSize(20);
+    m_pIconButton_HW36->setNormalPixmapPath(":/qtmaterial/test/test20.png");
+    layoutIconButton->addWidget(m_pIconButton_HW36, 0, Qt::AlignVCenter);
+
+    m_pIconButton_HW28_R8_B_Bg = new widget::IconButton(this);
+    m_pIconButton_HW28_R8_B_Bg->setObjectName("IconButton_HW28_R8_B_Bg");
+    m_pIconButton_HW28_R8_B_Bg->setIconSize(20);
+    m_pIconButton_HW28_R8_B_Bg->setNormalPixmapPath(":/qtmaterial/test/test20.png");
+    layoutIconButton->addWidget(m_pIconButton_HW28_R8_B_Bg, 0, Qt::AlignVCenter);
+
+    m_pIconButton_HW32_R8_B_Bg = new widget::IconButton(this);
+    m_pIconButton_HW32_R8_B_Bg->setObjectName("IconButton_HW32_R8_B_Bg");
+    m_pIconButton_HW32_R8_B_Bg->setIconSize(20);
+    m_pIconButton_HW32_R8_B_Bg->setNormalPixmapPath(":/qtmaterial/test/test20.png");
+    layoutIconButton->addWidget(m_pIconButton_HW32_R8_B_Bg, 0, Qt::AlignVCenter);
+
+    m_pIconButton_HW32_R8_B_Bg = new widget::IconButton(this);
+    m_pIconButton_HW32_R8_B_Bg->setObjectName("IconButton_HW36_R8_B_Bg");
+    m_pIconButton_HW32_R8_B_Bg->setIconSize(20);
+    m_pIconButton_HW32_R8_B_Bg->setNormalPixmapPath(":/qtmaterial/test/test20.png");
+    layoutIconButton->addWidget(m_pIconButton_HW32_R8_B_Bg, 0, Qt::AlignVCenter);
+
+    layoutIconButton->addStretch();
+
+    //
+    auto widgetHorIconTextButton = new QWidget(this);
+    widgetHorIconTextButton->setFixedHeight(48);
+
+    layout->addWidget(widgetHorIconTextButton);
+
+    auto layoutHorIconTextButton = new QHBoxLayout(widgetHorIconTextButton);
+    layoutHorIconTextButton->setAlignment(Qt::AlignVCenter);
+    layoutHorIconTextButton->setContentsMargins(0, 0, 0, 0);
+
+    m_pBtn_HorIconTextButton_H28_T14 = new widget::HorIconTextButton(this);
+    m_pBtn_HorIconTextButton_H28_T14->setObjectName("HorIconTextButton_H28_T14");
+    m_pBtn_HorIconTextButton_H28_T14->setIconSize(20);
+    m_pBtn_HorIconTextButton_H28_T14->setCheckable(true);
+    m_pBtn_HorIconTextButton_H28_T14->setNormalPixmapPath(":/qtmaterial/test/test20.png");
+    m_pBtn_HorIconTextButton_H28_T14->setText("我喜欢的");
+    layoutHorIconTextButton->addWidget(m_pBtn_HorIconTextButton_H28_T14, 0, Qt::AlignVCenter);
+
+    m_pBtn_HorIconTextButton_H32_T14 = new widget::HorIconTextButton(this);
+    m_pBtn_HorIconTextButton_H32_T14->setObjectName("HorIconTextButton_H32_T14");
+    m_pBtn_HorIconTextButton_H32_T14->setIconSize(20);
+    m_pBtn_HorIconTextButton_H32_T14->setCheckable(true);
+    m_pBtn_HorIconTextButton_H32_T14->setNormalPixmapPath(":/qtmaterial/test/test20.png");
+    m_pBtn_HorIconTextButton_H32_T14->setText("本地下载");
+    layoutHorIconTextButton->addWidget(m_pBtn_HorIconTextButton_H32_T14, 0, Qt::AlignVCenter);
+
+    m_pBtn_HorIconTextButton_H36_T14 = new widget::HorIconTextButton(this);
+    m_pBtn_HorIconTextButton_H36_T14->setObjectName("HorIconTextButton_H36_T14");
+    m_pBtn_HorIconTextButton_H36_T14->setIconSize(20);
+    m_pBtn_HorIconTextButton_H36_T14->setCheckable(true);
+    m_pBtn_HorIconTextButton_H36_T14->setNormalPixmapPath(":/qtmaterial/test/test20.png");
+    m_pBtn_HorIconTextButton_H36_T14->setText("最近播放呀呀");
+    layoutHorIconTextButton->addWidget(m_pBtn_HorIconTextButton_H36_T14, 0, Qt::AlignVCenter);
+
+    m_pBtn_HorIconTextButton_H28_R8_T14_Bg = new widget::HorIconTextButton(this);
+    m_pBtn_HorIconTextButton_H28_R8_T14_Bg->setObjectName("HorIconTextButton_H28_R8_T14_Bg");
+    m_pBtn_HorIconTextButton_H28_R8_T14_Bg->setIconSize(20);
+    m_pBtn_HorIconTextButton_H28_R8_T14_Bg->setCheckable(true);
+    m_pBtn_HorIconTextButton_H28_R8_T14_Bg->setNormalPixmapPath(":/qtmaterial/test/test20.png");;
+    m_pBtn_HorIconTextButton_H28_R8_T14_Bg->setText("音乐云盘");
+    layoutHorIconTextButton->addWidget(m_pBtn_HorIconTextButton_H28_R8_T14_Bg, 0, Qt::AlignVCenter);
+
+    m_pBtn_HorIconTextButton_H32_R8_T14_Bg = new widget::HorIconTextButton(this);
+    m_pBtn_HorIconTextButton_H32_R8_T14_Bg->setObjectName("HorIconTextButton_H32_R8_T14_Bg");
+    m_pBtn_HorIconTextButton_H32_R8_T14_Bg->setIconSize(20);
+    m_pBtn_HorIconTextButton_H32_R8_T14_Bg->setCheckable(true);
+    m_pBtn_HorIconTextButton_H32_R8_T14_Bg->setNormalPixmapPath(":/qtmaterial/test/test20.png");
+    m_pBtn_HorIconTextButton_H32_R8_T14_Bg->setText("我的收藏");
+    layoutHorIconTextButton->addWidget(m_pBtn_HorIconTextButton_H32_R8_T14_Bg, 0, Qt::AlignVCenter);
+
+    m_pBtn_HorIconTextButton_H36_R8_T14_Bg = new widget::HorIconTextButton(this);
+    m_pBtn_HorIconTextButton_H36_R8_T14_Bg->setObjectName("HorIconTextButton_H36_R8_T14_Bg");
+    m_pBtn_HorIconTextButton_H36_R8_T14_Bg->setIconSize(20);
+    m_pBtn_HorIconTextButton_H36_R8_T14_Bg->setCheckable(true);
+    m_pBtn_HorIconTextButton_H36_R8_T14_Bg->setNormalPixmapPath(":/qtmaterial/test/test20.png");
+    m_pBtn_HorIconTextButton_H36_R8_T14_Bg->setText("我的播客");
+    m_pBtn_HorIconTextButton_H36_R8_T14_Bg->setAdjustWidth(false);
+    m_pBtn_HorIconTextButton_H36_R8_T14_Bg->setFixedSize(140, 36);
+    layoutHorIconTextButton->addWidget(m_pBtn_HorIconTextButton_H36_R8_T14_Bg, 0, Qt::AlignVCenter);
+
+    QButtonGroup *buttonGroupHorIconTextButton = new QButtonGroup(this);
+    buttonGroupHorIconTextButton->setExclusive(true);
+    buttonGroupHorIconTextButton->addButton(m_pBtn_HorIconTextButton_H28_T14, 0);
+    buttonGroupHorIconTextButton->addButton(m_pBtn_HorIconTextButton_H32_T14, 1);
+    buttonGroupHorIconTextButton->addButton(m_pBtn_HorIconTextButton_H36_T14, 2);
+    buttonGroupHorIconTextButton->addButton(m_pBtn_HorIconTextButton_H28_R8_T14_Bg, 4);
+    buttonGroupHorIconTextButton->addButton(m_pBtn_HorIconTextButton_H32_R8_T14_Bg, 5);
+    buttonGroupHorIconTextButton->addButton(m_pBtn_HorIconTextButton_H36_R8_T14_Bg, 6);
+    m_pBtn_HorIconTextButton_H36_R8_T14_Bg->setChecked(true);
+
+    layoutHorIconTextButton->addStretch();
 
     //
     auto widgetBottomBorderButton = new QWidget(this);
