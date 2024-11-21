@@ -65,28 +65,41 @@ LabelTestWidget::LabelTestWidget(QWidget *parent) :
 
     layoutwidgetVectorLabel->addStretch();
 
-    auto widgetCarouselLabel = new QWidget(this);
-    widgetCarouselLabel->setFixedHeight(48);
+    //
+    m_pCarouselLabel1 = new widget::CarouselLabel(this);
+    m_pCarouselLabel1->setObjectName("MyCarouselLabel");
+    m_pCarouselLabel1->setText("这是一段滚动的文字，滚动滚动！！", QFont(), Qt::red, 20, 30, true);
+    layout->addWidget(m_pCarouselLabel1, 0, Qt::AlignLeft);
 
-    layout->addWidget(widgetCarouselLabel);
+    m_pCarouselLabel2 = new widget::CarouselLabel(this);
+    m_pCarouselLabel2->setObjectName("MyCarouselLabel");
+    m_pCarouselLabel2->setText("这是一段滚动的文字，滚动滚动！！", QFont(), Qt::blue, 80, 20, true);
+    layout->addWidget(m_pCarouselLabel2, 0, Qt::AlignLeft);
 
-    auto layoutwidgetCarouselLabel = new QHBoxLayout(widgetCarouselLabel); 
-    layoutwidgetCarouselLabel->setAlignment(Qt::AlignVCenter);
-    layoutwidgetCarouselLabel->setContentsMargins(0, 0, 0, 0);
+    m_pCarouselLabel3 = new widget::CarouselLabel(this);
+    m_pCarouselLabel3->setObjectName("MyCarouselLabel");
+    m_pCarouselLabel3->setText("这是一段滚动的文字，滚动滚动！！", QFont(), Qt::red, 20, 30);
+    m_pCarouselLabel3->setFixedSize(150, 40);
+    layout->addWidget(m_pCarouselLabel3, 0, Qt::AlignLeft);
 
-     m_pCarouselLabel = new widget::CarouselLabel(this);
-     m_pCarouselLabel->setObjectName("MyCarouselLabel");
-     m_pCarouselLabel->setParams("这是一段滚动的文字，滚动滚动！");
-     layoutwidgetCarouselLabel->addWidget(m_pCarouselLabel, 0, Qt::AlignVCenter);
-
-     layoutwidgetCarouselLabel->addStretch();
+    m_pCarouselLabel4 = new widget::CarouselLabel(this);
+    m_pCarouselLabel4->setObjectName("MyCarouselLabel");
+    QFont font4 = QFont();
+    font4.setPixelSize(24);
+    font4.setBold(true);
+    m_pCarouselLabel4->setText("这是一段滚动的文字，滚动滚动！！", font4, Qt::blue, 20, 10);
+    m_pCarouselLabel4->setFixedSize(700, 60);
+    layout->addWidget(m_pCarouselLabel4, 0, Qt::AlignLeft);
 
     QString carouselLabelStyle = R"(
         #MyCarouselLabel {
             background-color: #000000;
         }
     )";
-    m_pCarouselLabel->setStyleSheet(carouselLabelStyle);
+    m_pCarouselLabel1->setStyleSheet(carouselLabelStyle);
+    m_pCarouselLabel2->setStyleSheet(carouselLabelStyle);
+    m_pCarouselLabel3->setStyleSheet(carouselLabelStyle);
+    m_pCarouselLabel4->setStyleSheet(carouselLabelStyle);
     
     layout->addStretch();
 }
