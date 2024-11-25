@@ -2,4 +2,16 @@
   <qresource prefix="/test/light">
     <file alias="first-1-16.png">../../img/light/first-1-16.png</file>
   </qresource>
+
+  <qresource prefix="/test/light/carousel">
+    <file alias="109951170188223427.jpg">../../img/light/carousel/109951170188223427.jpg</file>
+    <file alias="109951170188234221.jpg">../../img/light/carousel/109951170188234221.jpg</file>
+    <file alias="109951170188242621.jpg">../../img/light/carousel/109951170188242621.jpg</file>
+    <file alias="109951170188248870.jpg">../../img/light/carousel/109951170188248870.jpg</file>
+    <file alias="109951170188276901.jpg">../../img/light/carousel/109951170188276901.jpg</file>
+    <file alias="109951170188279640.jpg">../../img/light/carousel/109951170188279640.jpg</file>
+    <file alias="109951170188293560.jpg">../../img/light/carousel/109951170188293560.jpg</file>
+    <file alias="109951170188294750.jpg">../../img/light/carousel/109951170188294750.jpg</file>
+    <file alias="109951170188304539.jpg">../../img/light/carousel/109951170188304539.jpg</file>
+  </qresource>
 </RCC>

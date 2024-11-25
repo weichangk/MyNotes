@@ -13,6 +13,7 @@
 #include "qtmaterial/widget/labeltest.h"
 #include "qtmaterial/widget/lineedittest.h"
 #include "qtmaterial/widget/progressbartest.h"
+#include "qtmaterial/widget/carouseltest.h"
 #include "qtmaterial/filter/shadowtest.h"
 
 class MainWindow : public QWidget {
@@ -51,6 +52,7 @@ private:
     void labelTestShow();
     void lineEditTestShow();
     void progressBarTestShow();
+    void carouselTestShow();
 
     // qtmaterial filter
     void shadowTestShow();
@@ -82,6 +84,7 @@ private:
     LabelTestWidget *m_pLabelTestWidget = nullptr;
     LineEditTestWidget *m_pLineEditTestWidget = nullptr;
     ProgressBarTestWidget *m_pProgressBarTestWidget = nullptr;
+    CarouselTestWidget *m_pCarouselTestWidget = nullptr;
 
     // qtmaterial filter
     ShadowTestWidget *m_pShadowTestWidget = nullptr;
