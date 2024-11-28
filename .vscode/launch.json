@@ -26,7 +26,6 @@
             "name": "win-qtnote-cppvsdbg-attach",
             "type": "cppvsdbg",
             "request": "attach",
-            // "processId": 1234,
             "processId": "${command:pickProcess}",
             "visualizerFile": "${workspaceRoot}/3rdparty/QtMaterial/qt5.natvis.xml",
             "symbolSearchPath": "otherSearchPath;E:/Qt/5.15.2/msvc2019_64/bin",
