@@ -9,12 +9,14 @@
 #include "test/languagechange.h"
 #include "test/qsstest.h"
 #include "qtmaterial/core/definetest.h"
+#include "qtmaterial/core/subjecttest.h"
 #include "qtmaterial/widget/buttontest.h"
 #include "qtmaterial/widget/labeltest.h"
 #include "qtmaterial/widget/lineedittest.h"
 #include "qtmaterial/widget/progressbartest.h"
 #include "qtmaterial/widget/carouseltest.h"
 #include "qtmaterial/filter/shadowtest.h"
+#include "qtmaterial/filter/movetest.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
@@ -46,6 +48,7 @@ private:
 
     // qtmaterial core
     void defineTestShow();
+    void subjectTestShow();
 
     // qtmaterial widget
     void buttonTestShow();
@@ -56,6 +59,7 @@ private:
 
     // qtmaterial filter
     void shadowTestShow();
+    void moveTestShow();
 
 private:
     QTabWidget *main_tabwidget_ = nullptr;
@@ -78,6 +82,7 @@ private:
 
     // qtmaterial core
     DefineTestWidget *m_pDefineTestWidget = nullptr;
+    SubjectTestWidget *m_pSubjectTestWidget = nullptr;
 
     // qtmaterial widget
     ButtonTestWidget *m_pButtonTestWidget = nullptr;
@@ -88,4 +93,5 @@ private:
 
     // qtmaterial filter
     ShadowTestWidget *m_pShadowTestWidget = nullptr;
+    MoveTestWidget *m_pMoveTestWidget = nullptr;
 };

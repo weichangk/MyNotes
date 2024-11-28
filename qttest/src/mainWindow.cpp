@@ -21,7 +21,7 @@ using QtTestDemo = enum {
 
 using QtmaterialCoreDemo = enum {
     QtmaterialCoreDemoDefineTest = 1000,
-    QtmaterialCoreDemo111,
+    QtmaterialCoreDemoSubjectTest,
     QtmaterialCoreDemo222,
     QtmaterialCoreDemo333,
     QtmaterialCoreDemo444,
@@ -47,7 +47,7 @@ using QtmaterialWidgetDemo = enum {
 
 using QtmaterialFilterDemo = enum {
     QtmaterialFilterShadowTest = 3000,
-    QtmaterialFilterDemo111,
+    QtmaterialFilterDemoMoveTest,
     QtmaterialFilterDemo222,
     QtmaterialFilterDemo333,
     QtmaterialFilterDemo444,
@@ -147,7 +147,7 @@ void MainWindow::setQtmaterialCoreDemoBtns(QWidget *w) {
     auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
     demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemoDefineTest, "Define Test");
-    demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo111, "111");
+    demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemoSubjectTest, "Subject Test");
     demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo222, "222");
     demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo333, "333");
     demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemo444, "444");
@@ -203,7 +203,7 @@ void MainWindow::setQtmaterialFilterDemoBtns(QWidget *w) {
     auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
     demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterShadowTest, "Shadow Test");
-    demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo111, "111");
+    demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemoMoveTest, "Move Test");
     demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo222, "222");
     demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo333, "333");
     demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo444, "444");
@@ -290,7 +290,8 @@ void MainWindow::test(int id) {
     case QtmaterialCoreDemo::QtmaterialCoreDemoDefineTest:
         defineTestShow();
         break;
-    case QtmaterialCoreDemo::QtmaterialCoreDemo111:
+    case QtmaterialCoreDemo::QtmaterialCoreDemoSubjectTest:
+        subjectTestShow();
         break;
     case QtmaterialCoreDemo::QtmaterialCoreDemo222:
         break;
@@ -342,7 +343,8 @@ void MainWindow::test(int id) {
     case QtmaterialFilterDemo::QtmaterialFilterShadowTest:
         shadowTestShow();
         break;
-    case QtmaterialFilterDemo::QtmaterialFilterDemo111:
+    case QtmaterialFilterDemo::QtmaterialFilterDemoMoveTest:
+        moveTestShow();
         break;
     case QtmaterialFilterDemo::QtmaterialFilterDemo222:
         break;
@@ -442,6 +444,13 @@ void MainWindow::defineTestShow() {
     m_pDefineTestWidget->show();
 }
 
+void MainWindow::subjectTestShow() {
+    if (!m_pSubjectTestWidget) {
+        m_pSubjectTestWidget = new SubjectTestWidget();
+    }
+    m_pSubjectTestWidget->show();
+}
+
 void MainWindow::buttonTestShow() {
     if (!m_pButtonTestWidget) {
         m_pButtonTestWidget = new ButtonTestWidget();
@@ -482,4 +491,11 @@ void MainWindow::shadowTestShow() {
         m_pShadowTestWidget = new ShadowTestWidget();
     }
     m_pShadowTestWidget->show();
+}
+
+void MainWindow::moveTestShow() {
+    if (!m_pMoveTestWidget) {
+        m_pMoveTestWidget = new MoveTestWidget();
+    }
+    m_pMoveTestWidget->show();
 }
