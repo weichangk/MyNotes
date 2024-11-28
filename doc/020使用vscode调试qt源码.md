@@ -86,3 +86,7 @@ launch.json 配置实现qt源码调试
 
 qt5.natvis.xml 文件获取 `https://wiki.qt.io/IDE_Debug_Helpers`
 需要将文件中的`##NAMESPACE##::`命名空间删除，文档内有说明
+
+
+在 VSCode 中，launch.json 文件保存时，如果出现了自动配置如 visualizerFile 的行为，可能是由某些扩展（如 C++ 调试扩展 C/C++ 或类似扩展）在保存时自动生成的默认字段导致的。
+可以在设置中搜索launch.json在禁用Qttools扩展自动添加 visualizerFile 配置
