@@ -20,6 +20,8 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
 
     auto layout = new QVBoxLayout(this); 
 
+   QFont iconFont = core::Font::getIconFont(core::Font::IconFontEnum::IconFont);
+
     //
     auto widgetVectorButton = new QWidget(this);
     widgetVectorButton->setFixedHeight(48);
@@ -33,42 +35,42 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     m_pBtn_VectorButton_HW28_I20 = new widget::VectorButton(this);
     m_pBtn_VectorButton_HW28_I20->setObjectName("VectorButton_HW28_I20");
     m_pBtn_VectorButton_HW28_I20->setCheckable(true);
-    m_pBtn_VectorButton_HW28_I20->setFont(core::Font::currentIconFont());
+    m_pBtn_VectorButton_HW28_I20->setFont(iconFont);
     m_pBtn_VectorButton_HW28_I20->setText(QChar(0xe665));
     layoutVectorButton->addWidget(m_pBtn_VectorButton_HW28_I20, 0, Qt::AlignVCenter);
 
     m_pBtn_VectorButton_HW32_I20 = new widget::VectorButton(this);
     m_pBtn_VectorButton_HW32_I20->setObjectName("VectorButton_HW32_I20");
     m_pBtn_VectorButton_HW32_I20->setCheckable(true);
-    m_pBtn_VectorButton_HW32_I20->setFont(core::Font::currentIconFont());
+    m_pBtn_VectorButton_HW32_I20->setFont(iconFont);
     m_pBtn_VectorButton_HW32_I20->setText(QChar(0xe665));
     layoutVectorButton->addWidget(m_pBtn_VectorButton_HW32_I20, 0, Qt::AlignVCenter);
 
     m_pBtn_VectorButton_HW36_I20 = new widget::VectorButton(this);
     m_pBtn_VectorButton_HW36_I20->setObjectName("VectorButton_HW36_I20");
     m_pBtn_VectorButton_HW36_I20->setCheckable(true);
-    m_pBtn_VectorButton_HW36_I20->setFont(core::Font::currentIconFont());
+    m_pBtn_VectorButton_HW36_I20->setFont(iconFont);
     m_pBtn_VectorButton_HW36_I20->setText(QChar(0xe665));
     layoutVectorButton->addWidget(m_pBtn_VectorButton_HW36_I20, 0, Qt::AlignVCenter);
 
     m_pBtn_VectorButton_HW28_R8_I20_B_Bg = new widget::VectorButton(this);
     m_pBtn_VectorButton_HW28_R8_I20_B_Bg->setObjectName("VectorButton_HW28_R8_I20_B_Bg");
     m_pBtn_VectorButton_HW28_R8_I20_B_Bg->setCheckable(true);
-    m_pBtn_VectorButton_HW28_R8_I20_B_Bg->setFont(core::Font::currentIconFont());
+    m_pBtn_VectorButton_HW28_R8_I20_B_Bg->setFont(iconFont);
     m_pBtn_VectorButton_HW28_R8_I20_B_Bg->setText(QChar(0xe665));
     layoutVectorButton->addWidget(m_pBtn_VectorButton_HW28_R8_I20_B_Bg, 0, Qt::AlignVCenter);
 
     m_pBtn_VectorButton_HW32_R8_I20_B_Bg = new widget::VectorButton(this);
     m_pBtn_VectorButton_HW32_R8_I20_B_Bg->setObjectName("VectorButton_HW32_R8_I20_B_Bg");
     m_pBtn_VectorButton_HW32_R8_I20_B_Bg->setCheckable(true);
-    m_pBtn_VectorButton_HW32_R8_I20_B_Bg->setFont(core::Font::currentIconFont());
+    m_pBtn_VectorButton_HW32_R8_I20_B_Bg->setFont(iconFont);
     m_pBtn_VectorButton_HW32_R8_I20_B_Bg->setText(QChar(0xe665));
     layoutVectorButton->addWidget(m_pBtn_VectorButton_HW32_R8_I20_B_Bg, 0, Qt::AlignVCenter);
 
     m_pBtn_VectorButton_HW36_R8_I20_B_Bg = new widget::VectorButton(this);
     m_pBtn_VectorButton_HW36_R8_I20_B_Bg->setObjectName("VectorButton_HW36_R8_I20_B_Bg");
     m_pBtn_VectorButton_HW36_R8_I20_B_Bg->setCheckable(true);
-    m_pBtn_VectorButton_HW36_R8_I20_B_Bg->setFont(core::Font::currentIconFont());
+    m_pBtn_VectorButton_HW36_R8_I20_B_Bg->setFont(iconFont);
     m_pBtn_VectorButton_HW36_R8_I20_B_Bg->setText(QChar(0xe665));
     layoutVectorButton->addWidget(m_pBtn_VectorButton_HW36_R8_I20_B_Bg, 0, Qt::AlignVCenter);
 
@@ -97,7 +99,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     m_pBtn_HorIconTextVectorButton_H28_I20_T14 = new widget::HorIconTextVectorButton(this);
     m_pBtn_HorIconTextVectorButton_H28_I20_T14->setObjectName("HorIconTextVectorButton_H28_I20_T14");
     m_pBtn_HorIconTextVectorButton_H28_I20_T14->setCheckable(true);
-    m_pBtn_HorIconTextVectorButton_H28_I20_T14->setIconFont(core::Font::currentIconFont());
+    m_pBtn_HorIconTextVectorButton_H28_I20_T14->setIconFont(iconFont);
     m_pBtn_HorIconTextVectorButton_H28_I20_T14->setIcon(QChar(0xe665));
     m_pBtn_HorIconTextVectorButton_H28_I20_T14->setText("我喜欢的");
     layoutHorIconTextVectorButton->addWidget(m_pBtn_HorIconTextVectorButton_H28_I20_T14, 0, Qt::AlignVCenter);
@@ -105,7 +107,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     m_pBtn_HorIconTextVectorButton_H32_I20_T14 = new widget::HorIconTextVectorButton(this);
     m_pBtn_HorIconTextVectorButton_H32_I20_T14->setObjectName("HorIconTextVectorButton_H32_I20_T14");
     m_pBtn_HorIconTextVectorButton_H32_I20_T14->setCheckable(true);
-    m_pBtn_HorIconTextVectorButton_H32_I20_T14->setIconFont(core::Font::currentIconFont());
+    m_pBtn_HorIconTextVectorButton_H32_I20_T14->setIconFont(iconFont);
     m_pBtn_HorIconTextVectorButton_H32_I20_T14->setIcon(QChar(0xe665));
     m_pBtn_HorIconTextVectorButton_H32_I20_T14->setText("本地下载");
     layoutHorIconTextVectorButton->addWidget(m_pBtn_HorIconTextVectorButton_H32_I20_T14, 0, Qt::AlignVCenter);
@@ -113,7 +115,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     m_pBtn_HorIconTextVectorButton_H36_I20_T14 = new widget::HorIconTextVectorButton(this);
     m_pBtn_HorIconTextVectorButton_H36_I20_T14->setObjectName("HorIconTextVectorButton_H36_I20_T14");
     m_pBtn_HorIconTextVectorButton_H36_I20_T14->setCheckable(true);
-    m_pBtn_HorIconTextVectorButton_H36_I20_T14->setIconFont(core::Font::currentIconFont());
+    m_pBtn_HorIconTextVectorButton_H36_I20_T14->setIconFont(iconFont);
     m_pBtn_HorIconTextVectorButton_H36_I20_T14->setIcon(QChar(0xe665));
     m_pBtn_HorIconTextVectorButton_H36_I20_T14->setText("最近播放呀呀");
     layoutHorIconTextVectorButton->addWidget(m_pBtn_HorIconTextVectorButton_H36_I20_T14, 0, Qt::AlignVCenter);
@@ -121,7 +123,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     m_pBtn_HorIconTextVectorButton_H28_R8_I20_T14_Bg = new widget::HorIconTextVectorButton(this);
     m_pBtn_HorIconTextVectorButton_H28_R8_I20_T14_Bg->setObjectName("HorIconTextVectorButton_H28_R8_I20_T14_Bg");
     m_pBtn_HorIconTextVectorButton_H28_R8_I20_T14_Bg->setCheckable(true);
-    m_pBtn_HorIconTextVectorButton_H28_R8_I20_T14_Bg->setIconFont(core::Font::currentIconFont());
+    m_pBtn_HorIconTextVectorButton_H28_R8_I20_T14_Bg->setIconFont(iconFont);
     m_pBtn_HorIconTextVectorButton_H28_R8_I20_T14_Bg->setIcon(QChar(0xe665));
     m_pBtn_HorIconTextVectorButton_H28_R8_I20_T14_Bg->setText("音乐云盘");
     layoutHorIconTextVectorButton->addWidget(m_pBtn_HorIconTextVectorButton_H28_R8_I20_T14_Bg, 0, Qt::AlignVCenter);
@@ -129,7 +131,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     m_pBtn_HorIconTextVectorButton_H32_R8_I20_T14_Bg = new widget::HorIconTextVectorButton(this);
     m_pBtn_HorIconTextVectorButton_H32_R8_I20_T14_Bg->setObjectName("HorIconTextVectorButton_H32_R8_I20_T14_Bg");
     m_pBtn_HorIconTextVectorButton_H32_R8_I20_T14_Bg->setCheckable(true);
-    m_pBtn_HorIconTextVectorButton_H32_R8_I20_T14_Bg->setIconFont(core::Font::currentIconFont());
+    m_pBtn_HorIconTextVectorButton_H32_R8_I20_T14_Bg->setIconFont(iconFont);
     m_pBtn_HorIconTextVectorButton_H32_R8_I20_T14_Bg->setIcon(QChar(0xe665));
     m_pBtn_HorIconTextVectorButton_H32_R8_I20_T14_Bg->setText("我的收藏");
     layoutHorIconTextVectorButton->addWidget(m_pBtn_HorIconTextVectorButton_H32_R8_I20_T14_Bg, 0, Qt::AlignVCenter);
@@ -137,7 +139,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
     m_pBtn_HorIconTextVectorButton_H36_R8_I20_T14_Bg = new widget::HorIconTextVectorButton(this);
     m_pBtn_HorIconTextVectorButton_H36_R8_I20_T14_Bg->setObjectName("HorIconTextVectorButton_H36_R8_I20_T14_Bg");
     m_pBtn_HorIconTextVectorButton_H36_R8_I20_T14_Bg->setCheckable(true);
-    m_pBtn_HorIconTextVectorButton_H36_R8_I20_T14_Bg->setIconFont(core::Font::currentIconFont());
+    m_pBtn_HorIconTextVectorButton_H36_R8_I20_T14_Bg->setIconFont(iconFont);
     m_pBtn_HorIconTextVectorButton_H36_R8_I20_T14_Bg->setIcon(QChar(0xe665));
     m_pBtn_HorIconTextVectorButton_H36_R8_I20_T14_Bg->setText("我的播客");
     m_pBtn_HorIconTextVectorButton_H36_R8_I20_T14_Bg->setAdjustWidth(false);

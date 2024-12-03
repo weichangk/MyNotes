@@ -16,6 +16,8 @@ LabelTestWidget::LabelTestWidget(QWidget *parent) :
     )";
     setStyleSheet(style);
 
+   QFont iconFont = core::Font::getIconFont(core::Font::IconFontEnum::IconFont);
+   
     auto layout = new QVBoxLayout(this); 
 
     auto widgetVectorLabel = new QWidget(this);
@@ -29,37 +31,37 @@ LabelTestWidget::LabelTestWidget(QWidget *parent) :
 
     m_pLab1 = new widget::VectorLabel(this);
     m_pLab1->setObjectName("VectorLabel_Size24");
-    m_pLab1->setFont(core::Font::currentIconFont());
+    m_pLab1->setFont(iconFont);
     m_pLab1->setText(QChar(0xe665));
     layoutwidgetVectorLabel->addWidget(m_pLab1, 0, Qt::AlignVCenter);
 
     m_pLab2 = new widget::VectorLabel(this);
     m_pLab2->setObjectName("VectorLabel_Size26");
-    m_pLab2->setFont(core::Font::currentIconFont());
+    m_pLab2->setFont(iconFont);
     m_pLab2->setText(QChar(0xe665));
     layoutwidgetVectorLabel->addWidget(m_pLab2, 0, Qt::AlignVCenter);
 
     m_pLab3 = new widget::VectorLabel(this);
     m_pLab3->setObjectName("VectorLabel_Size28");
-    m_pLab3->setFont(core::Font::currentIconFont());
+    m_pLab3->setFont(iconFont);
     m_pLab3->setText(QChar(0xe665));
     layoutwidgetVectorLabel->addWidget(m_pLab3, 0, Qt::AlignVCenter);
 
     m_pLab4 = new widget::VectorLabel(this);
     m_pLab4->setObjectName("VectorLabel_Size24RoundBg");
-    m_pLab4->setFont(core::Font::currentIconFont());
+    m_pLab4->setFont(iconFont);
     m_pLab4->setText(QChar(0xe665));
     layoutwidgetVectorLabel->addWidget(m_pLab4, 0, Qt::AlignVCenter);
 
     m_pLab5 = new widget::VectorLabel(this);
     m_pLab5->setObjectName("VectorLabel_Size26RoundBg");
-    m_pLab5->setFont(core::Font::currentIconFont());
+    m_pLab5->setFont(iconFont);
     m_pLab5->setText(QChar(0xe665));
     layoutwidgetVectorLabel->addWidget(m_pLab5, 0, Qt::AlignVCenter);
 
     m_pLab6 = new widget::VectorLabel(this);
     m_pLab6->setObjectName("VectorLabel_Size28RoundBg");
-    m_pLab6->setFont(core::Font::currentIconFont());
+    m_pLab6->setFont(iconFont);
     m_pLab6->setText(QChar(0xe665));
     layoutwidgetVectorLabel->addWidget(m_pLab6, 0, Qt::AlignVCenter);
 
