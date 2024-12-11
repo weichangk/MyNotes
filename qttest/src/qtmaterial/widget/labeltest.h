@@ -21,4 +21,6 @@ private:
     widget::CarouselLabel *m_pCarouselLabel2 = nullptr;
     widget::CarouselLabel *m_pCarouselLabel3 = nullptr;
     widget::CarouselLabel *m_pCarouselLabel4 = nullptr;
+
+    widget::DiscountLabel *m_pDiscountLabel = nullptr;
 };

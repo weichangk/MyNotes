@@ -2,6 +2,7 @@
 #include "core/font.h"
 
 #include <QHBoxLayout>
+#include <QApplication>
 
 LabelTestWidget::LabelTestWidget(QWidget *parent) :
     QWidget(parent) {
@@ -103,5 +104,12 @@ LabelTestWidget::LabelTestWidget(QWidget *parent) :
     m_pCarouselLabel3->setStyleSheet(carouselLabelStyle);
     m_pCarouselLabel4->setStyleSheet(carouselLabelStyle);
     
+    m_pDiscountLabel = new widget::DiscountLabel(this);
+    m_pDiscountLabel->setFixedSize(80, 16);
+    QFont discountFont = QApplication::font();
+    discountFont.setPixelSize(11);
+    m_pDiscountLabel->setText("限时6.4折", discountFont, QColor("#ecd4cf"), 20, 40);
+    layout->addWidget(m_pDiscountLabel, 0, Qt::AlignLeft);
+
     layout->addStretch();
 }
