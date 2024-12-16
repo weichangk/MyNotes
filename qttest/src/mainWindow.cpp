@@ -38,7 +38,7 @@ using QtmaterialWidgetDemo = enum {
     QtmaterialWidgetDemoLineEditTest,
     QtmaterialWidgetDemoProgressBarTest,
     QtmaterialWidgetDemoCarouselTest,
-    QtmaterialWidgetDemo555,
+    QtmaterialWidgetAvatarTest,
     QtmaterialWidgetDemo666,
     QtmaterialWidgetDemo777,
     QtmaterialWidgetDemo888,
@@ -179,7 +179,7 @@ void MainWindow::setQtmaterialWidgetDemoBtns(QWidget *w) {
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoLineEditTest, "LineEdit Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoProgressBarTest, "ProgressBar Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoCarouselTest, "Carousel Test");
-    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo555, "555");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetAvatarTest, "Avatar Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo666, "666");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo777, "777");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo888, "888");
@@ -327,7 +327,8 @@ void MainWindow::test(int id) {
     case QtmaterialWidgetDemo::QtmaterialWidgetDemoCarouselTest:
         carouselTestShow();
         break;
-    case QtmaterialWidgetDemo::QtmaterialWidgetDemo555:
+    case QtmaterialWidgetDemo::QtmaterialWidgetAvatarTest:
+        avatarTestShow();
         break;
     case QtmaterialWidgetDemo::QtmaterialWidgetDemo666:
         break;
@@ -484,6 +485,13 @@ void MainWindow::carouselTestShow() {
         m_pCarouselTestWidget = new CarouselTestWidget();
     }
     m_pCarouselTestWidget->show();
+}
+
+void MainWindow::avatarTestShow() {
+    if (!m_pAvatarTestWidget) {
+        m_pAvatarTestWidget = new AvatarTestWidget();
+    }
+    m_pAvatarTestWidget->show();
 }
 
 void MainWindow::shadowTestShow() {

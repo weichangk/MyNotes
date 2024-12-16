@@ -1,4 +1,5 @@
 <RCC>
-  <qresource prefix="/">
+  <qresource prefix="/test">
+    <file alias="avatar">../img/avatar.jpg</file>
   </qresource>
 </RCC>
