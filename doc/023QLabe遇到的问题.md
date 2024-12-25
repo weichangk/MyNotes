@@ -1,0 +1,1 @@
+在自定义控件中使用QLabel时（如button中有个label），在disabled状态下遇到文本有重影的问题，可以设置QLabel的背景色来解决，一般设置透明
