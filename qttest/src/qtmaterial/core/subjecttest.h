@@ -51,6 +51,6 @@ public:
     void testEvent(int n);
 
 private:
-    core::Subject<ISubjectTestEventObserver> m_Observer;
+    qtmaterialcore::Subject<ISubjectTestEventObserver> m_Observer;
     // 常用于封装功能接口的服务，回调调用 m_Observer.notify 再响应监听者
 };

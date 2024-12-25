@@ -116,7 +116,7 @@ void MainWindow::createUi() {
 }
 
 void MainWindow::setQtTestDemoBtns(QWidget *w) {
-    auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
+    auto demoFlowLayout = new qtmaterialwidget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
     demoMap.insert(QtTestDemo::QtTestDemoDialog, "Dialog");
     demoMap.insert(QtTestDemo::QtTestDemoPainter, "Painter");
@@ -144,7 +144,7 @@ void MainWindow::setQtTestDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setQtmaterialCoreDemoBtns(QWidget *w) {
-    auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
+    auto demoFlowLayout = new qtmaterialwidget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
     demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemoDefineTest, "Define Test");
     demoMap.insert(QtmaterialCoreDemo::QtmaterialCoreDemoSubjectTest, "Subject Test");
@@ -172,7 +172,7 @@ void MainWindow::setQtmaterialCoreDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setQtmaterialWidgetDemoBtns(QWidget *w) {
-    auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
+    auto demoFlowLayout = new qtmaterialwidget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetButtonTest, "Button Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoLabelTest, "Label Test");
@@ -200,7 +200,7 @@ void MainWindow::setQtmaterialWidgetDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setQtmaterialFilterDemoBtns(QWidget *w) {
-    auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
+    auto demoFlowLayout = new qtmaterialwidget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
     demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterShadowTest, "Shadow Test");
     demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemoMoveTest, "Move Test");
@@ -228,7 +228,7 @@ void MainWindow::setQtmaterialFilterDemoBtns(QWidget *w) {
 }
 
 void MainWindow::setQtmaterialOsxDemoBtns(QWidget *w) {
-    auto demoFlowLayout = new widget::FlowLayout(w, 4, 4, 4);
+    auto demoFlowLayout = new qtmaterialwidget::FlowLayout(w, 4, 4, 4);
     QMap<int, QString> demoMap;
     demoMap.insert(QtmaterialOsxDemo::QtmaterialOsxDemo000, "000");
     demoMap.insert(QtmaterialOsxDemo::QtmaterialOsxDemo111, "111");
@@ -391,7 +391,7 @@ void MainWindow::test(int id) {
 
 void MainWindow::dialogShow() {
     Dialog dialog;
-    auto mask = new filter::PopupMask(&dialog, this);
+    auto mask = new qtmaterialfilter::PopupMask(&dialog, this);
     mask->setFullMask(true);
     dialog.exec();
 }

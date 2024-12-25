@@ -20,5 +20,5 @@ MoveTestWidget::MoveTestWidget(QWidget *parent) :
     layout->addWidget(titleBar);
     layout->addStretch();
 
-    auto move = new filter::MoveTitleBar(titleBar, this);
+    auto move = new qtmaterialfilter::MoveTitleBar(titleBar, this);
 }

@@ -13,7 +13,7 @@ LanguageChangeTest::~LanguageChangeTest() {
 }
 
 void LanguageChangeTest::createUi() {
-    lang_ = new filter::Lang(this);
+    lang_ = new qtmaterialfilter::Lang(this);
     
     setWindowTitle("Language Change Test");
     setFixedSize(800, 600);
@@ -34,7 +34,7 @@ void LanguageChangeTest::createUi() {
 }
 
 void LanguageChangeTest::sigConnect() {
-    connect(lang_, &filter::Lang::sigLanguageChange,
+    connect(lang_, &qtmaterialfilter::Lang::sigLanguageChange,
             this, &LanguageChangeTest::slotLanguageChanged);
 
     connect(lang_combox_, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
@@ -48,13 +48,13 @@ void LanguageChangeTest::slotLanguageChanged() {
 void LanguageChangeTest::slotLangComboxIndexChanged(int index) {
     switch (index) {
     case 0:
-        core::Lang::getInstance()->setLangLocale(core::LangLocale::lang_locale_zh);
+        qtmaterialcore::Lang::getInstance()->setLangLocale(qtmaterialcore::LangLocale::lang_locale_zh);
         break;
     case 1:
-        core::Lang::getInstance()->setLangLocale(core::LangLocale::lang_locale_en);
+        qtmaterialcore::Lang::getInstance()->setLangLocale(qtmaterialcore::LangLocale::lang_locale_en);
         break;
     default:
-        core::Lang::getInstance()->setLangLocale(core::LangLocale::lang_locale_zh);
+        qtmaterialcore::Lang::getInstance()->setLangLocale(qtmaterialcore::LangLocale::lang_locale_zh);
         break;
     }
 }

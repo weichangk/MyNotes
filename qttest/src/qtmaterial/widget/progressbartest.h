@@ -14,5 +14,5 @@ public:
 
 private:
     QProgressBar *m_pProgressBar = nullptr;
-    widget::LoopProgressBar *m_pProgressBar1 = nullptr;
+    qtmaterialwidget::LoopProgressBar *m_pProgressBar1 = nullptr;
 };

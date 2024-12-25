@@ -7,10 +7,10 @@
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-    core::Lang::getInstance()->setSysLangLocale();
-    core::Theme::setTheme(core::Theme::LIGHT);
-    core::Font::setFont(core::Font::ROBOTO_REGULAR);
-    core::Font::setIconFont(core::Font::IconFont);
+    qtmaterialcore::Lang::getInstance()->setSysLangLocale();
+    qtmaterialcore::Theme::setTheme(qtmaterialcore::Theme::LIGHT);
+    qtmaterialcore::Font::setFont(qtmaterialcore::Font::ROBOTO_REGULAR);
+    qtmaterialcore::Font::setIconFont(qtmaterialcore::Font::IconFont);
     MainWindow w;
     w.show();
     return a.exec();

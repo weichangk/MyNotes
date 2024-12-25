@@ -11,5 +11,5 @@ public:
     ~ShadowTestWidget();
 
 private:
-    filter::ShadowEffect *m_pShadowEffect = nullptr;
+    qtmaterialfilter::ShadowEffect *m_pShadowEffect = nullptr;
 };

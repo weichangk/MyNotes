@@ -12,6 +12,6 @@ public:
     }
 
 private:
-    widget::Avatar *m_pAvatar1 = nullptr;
-    widget::Avatar *m_pAvatar2 = nullptr;
+    qtmaterialwidget::Avatar *m_pAvatar1 = nullptr;
+    qtmaterialwidget::Avatar *m_pAvatar2 = nullptr;
 };

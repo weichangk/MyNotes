@@ -10,12 +10,12 @@ AvatarTestWidget::AvatarTestWidget(QWidget *parent) :
 
     auto layout = new QVBoxLayout(this);
 
-    m_pAvatar1 = new widget::Avatar(this);
+    m_pAvatar1 = new qtmaterialwidget::Avatar(this);
     m_pAvatar1->setFixedSize(100, 100);
     m_pAvatar1->setBorderRadius(50);
     m_pAvatar1->setAvatar(":/test/avatar");
 
-    m_pAvatar2 = new widget::Avatar(this);
+    m_pAvatar2 = new qtmaterialwidget::Avatar(this);
     m_pAvatar2->setFixedSize(100, 100);
     m_pAvatar2->setBorderRadius(50);
     m_pAvatar2->setAvatar(":/test/avatar");

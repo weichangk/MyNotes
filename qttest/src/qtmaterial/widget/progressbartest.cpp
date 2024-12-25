@@ -16,7 +16,7 @@ ProgressBarTestWidget::ProgressBarTestWidget(QWidget *parent) :
     m_pProgressBar->setObjectName("QProgressBar_Test");
     m_pProgressBar->setRange(0, 0);
 
-    auto maskProgressBar = new filter::RadiusMask(m_pProgressBar);
+    auto maskProgressBar = new qtmaterialfilter::RadiusMask(m_pProgressBar);
 
     layout->addWidget(m_pProgressBar);
 
@@ -38,7 +38,7 @@ ProgressBarTestWidget::ProgressBarTestWidget(QWidget *parent) :
     )";
     m_pProgressBar->setStyleSheet(progressBarStyleSheet);
 
-    m_pProgressBar1 = new widget::LoopProgressBar(this);
+    m_pProgressBar1 = new qtmaterialwidget::LoopProgressBar(this);
     m_pProgressBar1->setFixedHeight(24);
     layout->addWidget(m_pProgressBar1);
 

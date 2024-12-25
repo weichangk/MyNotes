@@ -17,7 +17,7 @@ LineEditTestWidget::LineEditTestWidget(QWidget *parent) :
 
     auto layout = new QVBoxLayout(this);
 
-    m_pSearchLineEdit = new widget::SearchLineEdit(this);
+    m_pSearchLineEdit = new qtmaterialwidget::SearchLineEdit(this);
     m_pSearchLineEdit->setFixedWidth(250);
     m_pSearchLineEdit->setPlaceholderText("Enter your name here");
 

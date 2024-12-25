@@ -16,7 +16,7 @@ ShadowTestWidget::ShadowTestWidget(QWidget *parent) :
 
     layout->addWidget(label, 0, Qt::AlignCenter);
 
-    m_pShadowEffect = new filter::ShadowEffect(this);
+    m_pShadowEffect = new qtmaterialfilter::ShadowEffect(this);
 }
 
 ShadowTestWidget::~ShadowTestWidget() {
