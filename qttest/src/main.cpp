@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
     qtmaterialcore::Lang::getInstance()->setSysLangLocale();
     qtmaterialcore::Theme::setTheme(qtmaterialcore::Theme::LIGHT);
     qtmaterialcore::Font::setFont(qtmaterialcore::Font::ROBOTO_REGULAR);
-    qtmaterialcore::Font::setIconFont(qtmaterialcore::Font::IconFont);
+    qtmaterialcore::Font::setIconFont(":/font/QtMaterialIconFont.ttf");
     MainWindow w;
     w.show();
     return a.exec();

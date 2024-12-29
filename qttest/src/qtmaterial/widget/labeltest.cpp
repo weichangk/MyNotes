@@ -17,7 +17,7 @@ LabelTestWidget::LabelTestWidget(QWidget *parent) :
     )";
     setStyleSheet(style);
 
-   QFont iconFont = qtmaterialcore::Font::getIconFont(qtmaterialcore::Font::IconFontEnum::IconFont);
+   QFont iconFont = qtmaterialcore::Font::getIconFont(":/font/QtMaterialIconFont.ttf");
    
     auto layout = new QVBoxLayout(this); 
 

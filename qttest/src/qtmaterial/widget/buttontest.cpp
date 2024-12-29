@@ -20,7 +20,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
 
     auto layout = new QVBoxLayout(this); 
 
-   QFont iconFont = qtmaterialcore::Font::getIconFont(qtmaterialcore::Font::IconFontEnum::IconFont);
+   QFont iconFont = qtmaterialcore::Font::getIconFont(":/font/QtMaterialIconFont.ttf");
 
     //
     auto widgetVectorButton = new QWidget(this);
