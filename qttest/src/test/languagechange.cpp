@@ -13,7 +13,7 @@ LanguageChangeTest::~LanguageChangeTest() {
 }
 
 void LanguageChangeTest::createUi() {
-    lang_ = new qtmaterialfilter::Lang(this);
+    lang_ = new qtmaterialfilter::LanguageFilter(this);
     
     setWindowTitle("Language Change Test");
     setFixedSize(800, 600);
@@ -34,7 +34,7 @@ void LanguageChangeTest::createUi() {
 }
 
 void LanguageChangeTest::sigConnect() {
-    connect(lang_, &qtmaterialfilter::Lang::sigLanguageChange,
+    connect(lang_, &qtmaterialfilter::LanguageFilter::sigLanguageChange,
             this, &LanguageChangeTest::slotLanguageChanged);
 
     connect(lang_combox_, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),

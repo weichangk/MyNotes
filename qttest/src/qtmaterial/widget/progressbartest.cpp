@@ -1,5 +1,5 @@
 #include "progressbartest.h"
-#include "filter/mask.h"
+#include "filter/maskwidget.h"
 
 #include <QHBoxLayout>
 
@@ -16,7 +16,7 @@ ProgressBarTestWidget::ProgressBarTestWidget(QWidget *parent) :
     m_pProgressBar->setObjectName("QProgressBar_Test");
     m_pProgressBar->setRange(0, 0);
 
-    auto maskProgressBar = new qtmaterialfilter::RadiusMask(m_pProgressBar);
+    auto maskProgressBar = new qtmaterialfilter::MaskWidget(m_pProgressBar);
 
     layout->addWidget(m_pProgressBar);
 

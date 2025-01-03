@@ -1,5 +1,5 @@
 #include "movetest.h"
-#include "filter/move.h"
+#include "filter/movetitlebar.h"
 
 #include <QVBoxLayout>
 

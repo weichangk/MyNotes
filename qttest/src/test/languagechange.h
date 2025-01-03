@@ -3,7 +3,7 @@
 #include <QComboBox>
 #include <QLabel>
 #include <QPushButton>
-#include "filter/lang.h"
+#include "filter/languagefilter.h"
 
 class LanguageChangeTest : public QWidget {
     Q_OBJECT
@@ -23,5 +23,5 @@ private slots:
 private:
     QComboBox *lang_combox_ = nullptr;
     QLabel *label_ = nullptr;
-    qtmaterialfilter::Lang *lang_ = nullptr;
+    qtmaterialfilter::LanguageFilter *lang_ = nullptr;
 };

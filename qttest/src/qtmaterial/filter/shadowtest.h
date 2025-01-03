@@ -1,5 +1,5 @@
 #pragma once
-#include "filter/shadow.h"
+#include "filter/shadowwindow.h"
 
 #include <QWidget>
 
