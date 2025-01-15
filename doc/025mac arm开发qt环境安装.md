@@ -45,6 +45,7 @@ export PATH=$QTDIR/bin:$PATH
 ```
 
 # 关于环境变量配置
+在终端执行命令 echo $SHELL 获得终端类型
 在 macOS 上，~/.zprofile 和 ~/.zshrc 都是与 Zsh (Z shell) 相关的配置文件，用于定义 shell 的行为。它们的主要区别在于加载时机和用途。
 
 | 特性 | .zprofile| .zshrc |
