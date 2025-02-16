@@ -1,9 +1,9 @@
 include(${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/QtMaterial/cmake/public.cmake)
 
 project(
-    QtTest
+    QtDemo
     VERSION 1.0.0
-    DESCRIPTION "qttest project"
+    DESCRIPTION "QWidgetDemo Project"
     LANGUAGES CXX
 )
 

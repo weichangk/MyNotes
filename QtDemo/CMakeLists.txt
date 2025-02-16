@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 project(
     QtNote
     VERSION 1.0.0
-    DESCRIPTION "qt note project"
+    DESCRIPTION "QtDemo Project"
     LANGUAGES CXX
 )
 
@@ -42,5 +42,5 @@ elseif(APPLE)
 endif()
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty/QtMaterial)
-add_subdirectory(qttest)
-# add_subdirectory(qmlmaterialtest)
+add_subdirectory(QWidgetDemo)
+add_subdirectory(QMLDemo)

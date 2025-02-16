@@ -7,7 +7,7 @@ project(
     LANGUAGES CXX
 )
 
-set(MY_CMAKE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../cmake)
+set(MY_CMAKE_DIR ${CMAKE_SOURCE_DIR}/3rdparty/QtMaterial/cmake)
 
 include(${MY_CMAKE_DIR}/public.cmake)
 
