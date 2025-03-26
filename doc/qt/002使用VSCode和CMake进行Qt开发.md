@@ -25,6 +25,7 @@ archive 和 official_releases 两个目录都有最新的 Qt 开发环境安装�
 - Qt Configure
 - Qt tools
 - QML
+- CodeLLDB
 
 ### 配置环境变量
 - D:\Qt\Tools\CMake_64\bin
@@ -245,6 +246,7 @@ c_cpp_properties.json 中的 defines 预处理器宏也可以在开发中使用�
     ```
 - <b>dump调试</b>
     ```
+    "symbolSearchPath": "path"
     "dumpPath": "path"
     ```
 - <b>进程调试</b>
@@ -253,7 +255,8 @@ c_cpp_properties.json 中的 defines 预处理器宏也可以在开发中使用�
         "name": "win-qtnote-cppvsdbg-attach",
         "type": "cppvsdbg",
         "request": "attach",
-        "processId": 1234,
+        // "processId": 1234,
+        "processId": "${command:pickProcess}",
         "visualizerFile": "${workspaceRoot}/qt6.natvis.xml",
         "symbolSearchPath": "otherSearchPath;D:/Qt/6.5.0/msvc2019_64/bin",
         "sourceFileMap": {
