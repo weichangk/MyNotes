@@ -205,37 +205,37 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
 
     m_pIconButton_HW28 = new qtmaterialwidget::IconButton(this);
     m_pIconButton_HW28->setObjectName("IconButton_HW28");
-    m_pIconButton_HW28->setIconSize(20);
+    m_pIconButton_HW28->setIconSize(20, 20);
     m_pIconButton_HW28->setNormalPixmapPath(":/qtmaterial/test/test20.png");
     layoutIconButton->addWidget(m_pIconButton_HW28, 0, Qt::AlignVCenter);
 
     m_pIconButton_HW32 = new qtmaterialwidget::IconButton(this);
     m_pIconButton_HW32->setObjectName("IconButton_HW32");
-    m_pIconButton_HW32->setIconSize(20);
+    m_pIconButton_HW32->setIconSize(20, 20);
     m_pIconButton_HW32->setNormalPixmapPath(":/qtmaterial/test/test20.png");
     layoutIconButton->addWidget(m_pIconButton_HW32, 0, Qt::AlignVCenter);
 
     m_pIconButton_HW36 = new qtmaterialwidget::IconButton(this);
     m_pIconButton_HW36->setObjectName("IconButton_HW36");
-    m_pIconButton_HW36->setIconSize(20);
+    m_pIconButton_HW36->setIconSize(20, 20);
     m_pIconButton_HW36->setNormalPixmapPath(":/qtmaterial/test/test20.png");
     layoutIconButton->addWidget(m_pIconButton_HW36, 0, Qt::AlignVCenter);
 
     m_pIconButton_HW28_R8_B_Bg = new qtmaterialwidget::IconButton(this);
     m_pIconButton_HW28_R8_B_Bg->setObjectName("IconButton_HW28_R8_B_Bg");
-    m_pIconButton_HW28_R8_B_Bg->setIconSize(20);
+    m_pIconButton_HW28_R8_B_Bg->setIconSize(20, 20);
     m_pIconButton_HW28_R8_B_Bg->setNormalPixmapPath(":/qtmaterial/test/test20.png");
     layoutIconButton->addWidget(m_pIconButton_HW28_R8_B_Bg, 0, Qt::AlignVCenter);
 
     m_pIconButton_HW32_R8_B_Bg = new qtmaterialwidget::IconButton(this);
     m_pIconButton_HW32_R8_B_Bg->setObjectName("IconButton_HW32_R8_B_Bg");
-    m_pIconButton_HW32_R8_B_Bg->setIconSize(20);
+    m_pIconButton_HW32_R8_B_Bg->setIconSize(20, 20);
     m_pIconButton_HW32_R8_B_Bg->setNormalPixmapPath(":/qtmaterial/test/test20.png");
     layoutIconButton->addWidget(m_pIconButton_HW32_R8_B_Bg, 0, Qt::AlignVCenter);
 
     m_pIconButton_HW32_R8_B_Bg = new qtmaterialwidget::IconButton(this);
     m_pIconButton_HW32_R8_B_Bg->setObjectName("IconButton_HW36_R8_B_Bg");
-    m_pIconButton_HW32_R8_B_Bg->setIconSize(20);
+    m_pIconButton_HW32_R8_B_Bg->setIconSize(20, 20);
     m_pIconButton_HW32_R8_B_Bg->setNormalPixmapPath(":/qtmaterial/test/test20.png");
     layoutIconButton->addWidget(m_pIconButton_HW32_R8_B_Bg, 0, Qt::AlignVCenter);
 
@@ -253,7 +253,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
 
     m_pBtn_HorIconTextButton_H28_T14 = new qtmaterialwidget::HorIconTextButton(this);
     m_pBtn_HorIconTextButton_H28_T14->setObjectName("HorIconTextButton_H28_T14");
-    m_pBtn_HorIconTextButton_H28_T14->setIconSize(20);
+    m_pBtn_HorIconTextButton_H28_T14->setIconSize(20, 20);
     m_pBtn_HorIconTextButton_H28_T14->setCheckable(true);
     m_pBtn_HorIconTextButton_H28_T14->setNormalPixmapPath(":/qtmaterial/test/test20.png");
     m_pBtn_HorIconTextButton_H28_T14->setText("我喜欢的");
@@ -261,7 +261,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
 
     m_pBtn_HorIconTextButton_H32_T14 = new qtmaterialwidget::HorIconTextButton(this);
     m_pBtn_HorIconTextButton_H32_T14->setObjectName("HorIconTextButton_H32_T14");
-    m_pBtn_HorIconTextButton_H32_T14->setIconSize(20);
+    m_pBtn_HorIconTextButton_H32_T14->setIconSize(20, 20);
     m_pBtn_HorIconTextButton_H32_T14->setCheckable(true);
     m_pBtn_HorIconTextButton_H32_T14->setNormalPixmapPath(":/qtmaterial/test/test20.png");
     m_pBtn_HorIconTextButton_H32_T14->setText("本地下载");
@@ -269,7 +269,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
 
     m_pBtn_HorIconTextButton_H36_T14 = new qtmaterialwidget::HorIconTextButton(this);
     m_pBtn_HorIconTextButton_H36_T14->setObjectName("HorIconTextButton_H36_T14");
-    m_pBtn_HorIconTextButton_H36_T14->setIconSize(20);
+    m_pBtn_HorIconTextButton_H36_T14->setIconSize(20, 20);
     m_pBtn_HorIconTextButton_H36_T14->setCheckable(true);
     m_pBtn_HorIconTextButton_H36_T14->setNormalPixmapPath(":/qtmaterial/test/test20.png");
     m_pBtn_HorIconTextButton_H36_T14->setText("最近播放呀呀");
@@ -277,7 +277,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
 
     m_pBtn_HorIconTextButton_H28_R8_T14_Bg = new qtmaterialwidget::HorIconTextButton(this);
     m_pBtn_HorIconTextButton_H28_R8_T14_Bg->setObjectName("HorIconTextButton_H28_R8_T14_Bg");
-    m_pBtn_HorIconTextButton_H28_R8_T14_Bg->setIconSize(20);
+    m_pBtn_HorIconTextButton_H28_R8_T14_Bg->setIconSize(20, 20);
     m_pBtn_HorIconTextButton_H28_R8_T14_Bg->setCheckable(true);
     m_pBtn_HorIconTextButton_H28_R8_T14_Bg->setNormalPixmapPath(":/qtmaterial/test/test20.png");;
     m_pBtn_HorIconTextButton_H28_R8_T14_Bg->setText("音乐云盘");
@@ -285,7 +285,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
 
     m_pBtn_HorIconTextButton_H32_R8_T14_Bg = new qtmaterialwidget::HorIconTextButton(this);
     m_pBtn_HorIconTextButton_H32_R8_T14_Bg->setObjectName("HorIconTextButton_H32_R8_T14_Bg");
-    m_pBtn_HorIconTextButton_H32_R8_T14_Bg->setIconSize(20);
+    m_pBtn_HorIconTextButton_H32_R8_T14_Bg->setIconSize(20, 20);
     m_pBtn_HorIconTextButton_H32_R8_T14_Bg->setCheckable(true);
     m_pBtn_HorIconTextButton_H32_R8_T14_Bg->setNormalPixmapPath(":/qtmaterial/test/test20.png");
     m_pBtn_HorIconTextButton_H32_R8_T14_Bg->setText("我的收藏");
@@ -293,7 +293,7 @@ ButtonTestWidget::ButtonTestWidget(QWidget *parent) :
 
     m_pBtn_HorIconTextButton_H36_R8_T14_Bg = new qtmaterialwidget::HorIconTextButton(this);
     m_pBtn_HorIconTextButton_H36_R8_T14_Bg->setObjectName("HorIconTextButton_H36_R8_T14_Bg");
-    m_pBtn_HorIconTextButton_H36_R8_T14_Bg->setIconSize(20);
+    m_pBtn_HorIconTextButton_H36_R8_T14_Bg->setIconSize(20, 20);
     m_pBtn_HorIconTextButton_H36_R8_T14_Bg->setCheckable(true);
     m_pBtn_HorIconTextButton_H36_R8_T14_Bg->setNormalPixmapPath(":/qtmaterial/test/test20.png");
     m_pBtn_HorIconTextButton_H36_R8_T14_Bg->setText("我的播客");

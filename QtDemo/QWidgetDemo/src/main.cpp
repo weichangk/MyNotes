@@ -8,7 +8,9 @@
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
     qtmaterialcore::Lang::getInstance()->setSysLangLocale();
-    qtmaterialcore::Theme::setTheme(qtmaterialcore::Theme::LIGHT);
+    QStringList prefixs;
+    prefixs.append("");
+    qtmaterialcore::Theme::setTheme(qtmaterialcore::Theme::LIGHT, prefixs);
     qtmaterialcore::Font::setFont(qtmaterialcore::Font::ROBOTO_REGULAR);
     qtmaterialcore::Font::setIconFont(":/font/QtMaterialIconFont.ttf");
     MainWindow w;
