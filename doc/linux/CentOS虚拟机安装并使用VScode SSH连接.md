@@ -48,3 +48,12 @@ Host 192.168.43.128
   User root
 ```
 即可使用SSH输入密码连接
+
+## 远程主机不满足运行VS Code服务器的先决条件
+https://code.visualstudio.com/docs/remote/faq#_can-i-run-vs-code-server-on-older-linux-distributions
+
+也就是从 1.86 版本开始，vscode server 要求服务器操作系统版本必须是 ubuntu 20.04 或者 centos 8 或者 debian 10 以上了。否则会导致 vscode 连接不上远程。
+因此服务器是 centos 7 或者 ubuntu 18.04 最简便的方法就是下载 vscode 1.85 版本。
+
+1.85 版本的官方介绍链接：https://code.visualstudio.com/updates/v1_85，这个页面上有 exe 的下载链接，构造一下 zip 包的下载链接：https://update.code.visualstudio.com/1.85.2/win32-x64-archive/stable。
+解压缩上面的 zip 包，使用 1.85 版本的 vscode 即可解决连接不上远程的问题。
