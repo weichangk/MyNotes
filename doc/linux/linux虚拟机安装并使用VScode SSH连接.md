@@ -57,3 +57,19 @@ https://code.visualstudio.com/docs/remote/faq#_can-i-run-vs-code-server-on-older
 
 1.85 版本的官方介绍链接：https://code.visualstudio.com/updates/v1_85，这个页面上有 exe 的下载链接，构造一下 zip 包的下载链接：https://update.code.visualstudio.com/1.85.2/win32-x64-archive/stable。
 解压缩上面的 zip 包，使用 1.85 版本的 vscode 即可解决连接不上远程的问题。
+
+## Ubuntu 虚拟机安装
+官网下载镜像 https://releases.ubuntu.com/
+VMware 新建虚拟机（自定义（高级）），安装来源选稍后安装操作系统，使用网路地址转换（NAT），配置完成后，先在CD/DVD配置iso镜像再开启虚拟机，在首次进入虚拟机时提示配置账号密码配置即可。
+
+## 配置Ubuntu 虚拟机ssh服务
+```
+sudo apt update
+sudo apt install openssh-server
+sudo apt install vim
+sudo vim /etc/ssh/sshd_config
+#找到PermitRootLogin设置为yes保存退出，主机和虚拟机互ping一下看网络连通情况
+```
+
+## 使用VScode SSH 远程
+和上面一样
