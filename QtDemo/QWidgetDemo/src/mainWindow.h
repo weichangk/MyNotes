@@ -16,6 +16,7 @@
 #include "qtmaterial/widget/progressbartest.h"
 #include "qtmaterial/widget/carouseltest.h"
 #include "qtmaterial/widget/avatartest.h"
+#include "qtmaterial/widget/titlebartest.h"
 #include "qtmaterial/filter/shadowtest.h"
 #include "qtmaterial/filter/movetest.h"
 
@@ -58,6 +59,7 @@ private:
     void progressBarTestShow();
     void carouselTestShow();
     void avatarTestShow();
+    void titleBarTestShow();
 
     // qtmaterial filter
     void shadowTestShow();
@@ -93,6 +95,7 @@ private:
     ProgressBarTestWidget *m_pProgressBarTestWidget = nullptr;
     CarouselTestWidget *m_pCarouselTestWidget = nullptr;
     AvatarTestWidget *m_pAvatarTestWidget = nullptr;
+    TitlebarTestWidget *m_pTitlebarTestWidget = nullptr;
 
     // qtmaterial filter
     ShadowTestWidget *m_pShadowTestWidget = nullptr;
