@@ -19,8 +19,7 @@ private:
     SubjectTestEventObserverWidget *p_mSubjectTestEventObserverWidget = nullptr;
 };
 
-class ISubjectTestEventObserver : public QObject {
-    Q_OBJECT
+class ISubjectTestEventObserver {
 public:
     virtual void subjectTestEvent(int n) = 0;
 };
