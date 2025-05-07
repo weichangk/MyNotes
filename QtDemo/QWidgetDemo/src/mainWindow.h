@@ -1,23 +1,24 @@
 #pragma once
 #include <QWidget>
 #include <QTabWidget>
-#include "test/dialog.h"
-#include "test/painter.h"
-#include "test/tabwidget.h"
-#include "test/translucentbackground.h"
-#include "test/layout.h"
-#include "test/languagechange.h"
-#include "test/qsstest.h"
-#include "qtmaterial/core/definetest.h"
-#include "qtmaterial/core/subjecttest.h"
-#include "qtmaterial/widget/buttontest.h"
-#include "qtmaterial/widget/labeltest.h"
-#include "qtmaterial/widget/lineedittest.h"
-#include "qtmaterial/widget/progressbartest.h"
-#include "qtmaterial/widget/carouseltest.h"
-#include "qtmaterial/widget/avatartest.h"
-#include "qtmaterial/filter/shadowtest.h"
-#include "qtmaterial/filter/movetest.h"
+#include "other/dialog.h"
+#include "other/painter.h"
+#include "other/tabwidget.h"
+#include "other/translucentbackground.h"
+#include "other/layout.h"
+#include "other/languagechange.h"
+#include "other/qsstest.h"
+#include "core/definetest.h"
+#include "core/subjecttest.h"
+#include "widget/buttontest.h"
+#include "widget/labeltest.h"
+#include "widget/lineedittest.h"
+#include "widget/progressbartest.h"
+#include "widget/carouseltest.h"
+#include "widget/avatartest.h"
+#include "widget/titlebartest.h"
+#include "filter/shadowtest.h"
+#include "filter/movetest.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
@@ -58,6 +59,7 @@ private:
     void progressBarTestShow();
     void carouselTestShow();
     void avatarTestShow();
+    void titleBarTestShow();
 
     // qtmaterial filter
     void shadowTestShow();
@@ -93,6 +95,7 @@ private:
     ProgressBarTestWidget *m_pProgressBarTestWidget = nullptr;
     CarouselTestWidget *m_pCarouselTestWidget = nullptr;
     AvatarTestWidget *m_pAvatarTestWidget = nullptr;
+    TitlebarTestWidget *m_pTitlebarTestWidget = nullptr;
 
     // qtmaterial filter
     ShadowTestWidget *m_pShadowTestWidget = nullptr;

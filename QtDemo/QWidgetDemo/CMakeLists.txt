@@ -32,6 +32,14 @@ MY_ADD_QT_PACK_FUNC(
     Widgets
 )
 
+if(APPLE)
+    MY_ADD_LINK_FRAMEWORK_FUNC(
+        AppKit Metal DiskArbitration IOKit OpenGL AGL
+        AVFoundation Carbon CoreAudio
+        CoreFoundation CoreServices
+    )
+endif()
+
 MY_ADD_LINK_LIB_FUNC(
     QtMaterial
 )
