@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 project(
     QtNote
     VERSION 1.0.0
-    DESCRIPTION "QtDemo Project"
+    DESCRIPTION "QtTest Project"
     LANGUAGES CXX
 )
 
