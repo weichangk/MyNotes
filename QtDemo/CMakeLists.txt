@@ -43,4 +43,4 @@ endif()
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty/QtMaterial)
 add_subdirectory(qwidget)
-add_subdirectory(QMLDemo)
+add_subdirectory(qml)
