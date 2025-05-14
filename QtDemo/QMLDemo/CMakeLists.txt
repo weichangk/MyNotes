@@ -13,7 +13,7 @@ MY_ADD_QT_PACK_FUNC(
     Quick
 )
 
-include(${CMAKE_SOURCE_DIR}/QMLMaterial/vendor.cmake)
+include(${CMAKE_SOURCE_DIR}/3rdparty/QtMaterial/qml/vendor.cmake)
 MY_ADD_VENDOR_SOURCES_FUNC(
     ${QMLMATERIAL_VENDOR_SOURCES}
 )
