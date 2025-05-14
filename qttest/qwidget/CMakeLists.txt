@@ -53,6 +53,11 @@ include(config.cmake)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${PROJECT_ID}")
 
+if(MSVC)
+    set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_CURRENT_SOURCE_DIR}/app_icon.rc")
+    target_sources(${PROJECT_NAME} PRIVATE ${APP_ICON_RESOURCE_WINDOWS})
+endif()
+
 target_compile_definitions(${PROJECT_NAME} PRIVATE
     APPLICATION_ID="${PROJECT_ID}"
     APPLICATION_DISPLAY_NAME="${PROJECT_NAME}"
