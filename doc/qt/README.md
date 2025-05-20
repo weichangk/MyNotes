@@ -9,7 +9,7 @@
 - Qt 使用 VSCode 开发
 - Qt 使用 XCode 开发
 
-### Qt 入门
+### Qt 快速入门
 - Qt 窗口部件
 - Qt 布局管理
 - Qt 事件系统
