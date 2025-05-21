@@ -1,11 +1,3 @@
-## 基础窗口部件 QWidget
-
-QWidget类关系图：
-
-![QWidget类关系图](./assets/QWidget%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE.png)
-
-### 窗口与子部件
-```cpp
 #include <QWidget>
 #include <QLabel>
 #include <QEventLoop>
@@ -56,17 +48,3 @@ void windows_and_sub_widgets()
     // 在Qt中销毁父对象时自动销毁子对象，所以label2不需要手动销毁
     // delete label2
 }
-```
-### 窗口类型
-
-### 窗口几何布局
-
-## 对话框QDialog
-
-### 模态和非模态对话框
-
-### 标准对话框
-
-## 其他窗口部件
-
-### QFrame

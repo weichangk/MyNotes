@@ -11,7 +11,7 @@ public:
 private:
     void createUi();
     void setQtWidgetsBtns(QWidget *w);
-
-private:
-
+    void qtWidgetsTestShow(int id);
+    
+    void windows_and_sub_widgets_test();
 };

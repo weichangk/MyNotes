@@ -1,5 +1,6 @@
 #include "qtwidgetsdialog.h"
 #include "../flowlayout.h"
+#include "windows_and_sub_widgets.h"
 
 #include <QPushbutton>
 #include <QMap>
@@ -45,8 +46,20 @@ void QtWidgetsDialog::setQtWidgetsBtns(QWidget *w) {
         btn->setProperty("QtWidgetsID", iter.key());
         connect(btn, &QPushButton::clicked, this, [this, btn]() {
             int id = btn->property("QtWidgetsID").toInt();
-            // qtStartShow(id);
+            qtWidgetsTestShow(id);
         });
         flowLayout->addWidget(btn);
     }
+}
+
+void QtWidgetsDialog::qtWidgetsTestShow(int id) {
+    switch (id) {
+    case QtWidgetsID::QtWidgets0:
+        windows_and_sub_widgets_test();
+        break;
+    }
+}
+
+void QtWidgetsDialog::windows_and_sub_widgets_test() {
+    windows_and_sub_widgets();
 }
