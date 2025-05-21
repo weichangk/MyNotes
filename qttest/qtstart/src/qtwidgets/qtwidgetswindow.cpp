@@ -1,6 +1,7 @@
-#include "qtwidgetsdialog.h"
+#include "qtwidgetswindow.h"
 #include "../flowlayout.h"
 #include "windows_and_sub_widgets.h"
+#include "window_type.h"
 
 #include <QPushbutton>
 #include <QMap>
@@ -19,24 +20,25 @@ using QtWidgetsID = enum {
     QtWidgets9,
 };
 
-QtWidgetsDialog::QtWidgetsDialog(QWidget *parent) :
-    QDialog(parent) {
+QtWidgetsWindow::QtWidgetsWindow(QWidget *parent) :
+    QWidget(parent) {
     createUi();
 }
 
-QtWidgetsDialog::~QtWidgetsDialog() {
+QtWidgetsWindow::~QtWidgetsWindow() {
 }
 
-void QtWidgetsDialog::createUi() {
+void QtWidgetsWindow::createUi() {
     setWindowTitle("Qt 窗口部件");
     setMinimumSize(1096, 680);
     setQtWidgetsBtns(this);
 }
 
-void QtWidgetsDialog::setQtWidgetsBtns(QWidget *w) {
+void QtWidgetsWindow::setQtWidgetsBtns(QWidget *w) {
     auto flowLayout = new FlowLayout(w, 4, 4, 4);
     QMap<int, QString> qtStartMap;
     qtStartMap.insert(QtWidgetsID::QtWidgets0, "Qt 窗口与子窗口");
+    qtStartMap.insert(QtWidgetsID::QtWidgets1, "Qt 窗口类型");
 
     QMap<int, QString>::Iterator iter;
     for (iter = qtStartMap.begin(); iter != qtStartMap.end(); ++iter) {
@@ -52,14 +54,21 @@ void QtWidgetsDialog::setQtWidgetsBtns(QWidget *w) {
     }
 }
 
-void QtWidgetsDialog::qtWidgetsTestShow(int id) {
+void QtWidgetsWindow::qtWidgetsTestShow(int id) {
     switch (id) {
     case QtWidgetsID::QtWidgets0:
         windows_and_sub_widgets_test();
         break;
+    case QtWidgetsID::QtWidgets1:
+        window_type_test();
+        break;
     }
 }
 
-void QtWidgetsDialog::windows_and_sub_widgets_test() {
+void QtWidgetsWindow::windows_and_sub_widgets_test() {
     windows_and_sub_widgets();
+}
+
+void QtWidgetsWindow::window_type_test() {
+    window_type();
 }

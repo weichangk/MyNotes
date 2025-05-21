@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "flowlayout.h"
-#include "qtwidgets/qtwidgetsdialog.h"
 
 #include <QPushbutton>
 #include <QMap>
@@ -70,12 +69,14 @@ void MainWindow::setQtStartBtns(QWidget *w) {
 void MainWindow::qtStartShow(int id) {
     switch (id) {
     case EQtStartID::QtStart0:
-        qtWidgetsDialogShow();
+        qtWidgetsWindowShow();
         break;
     }
 }
 
-void MainWindow::qtWidgetsDialogShow() {
-    QtWidgetsDialog dlg;
-    dlg.exec();
+void MainWindow::qtWidgetsWindowShow() {
+    if (!m_pQtWidgetsWindow) {
+        m_pQtWidgetsWindow = new QtWidgetsWindow();
+    }
+    m_pQtWidgetsWindow->show();
 }

@@ -1,4 +1,5 @@
 #pragma once
+#include "qtwidgets/qtwidgetswindow.h"
 
 #include <QWidget>
 
@@ -13,5 +14,8 @@ private:
     void createUi();
     void setQtStartBtns(QWidget *w);
     void qtStartShow(int id);
-    void qtWidgetsDialogShow();
+    void qtWidgetsWindowShow();
+
+private:
+    QtWidgetsWindow *m_pQtWidgetsWindow = nullptr;
 };
