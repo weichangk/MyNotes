@@ -27,10 +27,16 @@ else
     GENERATOR="Unix Makefiles"
     CPU_CORES=$(sysctl -n hw.logicalcpu)
     BUILD_CMD="$CMAKE_PATH --build \"$BUILD_DIR\" --target all -j $CPU_CORES"
-    echo "⚠️ 未安装 Ninja，使用 Unix Makefiles ($CPU_CORES 线程)"
+    echo "⚠️ 未安装 Ninja，使用构建系统: Unix Makefiles ($CPU_CORES 线程)"
 fi
 
-echo "🛠️ 配置 CMake ($GENERATOR)..."
+echo "🧹 清理构建目录 $BUILD_DIR"
+rm -rf "$BUILD_DIR"
+
+echo "🧹 清理输出目录 $BUILD_DIR"
+rm -rf "$BUILD_DIR"
+
+echo "🛠️ 开始构建..."
 start_time=$(date +%s)
 
 "$CMAKE_PATH" \
@@ -46,27 +52,27 @@ start_time=$(date +%s)
     -B "$BUILD_DIR"
 
 if [ $? -ne 0 ]; then
-    echo "❌ CMake 配置失败"
-    exit 1
-fi
-
-end_time=$(date +%s)
-duration=$((end_time - start_time))
-echo "✅ 配置 CMake 完成，用时 ${duration}s"
-
-echo "🚀 开始构建..."
-start_time=$(date +%s)
-
-eval "$BUILD_CMD"
-
-if [ $? -ne 0 ]; then
     echo "❌ 构建失败"
     exit 1
 fi
 
 end_time=$(date +%s)
 duration=$((end_time - start_time))
-echo "🎉 构建成功，用时 ${duration}s"
+echo "✅ 构建完成，用时 ${duration}s"
+
+echo "🚀 开始编译..."
+start_time=$(date +%s)
+
+eval "$BUILD_CMD"
+
+if [ $? -ne 0 ]; then
+    echo "❌ 编译失败"
+    exit 1
+fi
+
+end_time=$(date +%s)
+duration=$((end_time - start_time))
+echo "🎉 编译完成，用时 ${duration}s"
 
 
 echo "收集符号文件"
