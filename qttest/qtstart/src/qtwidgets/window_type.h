@@ -1,8 +1,5 @@
 
 #include <QWidget>
-#include <QLabel>
-#include <QEventLoop>
-#include <QTimer>
 
 void window_type() {
     /*

@@ -61,9 +61,6 @@ void windows_and_sub_widgets()
 ```cpp
 
 #include <QWidget>
-#include <QLabel>
-#include <QEventLoop>
-#include <QTimer>
 
 void window_type() {
     /*
