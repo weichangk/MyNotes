@@ -2,6 +2,7 @@
 #include "../flowlayout.h"
 #include "windows_and_sub_widgets.h"
 #include "window_type.h"
+#include "window_geometry.h"
 
 #include <QPushbutton>
 #include <QMap>
@@ -39,6 +40,7 @@ void QtWidgetsWindow::setQtWidgetsBtns(QWidget *w) {
     QMap<int, QString> qtStartMap;
     qtStartMap.insert(QtWidgetsID::QtWidgets0, "Qt 窗口与子窗口");
     qtStartMap.insert(QtWidgetsID::QtWidgets1, "Qt 窗口类型");
+    qtStartMap.insert(QtWidgetsID::QtWidgets1, "Qt 窗口几何布局");
 
     QMap<int, QString>::Iterator iter;
     for (iter = qtStartMap.begin(); iter != qtStartMap.end(); ++iter) {
@@ -62,6 +64,8 @@ void QtWidgetsWindow::qtWidgetsTestShow(int id) {
     case QtWidgetsID::QtWidgets1:
         window_type_test();
         break;
+    case QtWidgetsID:QtWidgets2:
+        window_geometry_test();
     }
 }
 
@@ -71,4 +75,8 @@ void QtWidgetsWindow::windows_and_sub_widgets_test() {
 
 void QtWidgetsWindow::window_type_test() {
     window_type();
+}
+
+void QtWidgetsWindow::window_geometry_test() {
+    window_geometry();
 }
