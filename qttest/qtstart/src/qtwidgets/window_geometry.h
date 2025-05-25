@@ -1,5 +1,8 @@
 
 #include <QWidget>
+#include <QDebug>
+#include <QEventLoop>
+#include <QTimer>
 
 void window_geometry() {
     /*
@@ -20,4 +23,23 @@ void window_geometry() {
         size()	                        返回内容区的 QSize(width, height)
     */
 
+    QWidget widget;
+    // 设置窗口大小
+    widget.resize(400, 300);
+    // 设置窗口位置   
+    widget.move(200, 100);         
+    widget.show();
+
+    int x = widget.x();
+    qDebug("x: %d", x);            // 输出x的值
+    int y = widget.y();
+    qDebug("y: %d", y);
+    QRect geometry = widget.geometry();
+    QRect frame = widget.frameGeometry();
+    qDebug() << "geometry: " << geometry << "frame: " << frame;
+
+    // 进入子事件循环，5秒后退出
+    QEventLoop loop;
+    QTimer::singleShot(5000, &loop, &QEventLoop::quit);
+    loop.exec();
 }

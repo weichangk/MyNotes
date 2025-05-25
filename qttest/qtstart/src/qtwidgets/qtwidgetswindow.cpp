@@ -40,7 +40,7 @@ void QtWidgetsWindow::setQtWidgetsBtns(QWidget *w) {
     QMap<int, QString> qtStartMap;
     qtStartMap.insert(QtWidgetsID::QtWidgets0, "Qt 窗口与子窗口");
     qtStartMap.insert(QtWidgetsID::QtWidgets1, "Qt 窗口类型");
-    qtStartMap.insert(QtWidgetsID::QtWidgets1, "Qt 窗口几何布局");
+    qtStartMap.insert(QtWidgetsID::QtWidgets2, "Qt 窗口几何布局");
 
     QMap<int, QString>::Iterator iter;
     for (iter = qtStartMap.begin(); iter != qtStartMap.end(); ++iter) {
@@ -64,8 +64,9 @@ void QtWidgetsWindow::qtWidgetsTestShow(int id) {
     case QtWidgetsID::QtWidgets1:
         window_type_test();
         break;
-    case QtWidgetsID:QtWidgets2:
+    case QtWidgetsID::QtWidgets2:
         window_geometry_test();
+        break;
     }
 }
 
