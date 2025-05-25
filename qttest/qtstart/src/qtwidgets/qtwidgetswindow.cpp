@@ -3,6 +3,7 @@
 #include "windows_and_sub_widgets.h"
 #include "window_type.h"
 #include "window_geometry.h"
+#include "modal_dialog.h"
 
 #include <QPushbutton>
 #include <QMap>
@@ -41,6 +42,7 @@ void QtWidgetsWindow::setQtWidgetsBtns(QWidget *w) {
     qtStartMap.insert(QtWidgetsID::QtWidgets0, "Qt 窗口与子窗口");
     qtStartMap.insert(QtWidgetsID::QtWidgets1, "Qt 窗口类型");
     qtStartMap.insert(QtWidgetsID::QtWidgets2, "Qt 窗口几何布局");
+    qtStartMap.insert(QtWidgetsID::QtWidgets3, "Qt 模态和非模态对话框");
 
     QMap<int, QString>::Iterator iter;
     for (iter = qtStartMap.begin(); iter != qtStartMap.end(); ++iter) {
@@ -67,6 +69,9 @@ void QtWidgetsWindow::qtWidgetsTestShow(int id) {
     case QtWidgetsID::QtWidgets2:
         window_geometry_test();
         break;
+    case QtWidgetsID::QtWidgets3:
+        modal_dialog_test();
+        break;
     }
 }
 
@@ -80,4 +85,8 @@ void QtWidgetsWindow::window_type_test() {
 
 void QtWidgetsWindow::window_geometry_test() {
     window_geometry();
+}
+
+void QtWidgetsWindow::modal_dialog_test() {
+    modal_dialog();
 }

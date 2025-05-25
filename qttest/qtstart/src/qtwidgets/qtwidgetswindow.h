@@ -16,4 +16,5 @@ private:
     void windows_and_sub_widgets_test();
     void window_type_test();
     void window_geometry_test();
+    void modal_dialog_test();
 };
