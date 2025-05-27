@@ -18,4 +18,5 @@ private:
     void window_geometry_test();
     void modal_dialog_test();
     void window_switch_test();
+    void standard_dialog_test();
 };
