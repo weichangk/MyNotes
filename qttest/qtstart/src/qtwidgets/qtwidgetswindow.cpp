@@ -6,6 +6,8 @@
 #include "modal_dialog.h"
 #include "window_switch.h"
 #include "standard_dialog.h"
+#include "frame_use.h"
+#include "frame_family.h"
 
 #include <QPushbutton>
 #include <QMap>
@@ -47,6 +49,8 @@ void QtWidgetsWindow::setQtWidgetsBtns(QWidget *w) {
     qtStartMap.insert(QtWidgetsID::QtWidgets3, "Qt 模态和非模态对话框");
     qtStartMap.insert(QtWidgetsID::QtWidgets4, "Qt 多窗口切换");
     qtStartMap.insert(QtWidgetsID::QtWidgets5, "Qt 标准对话框");
+    qtStartMap.insert(QtWidgetsID::QtWidgets6, "Qt QFrame使用");
+    qtStartMap.insert(QtWidgetsID::QtWidgets7, "Qt QFrame类族");
 
     QMap<int, QString>::Iterator iter;
     for (iter = qtStartMap.begin(); iter != qtStartMap.end(); ++iter) {
@@ -82,6 +86,12 @@ void QtWidgetsWindow::qtWidgetsTestShow(int id) {
     case QtWidgetsID::QtWidgets5:
         standard_dialog_test();
         break;
+    case QtWidgetsID::QtWidgets6:
+        frame_use_test();
+        break;
+    case QtWidgetsID::QtWidgets7:
+        frame_family_test();
+        break;
     }
 }
 
@@ -107,4 +117,12 @@ void QtWidgetsWindow::window_switch_test() {
 
 void QtWidgetsWindow::standard_dialog_test() {
     standard_dialog();
+}
+
+void QtWidgetsWindow::frame_use_test() {
+    frame_use();
+}
+
+void QtWidgetsWindow::frame_family_test() {
+    frame_family();
 }
