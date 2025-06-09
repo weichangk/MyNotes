@@ -1,6 +1,9 @@
 #include "qtlayoutswindow.h"
 #include "../flowlayout.h"
 #include "qbox_layout.h"
+#include "qform_layout.h"
+#include "qgrid_layout.h"
+#include "qstack_layout.h"
 
 #include <QPushbutton>
 #include <QMap>
@@ -31,8 +34,8 @@ void QtLayoutsWindow::setQtLayoutsBtns(QWidget *w) {
     auto flowLayout = new FlowLayout(w, 4, 4, 4);
     QMap<int, QString> qtStartMap;
     qtStartMap.insert(QtLayoutsID::QtBoxLayoutID, "Qt 基本布局管理器（QBoxLayout）");
-    qtStartMap.insert(QtLayoutsID::QtFormLayoutID, "Qt 栅格布局管理器（QGridLayout）");
-    qtStartMap.insert(QtLayoutsID::QtGridLayoutID, "Qt 窗体布局管理器（QFormLayout）");
+    qtStartMap.insert(QtLayoutsID::QtFormLayoutID, "Qt 窗体布局管理器（QFormLayout）");
+    qtStartMap.insert(QtLayoutsID::QtGridLayoutID, "Qt 栅格布局管理器（QGridLayout）");
     qtStartMap.insert(QtLayoutsID::QtStackLayoutID, "Qt 堆叠布局管理器（QStackLayout）");
 
     QMap<int, QString>::Iterator iter;
@@ -71,10 +74,13 @@ void QtLayoutsWindow::qbox_layout_test() {
 }
 
 void QtLayoutsWindow::qform_layout_test() {
+    qform_layout();
 }
 
 void QtLayoutsWindow::qgrid_layout_test() {
+    qgrid_layout();
 }
 
 void QtLayoutsWindow::qstack_layout_test() {
+    qstack_layout();
 }
