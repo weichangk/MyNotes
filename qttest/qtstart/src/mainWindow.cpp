@@ -71,6 +71,9 @@ void MainWindow::qtStartShow(int id) {
     case EQtStartID::QtStart0:
         qtWidgetsWindowShow();
         break;
+    case EQtStartID::QtStart1:
+        qtLayoutsWindowShow();
+        break;
     }
 }
 
@@ -79,4 +82,11 @@ void MainWindow::qtWidgetsWindowShow() {
         m_pQtWidgetsWindow = new QtWidgetsWindow();
     }
     m_pQtWidgetsWindow->show();
+}
+
+void MainWindow::qtLayoutsWindowShow() {
+    if (!m_pQtLayoutsWindow) {
+        m_pQtLayoutsWindow = new QtLayoutsWindow();
+    }
+    m_pQtLayoutsWindow->show();
 }
