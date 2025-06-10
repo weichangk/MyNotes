@@ -1,4 +1,5 @@
 
+## 使用 PlantUML
 
 ### WIN 环境准备
 
@@ -88,38 +89,62 @@
 
    命令面板：输入`PlantUML: Export Current Diagram` 在弹出的格式选择中选择 `png/svg/pdf` 即可导出
 
-### 可选增强体验
+## 使用 Markdown 集成 Mermaid
+新建 `.md` 文件写入以下代码也可以画 UML 类图：
+```mermaid
+classDiagram
+    class Person {
+    -name: String
+    -age: int
+    +getInfo(): String
+    }
 
-1. 使用 Markdown 集成 Mermaid（轻量方案）
+    class Student {
+    -school: String
+    +study(): void
+    }
 
-   新建 `.md` 文件写入以下代码也可以画 UML 类图：
+    Person <|-- Student
+```
+安装插件 `Markdown Preview Enhanced` 或 `Mermaid Markdown Syntax Highlighting`
+使用 VSCode 的 Markdown 预览功能（`Cmd+Shift+V`）即可查看图形
+
+## 使用 Draw.io Integration
+
+1. 搜索并安装插件：`Draw.io Integration`（发布者为 Henning Dieterichs）
+
+2. 在你的项目文件夹下，右键选择 **New File**，命名为：`diagram.drawio.svg` 或 `diagram.drawio.png`
+
+   **推荐使用 SVG 格式**，因为它是可编辑的、可嵌入 Markdown 的矢量图。
+
+3. 使用 Draw.io 图形界面画 UML 图
+
+   你会看到和 https://app.diagrams.net 类似的界面，支持拖拽画图：
+
+4. 保存与导出
+
+   Draw.io 图会自动保存为 `.drawio.svg` 或 `.drawio.png` 文件。
+
+   你也可以：
+
+   - 点击菜单栏中的 `File → Export as → PNG/SVG/PDF` 导出为其他格式
+
+   - 导出的 `.svg` 可以插入到 Markdown 或 Word 文档中
+
+5. Markdown 中嵌入 Draw.io 图
 
    ```
-   ```mermaid
-   classDiagram
-     class Person {
-       -name: String
-       -age: int
-       +getInfo(): String
-     }
-   
-     class Student {
-       -school: String
-       +study(): void
-     }
-   
-     Person <|-- Student
+   ![UML图](diagram.drawio.svg)
    ```
 
-   安装插件 `Markdown Preview Enhanced` 或 `Mermaid Markdown Syntax Highlighting`
+   VSCode 的 Markdown 预览中可以直接显示这个图。
 
-   使用 VSCode 的 Markdown 预览功能（`Cmd+Shift+V`）即可查看图形
 
-2. 推荐插件组合
 
-   | 插件名称                  | 作用                       |
-   | ------------------------- | -------------------------- |
-   | PlantUML (jebbs)          | 编辑、预览、导出 UML 图    |
-   | Markdown Preview Enhanced | 支持 Mermaid 图预览        |
-   | Draw.io Integration       | 拖拽方式绘图（图形化操作） |
-   | Java Extension Pack       | Java 支持，间接增强兼容    |
+## Draw.io 与 PlantUML、Mermaid 对比
+
+| 工具         | 类型     | 编辑方式        | 难度 | 推荐使用场景             |
+| ------------ | -------- | --------------- | ---- | ------------------------ |
+| **PlantUML** | 代码式   | 文本写图        | ⭐⭐⭐⭐ | 自动化生成类图、版本控制 |
+| **Mermaid**  | 代码式   | 文本 + Markdown | ⭐⭐⭐  | 文档内轻量嵌入图         |
+| **Draw.io**  | 图形界面 | 拖拽编辑        | ⭐⭐   | 手工绘图、视觉表达       |
