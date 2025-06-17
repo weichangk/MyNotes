@@ -1,5 +1,6 @@
 #pragma once
 #include <QWidget>
+#include <QLabel>
 #include "widget/label.h"
 
 class LabelTestWidget : public QWidget {
@@ -23,4 +24,6 @@ private:
     qtmaterialwidget::CarouselLabel *m_pCarouselLabel4 = nullptr;
 
     qtmaterialwidget::DiscountLabel *m_pDiscountLabel = nullptr;
+
+    QLabel *m_pWrapModelLab= nullptr;
 };

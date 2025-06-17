@@ -14,7 +14,7 @@ using QtTestDemo = enum {
     QtTestDemoLayoutMacBug,
     QtTestDemoLanguageChangeTest,
     QtTestDemoQssTest,
-    QtTestDemo777,
+    QtTestComboBoxTest,
     QtTestDemo888,
     QtTestDemo999,
 };
@@ -48,7 +48,7 @@ using QtmaterialWidgetDemo = enum {
 using QtmaterialFilterDemo = enum {
     QtmaterialFilterShadowTest = 3000,
     QtmaterialFilterDemoMoveTest,
-    QtmaterialFilterDemo222,
+    QtmaterialFilterArrowMaskTest,
     QtmaterialFilterDemo333,
     QtmaterialFilterDemo444,
     QtmaterialFilterDemo555,
@@ -125,7 +125,7 @@ void MainWindow::setQtTestDemoBtns(QWidget *w) {
     demoMap.insert(QtTestDemo::QtTestDemoLayoutMacBug, "LayoutMacBug");
     demoMap.insert(QtTestDemo::QtTestDemoLanguageChangeTest, "LanguageChangeTest");
     demoMap.insert(QtTestDemo::QtTestDemoQssTest, "QssTest");
-    demoMap.insert(QtTestDemo::QtTestDemo777, "777");
+    demoMap.insert(QtTestDemo::QtTestComboBoxTest, "ComboBoxTest");
     demoMap.insert(QtTestDemo::QtTestDemo888, "888");
     demoMap.insert(QtTestDemo::QtTestDemo999, "999");
 
@@ -204,7 +204,7 @@ void MainWindow::setQtmaterialFilterDemoBtns(QWidget *w) {
     QMap<int, QString> demoMap;
     demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterShadowTest, "Shadow Test");
     demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemoMoveTest, "Move Test");
-    demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo222, "222");
+    demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterArrowMaskTest, "ArrowMask Test");
     demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo333, "333");
     demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo444, "444");
     demoMap.insert(QtmaterialFilterDemo::QtmaterialFilterDemo555, "555");
@@ -278,7 +278,8 @@ void MainWindow::test(int id) {
     case QtTestDemo::QtTestDemoQssTest:
         qssTestWidgetShow();
         break;
-    case QtTestDemo::QtTestDemo777:
+    case QtTestDemo::QtTestComboBoxTest:
+        qComboBoxTestShow();
         break;
     case QtTestDemo::QtTestDemo888:
         break;
@@ -348,7 +349,8 @@ void MainWindow::test(int id) {
     case QtmaterialFilterDemo::QtmaterialFilterDemoMoveTest:
         moveTestShow();
         break;
-    case QtmaterialFilterDemo::QtmaterialFilterDemo222:
+    case QtmaterialFilterDemo::QtmaterialFilterArrowMaskTest:
+        arrowMaskTestShow();
         break;
     case QtmaterialFilterDemo::QtmaterialFilterDemo333:
         break;
@@ -439,6 +441,13 @@ void MainWindow::qssTestWidgetShow() {
     m_pQssWidget->show();
 }
 
+void MainWindow::qComboBoxTestShow() {
+    if (!m_pQComboBoxTestWidget) {
+        m_pQComboBoxTestWidget = new QComboBoxTestWidget();
+    }
+    m_pQComboBoxTestWidget->show();
+}
+
 void MainWindow::defineTestShow() {
     if (!m_pDefineTestWidget) {
         m_pDefineTestWidget = new DefineTestWidget();
@@ -514,4 +523,11 @@ void MainWindow::moveTestShow() {
         m_pMoveTestWidget = new MoveTestWidget();
     }
     m_pMoveTestWidget->show();
+}
+
+void MainWindow::arrowMaskTestShow() {
+    if (!m_pArrowMaskTestWidget) {
+        m_pArrowMaskTestWidget = new ArrowMaskTestWidget();
+    }
+    m_pArrowMaskTestWidget->show();
 }

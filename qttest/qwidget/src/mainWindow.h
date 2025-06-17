@@ -8,6 +8,7 @@
 #include "other/layout.h"
 #include "other/languagechange.h"
 #include "other/qsstest.h"
+#include "other/qcomboboxtest.h"
 #include "core/definetest.h"
 #include "core/subjecttest.h"
 #include "widget/buttontest.h"
@@ -19,6 +20,7 @@
 #include "widget/titlebartest.h"
 #include "filter/shadowtest.h"
 #include "filter/movetest.h"
+#include "filter/masktest.h"
 
 class MainWindow : public QWidget {
     Q_OBJECT
@@ -47,6 +49,7 @@ private:
     void layoutMacBugShow();
     void languageChangeTestShow();
     void qssTestWidgetShow();
+    void qComboBoxTestShow();
 
     // qtmaterial core
     void defineTestShow();
@@ -64,6 +67,7 @@ private:
     // qtmaterial filter
     void shadowTestShow();
     void moveTestShow();
+    void arrowMaskTestShow();
 
 private:
     QTabWidget *main_tabwidget_ = nullptr;
@@ -83,6 +87,7 @@ private:
     LayoutMacBugWidget *layoutmacbug_widget_ = nullptr;
     LanguageChangeTest *languagechange_widget_ = nullptr;
     QssTestWidget *m_pQssWidget = nullptr;
+    QComboBoxTestWidget *m_pQComboBoxTestWidget = nullptr;
 
     // qtmaterial core
     DefineTestWidget *m_pDefineTestWidget = nullptr;
@@ -100,4 +105,5 @@ private:
     // qtmaterial filter
     ShadowTestWidget *m_pShadowTestWidget = nullptr;
     MoveTestWidget *m_pMoveTestWidget = nullptr;
+    ArrowMaskTestWidget *m_pArrowMaskTestWidget = nullptr;
 };

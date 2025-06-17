@@ -111,5 +111,20 @@ LabelTestWidget::LabelTestWidget(QWidget *parent) :
     m_pDiscountLabel->setText("限时6.4折", discountFont, QColor("#ecd4cf"), 20, 40);
     layout->addWidget(m_pDiscountLabel, 0, Qt::AlignLeft);
 
+    // m_pWrapModelLab = new QLabel(this);
+    // m_pWrapModelLab->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    // m_pWrapModelLab->setFixedSize(100, 500);
+    // m_pWrapModelLab->setText("第一行文本第二行文本第三行文本");
+    // m_pWrapModelLab->setWordWrap(true);
+    // m_pWrapModelLab->setStyleSheet("QLabel {background-color: #000000; color: red; font-size: 16px}");
+    // layout->addWidget(m_pWrapModelLab, 0, Qt::AlignLeft);
+
+
+    QLabel *label = new QLabel(this);
+    label->setText("<p style='line-height: 1.8;'>第一行文本第二行文本第三行文本</p>");
+    label->setWordWrap(true);
+    label->setFixedSize(60, 500);
+    layout->addWidget(label, 0, Qt::AlignLeft);
+
     layout->addStretch();
 }

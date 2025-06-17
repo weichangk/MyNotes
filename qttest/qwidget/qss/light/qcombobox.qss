@@ -1,0 +1,94 @@
+/* 基本样式 */
+QComboBox {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #302d3f;
+    padding-left: 8px;
+    border-radius: 8px;
+}
+
+/* 禁用状态 */
+QComboBox:disabled {
+    color: rgba(255, 255, 255, 0.24);
+}
+
+/* 悬浮状态 */
+QComboBox:hover {
+    border: 1px solid #3d267d;
+}
+
+/* 按下状态 */
+QComboBox:on {
+    border: 1px solid #3d267d;
+}
+
+/* 下拉按钮 */
+QComboBox::drop-down {
+    subcontrol-position: right center;
+    subcontrol-origin: padding;
+    width: 24px;
+    height: 24px;
+    padding-right: 4px;
+    background: transparent;
+}
+
+/* 下箭头图标 */
+QComboBox::down-arrow {
+    width: 24px;
+    height: 24px;
+    subcontrol-origin: content;
+    image: url(:/qtmaterial/img/vcu/light/old/icon/icon_basic/icon16/icon16_selected.png);
+}
+
+QComboBox::down-arrow:on {
+    image: url(:/qtmaterial/img/vcu/light/old/icon/icon_basic/icon16/icon16_preloading_audio_lost.png);
+}
+
+QComboBox::down-arrow:hover {
+    image: url(:/qtmaterial/img/vcu/light/old/icon/icon_basic/icon16/icon16_no.png);
+}
+
+QComboBox::down-arrow:pressed {
+    image: url(:/qtmaterial/img/vcu/light/old/icon/icon_basic/icon16/icon16_high_normal.png);
+}
+
+QComboBox::down-arrow:disabled {
+    image: url(:/qtmaterial/img/vcu/light/old/icon/icon_basic/icon16/icon16_selected.png);
+}
+
+/* 下拉列表项样式 */
+QComboBox QAbstractItemView {
+    selection-background-color: #403D51;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    background-color: red;
+    border: 0px;
+    border-radius: 8px;
+    outline: none;
+    color: rgba(255, 255, 255, 0.72);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 4px;
+}
+
+
+/* 每个选项项样式 */
+QComboBox QAbstractItemView::item {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(255, 255, 255, 0.72);
+    min-height: 24px;
+    border: 0px;
+    padding-left: 0px;
+    border-radius: 8px;
+}
+
+
