@@ -15,8 +15,8 @@ void QComboBoxTestWidget::createUi() {
 
     auto layout = new QVBoxLayout(this); 
 
-    m_pComboBox = new QComboBox(this);
-    m_pComboBox->setFixedSize(240, 40);
+    m_pComboBox = new MyComboBox(this);
+    m_pComboBox->setFixedSize(240, 24);
     m_pComboBox->addItem("Item 1");
     m_pComboBox->addItem("Item 2");
     m_pComboBox->addItem("Item 3");

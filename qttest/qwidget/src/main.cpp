@@ -7,6 +7,8 @@
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
+    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     qtmaterialcore::Lang::getInstance()->setSysLangLocale();
     QStringList prefixs;
     prefixs.append("");
