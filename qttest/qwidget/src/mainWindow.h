@@ -9,6 +9,7 @@
 #include "other/languagechange.h"
 #include "other/qsstest.h"
 #include "other/qcomboboxtest.h"
+#include "other/tasktest.h"
 #include "core/definetest.h"
 #include "core/subjecttest.h"
 #include "widget/buttontest.h"
@@ -50,6 +51,7 @@ private:
     void languageChangeTestShow();
     void qssTestWidgetShow();
     void qComboBoxTestShow();
+    void taskTestShow();
 
     // qtmaterial core
     void defineTestShow();
@@ -88,6 +90,7 @@ private:
     LanguageChangeTest *languagechange_widget_ = nullptr;
     QssTestWidget *m_pQssWidget = nullptr;
     QComboBoxTestWidget *m_pQComboBoxTestWidget = nullptr;
+    TaskTestDialog *m_pTaskTestDialog = nullptr;
 
     // qtmaterial core
     DefineTestWidget *m_pDefineTestWidget = nullptr;

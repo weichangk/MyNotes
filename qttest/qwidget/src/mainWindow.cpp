@@ -15,7 +15,7 @@ using QtTestDemo = enum {
     QtTestDemoLanguageChangeTest,
     QtTestDemoQssTest,
     QtTestComboBoxTest,
-    QtTestDemo888,
+    QtTestTaskTest,
     QtTestDemo999,
 };
 
@@ -126,7 +126,7 @@ void MainWindow::setQtTestDemoBtns(QWidget *w) {
     demoMap.insert(QtTestDemo::QtTestDemoLanguageChangeTest, "LanguageChangeTest");
     demoMap.insert(QtTestDemo::QtTestDemoQssTest, "QssTest");
     demoMap.insert(QtTestDemo::QtTestComboBoxTest, "ComboBoxTest");
-    demoMap.insert(QtTestDemo::QtTestDemo888, "888");
+    demoMap.insert(QtTestDemo::QtTestTaskTest, "TaskTest");
     demoMap.insert(QtTestDemo::QtTestDemo999, "999");
 
     QMap<int, QString>::Iterator iter;
@@ -281,7 +281,8 @@ void MainWindow::test(int id) {
     case QtTestDemo::QtTestComboBoxTest:
         qComboBoxTestShow();
         break;
-    case QtTestDemo::QtTestDemo888:
+    case QtTestDemo::QtTestTaskTest:
+        taskTestShow();
         break;
     case QtTestDemo::QtTestDemo999:
         break;
@@ -446,6 +447,13 @@ void MainWindow::qComboBoxTestShow() {
         m_pQComboBoxTestWidget = new QComboBoxTestWidget();
     }
     m_pQComboBoxTestWidget->show();
+}
+
+void MainWindow::taskTestShow() {
+    if (!m_pTaskTestDialog) {
+        m_pTaskTestDialog = new TaskTestDialog();
+    }
+    m_pTaskTestDialog->show();
 }
 
 void MainWindow::defineTestShow() {
