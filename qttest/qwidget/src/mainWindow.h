@@ -19,6 +19,7 @@
 #include "widget/carouseltest.h"
 #include "widget/avatartest.h"
 #include "widget/titlebartest.h"
+#include "widget/menutest.h"
 #include "filter/shadowtest.h"
 #include "filter/movetest.h"
 #include "filter/masktest.h"
@@ -65,6 +66,7 @@ private:
     void carouselTestShow();
     void avatarTestShow();
     void titleBarTestShow();
+    void menuTestShow();
 
     // qtmaterial filter
     void shadowTestShow();
@@ -104,6 +106,7 @@ private:
     CarouselTestWidget *m_pCarouselTestWidget = nullptr;
     AvatarTestWidget *m_pAvatarTestWidget = nullptr;
     TitlebarTestWidget *m_pTitlebarTestWidget = nullptr;
+    MenuWidget *m_pMenuWidget = nullptr;
 
     // qtmaterial filter
     ShadowTestWidget *m_pShadowTestWidget = nullptr;

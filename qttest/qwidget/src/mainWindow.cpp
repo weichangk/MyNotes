@@ -40,7 +40,7 @@ using QtmaterialWidgetDemo = enum {
     QtmaterialWidgetDemoCarouselTest,
     QtmaterialWidgetAvatarTest,
     QtmaterialWidgetTitlebarTest,
-    QtmaterialWidgetDemo777,
+    QtmaterialWidgetMenuTest,
     QtmaterialWidgetDemo888,
     QtmaterialWidgetDemo999,
 };
@@ -181,7 +181,7 @@ void MainWindow::setQtmaterialWidgetDemoBtns(QWidget *w) {
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemoCarouselTest, "Carousel Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetAvatarTest, "Avatar Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetTitlebarTest, "Titlebar Test");
-    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo777, "777");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetMenuTest, "MenuTest");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo888, "888");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo999, "999");
 
@@ -335,7 +335,8 @@ void MainWindow::test(int id) {
     case QtmaterialWidgetDemo::QtmaterialWidgetTitlebarTest:
         titleBarTestShow();
         break;
-    case QtmaterialWidgetDemo::QtmaterialWidgetDemo777:
+    case QtmaterialWidgetDemo::QtmaterialWidgetMenuTest:
+        menuTestShow();
         break;
     case QtmaterialWidgetDemo::QtmaterialWidgetDemo888:
         break;
@@ -517,6 +518,13 @@ void MainWindow::titleBarTestShow() {
         m_pTitlebarTestWidget = new TitlebarTestWidget();
     }
     m_pTitlebarTestWidget->show();
+}
+
+void MainWindow::menuTestShow() {
+    if (!m_pMenuWidget) {
+        m_pMenuWidget = new MenuWidget();
+    }
+    m_pMenuWidget->show();  
 }
 
 void MainWindow::shadowTestShow() {
