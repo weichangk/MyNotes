@@ -9,12 +9,12 @@ int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    qtmaterialcore::Lang::getInstance()->setSysLangLocale();
+    QtmCore::Lang::getInstance()->setSysLangLocale();
     QStringList prefixs;
     prefixs.append("");
-    qtmaterialcore::Theme::setTheme(qtmaterialcore::Theme::LIGHT, prefixs);
-    qtmaterialcore::Font::setFont(qtmaterialcore::Font::ROBOTO_REGULAR);
-    qtmaterialcore::Font::setIconFont(":/font/QtMaterialIconFont.ttf");
+    QtmCore::Theme::setTheme(QtmCore::Theme::LIGHT, prefixs);
+    QtmCore::Font::setFont(QtmCore::Font::ROBOTO_REGULAR);
+    QtmCore::Font::setIconFont(":/font/QtMaterialIconFont.ttf");
     MainWindow w;
     w.show();
     return a.exec();

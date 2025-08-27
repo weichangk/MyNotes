@@ -12,5 +12,5 @@ public:
     }
 
 private:
-    qtmaterialwidget::Carousel *m_pCarousel = nullptr;
+    QtmWidget::Carousel *m_pCarousel = nullptr;
 };

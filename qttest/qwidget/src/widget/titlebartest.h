@@ -12,5 +12,5 @@ public:
     }
 
 private:
-    qtmaterialwidget::Titlebar *m_pTitlebar = nullptr;
+    QtmWidget::Titlebar *m_pTitlebar = nullptr;
 };

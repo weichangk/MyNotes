@@ -25,7 +25,7 @@ ArrowMaskTestWidget::ArrowMaskTestWidget(QWidget *parent) :
     layout->addWidget(widget);
     layout->addStretch();
 
-    auto mask = new qtmaterialfilter::ArrowWindow(this);
+    auto mask = new QtmFilter::ArrowWindow(this);
 }
 
 ArrowMaskTestWidget::~ArrowMaskTestWidget() {

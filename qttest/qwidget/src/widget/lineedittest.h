@@ -10,5 +10,5 @@ public:
     ~LineEditTestWidget() override {}
 
 private:
-    qtmaterialwidget::SearchLineEdit *m_pSearchLineEdit = nullptr;
+    QtmWidget::SearchLineEdit *m_pSearchLineEdit = nullptr;
 };

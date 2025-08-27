@@ -7,7 +7,7 @@
 
 #include "widget/menu.h"
 
-using namespace qtmaterialwidget;
+using namespace QtmWidget;
 
 class MenuWidget : public QWidget {
     Q_OBJECT

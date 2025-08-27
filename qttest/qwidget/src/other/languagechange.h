@@ -23,5 +23,5 @@ private slots:
 private:
     QComboBox *lang_combox_ = nullptr;
     QLabel *label_ = nullptr;
-    qtmaterialfilter::LanguageFilter *lang_ = nullptr;
+    QtmFilter::LanguageFilter *lang_ = nullptr;
 };

@@ -13,7 +13,7 @@ TitlebarTestWidget::TitlebarTestWidget(QWidget *parent) :
     auto layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
 
-    m_pTitlebar = new qtmaterialwidget::Titlebar(this);
+    m_pTitlebar = new QtmWidget::Titlebar(this);
     m_pTitlebar->setBackgroundColor(QColor("#266df8"));
     m_pTitlebar->setCloseBtnNormalPixmapPath(":/test/img/mac_close_n.png");
     m_pTitlebar->setCloseBtnHoverPixmapPath(":/test/img/mac_close_h.png");
@@ -32,7 +32,7 @@ TitlebarTestWidget::TitlebarTestWidget(QWidget *parent) :
     layout->addStretch();
 
     //
-    connect(m_pTitlebar, &qtmaterialwidget::Titlebar::sigIgnoreClose, this, [&](){
+    connect(m_pTitlebar, &QtmWidget::Titlebar::sigIgnoreClose, this, [&](){
         return true;
     });
 }

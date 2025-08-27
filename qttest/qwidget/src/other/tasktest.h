@@ -14,7 +14,7 @@
 
 #include <string>
 
-using namespace qtmaterialtask;
+using namespace QtmTask;
 
 class ProgressDialog : public QDialog {
     Q_OBJECT
