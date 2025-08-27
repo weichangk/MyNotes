@@ -45,23 +45,23 @@ QComboBox::down-arrow {
     width: 24px;
     height: 24px;
     subcontrol-origin: content;
-    image: url(:/qtmaterial/img/vcu/light/icon/icon_basic/icon16/icon16_selected.png);
+    image: url(:/QtmImg/img/light/icon/icon_basic/icon16/icon16_selected.png);
 }
 
 QComboBox::down-arrow:on {
-    image: url(:/qtmaterial/img/vcu/light/icon/icon_basic/icon16/icon16_preloading_audio_lost.png);
+    image: url(:/QtmImg/img/light/icon/icon_basic/icon16/icon16_preloading_audio_lost.png);
 }
 
 QComboBox::down-arrow:hover {
-    image: url(:/qtmaterial/img/vcu/light/icon/icon_basic/icon16/icon16_no.png);
+    image: url(:/QtmImg/img/light/icon/icon_basic/icon16/icon16_no.png);
 }
 
 QComboBox::down-arrow:pressed {
-    image: url(:/qtmaterial/img/vcu/light/icon/icon_basic/icon16/icon16_high_normal.png);
+    image: url(:/QtmImg/img/light/icon/icon_basic/icon16/icon16_high_normal.png);
 }
 
 QComboBox::down-arrow:disabled {
-    image: url(:/qtmaterial/img/vcu/light/icon/icon_basic/icon16/icon16_selected.png);
+    image: url(:/QtmImg/img/light/icon/icon_basic/icon16/icon16_selected.png);
 }
 
 /* 下拉列表项样式 */

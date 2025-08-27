@@ -24,7 +24,7 @@ void MenuWidget::createUi() {
     auto *layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
 
-    QIcon icon(":/qtmaterial/img/vcu/dark/v16/icon16/icon16_Checkmark_blue.png");
+    QIcon icon(":/QtmImg/img/dark/v16/icon16/icon16_Checkmark_blue.png");
 
     p_mMenuBar = new QMenuBar(this);
     layout->addWidget(p_mMenuBar);
