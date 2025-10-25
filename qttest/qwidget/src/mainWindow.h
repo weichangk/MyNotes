@@ -20,6 +20,7 @@
 #include "widget/avatartest.h"
 #include "widget/titlebartest.h"
 #include "widget/menutest.h"
+#include "widget/slidertest.h"
 #include "filter/shadowtest.h"
 #include "filter/movetest.h"
 #include "filter/masktest.h"
@@ -67,6 +68,7 @@ private:
     void avatarTestShow();
     void titleBarTestShow();
     void menuTestShow();
+    void sliderTestShow();
 
     // qtmaterial filter
     void shadowTestShow();
@@ -107,6 +109,7 @@ private:
     AvatarTestWidget *m_pAvatarTestWidget = nullptr;
     TitlebarTestWidget *m_pTitlebarTestWidget = nullptr;
     MenuWidget *m_pMenuWidget = nullptr;
+    SliderTestWidget *m_pSliderTestWidget = nullptr;
 
     // qtmaterial filter
     ShadowTestWidget *m_pShadowTestWidget = nullptr;

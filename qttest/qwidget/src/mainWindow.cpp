@@ -41,7 +41,7 @@ using QtmaterialWidgetDemo = enum {
     QtmaterialWidgetAvatarTest,
     QtmaterialWidgetTitlebarTest,
     QtmaterialWidgetMenuTest,
-    QtmaterialWidgetDemo888,
+    QtmaterialWidgetSliderTest,
     QtmaterialWidgetDemo999,
 };
 
@@ -182,7 +182,7 @@ void MainWindow::setQtmaterialWidgetDemoBtns(QWidget *w) {
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetAvatarTest, "Avatar Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetTitlebarTest, "Titlebar Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetMenuTest, "MenuTest");
-    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo888, "888");
+    demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetSliderTest, "Slider Test");
     demoMap.insert(QtmaterialWidgetDemo::QtmaterialWidgetDemo999, "999");
 
     QMap<int, QString>::Iterator iter;
@@ -338,7 +338,8 @@ void MainWindow::test(int id) {
     case QtmaterialWidgetDemo::QtmaterialWidgetMenuTest:
         menuTestShow();
         break;
-    case QtmaterialWidgetDemo::QtmaterialWidgetDemo888:
+    case QtmaterialWidgetDemo::QtmaterialWidgetSliderTest:
+        sliderTestShow();
         break;
     case QtmaterialWidgetDemo::QtmaterialWidgetDemo999:
         break;
@@ -525,6 +526,13 @@ void MainWindow::menuTestShow() {
         m_pMenuWidget = new MenuWidget();
     }
     m_pMenuWidget->show();  
+}
+
+void MainWindow::sliderTestShow() {
+    if (!m_pSliderTestWidget) {
+        m_pSliderTestWidget = new SliderTestWidget();
+    }
+    m_pSliderTestWidget->show();
 }
 
 void MainWindow::shadowTestShow() {
