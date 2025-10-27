@@ -24,14 +24,14 @@ LineEditTestWidget::LineEditTestWidget(QWidget *parent) :
     layout->addWidget(m_pSearchLineEdit);
 
     m_pQLineEdit1 = new QLineEdit(this);
-    m_pQLineEdit1->setFixedWidth(40);
+    m_pQLineEdit1->setFixedSize(40, 24);
     m_pQLineEdit1->setAlignment(Qt::AlignCenter);
     m_pQLineEdit1->setValidator(new QIntValidator(-100, 100, this));
     m_pQLineEdit1->setText("0");
     layout->addWidget(m_pQLineEdit1);
 
     m_pUnitLineEdit1 = new QtmWidget::UnitLineEdit(this);
-    m_pUnitLineEdit1->setFixedWidth(120);
+    m_pUnitLineEdit1->setFixedSize(120, 24);
     m_pUnitLineEdit1->setAlignment(Qt::AlignCenter);
     m_pUnitLineEdit1->setUnit("kg");
     m_pUnitLineEdit1->setPrefix("+");
