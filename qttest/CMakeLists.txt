@@ -48,7 +48,7 @@ elseif(APPLE)
     endif()
 endif()
 
-add_subdirectory(qtstart)
 add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty/QtMaterial)
 add_subdirectory(qwidget)
 add_subdirectory(qml)
+add_subdirectory(qtstart)
