@@ -1,6 +1,7 @@
 #pragma once
 #include "qtwidgets/qtwidgetswindow.h"
 #include "qtlayouts/qtlayoutswindow.h"
+#include "qtevent/event_demo.h"
 
 #include <QWidget>
 
@@ -17,8 +18,10 @@ private:
     void qtStartShow(int id);
     void qtWidgetsWindowShow();
     void qtLayoutsWindowShow();
+    void qtEventDemoShow();
 
 private:
     QtWidgetsWindow *m_pQtWidgetsWindow = nullptr;
     QtLayoutsWindow *m_pQtLayoutsWindow = nullptr;
+    QtEventWidget *m_pQtEventWidget = nullptr;
 };
