@@ -285,7 +285,18 @@ function Start-ProxyServer {
         return $true
     }
     Write-Host "Starting..." -ForegroundColor Yellow
-    $j = Start-Job { copilot-api start 2>&1 }
+    # 确定代理：优先用 -Proxy 参数，其次继承环境变量
+    $proxyUrl = if ($Proxy) { $Proxy } elseif ($env:HTTPS_PROXY) { $env:HTTPS_PROXY } elseif ($env:HTTP_PROXY) { $env:HTTP_PROXY } else { "" }
+    if ($proxyUrl) { Write-Host "  Proxy: $proxyUrl" -ForegroundColor Gray }
+    # Start-Job 不继承环境变量，需要显式传入
+    $j = Start-Job -ArgumentList $proxyUrl -ScriptBlock {
+        param($proxy)
+        if ($proxy) {
+            $env:HTTPS_PROXY = $proxy
+            $env:HTTP_PROXY  = $proxy
+        }
+        copilot-api start 2>&1
+    }
     for ($i=0; $i -lt 30; $i++) {
         Start-Sleep 1
         Write-Host "." -NoNewline -ForegroundColor Yellow
@@ -315,10 +326,22 @@ function Start-ProxyServer {
     return $false
 }
 function Set-ClaudeEnv {
-    $env:ANTHROPIC_BASE_URL = "http://localhost:4141"
-    $env:ANTHROPIC_AUTH_TOKEN = "sk-dummy"
-    $env:ANTHROPIC_MODEL = "claude-sonnet-4.5"
-    $env:ANTHROPIC_DEFAULT_HAIKU_MODEL = "gpt-5-mini"
+    $env:ANTHROPIC_BASE_URL   = "http://localhost:4141"
+    $env:ANTHROPIC_AUTH_TOKEN = "dummy"
+    # copilot-api 展示的可用模型均为非 claude 名称，由 copilot-api 负责 API 格式转换
+    $env:ANTHROPIC_MODEL                  = "gpt-4o"
+    $env:ANTHROPIC_DEFAULT_SONNET_MODEL   = "gpt-4o"
+    $env:ANTHROPIC_SMALL_FAST_MODEL       = "gpt-4o-mini"
+    $env:ANTHROPIC_DEFAULT_HAIKU_MODEL    = "gpt-4o-mini"
+    # 禁止 Claude Code 发起额外的模型查询请求
+    $env:DISABLE_NON_ESSENTIAL_MODEL_CALLS         = "1"
+    $env:CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC  = "1"
+    # 代理：优先用 -Proxy 参数，其次继承已有环境变量
+    $proxyUrl = if ($Proxy) { $Proxy } elseif ($env:HTTPS_PROXY) { $env:HTTPS_PROXY } elseif ($env:HTTP_PROXY) { $env:HTTP_PROXY } else { "" }
+    if ($proxyUrl) {
+        $env:HTTPS_PROXY = $proxyUrl
+        $env:HTTP_PROXY  = $proxyUrl
+    }
 }
 function Start-ClaudeCode {
     <#

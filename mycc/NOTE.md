@@ -82,3 +82,29 @@ $env:HTTP_PROXY  = "http://127.0.0.1:7890"
 ```
 
 > mycc 会自动将当前终端的 `HTTPS_PROXY` / `HTTP_PROXY` 传给认证窗口，无需重复设置。
+
+---
+
+## API Error 400 model_not_supported
+
+### 原因
+
+copilot-api 暴露的可用模型均为 **非 claude 名称**（如 `gpt-4o`、`gemini-2.5-pro`），它负责将 Anthropic API 格式请求转发给 GitHub Copilot，并将响应转换回 Anthropic 格式。
+
+如果 `ANTHROPIC_MODEL` 设为 `claude-opus-4.6`（带`.`）等格式，copilot-api 内部转换正则无法匹配，最终透传给 GitHub Copilot 报错。
+
+### 解决方案
+
+将模型设置为 copilot-api 实际支持的模型名：
+
+```powershell
+# 查看可用模型列表
+Invoke-RestMethod "http://localhost:4141/v1/models" | Select-Object -ExpandProperty data | Select-Object id
+
+# 正确的环境变量配置（mycc.ps1 已自动处理）
+$env:ANTHROPIC_MODEL                = "gpt-4o"
+$env:ANTHROPIC_DEFAULT_SONNET_MODEL = "gpt-4o"
+$env:ANTHROPIC_SMALL_FAST_MODEL     = "gpt-4o-mini"
+$env:DISABLE_NON_ESSENTIAL_MODEL_CALLS        = "1"
+$env:CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC = "1"
+```
