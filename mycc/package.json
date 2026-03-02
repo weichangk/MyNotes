@@ -1,0 +1,16 @@
+{
+  "bin": {
+    "mycc": "./mycc-cli.js"
+  },
+  "name": "mycc",
+  "version": "1.0.0",
+  "description": "Claude Code with GitHub Copilot - One-click launcher",
+  "keywords": [
+    "claude",
+    "copilot",
+    "ai",
+    "cli"
+  ],
+  "author": "",
+  "license": "MIT"
+}
