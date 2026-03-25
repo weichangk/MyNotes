@@ -1,0 +1,166 @@
+@startmindmap
+skinparam defaultFontName Microsoft YaHei
+skinparam shadowing false
+skinparam roundcorner 20
+skinparam ArrowColor #666666
+skinparam nodeFontColor #222222
+skinparam nodeBorderColor #999999
+skinparam nodeBackgroundColor #F8F8F8
+skinparam rootNode {
+  BackgroundColor #2E8B57
+  FontColor white
+  BorderColor #2E8B57
+}
+skinparam leafNode {
+  BackgroundColor #FFFDF5
+  BorderColor #D8C58A
+}
+
+* 音视频流媒体技术
+** 音视频基础
+*** 音视频开发环境
+**** Windows 平台
+**** Linux 平台
+*** 音视频基础
+**** 音频基础
+**** 视频基础
+**** 常用工具
+***** MediaInfo
+***** VLC播放器
+** FFMPEG命令
+*** 视频录制
+*** 多媒体文件的分解复用
+*** 转码与合并
+*** 图片视频互转
+*** 直播相关
+*** 音频滤镜
+** FFMPEG编程基础
+*** 音视频渲染
+**** SDL环境搭建
+**** SDL 事件处理
+**** SDL 像素处理
+**** YUV视频播放
+**** PCM声音播放
+*** FFmpeg API扫盲
+**** FFmpeg框架
+**** FFmpeg内存模型
+**** FFmpeg 常见结构体精讲
+*** 音视频编解码实战
+**** AAC编解码原理
+**** 自定义编解码原理
+**** AAC解码
+**** AAC编码
+**** H264解码
+**** H264编码
+**** FFmpeg如何改造
+*** 音视频封装技术
+**** FLV封装格式
+**** MP4封装格式
+**** 多媒体复用
+**** 多媒体复用项目
+**** 音视频封装格式
+*** 音视频过滤
+**** 音频过滤器
+**** 视频过滤器
+**** 滤镜框架
+**** 模块划分
+*** 播放器开发
+**** 音视频架构
+**** 播放器控制
+**** 音视频同步
+*** ffplay播放器
+**** 了解ffplay.c的意义
+**** ffplay框架
+**** 音视频解码
+**** 音视频控制
+**** 音视频同步
+**** 参数机制
+*** ffmpeg录制转码
+**** 了解ffmpeg.c
+**** ffmpeg框架
+**** 音视频编码
+**** 对接格式转换
+**** 提取音频
+**** 提取视频
+**** logo叠加
+**** 音视频文件拼接
+**** filter机制
+** 流媒体实战
+*** rtmp流媒体
+**** rtmp协议
+**** wireshark抓包
+**** rtmp拉流
+**** rtmp推流
+*** hls流媒体
+**** hls协议
+**** HTTP协议
+**** TS格式
+**** wireshark抓包
+**** hls拉流
+**** ffmpeg hls源码
+**** hls多码率机制
+*** http-flv流媒体
+**** http flv协议
+**** wireshark抓包
+**** http chunk机制
+**** http-flv拉流实战
+**** ffmpeg http flv源码
+*** RTMP HLS HTTP-FLV流媒体服务器
+**** 整体框架
+**** rtmp协议
+**** rtmp封装
+**** hls拉流
+**** http-flv拉流
+**** FFmpeg切片
+**** 首屏秒开技术
+**** forward集群源码
+**** edge集群源码
+**** 负载均衡部署方式
+*** RTSP流媒体
+**** RTSP协议
+**** RTP协议
+**** RTCP协议
+**** RTSP流媒体服务器搭建
+**** RTSP推流
+**** RTSP拉流
+**** wireshark抓包
+** WEBRTC实战
+*** WebRTC中级开发
+**** WebRTC通讯原理
+**** WebRTC开发环境搭建
+**** coturn最佳搭建方法
+**** 如何采集音视频数据
+**** 一对一通讯时序
+**** 信令服务端设计
+**** Web一对一通讯
+**** Web和Android通讯
+**** AppRTC快速演示
+**** 用户双摄像头分屏
+*** WebRTC高级开发
+**** 码率限制
+**** 视频编码器
+**** Mesh信号多方通话
+**** Janus框架
+**** Janus Web客户端源码
+**** Janus Android客户端源码
+**** Janus Windows客户端源码
+**** Janus信令设计
+**** 基于Janus实现会议系统
+**** WebRTC源码编译
+**** 拥塞控制算法
+**** FEC
+**** jitter buffer
+*** Janus服务端源码
+**** 源码结构
+**** 插件机制
+**** 线程
+**** 信令交互流程
+**** videoroom
+**** sfu
+**** rtp
+**** srtp
+**** rtcp
+**** stun
+**** turn
+
+@endmindmap
