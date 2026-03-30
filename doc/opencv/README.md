@@ -1,0 +1,93 @@
+# OpenCV 快速入门
+
+## 目录结构
+
+- [**一、环境搭建与基础**](./01_环境搭建与基础/README.md)
+  - [OpenCV 简介与安装](./01_环境搭建与基础/OpenCV%20简介与安装.md)（Windows/Linux/macOS、pip/CMake 源码编译）
+  - [第一个 OpenCV 程序](./01_环境搭建与基础/第一个%20OpenCV%20程序.md)（C++ 与 Python 示例）
+  - [CMake 配置 OpenCV 项目](./01_环境搭建与基础/CMake%20配置%20OpenCV%20项目.md)
+  - [Mat 核心数据结构](./01_环境搭建与基础/Mat%20核心数据结构.md)（创建、访问像素、深拷贝与浅拷贝）
+  - [图像的读取、显示与保存](./01_环境搭建与基础/图像的读取显示与保存.md)（imread、imshow、imwrite）
+- [**二、图像基本操作**](./02_图像基本操作/README.md)
+  - [像素访问与修改](./02_图像基本操作/像素访问与修改.md)（at、ptr、数据指针）
+  - [图像属性](./02_图像基本操作/图像属性.md)（rows、cols、channels、type、depth）
+  - [ROI 感兴趣区域](./02_图像基本操作/ROI%20感兴趣区域.md)
+  - [通道分离与合并](./02_图像基本操作/通道分离与合并.md)（split、merge）
+  - [图像算术运算](./02_图像基本操作/图像算术运算.md)（add、subtract、addWeighted）
+  - [位运算](./02_图像基本操作/位运算.md)（bitwise_and、bitwise_or、bitwise_xor、bitwise_not）
+- [**三、色彩空间与转换**](./03_色彩空间与转换/README.md)
+  - [色彩空间概述](./03_色彩空间与转换/色彩空间概述.md)（BGR、RGB、HSV、HLS、Lab、YUV）
+  - [色彩空间转换](./03_色彩空间与转换/色彩空间转换.md)（cvtColor）
+  - [灰度化与二值化](./03_色彩空间与转换/灰度化与二值化.md)（threshold、adaptiveThreshold）
+  - [颜色检测与追踪](./03_色彩空间与转换/颜色检测与追踪.md)（inRange、HSV 掩膜）
+- [**四、几何变换**](./04_几何变换/README.md)
+  - [缩放](./04_几何变换/缩放.md)（resize、插值方式）
+  - [平移与旋转](./04_几何变换/平移与旋转.md)（warpAffine、getRotationMatrix2D）
+  - [仿射变换](./04_几何变换/仿射变换.md)（getAffineTransform）
+  - [透视变换](./04_几何变换/透视变换.md)（getPerspectiveTransform、warpPerspective）
+  - [翻转与裁剪](./04_几何变换/翻转与裁剪.md)（flip）
+- [**五、图像滤波与平滑**](./05_图像滤波与平滑/README.md)
+  - [卷积基础](./05_图像滤波与平滑/卷积基础.md)（filter2D、核的概念）
+  - [均值滤波与方框滤波](./05_图像滤波与平滑/均值滤波与方框滤波.md)（blur、boxFilter）
+  - [高斯滤波](./05_图像滤波与平滑/高斯滤波.md)（GaussianBlur）
+  - [中值滤波](./05_图像滤波与平滑/中值滤波.md)（medianBlur）
+  - [双边滤波](./05_图像滤波与平滑/双边滤波.md)（bilateralFilter）
+- [**六、边缘检测与梯度**](./06_边缘检测与梯度/README.md)
+  - [Sobel 算子](./06_边缘检测与梯度/Sobel%20算子.md)
+  - [Scharr 算子](./06_边缘检测与梯度/Scharr%20算子.md)
+  - [Laplacian 算子](./06_边缘检测与梯度/Laplacian%20算子.md)
+  - [Canny 边缘检测](./06_边缘检测与梯度/Canny%20边缘检测.md)
+- [**七、形态学操作**](./07_形态学操作/README.md)
+  - [腐蚀与膨胀](./07_形态学操作/腐蚀与膨胀.md)（erode、dilate）
+  - [开运算与闭运算](./07_形态学操作/开运算与闭运算.md)（morphologyEx）
+  - [梯度、顶帽与黑帽](./07_形态学操作/梯度顶帽与黑帽.md)
+  - [结构元素](./07_形态学操作/结构元素.md)（getStructuringElement）
+- [**八、轮廓与形状分析**](./08_轮廓与形状分析/README.md)
+  - [轮廓查找与绘制](./08_轮廓与形状分析/轮廓查找与绘制.md)（findContours、drawContours）
+  - [轮廓特征](./08_轮廓与形状分析/轮廓特征.md)（面积、周长、质心、边界框）
+  - [轮廓近似与凸包](./08_轮廓与形状分析/轮廓近似与凸包.md)（approxPolyDP、convexHull）
+  - [最小外接矩形与圆](./08_轮廓与形状分析/最小外接矩形与圆.md)（minAreaRect、minEnclosingCircle）
+  - [形状匹配](./08_轮廓与形状分析/形状匹配.md)（matchShapes、Hu矩）
+- [**九、直方图**](./09_直方图/README.md)
+  - [直方图计算与绘制](./09_直方图/直方图计算与绘制.md)（calcHist）
+  - [直方图均衡化](./09_直方图/直方图均衡化.md)（equalizeHist、CLAHE）
+  - [直方图比较](./09_直方图/直方图比较.md)（compareHist）
+  - [反向投影](./09_直方图/反向投影.md)（calcBackProject）
+- [**十、模板匹配与特征检测**](./10_模板匹配与特征检测/README.md)
+  - [模板匹配](./10_模板匹配与特征检测/模板匹配.md)（matchTemplate）
+  - [Harris 角点检测](./10_模板匹配与特征检测/Harris%20角点检测.md)
+  - [Shi-Tomasi 角点检测](./10_模板匹配与特征检测/Shi-Tomasi%20角点检测.md)（goodFeaturesToTrack）
+  - [SIFT 特征](./10_模板匹配与特征检测/SIFT%20特征.md)
+  - [ORB 特征](./10_模板匹配与特征检测/ORB%20特征.md)
+  - [特征匹配](./10_模板匹配与特征检测/特征匹配.md)（BFMatcher、FlannBasedMatcher）
+- [**十一、霍夫变换**](./11_霍夫变换/README.md)
+  - [霍夫直线检测](./11_霍夫变换/霍夫直线检测.md)（HoughLines、HoughLinesP）
+  - [霍夫圆检测](./11_霍夫变换/霍夫圆检测.md)（HoughCircles）
+- [**十二、图像分割**](./12_图像分割/README.md)
+  - [阈值分割](./12_图像分割/阈值分割.md)（全局阈值、自适应阈值、Otsu）
+  - [分水岭算法](./12_图像分割/分水岭算法.md)（watershed）
+  - [GrabCut 前景提取](./12_图像分割/GrabCut%20前景提取.md)
+  - [连通域分析](./12_图像分割/连通域分析.md)（connectedComponents）
+- [**十三、视频处理**](./13_视频处理/README.md)
+  - [视频读取与播放](./13_视频处理/视频读取与播放.md)（VideoCapture）
+  - [摄像头实时采集](./13_视频处理/摄像头实时采集.md)
+  - [视频写入](./13_视频处理/视频写入.md)（VideoWriter、编码器选择）
+  - [帧间差分与运动检测](./13_视频处理/帧间差分与运动检测.md)
+  - [光流法](./13_视频处理/光流法.md)（calcOpticalFlowPyrLK、calcOpticalFlowFarneback）
+- [**十四、绘图与标注**](./14_绘图与标注/README.md)
+  - [基本图形绘制](./14_绘图与标注/基本图形绘制.md)（line、rectangle、circle、ellipse、polylines）
+  - [文字绘制](./14_绘图与标注/文字绘制.md)（putText、字体选择）
+  - [鼠标交互](./14_绘图与标注/鼠标交互.md)（setMouseCallback）
+  - [滑动条](./14_绘图与标注/滑动条.md)（createTrackbar）
+- [**十五、图像变换**](./15_图像变换/README.md)
+  - [傅里叶变换](./15_图像变换/傅里叶变换.md)（DFT、频域滤波）
+  - [距离变换](./15_图像变换/距离变换.md)（distanceTransform）
+- [**十六、机器学习基础**](./16_机器学习基础/README.md)
+  - [KNN 分类](./16_机器学习基础/KNN%20分类.md)（ml::KNearest）
+  - [SVM 分类](./16_机器学习基础/SVM%20分类.md)（ml::SVM）
+  - [级联分类器](./16_机器学习基础/级联分类器.md)（CascadeClassifier、人脸检测）
+- [**十七、DNN 深度学习模块**](./17_DNN深度学习模块/README.md)
+  - [DNN 模块概述](./17_DNN深度学习模块/DNN%20模块概述.md)（支持的框架与模型格式）
+  - [加载与推理](./17_DNN深度学习模块/加载与推理.md)（readNet、blobFromImage、forward）
+  - [目标检测实战](./17_DNN深度学习模块/目标检测实战.md)（YOLO、SSD）
+  - [图像分类实战](./17_DNN深度学习模块/图像分类实战.md)（ResNet、MobileNet）
