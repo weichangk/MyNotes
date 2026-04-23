@@ -84,10 +84,10 @@ sudo apt-get install nginx -y
 sudo cat > /etc/nginx/sites-available/openclaw << 'EOF'
 server {
     listen 80;
-    server_name ai.yourdomain.com;
+    server_name openclaw.lilikk.com;
     
     location / {
-        proxy_pass http://127.0.0.1:3000;
+        proxy_pass http://127.0.0.1:18789;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
