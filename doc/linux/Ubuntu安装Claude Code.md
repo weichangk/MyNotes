@@ -12,3 +12,6 @@
 
 
 
+修改.claude.json配置绕过登录
+
+"hasCompletedOnboarding": true
